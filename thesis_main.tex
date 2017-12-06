@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% yale_thesis.tex
+% Elena Gramellini
+% Started: 2017/12/05
+%
+% A bare, sample template for a Yale PhD thesis using yalephd.cls
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper,12pt,draft]{yalephd}
+% remove draft option for final printing.
+% font size must be between 10pt-12pt.
+
+\usepackage{geometry} % you need this for yalephd.cls to work.
+\usepackage{graphicx} % you probably want the rest of these.
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{appendix}
+\usepackage{comment}
+\usepackage{cite}
+\bibliographystyle{plain}
+
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+
+
+
+\begin{document}
+  
+
+% Need to define title before the abstract.
+\title{Measurement of the positive kaon-argon total hadronic differential cross section in the LArIAT experiment}
+\author{Elena Gramellini}
+\advisor{Bonnie T. Fleming}
+\date{Date you'll receive your degree} % usually not \today.
+
+% All the stuff at the front of your thesis.
+\frontmatter
+
+\begin{abstract}
+Abstract goes here. Limit 750 words.
+\end{abstract}
+
+
+\maketitle
+\makecopyright{2017}
+
+%  \begin{dedication}
+%A mia mamma e mio babbo,\\
+%grazie per le radici e grazie per le ali.
+%    \par   %% or a blank line
+%    \vspace{2\baselineskip}
+%To my mom and dad,\\
+%thank you for the roots and thank you for the wings.
+%    \vspace{\baselineskip}
+%  \end{dedication}
+\tableofcontents
+\listoffigures % remove this if you have no figures.
+\listoftables % remove this if you have no tables.
+
+\chapter{Acknowledgements} % this needs to be before \mainmatter.
+A lot of people are awesome. But not you, who are reading my thesis before it's done.
+
+% Starts proper arabic numbering of pages and chapters.
+\mainmatter
+
+\input{0-Introduction}
+\input{1-LArTPCs}
+\input{2-TheLArIATExperiment}
+\input{3-KaonInteractionsInLAr}
+\input{4-DataCollection}
+\input{5-EnergyCalibration}
+\input{6-TrackingOptimization}
+\input{7-KaonCrossSectionAnalysis}
+
+
+% Add additional \chapter{}s as necessary.
+
+% use \cite{} to cite a reference in your bibliography file.
+% use \ref{} to reference a \label{} from an equation, figure, or table.
+
+% for sets of equations use align:
+%\begin{align}
+%\end{align}
+
+% for figures:
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=.45\textwidth]{name_of_figure.eps}
+%\caption{A caption! \label{a_figure}}
+%\end{figure}
+
+% for tables:
+%\begin{table}
+%\begin{tabular}{c|c|c}
+% 1 & 2 & 3 \\
+%\hline
+%\end{tabular}
+%\caption{Another caption! \label{a_table}}
+%\end{table}
+
+% Only call appendix once, here.
+\appendix
+\input{A-MicroBooNECRT}
+
+% Any chapters such as End Notes go after this.
+\backmatter
+
+\bibliography{bib.bib}
+\bibliographystyle{plain}
+% for your own sake, use a bibtex file, so all of the numbering of references will be done
+% automatically.
+
+\end{document}
