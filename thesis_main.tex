@@ -14,13 +14,16 @@
 \usepackage{graphicx} % you probably want the rest of these.
 \usepackage{dcolumn}
 \usepackage{bm}
+\usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{appendix}
 \usepackage{comment}
 \usepackage{cite}
+\usepackage{color}
 \bibliographystyle{plain}
+\usepackage{slashed}  
 
 \newenvironment{dedication}
   {%\clearpage           % we want a new page          %% I commented this
@@ -76,14 +79,15 @@ A lot of people are awesome. But not you, who are reading my thesis before it's 
 % Starts proper arabic numbering of pages and chapters.
 \mainmatter
 
-\input{0-Introduction}
-\input{1-LArTPCs}
-\input{2-TheLArIATExperiment}
-\input{3-KaonInteractionsInLAr}
-\input{4-DataCollection}
-\input{5-EnergyCalibration}
-\input{6-TrackingOptimization}
-\input{7-KaonCrossSectionAnalysis}
+\input{Chapter-0/0-Introduction}
+\input{Chapters/1-LArTPCs}
+\input{Chapters/2-TheLArIATExperiment}
+\input{Chapters/3-KaonInteractionsInLAr}
+\input{Chapters/4-DataCollection}
+\input{Chapters/4-MonteCarlo}
+\input{Chapters/5-EnergyCalibration}
+\input{Chapters/6-TrackingOptimization}
+\input{Chapters/7-KaonCrossSectionAnalysis}
 
 
 % Add additional \chapter{}s as necessary.
@@ -113,7 +117,8 @@ A lot of people are awesome. But not you, who are reading my thesis before it's 
 
 % Only call appendix once, here.
 \appendix
-\input{A-MicroBooNECRT}
+\input{Chapters/A-LArIATEField}
+\input{Chapters/B-MicroBooNECRT}
 
 % Any chapters such as End Notes go after this.
 \backmatter

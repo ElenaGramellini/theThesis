@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: thesis_main.aux
+The style file: plain.bst
+Illegal, another \bibstyle command---line 81 of file thesis_main.aux
+ : \bibstyle
+ :          {plain}
+I'm skipping whatever remains of this command
+Database file #1: bib.bib.bib
+You're missing a field name---line 231 of file bib.bib.bib
+ : 
+ : %      author         = "Dimopoulos, Savas and Raby, Stuart and Wilczek, Frank",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 243 of file bib.bib.bib
+ : 
+ : %title = "Threshold corrections to dimension-six proton decay operators in non-minimal \{SUSY\} SU(5) \{GUTs\} ",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in ParticlePhysicsProjectPrioritizationPanel(P5):2014pwa
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            520 strings with 4496 characters,
+and the built_in function-call counts, 854 in all, are:
+= -- 86
+> -- 27
+< -- 0
++ -- 11
+- -- 8
+* -- 61
+:= -- 151
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 32
+empty$ -- 72
+format.name$ -- 8
+if$ -- 170
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 10
+preamble$ -- 1
+purify$ -- 9
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 65
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 1
+while$ -- 10
+width$ -- 4
+write$ -- 33
+(There were 3 error messages)
