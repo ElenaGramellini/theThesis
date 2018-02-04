@@ -6,6 +6,7 @@ The Standard Model (SM) of particle physics the most accurate theoretical descri
 The Standard Model is a gauge theory based on the local group of symmetry
 \begin{equation}
 G_{SM} = SU(3)_C  \otimes SU(2)_T \otimes U(1)_Y
+\label{eq:SMGroup}
 \end{equation}
 
 where the subscripts indicate the conserved charges: the strong charge, or color C, the weak isospin T (or rather its third component T3) and the hypercharge Y. These quantities can be related to the electric charge Q through the Gell-Mann-Nishijima relation:
@@ -41,8 +42,9 @@ Charged leptons interact via the weak and the electromagnetic forces, while neut
 The gauge group univocally determines the number of gauge bosons that carry the interaction; the gauge bosons correspond to the generators of the group: eight gluons (g) for the strong interaction, one photon ($\gamma$) and three bosons (W$^\pm$, Z$^0$) for the electroweak interaction.
 A gauge theory by itself can not provide a description of massive particles, but it is experimentally well know that most of the elementary particles have non-zero masses. The introduction of massive fields in the Standard Model lagrangian would make the theory non-renormalizable, and - so far - mathematically impossible to handle. This problem is solved in the Standard Model by the introduction of a scalar iso-doublet $\Phi(x)$, the Higgs field, which gives mass to W$^\pm$ and Z$^0$ gauge bosons through the electroweak symmetry breaking and to the fermions through Yukawa coupling \cite{Higgs1964,Higgs19642}.
 
-\section{Neutrinos in the Standard Model}
-The neutrino was introduced in the SM as a left-handed massless Weyl spinor.
+\section{Neutrinos: in and beyond the Standard Model}
+\subsection{Neutrino in the SM}
+Neutrino were introduced in the SM as left-handed massless Weyl spinors.
 The Dirac equation of motion
 \begin{equation}
 (i\gamma^ \mu \partial_\mu - m) \psi = 0
@@ -87,10 +89,86 @@ The third line describes the kinetic terms and the self-coupling terms of the ga
 
 The coupling between left-handed and right-handed field generates the mass term for fermions. The SM assumes only left-handed components for neutrinos, thus implying zero neutrino mass. Since any linear combination of massless fields results in a massless field, the flavor eigenstates are identical to the mass eigenstates in the SM.
 
+\subsection{Neutrino Oscillations}
+The determination of the flavor of a neutrino dynamically arises from the corresponding charged lepton associated in a CC interaction; for example, a $\nu_e$ is a neutrino which produces an $e^-$, a $\bar\nu_\mu$ is a neutrino which produces a $\mu^+$, $etc$. 
+The neutrino flavor eigenstates $\ket{\nu_\alpha}$,  with $\alpha = e,\mu,\tau$, are orthogonal to each other and form a base for the the weak interaction matrix.
 
+Overwhelming experimental data show neutrinos change flavor during their propagation. This phenomenon, predicted by Bruno Pontecorvo in 1957, is  called ``neutrino oscillations" and it is possible only if the flavor eigenstate are not identical to the mass eigenstates. A minimal extension of the Standard Model introduces three mass eigenstates, $\ket{\nu_i}$ ($i = 1,2, 3$), whose mass $m_i$ is well defined. 
+The unitary Pontecorvo-Maki-Nakagawa-Sakata matrix transforms the spinor wave functions ($\psi$) of each component  between flavor and mass bases as follows
+
+\begin{equation} 
+\sum \psi_\alpha \ket{\nu_\alpha} =  \sum \psi_i \ket{\nu_i}, \rightarrow \psi_\alpha =  U_{PMNS} \psi_i, 
+\end{equation}
+
+with
+
+\begin{equation}
+U_{PMNS}=\\
+\left[ 
+\begin{array}{ccc}
+c_{12} & s_{12} & 0\\
+-s_{12} & c_{12} & 0\\
+0 & 0 & 1\\
+\end{array}
+\right]
+\left[ 
+\begin{array}{ccc}
+c_{13} & 0 &s_{13}e^{-i\delta} \\
+0 & 1 & 0\\
+-s_{13}e^{-i\delta}& 0 & c_{13}\\
+\end{array}
+\right]
+\left[
+\begin{array}{ccc}
+1 & 0 & 0\\
+0 & c_{23} & s_{23} \\
+0& -s_{23} & c_{23} \\
+\end{array}
+\right]
+\left[ 
+\begin{array}{ccc}
+e^{i\alpha_1} & 0 & 0\\
+0& e^{i\alpha_2} & 0\\
+0 & 0 & 1\\
+\end{array}
+\right]
+\end{equation}
+
+
+
+
+
+where $c$ e $s$ stand respectively for cosine and sine of the corresponding  mixing angles ($\theta_{12}$, $\theta_{23}$ and $\theta_{13}$), $\delta$ è is the Dirac CP violation phase, $\alpha_1$ and $\alpha_{2}$   è is the eventual Majorana CP violation phases.
+
+\textcolor{red}{Experimental results summary}
 
 \section{Beyond the Standard Model}
-The discovery of neutrino oscillation and its implication of non-zero neutrino mass marks  the beginning of a new, exciting era in neutrino physics: the era of physics Beyond the Standard Model (BSM) in the neutrino sector.
+The discovery of neutrino oscillation and its implication of non-zero neutrino mass mark  the beginning of a new, exciting era in neutrino physics: the era of physics Beyond the Standard Model (BSM) in the neutrino sector.
 We are currently searching for new, deeper theories that can accommodate neutrinos with non-zero mass, while remaining consistent with the rest of the Standard Model. %More excitingly, we need to probe these theories experimentally. 
-\subsection{Neutrino Oscillations}
-\subsection{Proton Decay}
+
+\subsubsection{Open Questions in Neutrino Physics}
+On one hand, the last X decades of experiments in neutrino oscillations brought spectacular advancements in the understanding of the oscillations pattern, measuring the neutrino mixing angles and mass splitting with a precision of less than 10\%.  On the other, it opened the field for a series of questions needing experimental answers. 
+Critical challenges in the next decade will entail an even deeper understanding of the neutrino mixing pattern, investigation of the neutrino mass origin, neutrino number and nature, and assessing CP violation in the lepton sector. 
+
+
+Following the recommendation of the latest Particle Physics Project Prioritization Panel  \cite{ParticlePhysicsProjectPrioritizationPanel(P5):2014pwa}, the US  is dedicating substantial resources to the development of a short- and long- baseline neutrino program to address many of these fundamental questions.  This program pivots on the Liquid Argon Time Projection Chamber (LArTPC) detector technology which will be described in \ref{ch:1}.  
+
+The main goals of these research programs include:
+\begin{itemize}
+\item[-] Assessment of the existence of right-handed sterile neutrinos. 
+\item[-] Determination of the sign of $\Delta m^2_{13}$ (or $\Delta m^2_{23}$), i.e., the ``neutrino mass ordering".
+\item[-] Determination of the octant, i.e.  whether $\theta_{23}$ is maximal.
+\item[-] Determination the status of CP symmetry in the lepton sector.
+\end{itemize}
+
+\textcolor{red}{Smallness of neutrino masses, link to GUTs}
+
+\subsubsection{Towards a more fundamental theory}
+Despite its highly predictive power, a number of conceptual issues arise in the SM which disfavor it to be a good candidate for a fundamental theory.
+
+The SM rather complex group structure, where a gauge group is formed with the direct product of other three groups as shown in eq. \ref{eq:SMGroup},  is unexplained. Also, the SM fails to include a suitable dark matter candidate and a mechanisms that accounts for the baryon asymmetry of the universe. Within the SM, a total of 25 parameters remain seemingly arbitrary and need to be fitted to data: 3 gauge couplings, 9 charged fermion masses, 3 mixing angles and one CP phase in the CKM matrix, the Higgs mass and quartic coupling, $\theta_{QCD}$, 3 neutrino masses, 3 neutrino mixing angles, 1 Dirac phase and, eventually,  2 Majorana phases.
+
+
+
+
+

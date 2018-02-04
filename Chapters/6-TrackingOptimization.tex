@@ -1,2 +1,17 @@
 \chapter{Tracking Optimization}
-Your first chapter is probably an introduction. But who knows.
+Understanding how kaons and pions are tracked inside the TPC and optimizing the reconstruction algorithms to maximize the correct identification of the interaction point is a fundamental step of the analysis. 
+
+
+\section{MC sample and WC2TPC match}
+The optimization is performed on a MC sample of \textcolor{red}{HOW MANY?} kaons and \textcolor{red}{HOW MANY?} pions produced with the DDMC technique. 
+DDMC particles are shot from the WC4 location into the TPC following the beam profile.
+We mimic the matching between the WC and the TPC track on Monte Carlo by constructing a fake WC track using truth information at the true initial point. We then apply the same WC to TPC matching algorithm as in data. 
+
+Plots I want in this section:
+\begin{enumerate}
+\item WC2TPC MC DeltaX, DeltaY and $\alpha$
+\item Delta L, reco - true
+\item Delta L, reco - true Elastic, Delta L, reco - true Inelastic, other
+\item Length Quality cut
+\item Efficiency as a function of true KE and Angle
+\end{enumerate}

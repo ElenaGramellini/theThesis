@@ -14,6 +14,12 @@
 \usepackage{graphicx} % you probably want the rest of these.
 \usepackage{dcolumn}
 \usepackage{bm}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+
 \usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -80,7 +86,7 @@ A lot of people are awesome. But not you, who are reading my thesis before it's 
 \mainmatter
 
 \input{Chapter-0/0-Introduction}
-\input{Chapters/1-LArTPCs}
+\input{Chapter-1/1-LArTPCs}
 \input{Chapters/2-TheLArIATExperiment}
 \input{Chapters/3-KaonInteractionsInLAr}
 \input{Chapters/4-DataCollection}
