@@ -1,28 +1,39 @@
 \chapter{Kaons Interactions in Argon: Cross Section}\label{ch:Interactions}
 \section{Literature Review}
+
+%the prediction of the total hadronic interaction cross section ($\pi^{\pm}$, Ar) for thin-target simulations from two Monte Carlo generators (Geant 4.10.1 with Bertini Cascade model~\cite{geant4, g4bert} and Genie v2.8.2 with intranuke-hA model). The thick target simulation used a simple stand-alone Geant4 simulation  (i.e., no other detector features were taken into account except the geometry of the thin slices in the LAr volume). Fig.~\ref{fig:xsplot} shows the resulting total ${\pi^-}$ cross section extracted by the sliced TPC technique; it agrees well with the Geant 4 thin-target cross section. The Genie thin-target cross section for $^{40}$Ar shown in this figure is significantly different than that of Geant at low kinetic energies due to the fact that Geant4 models are tuned on $^{12}$C while Genie ones are tuned on a much heavier $^{56}$Fe target. The extrapolated cross section predicted for $^{40}$Ar can be then very different, especially in the resonance region where the model is strongly target-dependent from one generator to another.
+ 
+%The comparison of the Geant4 thin- and thick-target cross section results demonstrates the power of the "sliced TPC" method for the measurement of the ($\pi^{\pm}$, Ar) cross section in LArIAT TPC geometry. 
+
+
+%Having validated the ``Sliced TPC'' technique and shown that the this technique recovers the simulated cross-section, we now move to performing this measurement utilizing the complete LArIAT simulation within the LArSoft \cite{} based simulation.  Furthermore, we move from utilizing particle level MC-truth information to performing fully automated reconstruction of the charged hadron events within the LArTPC. 
+
+
+%Since the kaon cross section in argon has never been measured before, the Geant4 Monte Carlo tunes kaon transportation in argon by extrapolation from lighter and heavier nuclei. As shown in the previous section,  kaon data on carbon are available and  can be used as a metric to evaluate the Geant4 prediction performances.  Figure \ref{fig:TrueCarbon} shows the total hadronic cross section for carbon implemented in Geant4 10.01.p3 overlaid with the Bugg and Friedman data. Unfortunately, the current version of Geant4 does not reproduce the data for carbon closely. On one hand, this evidence makes us even more wary when using the Monte Carlo in simulating the kaon-argon interactions. On the other, it further highlights the importance of kaon measurements.
+
 \section{How to Measure Hadron Cross Section in LArIAT}\label{ch:methodology}
 \subsection{Particle Selection}\label{ch:ParticleSelectionMethod}
 \subsection{Beamline to TPC Handshake}\label{ch:WC2TPCMatchMethod}
 \subsection{The Thin Slice Method}
 \subsubsection{Cross Sections on Thin Target}
-Cross section measurements on a thin target have been the bread and butter of nuclear and particle experimentalists since the Rutherford experiments \textcolor{red}{NEED CITATION}. At their core, this type of experiments consists in shooting a beam of particles with a known flux on a thin target and recording the outgoing flux. 
+Cross section measurements on a thin target have been the bread and butter of nuclear and particle {Iexperimentalists since the Rutherford experiments \textcolor{red}{NEED CITATION}. At their core, this type of experiments consists in shooting a beam of particles with a known flux on a thin target and recording the outgoing flux. 
 
 
-In general, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and the target is thin compared to the interaction length so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{Interacting}$ and number of incident particles $N_{incident}$ determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
+In general, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and that the target is thin compared to the interaction length so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{Interacting}$ and number of incident particles $N_{Incident}$ determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
 Equation \ref{eq:thinTargetXS} 
 \begin{equation}
-P_{Survival} = 1- P_{Interacting} = 1 - \frac{N_{Interacting}}{N_{incident}} = e^{-\sigma_{TOT} n \delta X}
+P_{Survival} = 1- P_{Interacting} = 1 - \frac{N_{Interacting}}{N_{Incident}} = e^{-\sigma_{TOT} n \delta X}
 \label{eq:thinTargetXS}
 \end{equation}
 describes the probability for a particle to survive the thin target. This formula relates the total cross section $\sigma_{TOT}$, the density of the target centers  $n$  and  the thickness of the target  along the incident hadron direction $\delta X$, to the interaction probability\footnote{The scattering center density in the target, {\emph{n}},  relates to the argon density $\rho$, the Avogadro number  $ N_{A} $ and the argon molar mass $m_A$ as $n=\frac{\rho N_{A} }{m_A}$.}. If the target is thin compared to the interaction length of the process considered, we can Taylor expand the exponential function in equation \ref{eq:thinTargetXS} and find a simple proportionality relationship between the number of incident and interacting particles, and the cross section, as shown in equation \ref{eq:thinTargetXSTaylor}:
 \begin{equation}
-1 - \frac{N_{Interacting}}{N_{incident}} =  1 -\sigma_{TOT} n \delta X + O(\delta X^2).
+1 - \frac{N_{Interacting}}{N_{Incident}} =  1 -\sigma_{TOT} n \delta X + O(\delta X^2).
 \label{eq:thinTargetXSTaylor}
 \end{equation}
 
 Solving for the cross section, we find:
 \begin{equation}
- \sigma_{TOT}  = \frac{1}{n \delta X}\frac{N_{Interacting}}{N_{incident}}.
+ \sigma_{TOT}  = \frac{1}{n \delta X}\frac{N_{Interacting}}{N_{Incident}}.
 \label{eq:thinTargetXSSolved}
 \end{equation}
 
@@ -35,7 +46,7 @@ Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross sec
 
 \begin{equation}
  E^{kin}_{Front Face}  = \sqrt{p^2_{Beam} - m^2_{Beam}} - E_{loss},
-\label{eq:thinTargetXSSolved}
+\label{eq:enFF}
 \end{equation}
 where $E_{loss}$ is a correction for the energy loss in the dead material between the beamline and the TPC front face (more on \ref{sec:Eloss}). The  energy of the hadron at the each slab is determined by subtracting the energy released by the particle in the previous slabs. For example, at the $j^{th}$ point of a track, the kinetic energy will be
 
@@ -46,31 +57,31 @@ where $E_{loss}$ is a correction for the energy loss in the dead material betwee
 where $\Delta E_i$ is the energy deposited at each argon slice before the $j^{th}$ point as measured by the calorimetry associated with the tracking.
 
 
-If the particle enters a slice, it contributes to $N_{incident}( E^{kin})$ in the energy bin corresponding to its kinetic energy in that slice. If it interacts in the slice, it then also contributes to $N_{interacting}(E^{kin})$ in the appropriate energy bin. The cross section as a function of kinetic energy, $\sigma_{TOT}( E^{kin})$ will then be proportional to the ratio $\frac{N_{interacting}( E^{kin})}{N_{incident}( E^{kin})}$ .
+If the particle enters a slice, it contributes to $N_{Incident}( E^{kin})$ in the energy bin corresponding to its kinetic energy in that slice. If it interacts in the slice, it then also contributes to $N_{Interacting}(E^{kin})$ in the appropriate energy bin. The cross section as a function of kinetic energy, $\sigma_{TOT}( E^{kin})$ will then be proportional to the ratio $\frac{N_{Interacting}( E^{kin})}{N_{Incident}( E^{kin})}$ .
 
 
-The statistical uncertainty for each energy bin is calculated by error propagation from the statistical  uncertainty on $N_{incident}$ and $N_{interacting}$. 
-Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{incident}$ is distributed as a poissonian with mean and $\sigma^2$ equal to $N_{incident}$ in each bin.  
-On the other hand, $N_{interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The square of the variance for the binomial is given by  
+The statistical uncertainty for each energy bin is calculated by error propagation from the statistical  uncertainty on $N_{Incident}$ and $N_{Interacting}$. 
+Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{Incident}$ is distributed as a poissonian with mean and $\sigma^2$ equal to $N_{Incident}$ in each bin.  
+On the other hand, $N_{Interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The square of the variance for the binomial is given by  
 \begin{equation}
 \sigma^2 = \mathcal{N}P_{Interacting}(1-P_{Interacting});
 \label{eq:binVar}
 \end{equation}
 
-since the interaction probability $P_{Interacting}$ is $\frac{ N_{interacting}}{N_{incident}}$ and the number of tries $\mathcal{N}$ is $N_{incident}$, equation \ref{eq:binVar} translates into
+since the interaction probability $P_{Interacting}$ is $\frac{ N_{Interacting}}{N_{Incident}}$ and the number of tries $\mathcal{N}$ is $N_{Incident}$, equation \ref{eq:binVar} translates into
 \begin{equation}
-\sigma^2 = N_{incident}\frac{ N_{interacting}}{N_{incident}} (1-\frac{ N_{interacting}}{N_{incident}}) = N_{interacting}(1-\frac{ N_{interacting}}{N_{incident}}).
+\sigma^2 = N_{Incident}\frac{ N_{Interacting}}{N_{Incident}} (1-\frac{ N_{Interacting}}{N_{Incident}}) = N_{Interacting}(1-\frac{ N_{Interacting}}{N_{Incident}}).
 \end{equation}
 
-$N_{incident}$ and $N_{interacting}$ are not independent.
+$N_{Incident}$ and $N_{Interacting}$ are not independent.
 The uncertainty on the cross section is thus calculated as 
 \begin{equation}
-\delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N_{interacting}}{N_{interacting}}+\frac{\delta N_{incident}}{N_{incident}}\Big) 
+\delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N_{Interacting}}{N_{Interacting}}+\frac{\delta N_{Incident}}{N_{Incident}}\Big) 
 \end{equation}
 where:
 \begin{eqnarray}
-\delta N_{incident} = \sqrt[]{N_{incident}} \\
-\delta N_{interacting} = \sqrt[]{N_{interacting}(1-\frac{ N_{interacting}}{N_{incident}})}.
+\delta N_{Incident} = \sqrt[]{N_{Incident}} \\
+\delta N_{Interacting} = \sqrt[]{N_{Interacting}(1-\frac{ N_{Interacting}}{N_{Incident}})}.
 \end{eqnarray}
 
 
@@ -79,12 +90,40 @@ where:
 
 
 \subsection{Procedure testing with truth quantities}
-We describe here a closure test done on Monte Carlo quantities to prove that the methodology of slicing the TPC works within statistical error under the working assumption of perfect reconstruction.
+The $\pi^{-}$-Ar and K$^{+}$-Ar total hadronic cross section implemented in Geant4 can be used as a tool to validate the measurement methodology.  We describe here a closure test done on Monte Carlo to prove that the methodology of slicing the TPC retrieves the underlying cross section distribution implemented in Geant4 within the statistical error. %under the working assumption of perfect reconstruction.
 
-With this test, we compare the  by comparing the results of this method with the prediction of the total hadronic interaction cross section ($\pi^{\pm}$, Ar) for thin-target simulations from two Monte Carlo generators (Geant 4.10.1 with Bertini Cascade model~\cite{geant4, g4bert} and Genie v2.8.2 with intranuke-hA model). The thick target simulation used a simple stand-alone Geant4 simulation  (i.e., no other detector features were taken into account except the geometry of the thin slices in the LAr volume). Fig.~\ref{fig:xsplot} shows the resulting total ${\pi^-}$ cross section extracted by the sliced TPC technique; it agrees well with the Geant 4 thin-target cross section. The Genie thin-target cross section for $^{40}$Ar shown in this figure is significantly different than that of Geant at low kinetic energies due to the fact that Geant4 models are tuned on $^{12}$C while Genie ones are tuned on a much heavier $^{56}$Fe target. The extrapolated cross section predicted for $^{40}$Ar can be then very different, especially in the resonance region where the model is strongly target-dependent from one generator to another.
- 
-%The comparison of the Geant4 thin- and thick-target cross section results demonstrates the power of the "sliced TPC" method for the measurement of the ($\pi^{\pm}$, Ar) cross section in LArIAT TPC geometry. 
+For pions in the considered energy range, \textcolor{red}{the Geant4 inelastic model adopted to is ``BertiniCascade", while the elastic model ``hElasticLHEP".}
+For kaons, the Geant4 inelastic model adopted to is ``BertiniCascade", while the elastic model ``hElasticLHEP".  
 
 
-%Having validated the ``Sliced TPC'' technique and shown that the this technique recovers the simulated cross-section, we now move to performing this measurement utilizing the complete LArIAT simulation within the LArSoft \cite{} based simulation.  Furthermore, we move from utilizing particle level MC-truth information to performing fully automated reconstruction of the charged hadron events within the LArTPC. 
+For the validation test, we fire about 390000 pions and 140000 kaons inside the LArIAT TPC active volume using the DDMC (see sec \ref{ch:DDMC}). We apply  the thin-sliced method on using true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects to eventual issues with the methodology.  For each slab of 4.7 mm length on the path of the hadron, we integrate the true energy deposition as given by the Geant4 transportation model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Doing so, we obtain the true interacting and incident distributions for the considered hadron and we obtain the true MC cross section as a function of the hadron true kinetic energy. 
+
+Figure \ref{fig:TrueMCXS} shows the total hadronic cross section for argon implemented in Geant4 10.01.p3 (solid lines) overlaid with the true MC cross section as obtained with the sliced TPC method (markers) for pions on the left and kaons on the right; the total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.  The nice agreement with the Geant4 distribution and the cross section  obtained with the sliced TPC method gives us confidence in the  validity of the methodology. 
+        
+%\begin{comment}     
+\begin{figure}
+%\captionsetup{justification=raggedright}  
+\begin{minipage}[b]{.53\textwidth}  
+  \centering  
+\includegraphics[width=3in]{Chapter-4/Images/PionTrueXS.png}
+\end{minipage}%  
+\begin{minipage}[b]{0.53\textwidth}  
+  \centering  
+\includegraphics[width=3in]{Chapter-4/Images/KaonTrueXS.png}
+\end{minipage}
+\label{fig:TrueMCXS}
+\caption{Hadronic cross sections for $\pi^-$-Ar (left) and K$^+$-Ar (right) implemented in Geant4 10.01.p3 (solid lines) overlaid the true MC cross section as obtained with the sliced TPC method (markers). The total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.}
+%\par
+%\begin{minipage}[t]{.53\textwidth}
+%\caption{total hadronic cross section for carbon implemented in Geant4  10.01.p3  with overlaid with the Bugg %and Frideman data.}
+%\label{fig:TrueCarbon}
+%\end{minipage}%
+%\begin{minipage}[t]{.5\textwidth}  
+%\caption{Hadronic cross sections for argon implemented in Geant4 10.01.p3 (solid lines) overlaid the true MC cross section as obtained with the sliced TPC method (markers). The total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.}
+%\label{fig:TrueArgon}
+%\end{minipage}  
+\end{figure}
+%\end{comment}
+
+
 
