@@ -1,0 +1,90 @@
+\chapter{Kaons Interactions in Argon: Cross Section}\label{ch:Interactions}
+\section{Literature Review}
+\section{How to Measure Hadron Cross Section in LArIAT}\label{ch:methodology}
+\subsection{Particle Selection}\label{ch:ParticleSelectionMethod}
+\subsection{Beamline to TPC Handshake}\label{ch:WC2TPCMatchMethod}
+\subsection{The Thin Slice Method}
+\subsubsection{Cross Sections on Thin Target}
+Cross section measurements on a thin target have been the bread and butter of nuclear and particle experimentalists since the Rutherford experiments \textcolor{red}{NEED CITATION}. At their core, this type of experiments consists in shooting a beam of particles with a known flux on a thin target and recording the outgoing flux. 
+
+
+In general, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and the target is thin compared to the interaction length so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{Interacting}$ and number of incident particles $N_{incident}$ determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
+Equation \ref{eq:thinTargetXS} 
+\begin{equation}
+P_{Survival} = 1- P_{Interacting} = 1 - \frac{N_{Interacting}}{N_{incident}} = e^{-\sigma_{TOT} n \delta X}
+\label{eq:thinTargetXS}
+\end{equation}
+describes the probability for a particle to survive the thin target. This formula relates the total cross section $\sigma_{TOT}$, the density of the target centers  $n$  and  the thickness of the target  along the incident hadron direction $\delta X$, to the interaction probability\footnote{The scattering center density in the target, {\emph{n}},  relates to the argon density $\rho$, the Avogadro number  $ N_{A} $ and the argon molar mass $m_A$ as $n=\frac{\rho N_{A} }{m_A}$.}. If the target is thin compared to the interaction length of the process considered, we can Taylor expand the exponential function in equation \ref{eq:thinTargetXS} and find a simple proportionality relationship between the number of incident and interacting particles, and the cross section, as shown in equation \ref{eq:thinTargetXSTaylor}:
+\begin{equation}
+1 - \frac{N_{Interacting}}{N_{incident}} =  1 -\sigma_{TOT} n \delta X + O(\delta X^2).
+\label{eq:thinTargetXSTaylor}
+\end{equation}
+
+Solving for the cross section, we find:
+\begin{equation}
+ \sigma_{TOT}  = \frac{1}{n \delta X}\frac{N_{Interacting}}{N_{incident}}.
+\label{eq:thinTargetXSSolved}
+\end{equation}
+
+\subsubsection{Not-so-Thin Target: Slicing the Argon}
+The LArIAT TPC, with its 90 cm of length, is not a thin target. \textcolor{red}{Find expected interaction length for hadrons and kaons}. However, the fine-grained tracking of the LArIAT LArTPC allows us to treat the argon volume as a sequence of many adjacent thin targets. 
+
+As described in section \ref{sec:experimentDescription}, LArIAT wire planes count 240 wires each. The wires are oriented at +/- $60^{\circ}$ from the vertical direction at 4 mm spacing, while the beam direction is oriented 3 degrees off the $z$ axis in the $XZ$ plane. \textcolor{red}{review this math} The wires collect signals proportional to the energy loss of the hadron along its path in a  $\delta${\emph{X}} = 4 mm/sin($60^{\circ}$) $\approx$ 4.7~mm slab of liquid argon. Thus, one can think to slice the TPC into many thin targets of $\delta${\emph{X}} = 4.7~mm thickness along the direction of the incident particle. 
+
+Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Eq.~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC-to-TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
+
+\begin{equation}
+ E^{kin}_{Front Face}  = \sqrt{p^2_{Beam} - m^2_{Beam}} - E_{loss},
+\label{eq:thinTargetXSSolved}
+\end{equation}
+where $E_{loss}$ is a correction for the energy loss in the dead material between the beamline and the TPC front face (more on \ref{sec:Eloss}). The  energy of the hadron at the each slab is determined by subtracting the energy released by the particle in the previous slabs. For example, at the $j^{th}$ point of a track, the kinetic energy will be
+
+\begin{equation}
+ E_{j}^{kin} =  E^{kin}_{Front Face} - \sum_{i < j} \Delta E_i,
+\label{eq:KEj}
+\end{equation}
+where $\Delta E_i$ is the energy deposited at each argon slice before the $j^{th}$ point as measured by the calorimetry associated with the tracking.
+
+
+If the particle enters a slice, it contributes to $N_{incident}( E^{kin})$ in the energy bin corresponding to its kinetic energy in that slice. If it interacts in the slice, it then also contributes to $N_{interacting}(E^{kin})$ in the appropriate energy bin. The cross section as a function of kinetic energy, $\sigma_{TOT}( E^{kin})$ will then be proportional to the ratio $\frac{N_{interacting}( E^{kin})}{N_{incident}( E^{kin})}$ .
+
+
+The statistical uncertainty for each energy bin is calculated by error propagation from the statistical  uncertainty on $N_{incident}$ and $N_{interacting}$. 
+Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{incident}$ is distributed as a poissonian with mean and $\sigma^2$ equal to $N_{incident}$ in each bin.  
+On the other hand, $N_{interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The square of the variance for the binomial is given by  
+\begin{equation}
+\sigma^2 = \mathcal{N}P_{Interacting}(1-P_{Interacting});
+\label{eq:binVar}
+\end{equation}
+
+since the interaction probability $P_{Interacting}$ is $\frac{ N_{interacting}}{N_{incident}}$ and the number of tries $\mathcal{N}$ is $N_{incident}$, equation \ref{eq:binVar} translates into
+\begin{equation}
+\sigma^2 = N_{incident}\frac{ N_{interacting}}{N_{incident}} (1-\frac{ N_{interacting}}{N_{incident}}) = N_{interacting}(1-\frac{ N_{interacting}}{N_{incident}}).
+\end{equation}
+
+$N_{incident}$ and $N_{interacting}$ are not independent.
+The uncertainty on the cross section is thus calculated as 
+\begin{equation}
+\delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N_{interacting}}{N_{interacting}}+\frac{\delta N_{incident}}{N_{incident}}\Big) 
+\end{equation}
+where:
+\begin{eqnarray}
+\delta N_{incident} = \sqrt[]{N_{incident}} \\
+\delta N_{interacting} = \sqrt[]{N_{interacting}(1-\frac{ N_{interacting}}{N_{incident}})}.
+\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Procedure testing with truth quantities}
+We describe here a closure test done on Monte Carlo quantities to prove that the methodology of slicing the TPC works within statistical error under the working assumption of perfect reconstruction.
+
+With this test, we compare the  by comparing the results of this method with the prediction of the total hadronic interaction cross section ($\pi^{\pm}$, Ar) for thin-target simulations from two Monte Carlo generators (Geant 4.10.1 with Bertini Cascade model~\cite{geant4, g4bert} and Genie v2.8.2 with intranuke-hA model). The thick target simulation used a simple stand-alone Geant4 simulation  (i.e., no other detector features were taken into account except the geometry of the thin slices in the LAr volume). Fig.~\ref{fig:xsplot} shows the resulting total ${\pi^-}$ cross section extracted by the sliced TPC technique; it agrees well with the Geant 4 thin-target cross section. The Genie thin-target cross section for $^{40}$Ar shown in this figure is significantly different than that of Geant at low kinetic energies due to the fact that Geant4 models are tuned on $^{12}$C while Genie ones are tuned on a much heavier $^{56}$Fe target. The extrapolated cross section predicted for $^{40}$Ar can be then very different, especially in the resonance region where the model is strongly target-dependent from one generator to another.
+ 
+%The comparison of the Geant4 thin- and thick-target cross section results demonstrates the power of the "sliced TPC" method for the measurement of the ($\pi^{\pm}$, Ar) cross section in LArIAT TPC geometry. 
+
+
+%Having validated the ``Sliced TPC'' technique and shown that the this technique recovers the simulated cross-section, we now move to performing this measurement utilizing the complete LArIAT simulation within the LArSoft \cite{} based simulation.  Furthermore, we move from utilizing particle level MC-truth information to performing fully automated reconstruction of the charged hadron events within the LArTPC. 
+
