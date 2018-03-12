@@ -12,9 +12,15 @@
 %Since the kaon cross section in argon has never been measured before, the Geant4 Monte Carlo tunes kaon transportation in argon by extrapolation from lighter and heavier nuclei. As shown in the previous section,  kaon data on carbon are available and  can be used as a metric to evaluate the Geant4 prediction performances.  Figure \ref{fig:TrueCarbon} shows the total hadronic cross section for carbon implemented in Geant4 10.01.p3 overlaid with the Bugg and Friedman data. Unfortunately, the current version of Geant4 does not reproduce the data for carbon closely. On one hand, this evidence makes us even more wary when using the Monte Carlo in simulating the kaon-argon interactions. On the other, it further highlights the importance of kaon measurements.
 
 \section{How to Measure Hadron Cross Section in LArIAT}\label{ch:methodology}
+We use both the LArIAT  beamline detectors and the LArTPC information in order to measure hadronic cross sections in argon. Albeit with small differences, both the  $\pi^{-}$-Ar and K$^{+}$-Ar total hadronic cross section measurements rely on the same procedure described in details in the following paragraphs: we select the particle of interest using a combination of beamline detectors and TPC information (paragraph \ref{ch:ParticleSelectionMethod}), we perform a handshake between the beamline information and the TPC tracking to assure we are selecting the right TPC track (paragraph \ref{ch:WC2TPCMatchMethod}), and we apply the ``thin slice" method to get to the final result (paragraph \ref{ch:ThinSliceMethod}).
 \subsection{Particle Selection}\label{ch:ParticleSelectionMethod}
-\subsection{Beamline to TPC Handshake}\label{ch:WC2TPCMatchMethod}
-\subsection{The Thin Slice Method}
+\subsection{Wire Chamber to TPC Match}\label{ch:WC2TPCMatchMethod}
+After an event passes the selection described in the previous paragraph, we need to identify the track inside the TPC corresponding to the particle which triggered the beamline detectors, a procedure we refer to as ``WC to TPC match". In general, the tracking algorithm will reconstruct more than one track in the event, partially due to the fact that hadrons interact in the chamber, as shown in figure , and partially because of pile up events where the beam of charge particle is too intense compared to the drift time, as shown in figure. 
+\textcolor{red}{EVENT DISPLAYS}
+
+
+
+\subsection{The Thin Slice Method}\label{ch:ThinSliceMethod}
 \subsubsection{Cross Sections on Thin Target}
 Cross section measurements on a thin target have been the bread and butter of nuclear and particle {Iexperimentalists since the Rutherford experiments \textcolor{red}{NEED CITATION}. At their core, this type of experiments consists in shooting a beam of particles with a known flux on a thin target and recording the outgoing flux. 
 
