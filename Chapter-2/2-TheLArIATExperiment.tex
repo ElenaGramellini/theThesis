@@ -61,8 +61,62 @@ We describe here the characteristics and response of one magnet. We expect the s
 The current being passed through the magnets at a given time is identical in both magnets. For Run II period, the current settings explored were 60A (B $\sim$0.21 T) and 100A (B $\sim$0.35 T) in both polarities. 
 Albeit advantageous to enrich the tertiary beam composition with high mass particles such as kaons, we never pushed the magnets current over 100 A, not to incur in overheating.  During operation, we operated a air and water cooling system on the magnets and we remotely monitored the magnets temperature.
  
+\subsection{Multi-Wire Proportional Chambers}\label{sec:MWPC}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+\begin{centering}
+\vspace{-0.3cm}
+\includegraphics[height=2.3in]{Chapter-2/Images/WireChamber.png}
+\caption{
+{One of the four Multi Wire Proportional Chambers (WC) used in the LArIAT tertiary beamline.}
+}
+\label{fig:wirechamber}
+\end{centering}
+\end{figure}
+
+LArIAT uses four Multi-Wire proportional chambers, or wire chambers (WC) for short, two upstream and two downstream from the bending magnets. The geometry of one chamber is shown in Figure~\ref{fig:wirechamber}: the WC effective aperture is a square of  12.8~cm perpendicular to the beam direction.  Inside the chamber, the 128 horizontal and 128 vertical wires hang at a distance of 1~mm from each other in a mixture of 85\% Argon and 15\% isobutane gas.  The WC operating voltage is between 2400 V and 2500 V. LArIAT wire chambers are an upgraded version of the Fenker Chambers~\cite{Fenker}, where an extra grounding improves the signal to noise ratio of the electronic readout.  
+
+Two ASDQ chips~\cite{ASDQchip} mounted on a mother board plugged into the chamber serve as front end amplifier/discriminator. The chips are connected to a multi-hit TDC~\cite{Sten} which provides a fast OR output used as first level trigger. The TDC time resolution is 1.18~ns/bin and can accept 2 edges per 9~ns.  
+The maximum event rate acceptable by the chamber system is of 1 MHz: this rate is not a limiting factor considering that the rate of the tertiary particle beam at the first wire chamber is estimated to be less than 15 kHz. A full spill of data occurring once per supercycle is stored on the TDC board memory at once and read out by a controller specially designed controller.  We use LVDS cables to carry both power and data between the controller and the TDCs and from the controller to the rest of the DAQ.  
+%It is possible to program the time window for acceptance for hits, time offsets, front end threshold, and pulse shaping parameters through the controller via a USB from a PC or through an Ethernet connection.
+
+\subsubsection{Multi-Wire Proportional Chambers functionality}\label{sec:MWPCfunc}
 
 
+\subsection{Time-of-Flight System}\label{sec:TOF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Two scintillator paddles, one upstream to the first set of WCs and one downstream to the second set of WCs  form LArIAT  time-of-flight (TOF) detector system. 
+
+ \textcolor{red}{find exact dimentsions}
+The upstream paddle is made of a 10 x 6 x \textcolor{red}{?}~cm scintillator piece, read out by two \textcolor{red}{Hamamatsu 2 inch} PMTs mounted on the beam left side which collect the light from light guides mounted on all four edges of the scintillator. The downstream paddle dimensions are  14 x 14 x \textcolor{red}{?}~cm and it is read out by two \textcolor{red}{Hamamatsu 2 inch} PMTs on the opposite ends of the scintillator.
+The relatively thin width on the beamline direction minimizes energy loss of the particles coming from the target in the scintillatior material.
+
+\begin{figure}[!h]
+\begin{centering}
+\vspace{-0.3cm}
+%\includegraphics[height=2.3in]{figures/tofdelay.png}
+\caption{
+{\scriptsize \sf Pictures of the TOF system as was deployed during Run-I and Run-II data taking. The left image is of the upstream TOF paddle and the right image is of the downstream TOF paddle }
+}
+\label{fig:TOFSystemRunIandII}
+\end{centering}
+\end{figure}
+
+
+
+The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling rate of 1 GHz. The 12 bit samples are stored in a circular memory buffer. At trigger time, data from the TOF PMTs are recorded to output in a 28.7 $\mu$ second windows starting  approximately 8.4 $\mu$sec before the trigger time. 
+
+
+
+\subsubsection{TOF functionality}\label{sec:MWPCfunc}
+
+
+The TOF signals rise time (10-90\%) is 4 ns and a full width, half-maximum of 9 ns consistent in time. The signal amplitudes from the upstream TOF and  downstream TOF are slightly different:  200 mV for the upstream PMTs but only 50 mV for downstream PMTs. 
+
+The time of the pulses was calculated utilizing an oversampled template derived from the data itself. The pulse pedestal was taken from samples far from the pulse and subtracted to the pulse amplitude. We then stretch vertically a template to match the pedestal-subtracted pulse amplitude and we move it horizontally to find the time. With this technique, we find a pulse time-pickoff resolution better than 100 ps.  The pulse pile up is not a significant problem given the TOF timing resolution and the rate of the particle beam.  Leveraging on the pulses width uniformity of any given PMT (sigma of 400 ps),  we flag events where two pulses overlap as closely in time as 4 ns with an 90\% efficiency according to simulation. 
+
+
+We combine the pulses from the two PMTs on each paddle to determine the particles' arrival time by averaging the time measured from the single PMT, so to minimize errors due to optical path differences in the scintillator.  However, a time spread of approximately 300~ps is present in both the upstream and downstream detectors, likely due to transit time jitter in the PMTs themselves.  There is no evidence of systematic timing drift over long periods such as 3-4 months of a data-taking: the maximum variation of the average time differences between pairs of PMTs reading out the same scintillator is of the order of 150~ps.
 
 
 
@@ -79,120 +133,10 @@ Albeit advantageous to enrich the tertiary beam composition with high mass parti
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Time-of-Flight System}\label{sec:TOF}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The LArIAT time-of-flight (TOF) detector system consists broadly of two scintillator paddles, which bracket the beamline and are shown in blue in Figure~\ref{fig:tert-layout}. The exact details of the of the TOF system were changed between Run-II and Run-III to allow for better performance and timing resolution.
-
-\paragraph{\textbf{TOF System for Run-I and Run-II:}}
-The upstream paddle, shown in Figure \ref{}, has a relatively small active area (10~cm x 6~cm ) and was chosen to be a relatively thin piece of scintillator to minimize any impact on the momentum of the particles coming from the target. Light guides were mounted on all four edges which lead to two \textit{insert PMT type} PMTs mounted on the beam left side. The downstream paddle, shown in Figure \ref{fig:TOFSystemRunIandII}, was chosen to have a slightly larger area (14~cm x 14~cm) and had two \textit{insert PMT type} PMTs which were read out on opposite ends of the paddle.
-
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{figures/tofdelay.png}
-\caption{
-{\scriptsize \sf Pictures of the TOF system as was deployed during Run-I and Run-II data taking. The left image is of the upstream TOF paddle and the right image is of the downstream TOF paddle }
-}
-\label{fig:TOFSystemRunIandII}
-\end{centering}
-\end{figure}
-
-
-%The active area of the upstream paddle is relatively small ( 10~cm x 6~cm ) and that of the downstream paddle is somewhat larger ( 14~cmx 14~cm ). Lightguides are mounted on all four edges of each paddle. In the first two LARIAT production runs, each of the paddles was read out by two (xxkxkxkxk) photomultiplier tubes (PMTs), The long axis of the downstream paddle was directed horizontally and read out at either end. The upstream paddle was rotated by 45 degrees with respect to the horizontal and its two PMTs were mounted to the left side. In run 3, four more PMTs were added to the system. The upstream paddle was read out with the original set of PMTs and the downstream paddle with four 2" Hamamatsu PMTs (R-1828) inherited from the muon g-2 experiment(E821) at BNL.
-
-During data-taking cycles, signals from the TOF PMTs were sampled at 1 GHz
-with a CAEN 1751 digitizer and 12 bit samples were stored in a circular memory buffer. In response to an experimental trigger, a 28.7 $\mu$ second window of samples, starting approximately 8.4 $\mu$sec before the trigger, was written to the
-output. The amplitude of the TOF signals was typically 200 mV in the upstream TOF PMTs but only 50 mV in those of the downstream counter. The signals have a rise time (10-90\%) of 4 ns and a full width, half-maximum of 9 ns. The rate in the upstream counter was typically 15 kHz and much less, 400 Hz in the downstream counter.
-
-Because the shape of signals from each TOF PMT was highly uniform, the time of the pulses was determined using an oversampled template derived from the data itself. The DC offset (pulse pedestal) is taken from samples far from the pulse, The template is stretched vertically to match the pedestal-subtracted pulse amplitude and moved horizontally to match the time. The pulse time-pickoff resolution is better than 100 ps and relative amplitude resolution is better than x\%. Since the average rate of pulses incident on the ToF system is modest, pulse pile up is not a significant problem. Given the uniform width of the pulses produced by any given PMT (sigma of 400 ps), the pulse width can be used to flag events where two pulses overlap closely in time. Simulations indicate that for pulses as close as 4 ns, a well-chosen pulse width cut is 90\% efficient.
-
-To determine the particles' time of arrival, pulse times from the multiple PMTs mounted on each paddle had to be combined. During Run-I and II, with two PMTs mounted on each paddle, a simple average was used. In the case of the downstream paddle, with PMTs mounted at opposite ends, the average corrected for the fact that transit time to the two PMTs depended on the particle's point of impact on the scintillator. A plot of the time of arrival {\it difference} between the two downstream PMTs vs the longitudinal impact point, made with the help of track stubs from the wire chamber system, is shown in Fig.~\ref{fig:tofdelay}. As expected, the time difference
-changes systematically across the face of the scintillator.
-
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{figures/tofdelay.png}
-\caption{
-{\scriptsize \sf $\Delta-t$ between times registered on two downstream paddles.}
-}
-\label{fig:tofdelay}
-\end{centering}
-\end{figure}
-
-Taking the average minimizes ToF errors arising from optical path differences in the scintillator, However, even for a set of particles which pass through a single small area of the paddle, the times of pulses registered in the two PMTs are still spread by approximately 300~ps, an uncertainty which is probably caused by transit time jitter in the PMTs themselves. This jitter is evident in both the upstream and downstream detectors.
-
-Although climate-control in the LArIAT experiment hall is fairly primitive, there is little sign of systematic timing drift over longer periods. The average time differences between pairs of PMTs reading out the same scintillator varied by no more than 150~ps over the 3-4 months of a data-taking period.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Multi-Wire Proportional Chambers}\label{sec:MWPC}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The wire chambers are based on the Fenker Chambers~\cite{Fenker} long in use at Fermilab.  The chambers have been upgraded by adding additional grounding to improve the signal to noise in the electronic readout.  The chambers, shown in Figure~\ref{fig:wirechamber}, have an effective aperture of 128~mm in both horizontal and vertical distances.  The wires are spaced at 1~mm, with 128 wires in each view.  In a test beam, the chambers have typical efficiencies of 98\% to 99\%. The gas used is 85\% Argon + 15\% isobutane.  The wire chambers typically operate between 2400 and 2500 volts.
-
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{figures/WireChamber.png}
-\caption{
-{\scriptsize \sf Image of one of the wire chambers used in the LArIAT tertiary beamline.}
-}
-\label{fig:wirechamber}
-\end{centering}
-\end{figure}
-
-The front end amplifier/discriminator uses the ASDQ chip~\cite{ASDQchip}. Two of the ASDQ chips are mounted on a mother board that is plugged into the chamber.  Short flat cables are used to connect these ASDQ mother board to a new, multi-hit TDC~\cite{Sten}. This TDC provides a (maskable) fast OR output that can be used in a first level trigger. 
-
-This TDC can accept multiple hits per wire with a time resolution of 1.18~ns/bin.  The TDCs can accept 2 edges per 9~ns.  The maximum event rate that can be accepted by the chamber system is of the order of one megahertz.  These limitations are clearly not an issue for the LArIAT beamline where the rates and timing resolution required are much less stringent than this.  There is enough memory on the TDC board to buffer a full spill of data (up to about 100 events/spill).  As in this application the spills occur only once per minute, there is ample time to read out the whole spill through a controller specially designed to support these TDCs.  Power and data flow to and from the controller to the TDCs and from the controller to the rest of the DAQ is via LVDS.  The time window for acceptance for hits, time offsets, front end threshold, and pulse shaping parameters may be programmed through the controller via a USB link from a PC or through an Ethernet connection.
- 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Aerogel Cherenkov Detectors}\label{sec:Aerogel}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Aerogel is an ultra-light material in which the liquid component of the gel has been replaced with a gas. The result is a solid with extremely low density, low thermal conductivity, and low index of refraction. The goal of having an aerogel threshold Cherenkov detector in the LArIAT beam line is to separate muons and pions in the momentum range where muons emit Cherenkov radiation while pions do not. This technique was demonstrated by the MICE and Belle II experiments ~\cite{MICE-aerogel,BelleII-aerogel} and in LArIAT we use two aerogel threshold Cherenkov detector with index of refraction of 1.057 and 1.103. Having different indices of aerogel allows LArIAT to do this separation in two different momentum ranges of interest.
-
-\begin{figure}[htb]
-\centering
-%\includegraphics[height=1.85in]{figures/Aerogel1103Figure.png}
-\hspace{1cm}
-%\includegraphics[height=1.85in]{figures/Aerogel1057Figure.png}
-\caption{Number of photoelectrons per cm versus momentum for the two indices of refraction that are employed by the LArIAT aerogel detectors. The photoelectron yield includes the response of a bialkali photocathode following the recipe in ~\cite{bib8}. }
-\end{figure}
-
-
-%%% KEK couter
-The Aerogel Threshold Cherenkov Detector with the refractive index of 1.103 is placed just behind the second collimator on the tertiary beam line, between the two downstream wire chambers.
-Figure~\ref{fig:kek_aerogel} is a picture of this aerogel detector.
-It consists of 7 aerogel tiles (totaling 110 mm long in the beam direction), and the cross section of the detector is 108 mm $\times$ 108 mm.
-The array of the aerogel tiles is wrapped with a diffusion sheet and viewed by two PMTs (HAMAMATSU R329-02) from the sides.
-Figure~\ref{fig:kek_aerogel_ly} shows the observed light yield distribution for 550-800~MeV pions hitting the middle of the detector.
-The obtained light yield is equivalent to 22 photoelectrons for $\beta=1$.
-The fake rate for particles with velocity below the Cherenkov threshold is measured to be around 0.5\% with the threshold of 1.5 photoelectrons.
-
-\begin{figure}[htb]
-\centering
-%\includegraphics[height=1.85in]{figures/kek_aerogel.jpg}
-\caption{The Aerogel Threshold Cherenkov Detector with the refractive index of 1.103.}
-\label{fig:kek_aerogel}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-%\includegraphics[height=1.85in]{figures/kek_aerogel_ly.png}
-\caption{The observed light yield distribution for 550-800 MeV pions hitting the middle of the detector.
-The obtained light yield is equivalent to 22 photoelectrons for $\beta=1$.}
-\label{fig:kek_aerogel_ly}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Punch-Through and Muon Range Stack Instruments}\label{sec:MuRS}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{muon-Punch.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
