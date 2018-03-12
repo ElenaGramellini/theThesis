@@ -36,9 +36,31 @@ The tertiary beam composition counts mostly pions and protons with a small fract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The instrumentation of  LArIAT tertiary beam and the TPC components have changed several times during the three years of LArIAT data taking. The following paragraphs describe the components operational during the data taking period relevant to the hadron cross section measurements (a.k.a. Run II).
 
-The components of the tertiary beamline instrumentation key for the hadron cross section analyses are the target and collimators system, the two bending magnets (in a similar configuration used for the  MINERvA T-977 test beam calibration~\cite{MinervaTestbeam}) a set of four wire chambers (WCs) and two time-of-flight scintillating paddles (TOF) and, of course, the LArTPC.  The magnets determine the polarity of the particles in the tertiary beam; the combination of magnets and wire chambers determine the particles momentum, which is used in conjunction with the TOF to determine the particle species.
+The components of the tertiary beamline instrumentation key for the hadron cross section analyses are the target and collimators system, the two bending magnets (in a similar configuration used for the  MINERvA T-977 test beam calibration~\cite{MinervaTestbeam}) a set of four wire chambers (WCs) and two time-of-flight scintillating paddles (TOF) and, of course, the LArTPC.  The magnets determine the polarity of the particles in the tertiary beam; the combination of magnets and wire chambers determine the particles momentum, which is used to determine the particle species in conjunction with the TOF.
 A muon range stack downstream from the TPC and two sets of cosmic paddles configured as a telescope surrounding the TPC are also used for calibration purposes.
 
+
+\subsection{Bending Magnets}\label{sec:Magnets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+LArIAT uses a pair of identical Fermilab type ``NDB" electromagnets, recycled from the Tevatron's anti-proton ring \textcolor{red}{CITE CDF?}. 
+The magnets are a fundamental piece of the LArIAT beamline as they are used in all the three tasks of the LArIAT beamline: the sign of the current in the magnet provide the selection of either positively or negatively charged particles, the value of the magnetic field is used in the momentum determination and the subsequent particle identification. 
+
+We describe here the characteristics and response of one magnet. We expect the second one have a similar response, being identical in shape and with a similar history. The magnet aperture measures the gap dimensions to be 14.224~cm of height, 31.75~cm width, and  46.67~cm length.  The wire chambers aperture ($\sim$12.5~cm) is smaller than the magnet aperture, thus, only the central part of the magnet gap is utilized. The field is extremely uniform over this limited aperture and was measured with two Hall probes, both calibrated with nuclear magnetic resonance probes. The probes measured the excitation curve shown in Figure~\ref{fig:magnet_excitation}. 
+
+\begin{figure}[!h]
+\begin{centering}
+\vspace{-0.3cm}
+\includegraphics[height=3.0in]{Chapter-2/Images/ExcitationCurves.png}
+\caption{
+{ Magnetic field over current as a function of the current, for one NDB magnet (excitation curve). The data was collected using two Hall probes (blue and green). We fit the readings with a cubic function (black) to average of measurements (red) given in the legend.}
+}
+\label{fig:magnet_excitation}
+\end{centering}
+\end{figure}
+
+The current being passed through the magnets at a given time is identical in both magnets. For Run II period, the current settings explored were 60A (B $\sim$0.21 T) and 100A (B $\sim$0.35 T) in both polarities. 
+Albeit advantageous to enrich the tertiary beam composition with high mass particles such as kaons, we never pushed the magnets current over 100 A, not to incur in overheating.  During operation, we operated a air and water cooling system on the magnets and we remotely monitored the magnets temperature.
+ 
 
 
 
@@ -61,7 +83,7 @@ A muon range stack downstream from the TPC and two sets of cosmic paddles config
 \subsubsection{Time-of-Flight System}\label{sec:TOF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The LArIAT time-of-flight (TOF) detector system consists broadly consists of two scintillator paddles, which bracket the beamline and are shown in blue in Figure~\ref{fig:tert-layout}. The exact details of the of the TOF system were changed between Run-II and Run-III to allow for better performance and timing resolution.
+The LArIAT time-of-flight (TOF) detector system consists broadly of two scintillator paddles, which bracket the beamline and are shown in blue in Figure~\ref{fig:tert-layout}. The exact details of the of the TOF system were changed between Run-II and Run-III to allow for better performance and timing resolution.
 
 \paragraph{\textbf{TOF System for Run-I and Run-II:}}
 The upstream paddle, shown in Figure \ref{}, has a relatively small active area (10~cm x 6~cm ) and was chosen to be a relatively thin piece of scintillator to minimize any impact on the momentum of the particles coming from the target. Light guides were mounted on all four edges which lead to two \textit{insert PMT type} PMTs mounted on the beam left side. The downstream paddle, shown in Figure \ref{fig:TOFSystemRunIandII}, was chosen to have a slightly larger area (14~cm x 14~cm) and had two \textit{insert PMT type} PMTs which were read out on opposite ends of the paddle.
@@ -74,20 +96,6 @@ The upstream paddle, shown in Figure \ref{}, has a relatively small active area 
 {\scriptsize \sf Pictures of the TOF system as was deployed during Run-I and Run-II data taking. The left image is of the upstream TOF paddle and the right image is of the downstream TOF paddle }
 }
 \label{fig:TOFSystemRunIandII}
-\end{centering}
-\end{figure}
-
-\paragraph{\textbf{TOF System for Run-III:}}
-Two modifications were made to the downstream TOF paddle for Run-III to improve the efficiency and timing of the system. The large area scintillator paddle was replaced with a slightly smaller paddle more similar to the upstream and was now readout with four new PMT's (2" Hamamatsu PMTs (R-1828) inherited from the muon g-2 experiment(E821) at BNL) located on the diagonals of the counter, as shown in Figure \ref{fig:TOFSystemRunIII}.
-
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{figures/TOFRunIII.png}
-\caption{
-{\scriptsize \sf Image of the modified downstream TOF system deployed during Run-III data taking }
-}
-\label{fig:TOFSystemRunIII}
 \end{centering}
 \end{figure}
 
@@ -118,36 +126,8 @@ Taking the average minimizes ToF errors arising from optical path differences in
 
 Although climate-control in the LArIAT experiment hall is fairly primitive, there is little sign of systematic timing drift over longer periods. The average time differences between pairs of PMTs reading out the same scintillator varied by no more than 150~ps over the 3-4 months of a data-taking period.
 
-Finally, the amplitude of the ToF pulses (peak minus pedestal) reflects the energy deposited in the scintillator, largely through ionization.  At a given momentum, more massive particles such deuterons, protons, and kaons, will deposit more energy than less massive particles, such as electrons, muons, and pions. As described below, ToF and momentum information from the wire chambers can be combined to determine the particle's mass and hence its identity. Although the energy deposited in the scintillator isn't used to distinguish among the various particle types, it's clear from Figure~\ref{fig:tofamplitude} that the spectra of energy deposition for
-electrons, pions, and protons are very different.
-
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{figures/tofamplitude.png}
-\caption{
-{\scriptsize \sf Average upstream ToF pulse amplitude for protons and pions/positrons.}
-}
-\label{fig:tofamplitude}
-\end{centering}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Bending Magnets}\label{sec:Magnets}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The pair of spectrometer magnets in the LArIAT tertiary beam are Fermilab type "NDB" electromagnets, originally used in the anti-proton ring. These magnets provide the necessary bend in the particle trajectory to allow for a momentum measurement to be performed.  The magnets have a gap height of 14.224~cm, a gap width of 31.75~cm, and have an iron length of 46.67~cm.  The aperture presented by the magnets is larger than that of the wire chambers ($\sim$12.5cm) and thus only the central part of the magnet is ever utilized.  Over this limited aperture there is negligible variation of the field integral and thus a very uniform field is provided. The field intensity in one of the pair of magnets was measured using two Hall probes, both calibrated with NMR, to obtain the excitation curve shown in Figure~\ref{fig:magnet_excitation}). The second magnet, having been made to the same standard and having the same history, is assumed to have a very similar response.
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=3.0in]{figures/ExcitationCurves.png}
-\caption{
-{\scriptsize \sf Excitation Curve, B/I vs. I, for one NDB magnet, using two Hall probes (blue and green). Parameters from a cubic fit (black curve) to average of measurements (red) given in legend.}
-}
-\label{fig:magnet_excitation}
-\end{centering}
-\end{figure}
-
-These magnets were air- and water-cooled during operations and their temperatures monitored. Due to concerns of overheating, the maximum usable field at the center of the magnets is $\sim$0.35 Tesla with 100 Amps of current being passed through the magnets.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Multi-Wire Proportional Chambers}\label{sec:MWPC}
