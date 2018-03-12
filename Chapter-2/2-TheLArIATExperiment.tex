@@ -111,40 +111,35 @@ The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling r
 \subsubsection{TOF functionality}\label{sec:MWPCfunc}
 
 
-The TOF signals rise time (10-90\%) is 4 ns and a full width, half-maximum of 9 ns consistent in time. The signal amplitudes from the upstream TOF and  downstream TOF are slightly different:  200 mV for the upstream PMTs but only 50 mV for downstream PMTs. 
-
-The time of the pulses was calculated utilizing an oversampled template derived from the data itself. The pulse pedestal was taken from samples far from the pulse and subtracted to the pulse amplitude. We then stretch vertically a template to match the pedestal-subtracted pulse amplitude and we move it horizontally to find the time. With this technique, we find a pulse time-pickoff resolution better than 100 ps.  The pulse pile up is not a significant problem given the TOF timing resolution and the rate of the particle beam.  Leveraging on the pulses width uniformity of any given PMT (sigma of 400 ps),  we flag events where two pulses overlap as closely in time as 4 ns with an 90\% efficiency according to simulation. 
+The TOF signals rise time (10-90\%) is 4 ns and a full width, half-maximum of 9 ns consistent in time. The signal amplitudes from the upstream TOF and  downstream TOF are slightly different:  200 mV for the upstream PMTs but only 50 mV for downstream PMTs. The time of the pulses was calculated utilizing an oversampled template derived from the data itself. We take the pulse pedestal from samples far from the pulse and subtract it to the pulse amplitude. We then stretch vertically a template to match the pedestal-subtracted pulse amplitude and we move it horizontally to find the time. With this technique, we find a pulse time-pickoff resolution better than 100 ps.  The pulse pile up is not a significant problem given the TOF timing resolution and the rate of the particle beam.  Leveraging on the pulses width uniformity of any given PMT (sigma of 400 ps),  we flag events where two pulses overlap as closely in time as 4 ns with an 90\% efficiency according to simulation. 
 
 
-We combine the pulses from the two PMTs on each paddle to determine the particles' arrival time by averaging the time measured from the single PMT, so to minimize errors due to optical path differences in the scintillator.  However, a time spread of approximately 300~ps is present in both the upstream and downstream detectors, likely due to transit time jitter in the PMTs themselves.  There is no evidence of systematic timing drift over long periods such as 3-4 months of a data-taking: the maximum variation of the average time differences between pairs of PMTs reading out the same scintillator is of the order of 150~ps.
+We combine the pulses from the two PMTs on each paddle to determine the particles' arrival time by averaging the time measured from the single PMT, so to minimize errors due to optical path differences in the scintillator.  However, a time spread of approximately 300~ps is present in both the upstream and downstream detectors, likely due to transit time jitter in the PMTs themselves.  There is no evidence of systematic timing drift over long data-taking periods such as 3-4 months: the maximum variation of the average time differences between pairs of PMTs reading out the same scintillator is of the order of 150~ps.
 
-
-
-\section{In the Cryostat}
-
-\subsection{TPC: Charge Collection}\label{sec:TPC}
-\subsection{TPC: Light Collection System}
-\subsection{Cryogenics and Purity Control}
-\subsection{TPC: Electric Field Measurement}
-\section{Trigger and DAQ}
-\section{Control Systems}
-
-\begin{comment}
-
-
+\textcolor{red}{calculated TOF with error}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Punch-Through and Muon Range Stack Instruments}\label{sec:MuRS}
+\subsection{Punch-Through and Muon Range Stack Instruments}\label{sec:MuRS}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The punch-thorough and the muon range stack (MuRS) detectors are located downstream of the TPC. These detectors provide a sample of  TPC crossing tracks without relying on TPC information and can be used to improve particle ID for  muons and pions with momentum higher than  450 MeV/c.
+
+The punch-thorough is simply a \textcolor{red}{? x ? x ?}~cm scintillator piece, read out by \textcolor{red}{ two? Hamamatsu? 2? inch} PMTs. 
+The MuRS is a segmented block of steel with four slots instrumented with scintillation bars. The four steel layers in front of each instrumented slot are 2 cm, 2 cm, 14 cm and 16 cm wide in the beam direction. Each instrumented slot is equipped with four scintillation bars each, positioned vertically in the direction orthogonal to the beam. Each scintillator bar measures  \textcolor{red}{? x ? x 2}~cm and it is read out by  \textcolor{red}{ two? Hamamatsu? 2? inch} PMTs.  
+
+The signals from both the punch-thorough and the MuRS PMTs are digitized in the CAEN V1740, same as the TPC; the details of this discriminator are laid out in~\ref{sec:TPCCharge}. It is worth noticing that the sampling time of the CAEN V1740 is slow (of the order of 128 ns), so pulse shape information from the PMT is lost.
+Punch-thorough and MuRS hits are formed utilizing the OR between the PMTs digital discriminator signals under threshold at a given time, where we obtain the threshold for each PMT directly on data distributions.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{LArIAT Cosmic Ray Paddle Detectors}\label{sec:CosmicRayPaddle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Besides on beam data, LArIAT also triggers on cosmic rays events by using two sets of cosmic ray paddle detectors (a.k.a. ``cosmic towers".) The cosmic towers frame the LArIAT cryostat, as one sits in the downstream left corner and the other sits in the upstream right corner of the cryostat. Two paddle sets of four scintillators pieces each, an upper and a lower set, make up each cosmic tower. 
+Of the four paddles, a couple of two matched paddles stands upright while the a second matched pair lies across the top of the assembly in the top sets (or across the bottom of the assembly in the bottom sets). The horizontal couple is used as a veto for particles traveling from the TPC out.  The four signals  from the vertical paddles along one of the body diagonals of the TPC are combined in a logical ``AND''. This allows to select cosmic muons crossing the TPC along one of its diagonals.  Cosmic ray tracks crossing both anode and cathode populate the events triggered this way. This particularly useful sample of tracks (which we can safely assume to be associated with ~5 GeV muons MIPs) can be used for many tasks; for example, we use anode-cathode piercing tracks to cross check the TPC electric field on data (see \ref{ch:AppendixC}), to calibrate the charge response of the TPC wires for the full TPC volume and to measure the electron lifetime in the chamber \textcolor{red}{ ADD reference to different chapters}.
 
-LArIAT's system to trigger on cosmic rays is based on two so-called "cosmic towers" which stand  upstream and downstream of the cryostat, one on beam's right and one on beam's left, framing the cryostat.  Each cosmic tower is composed of two paddle assemblies, upper and lower.  The paddle assemblies each consist of four paddles, a matched pair which stand upright and a second matched pair lying across the top  of the assembly, to act as a veto for downward-going cosmic ray air showers.  Unless vetoes by the horizontal paddles, signals from paddle assemblies along the body diagonals of the TPC are combined in a logical ``AND'' to select cosmic muons crossing the TPC along one of its diagonals. A high proportion of events triggered this way contain cosmic ray tracks crossing both anode and cathode.  Such tracks provide a sample of LAr ionization with effectively uniform linear ionization density, but experience the entire range of charge attenuation available in the TPC before they drift to the anode. These tracks are used to calculate and monitor the level of electronegative contaminants in the liquid argon and provide a calibration sample for calorimetry and electric field studies outlined in Section \ref{sec:DetectorPerformance}.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The paddles have trapezoidal shape and are each enclosed in an aluminum case. An example is shown in Fig. \ref{pic:cosmicpaddle}. They come in two different sizes: a smaller version, with bases $32.2~cm$ and $26.7~cm$, $61.0~cm$ height and $3.02~cm$ thickness, and a bigger version, with bases $33.2~cm$ and $27.0~cm$, $70.8~cm$ height and $3.02~cm$ thickness. Each paddle is equipped with wavelength-shifting optical fibers running along one of the long sides and optically coupled to a low voltage, Zener-diode Hamamatsu H5783 PMT.  Signals from the PMT are amplified and discriminated by a custom-made PMT Amplifier and Discrimination (PAD) circuit mounted at one end of the paddle, then sent through a CAT5 cable to a Control and Concentrator Unit (CCU) which both power the PMT, controlling voltage and threshold, and output the PMT signal as logic ECL pulse.
 
 \begin{figure}[h!]
@@ -171,22 +166,14 @@ Plot of the counter efficiency $\varepsilon_P$ as a function of the PMT voltage 
 \end{figure}
 
 
-%$\varepsilon_P$ at a given voltage is defined as:
-
-%$$
-%\varepsilon_P = \frac{R_{1-2} \land R_{3-4} \land R_P}{R_{1-2} \land R_{3-4}}
-%$$
-
-%where $R_P$ is the rate of the paddle $P$ to be tested, $R_{1-2}$ is the coincidence rate of two sample paddles positioned above $P$, while $R_{3-4}$ is the coincidence rate of two sample paddles positioned below $P$.
-%$\eta_P$ at a given voltage is instead defined as:
-
-%$$
-%\eta_P = \frac{R_{1-2} \land R_{3-4} \land R_{P^*}}{R_{1-2} \land R_{3-4}}
-%$$
-
-%where $R_{P^*}$ is the Rate of the paddle $P$ 
-
-
 The trigger rate $R$ of the whole system is $R=0.032Hz$, corresponding to $\sim 1.9~\mu/minute$.
-\end{comment}
 
+
+
+\section{In the Cryostat}
+\subsection{TPC: Charge Collection}\label{sec:TPCCharge}
+\subsection{TPC: Light Collection System}\label{sec:TPCLight}
+\subsection{Cryogenics and Purity Control}
+%\subsection{TPC: Electric Field Measurement}
+\section{Trigger and DAQ}
+\section{Control Systems}
