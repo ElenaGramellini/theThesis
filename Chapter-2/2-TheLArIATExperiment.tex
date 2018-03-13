@@ -198,7 +198,7 @@ Liquid argon scintillates in vacuum-ultraviolet (VUV) range at 128 nm; since cry
 For Run II, we coated both  the windows of the ETL PMT and SensL SiPM  with a thin layer of TPB. In doing so, some of the VUV scintillation light converts into visible right at the sensor faces, keeping information on the direction of the light source. Information about the light directionality is lost for light reflected on foils, as the reflection is uniform in angle. For Run-II, the voltage dividers for the PMTs were configured for positive bias with a DC-coupled anode (AC-coupled anode with grounded photocathode) to minimize induced noise on the TPC wires and modify the PMT bases accordingly.  
 
 
-\subsection{Cryogenics and Purity Control}\label{ch:Cryo}
+\subsection{Cryogenics and Argon Purity}\label{ch:Cryo}
 LArIAT repurposed the ArgoNeuT cryostat \cite{argoneut} in order to use it in a beam of charge particles. We also added a new process piping and a new liquid argon filtration system in FTBF.
 Inside the LArIAT experimental hall, the cryostat sits on the beam of charge particles with its horizontal main axis oriented parallel to the beam.
 
@@ -227,30 +227,10 @@ We added a ``beam window'' on the front outer end cap and an ``excluder'' on the
 
 %%%%%%%%%%%%%%%%%%%%%
 As in any other LArTPC, argon purity is a crucial parameter for LArIAT. Indeed, the presence of contaminants effects both the basic working principles of a LArTPC: electronegative contaminants such as oxygen and water decrease the number of ionization electrons collected on the wires after drifting through the volume, while contaminants such as Nitrogen decrease the light yield from scintillation light, especially in its slow component.
-
-The argon path
-
-LArIAT argon is less than  1~ppm of oxygen, water and nitrogen contaminants.
-monitor with the use of  commercial gas analyzer.
-LArIAT makes use of LAr supplies from a vendor 
-
-LArIAT is supplied with liquid argon from a commercial dewar positioned outside of the experimental enclosure.  
-Liquid argon is delivered by a vendor with a specified maximum contamination of 2 parts per million (ppm) oxygen, 3.5~ppm water, and 10~ppm nitrogen which we 
-
-
-In practice, the delivered argon has much less than 1~ppm of all these contaminants.  Even such apparently low levels of contamination are too large to effectively drift ionization electrons, so filtration of the argon is required to achieve oxygen and water contamination at the level of 100 parts per trillion (ppt) or better. 
-
-The argon is delivered from the commercial dewar to the cryostat through 2.54~cm diameter schedule 10 stainless steel piping.  The piping was insulated with 20.32~cm of polyurethane foam by the manufacturer.  The piping was cleaned to remove oil and grease before being welded into the system. The argon then passes through LArIAT's argon filtration system which is based on the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD} design. The purification system consists of a single 77~liter filter which is filled halfway with a 4A molecular sieve supplied by Sigma-Aldrich~\cite{sigma-aldrich} that primarily removes water contamination but can also remove small amounts of nitrogen and oxygen. The remaining volume of the filter contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, to remove oxygen~\cite{basf} and to a lesser extent, water.  The filter is insulated with a vacuum jacket and aluminum radiation shields.  The filter media are regenerated in place using heated gas, as was done for LAPD. The filter media are very efficient at removing oxygen and water and the argon is pure enough after a single pass through the media to allow several millisecond electron drift lifetimes in the TPC. 
-
-From the filter the argon is directed into the inner cryostat via a liquid feedthrough on the top of the cryostat. The argon level, temperatures, and pressures are continuously monitored during operation both in the commercial dewar supplying the argon as well as the levels inside the cryostat, as shown on the top of Figure \ref{fig:LArIATCryoMonitor}. The argon in the cryostat is allowed to boil and vent to the atmosphere during operation and the argon level is monitored via the level probes. Flow of argon into the cryostat is enabled whenever the liquid level goes below a predetermined value to ensure that the TPC high voltage feedthrough and cold electronics are always submerged. During normal operations, the liquid level inside the cryostat is replenished several times per day, as can be seen by the cycle of the liquid level and valve positions shown at the bottom of Figure \ref{fig:LArIATCryoMonitor} 
-
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.35]{Chapter-2/Images/CryoMonitor.png}
-\includegraphics[scale=0.34]{.Chapter-2/Images/CryoMonitor2.png}
-\caption{\emph{(top)} Screenshot of the LArIAT cyrosystem monitoring page showing the levels of the argon both inside the cryostat and in the supply dewar as well as the monitored levels plotted over a twenty-four hour period. \emph{(bottom)} Plots showing the liquid argon level inside the cryostat as well as the corresponding liquid valve which allows argon to flow into the cryostat and the level drops due to boiling. The frequency of the typical fill/vent cycle can be seen with the typical time between fills being slightly more than 3 hours.}
-\label{fig:LArIATCryoMonitor}
-\end{figure}
+In LArIAT, contaminations should not exceed the level of 100 parts per trillion (ppt). We achieve this level of purity in several stages. The specifics required for the commercial argon bought for LArIAT are 2 parts per million (ppm) oxygen, 3.5~ppm water, and 10~ppm nitrogen. This argon is monitored with the use of commercial gas analyzer.
+Argon is stored in a dewar external to LArIAT hall and filtered before filling the TPC. %The argon is delivered from the commercial dewar to the cryostat through 2.54~cm diameter schedule 10 stainless steel piping.  The piping was insulated with 20.32~cm of polyurethane foam by the manufacturer.  The piping was cleaned to remove oil and grease before being welded into the system. 
+LArIAT uses a filtration system designed for the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD}: half of a 77~liter filter contains a 4A molecular sieve (Sigma-Aldrich~\cite{sigma-aldrich}) apt to remove mainly water, while the other half contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, apt to remove mainly oxygen~\cite{basf}. A single pass of argon in the filter is sufficient to achieve the necessary purity, unless the filter is saturated. In case the filter saturates, the media needs to be regenerated by using heated gas; this happened twice during the Run II period. We deemed the filter regeneration necessary every time the electron lifetime dropped under 100 \textmu s.
+The filtered argon reaches the inner vessel via a liquid feedthrough on the top of the cryostat. Argon is not recirculated in the system, but it rather boils off and vent to the atmosphere. During data taking, we replenish the argon in the cryostat several times per day to keep the TPC high voltage feedthrough and cold electronics always submerged. In fact, we need to monitor the level, temperatures, and pressures  of the argon both in the commercial dewar and inside the cryostat. 
 
 
 
