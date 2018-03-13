@@ -1,12 +1,18 @@
 \chapter{LArIAT: Liquid Argon In A Testbeam}\label{sec:experimentDescription}
-\section{LArIAT \& the Intensity Frontier}
+
+LArIAT, a small Liquid Argon Time Projection Chamber (LArTPC) in a test beam,  is designed to perform an extensive physics campaign centered on charged particle cross section measurements while characterizing the detector performance for future LArTPCs. LArTPC represents one of the most advanced experimental technologies for physics at the Intensity Frontier due to its full 3D-imaging, excellent particle identification and precise calorimetric energy reconstruction. This complex technology however needs a thorough calibration and dedicated measurements of some key quantities to achieve the precision required for the next generation of discoveries at the Intensity Frontier which LArIAT can provide. 
+
+The LArIAT LArTPC is deployed in a dedicated calibration test beamline at Fermilab.
+We use the LArIAT beamline to characterize the charge particles before they enter the TPC: the particle type and initial momentum is known from beamline information. The precise calorimetric energy reconstruction of the LArTPC technology enables the measurement of the total differential cross section for  tagged hadrons. 
+The Pion-Nucleus and Kaon-Nucleus total hadronic interaction cross section have never been measured before in argon and they are a fundamental step to shed light on light meson interaction in nuclei. Additionally, these measures provides a key input to neutrino physics and proton decay studies in future LArTPC experiments like SBN and DUNE.
+
+
+%\section{LArIAT \& the Intensity Frontier}
 \section{The Particles Path to LArIAT}
 
-LArIAT's home at Fermilab is the Fermilab Test Beam Facility (FTBF), where the experiment 
-characterizes a beam of charge particles downstream from the Meson Center beam line. 
+LArIAT's home at Fermilab is the Fermilab Test Beam Facility (FTBF), where the experiment characterizes a beam of charge particles downstream from the Meson Center beam line. 
 
-LArIAT's particles history begins in the Fermilab accelerator complex with a beam of protons. 
-The process of protons acceleration develops in gradual stages, see picture \ref{fig:Accelerator}: gaseous hydrogen is ionized in order to form H$^{-}$ ions; these ions are boosted to 750 keV by a Cockroft-Walton accelerator and injected to the Linac linear accelerator that increases their energy up to 400 MeV; then, H$^{-}$ ions pass through a carbon foil and lose the two electrons; the resulting protons are then injected into a rapid cycling synchrotron, called Booster; at this stage protons reach 8 GeV of energy and are compacted into bunches; the next stage of acceleration is the Main Injector, a synchrotron which accelerates the bunches up to 120 GeV; in the Main Injector, several bunches are merged into one and used for the injection in the last stage.
+LArIAT's particles history begins in the Fermilab accelerator complex with a beam of protons. The process of protons acceleration develops in gradual stages, see picture \ref{fig:Accelerator}: gaseous hydrogen is ionized in order to form H$^{-}$ ions; these ions are boosted to 750 keV by a Cockroft-Walton accelerator and injected to the Linac linear accelerator that increases their energy up to 400 MeV; then, H$^{-}$ ions pass through a carbon foil and lose the two electrons; the resulting protons are then injected into a rapid cycling synchrotron, called Booster; at this stage protons reach 8 GeV of energy and are compacted into bunches; the next stage of acceleration is the Main Injector, a synchrotron which accelerates the bunches up to 120 GeV; in the Main Injector, several bunches are merged into one and used for the injection in the last stage.
 
 
 The Fermilab accelerator complex works in supercycles of roughly 60 seconds in duration. The beam is then split by electrostatic septa and delivered at different experimental halls all over the lab. A 120~GeV$/c$ primary proton beam with variable intensity is extracted in four-second ``spills" and sent to the Meson Center beam line. Here, this primary beam is focused onto a tungsten target to create LArIAT's secondary beam. The composition of the secondary particle beam is mainly positive pions. For the LArIAT data considered in this work the secondary beam peak momentum was fixed at 64~GeV$/c$, although the beam is tunable in momentum between 8-80\,GeV$/c$; this was deemed a secondary beamline configuration which allowed a stable beam operation of the FTBF.
@@ -192,7 +198,61 @@ Liquid argon scintillates in vacuum-ultraviolet (VUV) range at 128 nm; since cry
 For Run II, we coated both  the windows of the ETL PMT and SensL SiPM  with a thin layer of TPB. In doing so, some of the VUV scintillation light converts into visible right at the sensor faces, keeping information on the direction of the light source. Information about the light directionality is lost for light reflected on foils, as the reflection is uniform in angle. For Run-II, the voltage dividers for the PMTs were configured for positive bias with a DC-coupled anode (AC-coupled anode with grounded photocathode) to minimize induced noise on the TPC wires and modify the PMT bases accordingly.  
 
 
-\subsection{Cryogenics and Purity Control}
-%\subsection{TPC: Electric Field Measurement}
+\subsection{Cryogenics and Purity Control}\label{ch:Cryo}
+LArIAT repurposed the ArgoNeuT cryostat \cite{argoneut} in order to use it in a beam of charge particles. We also added a new process piping and a new liquid argon filtration system in FTBF.
+Inside the LArIAT experimental hall, the cryostat sits on the beam of charge particles with its horizontal main axis oriented parallel to the beam.
+
+Two volumes make up LArIAT cryostat, shown in Figure \ref{fig:LArIATCryoStat}: purified liquid argon fills the inner vessel, while the outer volume insulates it with a vacuum jacket equipped with layers of aluminized mylar superinsulation. The inner vessel is a cylinder of 130~cm length and 6.2~cm diameter, containing about 550~L of LAr, corresponding to a mass of 0.76 ton. We run the signal cables for the LArTPC and the high voltage feedthrough through a ``chimney'' at the top and mid-length of the cryostat.
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.18]{Chapter-2/Images/Cryostat1.jpg}
+\includegraphics[scale=0.07]{Chapter-2/Images/Cryostat2.jpg}
+\caption{\emph{(left)} The LArIAT cryostat open with the TPC placed in the inner volume. \emph{(right)} The LArIAT cryostat fully sealed during initial commissioning prior to installation at Fermilab Testbeam Facility.Access to the internal volume is possible by opening the upstream end caps of the inner and outer vessels. }
+\label{fig:LArIATCryoStat}
+\end{figure}
+
+Given the different scopes of the ArgoNeuT and LArIAT detectors, we made several modification to the ArgoNeuT cryostat in order to use it in LArIAT. In particular, the modification  shown in Figure \ref{fig:LArIATCryoMods} were necessary to account for the beam of charged particles entering the TPC and to employ the new FTBT liquid argon purification system. 
+We added a ``beam window'' on the front outer end cap and an ``excluder'' on the inner endcap, with the scope of minimizing the amount of dead material upstream of the TPC's active volume.  Doing so, we reduced the amount of uninstrumented material before the TPC from $\sim$ 1.6 radiation lengths ($X_{0}$) (ArgoNeuT) to less than 0.3 $X_{0}$ (LArIAT). To allow studies of the scintillation light, we added a side port feedthrough which enables the mounting of the light collection system, as well as the connections for the corresponding signal and high-voltage cables (see Section \ref{sec:TPCLight}).  We modified the bottom of the cryostat adding Conflat and ISO flange sealing to connect the liquid argon transfer line to the new argon cooling and purification system.
+
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.35]{Chapter-2/Images/CryoMods.png}
+\caption{Pictures of the modified components of the cryostat. $1)$ The addition of an outlet to the bottom of the cryostat to allow connections to the purification system; $2)$ The ``beam-window'' on the outer endcap and the concave inner surface of the inner endcap (referred to as the excluder) to reduce the amount of material through which beam particles must travel before entering the TPC; $3)$ The modified side port for the LArIAT light collection system.}
+\label{fig:LArIATCryoMods}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%
+As in any other LArTPC, argon purity is a crucial parameter for LArIAT. Indeed, the presence of contaminants effects both the basic working principles of a LArTPC: electronegative contaminants such as oxygen and water decrease the number of ionization electrons collected on the wires after drifting through the volume, while contaminants such as Nitrogen decrease the light yield from scintillation light, especially in its slow component.
+
+The argon path
+
+LArIAT argon is less than  1~ppm of oxygen, water and nitrogen contaminants.
+monitor with the use of  commercial gas analyzer.
+LArIAT makes use of LAr supplies from a vendor 
+
+LArIAT is supplied with liquid argon from a commercial dewar positioned outside of the experimental enclosure.  
+Liquid argon is delivered by a vendor with a specified maximum contamination of 2 parts per million (ppm) oxygen, 3.5~ppm water, and 10~ppm nitrogen which we 
+
+
+In practice, the delivered argon has much less than 1~ppm of all these contaminants.  Even such apparently low levels of contamination are too large to effectively drift ionization electrons, so filtration of the argon is required to achieve oxygen and water contamination at the level of 100 parts per trillion (ppt) or better. 
+
+The argon is delivered from the commercial dewar to the cryostat through 2.54~cm diameter schedule 10 stainless steel piping.  The piping was insulated with 20.32~cm of polyurethane foam by the manufacturer.  The piping was cleaned to remove oil and grease before being welded into the system. The argon then passes through LArIAT's argon filtration system which is based on the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD} design. The purification system consists of a single 77~liter filter which is filled halfway with a 4A molecular sieve supplied by Sigma-Aldrich~\cite{sigma-aldrich} that primarily removes water contamination but can also remove small amounts of nitrogen and oxygen. The remaining volume of the filter contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, to remove oxygen~\cite{basf} and to a lesser extent, water.  The filter is insulated with a vacuum jacket and aluminum radiation shields.  The filter media are regenerated in place using heated gas, as was done for LAPD. The filter media are very efficient at removing oxygen and water and the argon is pure enough after a single pass through the media to allow several millisecond electron drift lifetimes in the TPC. 
+
+From the filter the argon is directed into the inner cryostat via a liquid feedthrough on the top of the cryostat. The argon level, temperatures, and pressures are continuously monitored during operation both in the commercial dewar supplying the argon as well as the levels inside the cryostat, as shown on the top of Figure \ref{fig:LArIATCryoMonitor}. The argon in the cryostat is allowed to boil and vent to the atmosphere during operation and the argon level is monitored via the level probes. Flow of argon into the cryostat is enabled whenever the liquid level goes below a predetermined value to ensure that the TPC high voltage feedthrough and cold electronics are always submerged. During normal operations, the liquid level inside the cryostat is replenished several times per day, as can be seen by the cycle of the liquid level and valve positions shown at the bottom of Figure \ref{fig:LArIATCryoMonitor} 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.35]{Chapter-2/Images/CryoMonitor.png}
+\includegraphics[scale=0.34]{.Chapter-2/Images/CryoMonitor2.png}
+\caption{\emph{(top)} Screenshot of the LArIAT cyrosystem monitoring page showing the levels of the argon both inside the cryostat and in the supply dewar as well as the monitored levels plotted over a twenty-four hour period. \emph{(bottom)} Plots showing the liquid argon level inside the cryostat as well as the corresponding liquid valve which allows argon to flow into the cryostat and the level drops due to boiling. The frequency of the typical fill/vent cycle can be seen with the typical time between fills being slightly more than 3 hours.}
+\label{fig:LArIATCryoMonitor}
+\end{figure}
+
+
+
 \section{Trigger and DAQ}
 \section{Control Systems}
