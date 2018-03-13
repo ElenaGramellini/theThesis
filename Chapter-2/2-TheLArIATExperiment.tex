@@ -89,18 +89,18 @@ Two scintillator paddles, one upstream to the first set of WCs and one downstrea
 
  \textcolor{red}{find exact dimentsions}
 The upstream paddle is made of a 10 x 6 x \textcolor{red}{?}~cm scintillator piece, read out by two \textcolor{red}{Hamamatsu 2 inch} PMTs mounted on the beam left side which collect the light from light guides mounted on all four edges of the scintillator. The downstream paddle dimensions are  14 x 14 x \textcolor{red}{?}~cm and it is read out by two \textcolor{red}{Hamamatsu 2 inch} PMTs on the opposite ends of the scintillator.
-The relatively thin width on the beamline direction minimizes energy loss of the particles coming from the target in the scintillatior material.
+The relatively thin width on the beamline direction minimizes energy loss of the particles coming from the target in the scintillator material.
 
-\begin{figure}[!h]
-\begin{centering}
-\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{figures/tofdelay.png}
-\caption{
-{\scriptsize \sf Pictures of the TOF system as was deployed during Run-I and Run-II data taking. The left image is of the upstream TOF paddle and the right image is of the downstream TOF paddle }
-}
-\label{fig:TOFSystemRunIandII}
-\end{centering}
-\end{figure}
+%\begin{figure}[!h]
+%\begin{centering}
+%\vspace{-0.3cm}
+%\includegraphics[height=2.3in]{Chapter-2/Images/tofdelay.png}
+%\caption{
+%{\scriptsize \sf Pictures of the TOF system as was deployed during Run-I and Run-II data taking. The left image is of the upstream TOF paddle and the right image is of the downstream TOF paddle }
+%}
+%\label{fig:TOFSystemRunIandII}
+%\end{centering}
+%\end{figure}
 
 
 
@@ -140,39 +140,58 @@ Besides on beam data, LArIAT also triggers on cosmic rays events by using two se
 Of the four paddles, a couple of two matched paddles stands upright while the a second matched pair lies across the top of the assembly in the top sets (or across the bottom of the assembly in the bottom sets). The horizontal couple is used as a veto for particles traveling from the TPC out.  The four signals  from the vertical paddles along one of the body diagonals of the TPC are combined in a logical ``AND''. This allows to select cosmic muons crossing the TPC along one of its diagonals.  Cosmic ray tracks crossing both anode and cathode populate the events triggered this way. This particularly useful sample of tracks (which we can safely assume to be associated with ~5 GeV muons MIPs) can be used for many tasks; for example, we use anode-cathode piercing tracks to cross check the TPC electric field on data (see \ref{ch:AppendixC}), to calibrate the charge response of the TPC wires for the full TPC volume and to measure the electron lifetime in the chamber \textcolor{red}{ ADD reference to different chapters}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The paddles have trapezoidal shape and are each enclosed in an aluminum case. An example is shown in Fig. \ref{pic:cosmicpaddle}. They come in two different sizes: a smaller version, with bases $32.2~cm$ and $26.7~cm$, $61.0~cm$ height and $3.02~cm$ thickness, and a bigger version, with bases $33.2~cm$ and $27.0~cm$, $70.8~cm$ height and $3.02~cm$ thickness. Each paddle is equipped with wavelength-shifting optical fibers running along one of the long sides and optically coupled to a low voltage, Zener-diode Hamamatsu H5783 PMT.  Signals from the PMT are amplified and discriminated by a custom-made PMT Amplifier and Discrimination (PAD) circuit mounted at one end of the paddle, then sent through a CAT5 cable to a Control and Concentrator Unit (CCU) which both power the PMT, controlling voltage and threshold, and output the PMT signal as logic ECL pulse.
+All the paddles are $3.02~cm$ thick and are  trapezoidal in shape. The paddles come in two sizes: the smaller version has bases $32.2~cm$ and $26.7~cm$, and $61.0~cm$ height, while the bigger version has bases $33.2~cm$ and $27.0~cm$, and $70.8~cm$ height.  A Zener-diode Hamamatsu H5783 PMT collects the light from a wavelength-shifting optical fiber which runs along one of the long sides of each paddle.
+A custom-made PMT Amplifier and Discrimination (PAD) circuit mounted at one end of the paddle collects signals from the PMTs and sends them to the Control and Concentrator Unit (CCU). We use the same connection to  power the PMT, control voltage and threshold, and output the PMT signal as logic ECL pulse.
+We retrieved the scintillation paddles from the decommissioning of the CDF detector at Fermilab and we used only the paddles with a counting efficiency greater than 95\% and low noise at working voltage. The measured trigger rate of the whole system is $0.032Hz$, corresponding to $\sim 2$ muons per minute.
+
 
 \begin{figure}[h!]
- \centering
-% \includegraphics[angle=90,width=0.7\textwidth]{figures/Cosmic_Paddle.jpg}
-\caption{
-Photograph of one of the scintillation counters used in the cosmic towers. 
-} 
+\centering
+ \includegraphics[angle=90,width=0.7\textwidth]{Chapter-2/Images/Cosmic_Paddle.jpg}
+\caption{Photograph of one of the scintillation counters used in the cosmic towers. } 
 \label{pic:cosmicpaddle}
 \end{figure}
 
-The paddles were selected from a pool of over 300 scintillating counters collected during the decommissioning of the CDF detector at Fermilab. 
-For each counter, both the efficiency $\varepsilon_P$ and the noise $\eta_P$ as a function of the voltage were determined. The measurement was performed sandwiching the given paddle among 4 sample counters, placed two above and two below the paddle under test. The efficiency 
-$\varepsilon_P$ was defined as the ratio between the 5-fold coincidence and the 4-fold coincidence of the sample counters. The accidental rate $\eta_P$ was instead defined as the number of 5-fold coincidence observed during ten minutes of data acquisition, when the signal of the paddle under test was delayed by $5 \mu s$. Each paddle with $\varepsilon_P \geq 95\%$ and $\eta_P = 0$ at working voltage was identified as a candidate for the Cosmic Ray system. The ones with the highest efficiency and lowest single count rate were then selected to realize the system itself. 
-The plot of $\varepsilon_P$ as a function of the PMT voltage for one example paddle is shown in Fig. \ref{pic:CR_Effplot}.
-
-\begin{figure}[h!]
- \centering
-% \includegraphics[width=0.7\textwidth]{figures/TSU29_Efficiency.png}
-\caption{
-Plot of the counter efficiency $\varepsilon_P$ as a function of the PMT voltage for one of the paddles composing the Cosmic Ray system. 
-} 
-\label{pic:CR_Effplot}
-\end{figure}
 
 
-The trigger rate $R$ of the whole system is $R=0.032Hz$, corresponding to $\sim 1.9~\mu/minute$.
 
 
 
 \section{In the Cryostat}
 \subsection{TPC: Charge Collection}\label{sec:TPCCharge}
 \subsection{TPC: Light Collection System}\label{sec:TPCLight}
+The mechanism of particle detection in argon other than drift electrons is the collection of scintillation photons.  Over the course of LArIAT three years of data taking, the light collection system changed several times. We describe here the light collection system for Run II. Two PMTs, a 3-inch diameter Hamamatsu R-11065 and 2-inch diameter ETL D757KFL~\cite{lightsys-pmttests}, as well as three SiPMs arrays (two Hamamatsu S11828-3344M 4x4 arrays and one single-channel SensL MicroFB-60035 ) are mounted on the PEEK support structure. PEEK screws into an access flange as shown in Figure~\ref{lightsys_pmts}, on the anode side, leaving  approximately 5~cm of clearance from the collection plane.  
+
+%------------------------------------------
+\begin{figure}
+\centering
+\includegraphics[height=2.2in]{Chapter-2/Images/lightsys_pmts.png}
+\hspace{1cm}
+\includegraphics[height=2.2in]{Chapter-2/Images/lightsys_wls.png}
+\caption{LArIAT's photodetector system for observing LAr scintillation light inside the TPC (left), and a simplified schematic of VUV light being wavelength-shifting along the TPB-coated reflecting foils (right).}
+\label{lightsys_pmts}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[height=0.25\textheight]{Chapter-2/Images/lightsys_etlbase.jpeg}
+\hspace{0.5cm}
+\includegraphics[height=0.25\textheight]{Chapter-2/Images/lightsys_hmmbase.jpg}
+\caption{\label{voltagedividers}Photos of the voltage divider bases for the ETL PMT (left) and the Hamamatsu PMT (right) used in Run-II.  The cable connections to the bases seen here were used for powering and testing prior to installation.  The yellow through-hole signal coupling capacitors seen on both bases are 18~nF (X7R) and are rated to 2~kV.}
+\end{figure}
+%------------------------------------------
+Liquid argon scintillates in vacuum-ultraviolet (VUV) range at 128 nm; since cryogenic PMTs are not sensitive to VUV wavelengths, we need to shift the light in a region visible to the PMTs. In LArIAT, the wavelength shifting is achieved by installing on the four walls of the TPC highly-reflective VIKUITY dielectric substrate foils coated with a thin layer of tetraphenyl-butadiene (TPB) (see Figure ~\ref{lightsys_foils}). One or more visible photons  are emitted and reflected into the chamber during the interaction of a VUV photon interacts with the TPB. Thus, the light yield is increased and made more uniform across the TPC active volume, allowing the possibility of light-based calorimetry (under study).
+
+%------------------------------------------
+%\begin{figure}
+%\centering
+%\includegraphics[scale=1.3]{Chapter-2/Images/lightsys_foils.png}
+%\caption{\label{lightsys_foils}The TPB-coated reflector foils mounted to the TPC field cage walls as viewed through the front cryostat opening. {\textcolor{red}{Better pictures needed.}}}
+%\end{figure}
+%------------------------------------------
+
+For Run II, we coated both  the windows of the ETL PMT and SensL SiPM  with a thin layer of TPB. In doing so, some of the VUV scintillation light converts into visible right at the sensor faces, keeping information on the direction of the light source. Information about the light directionality is lost for light reflected on foils, as the reflection is uniform in angle. For Run-II, the voltage dividers for the PMTs were configured for positive bias with a DC-coupled anode (AC-coupled anode with grounded photocathode) to minimize induced noise on the TPC wires and modify the PMT bases accordingly.  
+
+
 \subsection{Cryogenics and Purity Control}
 %\subsection{TPC: Electric Field Measurement}
 \section{Trigger and DAQ}
