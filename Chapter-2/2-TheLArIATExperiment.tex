@@ -110,7 +110,7 @@ The relatively thin width on the beamline direction minimizes energy loss of the
 
 
 
-The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling rate of 1 GHz. The 12 bit samples are stored in a circular memory buffer. At trigger time, data from the TOF PMTs are recorded to output in a 28.7 $\mu$ second windows starting  approximately 8.4 $\mu$sec before the trigger time. 
+The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling rate of 1 GHz. The 12 bit samples are stored in a circular memory buffer. At trigger time, data from the TOF PMTs are recorded to output in a 28.7 \textmu s windows starting  approximately 8.4 \textmu s before the trigger time. 
 
 
 
@@ -162,10 +162,80 @@ We retrieved the scintillation paddles from the decommissioning of the CDF detec
 
 
 
-
 \section{In the Cryostat}
-\subsection{TPC: Charge Collection}\label{sec:TPCCharge}
-\subsection{TPC: Light Collection System}\label{sec:TPCLight}
+\subsection{LArTPC: Charge Collection}\label{sec:TPCCharge}
+The LArIAT Liquid Argon Time Projection Chamber is a rectangular box of dimensions 47 cm (width) x 40 cm (height) x 90 cm (length), containing 170 liters of Liquid Argon.
+The LArTPC three major subcomponents are 
+\begin{itemize} 
+\item[1)] the cathode and field cage,
+\item [2)] the wire planes, 
+\item [3)] the read-out electronics. %
+\end{itemize}
+
+
+
+\subsubsection{Cathode and field cage}
+A G10 plain sheet with copper metallization on one of the 40x90~cm inner surfaces forms the cathode. 
+A high-voltage feedthrough on the top of the LArIAT cryostat delivers the high voltage to the cathode; scope of the high voltage system (Figure~\ref{fig:HVScheme}) is to drift ionization electrons from the interaction of charged particles in the liquid argon to the wire planes.  The power supply used in this system is a Glassman LX125N16 ~\cite{GlassmanPS} capable of generating up to -125~kV and 16~mA of current, but operated at -23.5kV during LArIAT Run-II. The power supply is connected via high voltage cables to a series of filter pots before finally reaching the cathode. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.35]{Chapter-2/Images//HVSchematic.png}\\
+\caption{Schematic of the LArIAT high voltage system.}
+\label{fig:HVScheme}
+\end{figure}%See DocDB 1472
+
+
+
+The field cage is made of \textcolor{red}{13 parallel copper rings} framing the inner walls of the G10 TPC structure. A network of voltage-dividing resistors connected to the field cage rings steps down the high voltage from the cathode to form a uniform electric field. The electric field over the entire TPC drift volume is  486 V/cm (see \ref{ch:AppendixA}). The  maximum drift length, i.e. the distance between cathode and anode planes, is 47 cm.
+
+\subsubsection{Wire planes}
+The wire planes measure the charge deposited in the TPC active volume. The drifting charge induces a current on the wire of the inner planes and it is collected on the collection plane wires.
+LArIAT counts three wire planes separated by 4 mm spaces: in order of distance from the cathode, they are the shield, the induction and the collection plane. The distance between two consecutive wires in each given plane (aka wire pitch) is 4 mm.  The shield plane counts 225 parallel wires of equal length oriented vertically. This plane is not connected with the read-out electronics; rather it shields the outer planes from extremely long induction signals due to the ionization chamber in the whole drift volume. As the shield plane acts almost like a Faraday cage, the shape of signals in the first instrumented plane (induction)  results easier to reconstruct.  Both the induction and collection planes count 240 parallel wires of different length oriented at 60$^\circ$ from the vertical with opposite signs.
+Moving electrons moving past the induction plane will induce a bipolar pulse on its wires and will form a unipolar pulse when collected on the last plane wires. 
+
+The three wire planes and the cathode form three drift volumes, as shown in Figure \ref{fig:driftregions}. 
+The main drift volume is defined as the region between the cathode plane and the shield plane (C-S). The other two drift regions are those between the shield plane and the induction plane (S-I), and between the induction plane and the collection plane (I-C). The electric field in these regions is chosen to satisfy the charge transparency condition to allow for 100$\%$ transmission of the drifting electrons through the shield and then the induction planes. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.35]{Chapter-2/Images/DriftRegions.png}\\
+\caption{Schematic of the three drift regions inside the LArIAT TPC: the main drift volume between the cathode and the shield plane (C-S) in green, the region between the shield plane and the induction plane (S-I) in purple, and the region between the induction plane and the collection plane (I-C) in pink.}
+\label{fig:driftregions}
+\end{figure}
+
+Table \ref{tab:voltages} provides the default voltages applied to the cathode and the shield, induction, and collection plane.  
+
+\begin{table}[htpb]
+\centering
+\caption{Cathode and anode planes default voltages}
+\label{tab:voltages}
+\begin{tabular}{llll}
+\hline
+\multicolumn{1}{|l|}{ Cathode} & 
+\multicolumn{1}{|l|}{ Shield} & \multicolumn{1}{l|}{ Induction} & \multicolumn{1}{l|}{ Collection}  \\ \hline
+\multicolumn{1}{|l|}{-23.17 kV} &
+\multicolumn{1}{|l|}{-298.8 V} & \multicolumn{1}{l|}{-18.5 V}      & \multicolumn{1}{l|}{338.5 V} \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Electronics}
+
+Dedicated electronics read the induction and collection plane wires, for a total of  480-channel analog signal path from the TPC wires to the signal digitizers. A digital control system for the TPC-mounted electronics, a power supply, and a distribution system complete the front-end system. Figure \ref{pic:FEelectronics} shows a block diagram of the overall system. The direct readout of the ionization electrons in liquid argon forms typically small signals on the wires, which needs to be amplified in oder to be processed. LArIAT  performs the amplification stage directly in cold with  amplifiers developed by Brookhaven National Lab (BNL) and mounted on the TPC frame inside the liquid argon, achieving a remarkable Signal-to-Noise ratio. %The BNL ASICs adopted in LAriAT are designated as LArASIC, version 4-star.%The ASIC signals for each wire are then driven out of the vessel  to DAQ boards that act as waveform recorders.
+The signal from the ASICs are driven to the other end of the readout chain, to the CAEN V1740 digitizers. The CAEN V1740 has a 12 bit resolution and a maximum input range of 2~VDC, resulting in about 180 ADC count for a crossing MIP.   
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=1.0\textwidth]{Chapter-2/Images/LArIAT_FE_Electronics.png}
+\caption{Overview of LArIAT Front End electronics. } 
+\label{pic:FEelectronics}
+\end{figure}
+
+
+
+
+\subsection{LArTPC: Light Collection System}\label{sec:TPCLight}
 The mechanism of particle detection in argon other than drift electrons is the collection of scintillation photons.  Over the course of LArIAT three years of data taking, the light collection system changed several times. We describe here the light collection system for Run II. Two PMTs, a 3-inch diameter Hamamatsu R-11065 and 2-inch diameter ETL D757KFL~\cite{lightsys-pmttests}, as well as three SiPMs arrays (two Hamamatsu S11828-3344M 4x4 arrays and one single-channel SensL MicroFB-60035 ) are mounted on the PEEK support structure. PEEK screws into an access flange as shown in Figure~\ref{lightsys_pmts}, on the anode side, leaving  approximately 5~cm of clearance from the collection plane.  
 
 %------------------------------------------
@@ -217,7 +287,6 @@ Given the different scopes of the ArgoNeuT and LArIAT detectors, we made several
 We added a ``beam window'' on the front outer end cap and an ``excluder'' on the inner endcap, with the scope of minimizing the amount of dead material upstream of the TPC's active volume.  Doing so, we reduced the amount of uninstrumented material before the TPC from $\sim$ 1.6 radiation lengths ($X_{0}$) (ArgoNeuT) to less than 0.3 $X_{0}$ (LArIAT). To allow studies of the scintillation light, we added a side port feedthrough which enables the mounting of the light collection system, as well as the connections for the corresponding signal and high-voltage cables (see Section \ref{sec:TPCLight}).  We modified the bottom of the cryostat adding Conflat and ISO flange sealing to connect the liquid argon transfer line to the new argon cooling and purification system.
 
 
-
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.35]{Chapter-2/Images/CryoMods.png}
@@ -229,10 +298,110 @@ We added a ``beam window'' on the front outer end cap and an ``excluder'' on the
 As in any other LArTPC, argon purity is a crucial parameter for LArIAT. Indeed, the presence of contaminants effects both the basic working principles of a LArTPC: electronegative contaminants such as oxygen and water decrease the number of ionization electrons collected on the wires after drifting through the volume, while contaminants such as Nitrogen decrease the light yield from scintillation light, especially in its slow component.
 In LArIAT, contaminations should not exceed the level of 100 parts per trillion (ppt). We achieve this level of purity in several stages. The specifics required for the commercial argon bought for LArIAT are 2 parts per million (ppm) oxygen, 3.5~ppm water, and 10~ppm nitrogen. This argon is monitored with the use of commercial gas analyzer.
 Argon is stored in a dewar external to LArIAT hall and filtered before filling the TPC. %The argon is delivered from the commercial dewar to the cryostat through 2.54~cm diameter schedule 10 stainless steel piping.  The piping was insulated with 20.32~cm of polyurethane foam by the manufacturer.  The piping was cleaned to remove oil and grease before being welded into the system. 
-LArIAT uses a filtration system designed for the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD}: half of a 77~liter filter contains a 4A molecular sieve (Sigma-Aldrich~\cite{sigma-aldrich}) apt to remove mainly water, while the other half contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, apt to remove mainly oxygen~\cite{basf}. A single pass of argon in the filter is sufficient to achieve the necessary purity, unless the filter is saturated. In case the filter saturates, the media needs to be regenerated by using heated gas; this happened twice during the Run II period. We deemed the filter regeneration necessary every time the electron lifetime dropped under 100 \textmu s.
+LArIAT uses a filtration system designed for the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD}: half of a 77~liter filter contains a 4A molecular sieve (Sigma-Aldrich~\cite{sigma-aldrich}) apt to remove mainly water, while the other half contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, apt to remove mainly oxygen~\cite{basf}. A single pass of argon in the filter is sufficient to achieve the necessary purity, unless the filter is saturated. In case the filter saturates, the media needs to be regenerated by using heated gas; this happened twice during the Run II period\footnote{We deemed the filter regeneration necessary every time the electron lifetime dropped under 100 \textmu s}.
 The filtered argon reaches the inner vessel via a liquid feedthrough on the top of the cryostat. Argon is not recirculated in the system, but it rather boils off and vent to the atmosphere. During data taking, we replenish the argon in the cryostat several times per day to keep the TPC high voltage feedthrough and cold electronics always submerged. In fact, we need to monitor the level, temperatures, and pressures  of the argon both in the commercial dewar and inside the cryostat. 
 
-
-
 \section{Trigger and DAQ}
+%The read-out of a LArIAT event is triggerred by a CAEN V1495 module.
+
+%The LArIAT data acquisition system is triggered to read out the digitizing buffers by a CAEN V1495 module. The V1495 is a powerful, easily configurable coincidence module featuring a user-programmable FPGA.  Sixteen logical inputs  are sampled on a 10~ns clock, checking for matches to any of the sixteen user-defined patterns in the trigger menu.  If a given trigger pattern is satisfied for two consecutive clock ticks, that pattern fires. 
+
+%Scope of the LArIAT DAQ and trigger system is to start the read out of the detector, to convert signals from analog to digital, to interface and synchronize with the accelerator system, to store raw data on disk, transfer data to archival storage and conduct a first pass data quality monitoring. 
+
+
+%A CAEN V1495 governs LArIAT DAQ system. 
+
+%The system is made by commercial VME electronics from CAEN, a VME time to digital converter for the beamline time of flight system, and a readout system for beamline wire chambers.
+
+
+%A CAEN V1495 board is used to perform the trigger of the whole detectors system. It is a VME board, which can be directly customized by the user through two programmable FPGA. For LArIAT experiment 16 trigger input signals are used, see Fig. 2.14. Through the FPGA configuration file  V1495.config  it is possible to define different trigger conditions - trigger output paths, with several logic combinations of the input signals.
+%The former trigger output path is the one that selects particles from the beam that cross the whole beamline and get to the TPC.
+%Moreover it's possible to add a delay to the trigger and to set some combinations of signals as a VETO.
+%Waveforms from beamline detectors and optical devices (PMTs and SiPMs) inside the cryostat are collected using two CAEN V1751 boards (For v1751 boards inputs, see Table 2.2.). They are both fed by the V1495 fast trigger. Each has a unit boardId and produces CAENFragment raw data objects.
+%The CAEN V1751 Waveform Digitizer [40] is VME module housing 8 Channel 10 bit 1 GS/s Waveform Digitizer with 1 Vpp input dynamic range; the range that has been set for our purposes is 204 mV, so 1 ADC count corresponds to 0.2 mV. The input channel provides a programmable voltage o set in the ± 0.5 V range too; we used this feature to adjust baseline o sets on our signals. The time window can also be adjusted by user maintaining the same sample %frequency (1 GS/s); we've started with a 7.168 ?s
+%time window, but after preliminary studies on the signals collected by PMTs and SiPMs we've moved to a 14.336 ?s window that could allow us to sample over all the slow LAr scintillation component (?S) signal tails, to study single photoelectron response of the optical devices.
+
+
+%The LArIAT data acquisition system is triggered to read out the digitizing buffers by a CAEN V1495 module. The V1495 is a powerful, easily configurable coincidence module featuring a user-programmable FPGA.  Sixteen logical inputs  are sampled on a 10~ns clock, checking for matches to any of the sixteen user-defined patterns in the trigger menu.  If a given trigger pattern is satisfied for two consecutive clock ticks, that pattern fires. 
+
+%NIM-standard logic pulse inputs to the trigger decision come from any of the instruments in the experiment, in principle; trigger inputs are derived from beam instruments, from the cosmic ray taggers, and from the cryostat's scintillation detectors. LArIAT takes full advantage of the trigger card's great flexibility.  As conditions change and innovations are gradually made to LArIAT's data-taking process, improvements are made to the trigger input designs and the combinations of inputs which define trigger patterns for the V1495.  The configuration of the trigger inputs is automatically logged in a database at the start of each run as part of the DAQ configuration, along with the rest of the XML configuration file for the V1495.
+
+%\subsubsection{Inputs to the Trigger System}
+
+%Two primary inputs to the trigger card are from the time of flight (see Sec.~\ref{sec:TOF}) and the wire chamber (see Sec.~\ref{sec:MWPC}) systems in the tertiary beamline.  Coincidence of activity in both of these systems strongly suggests that a charged particle has made the journey down the tertiary beam line from the copper target to the LArTPC in the cryostat, and that we will have a measure of its momentum and its velocity. PMT pulses from the time of flight system each pass through a linear fan-out, one output of which is threshold discriminated by a
+%discriminator to produce a NIM logic pulse for use in trigger logic.  On each of the upstream or downstream TOF paddles, we form a coincidence to within 20~ns of pulses from all the PMTs observing that same block of scintillator.  The upstream paddle coincidence signal is delayed 20~ns to allow any approximately lightspeed particles to travel 6.5~m to the downstream paddle.  The same upstream paddle coincidence signal is also widened to 100~ns to allow for slow-traveling (high-mass) particles.  Coincidences of these upstream and downstream TOF trigger input signals can be made in the V1495 trigger card.
+
+%Each wire chamber is read out by four multi-hit TDCs (time to digital converters), with sixty-four wires per TDC and two TDCs per plane (one horizontal and one vertical).  The TDCs each provide a logical ``fast'' OR of their inputs, indicating that one or more of their sixty-four wires went over the settable threshold.  Using NIM logic units, the OR of the horizontal wires and the OR of the vertical wires are input to a coincidence unit for each wire chamber, providing a single logical pulse for each of the four wire chambers, indicating that at least one horizontal wire and one vertical wire saw significant signal.  The single culminating logical pulses from each of the four wire chambers make up the first four inputs to the V1495 trigger card.  Within the user-programmable FPGA, the V1495 looks for the coincidence within 20~ns of at least three of these four specially-treated logical inputs.
+
+%Another primary input to the trigger card is from the cosmic towers (see Section~\ref{sec:CosmicRayPaddle}). To capture cosmic ray events in which a minimally ionizing cosmic ray muon crossed the TPC along the body diagonal, NIM modules form the logical coincidences from the two cosmic towers, one upper and one lower paddle assembly, in each combination.  The OR of these is provided as an input to the V1495. 
+
+%Three important logic pulses are derived from the timing of the beam.  These include a pulse in a brief window before the beam, a pulse indicating that the beam is on, and a pulse which defines the beam-free period which may be used for collecting cosmic-ray events.  An adjustable pulser is a fourth trigger input which does not depend on any particular activity in the experiment hall,  useful for collecting background events with zero bias. 
+
+%The PMTs observing liquid argon scintillation light (see Section \ref{sec:PhotonSystem}) produce pulses which form the foundation of several interesting trigger inputs.  Thresholding a copy of each PMT pulse (after amplification), and requiring a coincidence of pulses within $\sim$20~ns, creates simple trigger inputs indicating ionizing radiation was produced in the TPC.  This scintillation logic pulse is used to initiate a gate which spans the length of the TPC drift time, creating a logic signal which is remains ``on'' while significant drift charge may still be present in the TPC.  In addition, requiring a delayed coincidence of two subsequent scintillation logic pulses, separated by a variable length of time ranging from 300~ns to 7~$\mu$s, is used to create a trigger input to select events where a cosmic muon stops and decays to a Michel electron in the TPC.  A few different versions of this light-based trigger were implemented throughout the course of LArIAT's run time to allow reconstruction and calorimetric studies of Michel electrons. Figure~\ref{michel_logic} shows a schematic diagram of the logic comprising the Michel electron trigger. 
+
+%\begin{figure}
+%\includegraphics[width=\textwidth]{figures/trigger_michellogic.png}
+%\caption{\label{michel_logic}A schematic diagram of the trigger logic used to select Michel electron events during the cosmic readout window of the LArIAT supercycle.  The two PMT signals refer to the Hamamatsu (``HMM'') and ETL PMTs described in Section~\ref{sec:PhotonSystem}.  For some data-taking periods in Run-II, un-amplified pulses were discriminated at 180 mV to act as a veto on events that may saturate the dynamic range of the V1751 digitizer.  The discriminator thresholds used on the amplified (x10) PMT signal copies (\emph{ThA}, \emph{ThB}) as well as the Gate Delay period, were adjusted between run periods while experimenting with different configurations.}
+%\end{figure}
+
+%Further trigger inputs come from the beam line instrumentation behind the LArTPC cryostat, the PMTs of the Punch-Through scintillator paddles and those of the scintillator paddles instrumenting the Muon Range Stack.  The PMT pulses of all four of the broad-faced Punch Through paddles are discriminated to form logic pulses.  A single logic pulse is formed from these, indicating activity in at least two overlapping paddles at the rear of cryostat, before the steel block of the range stack.  PMT pulses from the Muon Range Stack are amplified and threshold discriminated.  These MuRS paddle pulses are then combined as in the Punch Through, creating single-bit indicators for each of the four instrumented layers that at least one pair of overlapping scintillator paddles sent signals within a 20~ns coincidence window.
+
+%\subsubsection{Trigger Decision and Issuance}
+
+%The V1495 may be configured to have up to sixteen trigger patterns and sixteen veto patterns, based on the trigger input signals.  A trigger pattern is defined as the AND of one or more defined inputs, and may include the NOT of the AND of further inputs.  Veto patterns are independently defined in the same way, but they have a very different effect.  When any of the trigger patterns fire, a ``fast trigger'' signal is issued and an adjustable countdown is initiated.  If the countdown completes without a veto pattern firing, the ``slow trigger'' signal is also issued and on a distinct hardware channel. Otherwise, if a veto pattern fires during the countdown, the slow trigger signal is vetoed.  
+
+%The fast trigger signal prompts readout of all the `short' data buffers, which include the V1751 modules, the V1495 itself, and the MWPC controller.  The V1751 buffers typically contain digitized PMT signals from the time of flight and cryogenic light collection detectors. Readout of the TPC wire signals, which are much longer and more numerous, is only prompted at the issuance of the slow trigger.
+
+
+
 \section{Control Systems}
+LArIAT is a complex ensemble of systems which needed to be monitored at once during data taking.  We performed the monitoring of the systems operations with a slow control system, a DAQ monitoring system and a low level data quality monitoring described in the following sections.
+
+\subsubsection{Slow Control}
+We used the Synoptic Java Web Start framework as a real-time display of subsystem conditions. Its simple 
+Graphical User Interface allowed us to change the operating parameters and to graph the trends of several variables of interest for all the tertiary beam detectors.  Among the most important quantities monitored by Synoptic there are the level of argon in both the inner vessel and the external dewar, the operating voltages of cathode and wire planes, of the PMTs and SiPMs, and of the four wire chambers, as well as the magnets temperature. Figure \ref{fig:synoptics} shows an example of the monitoring system.
+LArIAT uses the Accelerator Control NETwork system (ACNET) to monitor the beam conditions of the MCenter beamline. For example, the X and Y position of the beam at the first two wire chambers (WC1 and WC2) are shown in \ref{fig:ACNET}. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Chapter-2/Images/BeamOverview.png}
+\caption{Interface of the Synoptic slow control system}
+\label{fig:synoptics}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{Chapter-2/Images/BeamPosition.png}
+\caption{Beam position at the upstream wire chambers monitored with ACNET.}
+\label{fig:ACNET}
+\end{figure}
+
+\subsubsection{DAQ Monitoring}
+
+We monitor the data taking and the run time evolution with the Run Status Webpage (\href{http://lariat-wbm.fnal.gov/lariat/run.html}{http://lariat-wbm.fnal.gov/lariat/run.html}), a  webpage updated in real-time.  The page displays, among other information, the total number of triggers in the event per CAEN digitizer board, the total number of detectors triggered during a beam spill,  the trigger patterns (the number of times a particular trigger pattern was satisfied  during a beam spill) and current time relative to the Fermilab accelerator complex supercycle. A screen shot of the page is show in figure \ref{fig:runcond}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{Chapter-2/Images/RunConditions.png}
+\caption{Run Status page at LArIAT downtime. At the top the yellow bar displays the current position in the Fermilab supercycle. Interesting information to be monitored by the shifter were the run number and number of spills, time elapsed from data taking (here in red), the energy of the secondary beam and the trigger paths.}
+\label{fig:runcond}
+\end{figure}
+
+
+
+\subsubsection{Data Quality Monitoring}
+We employ two systems to ensure the quality of out data during data taking: the Near-real-time Data Quality Monitoring and the Event Viewer.
+
+\href{http://lariat-daq01.fnal.gov:5000/}{The Near-real-time Data Quality Monitoring} (DQM). This webpage receives updates from all the VME boards in the trigger system and displays the results of a quick analysis of the DAQ stream of raw data on a spill-by-spill basis. The DQM allows the shifter to monitor almost in real time (typically with a 2-minute delay)  a series of low level-quantities and compare them to past collections of beam spills. Some of the variables monitored in the DQM are  the pedestal mean and RMS on CAEN digitizer boards
+of the TPC wires and PMTs of the beamline detectors, the hit occupancy and timing plots on the multi-wire chambers, and number of data fragments recorded that are used to build a TPC event. Abnormal values for  low-level quantity in the data  activate a series of alarms in the DQM; this quick feedback on the DAQ and beam conditions is fundamental to assure a fast debugging of the detector and a very efficient data taking during beam uptime.
+
+The online Event Viewer displays a two dimensional representation of LArIAT TPC events on both the Induction and the Collection planes in near real time. The raw pulses collected by the DAQ on each wire are plotted as a function of drift time, resulting in an image of the TPC event easily readable by the shifter. This tool guarantees a particularly good  check of the TPC operation which activate an immediate feedback for troubleshooting a number of issues. For example,  it easy for the shifter to spot high occupancy events and request a reduction of the primary beam intensity, or to spot a decrease of the argon purity which requires the regeneration of filters, or to catch the presence of electronic noise and reboot the ASICs. An example of high occupancy event is shown in \ref{fig:highOcc}.
+
+\begin{figure}[htb]
+\centering
+%\includegraphics[scale=0.6]{Chapter-2/Images/RunConditions.png}
+\caption{High occupancy event display.}
+\label{fig:highOcc}
+\end{figure}
+
+
