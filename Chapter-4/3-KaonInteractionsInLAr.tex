@@ -132,4 +132,30 @@ Figure \ref{fig:TrueMCXS} shows the total hadronic cross section for argon imple
 %\end{comment}
 
 
+\subsection{Uncertainty budget}
+Measuring an hadronic cross section  in LArIAT translates into counting how many hadrons impinged on a slab of argon at a given energy and how many of those hadrons interacted at said energy. So, the key questions here are:
+\begin{itemize}
+\item[]a) how well do we know the kinetic energy at each point of the tracking? %(Incident Kinetic Energy bins)
+\item[]b) how well do we know when the tracking stops? %(Interacting Kinetic Energy bin)
+\item[]c) are there any systematic shifts?
+\end{itemize}
+
+In order to answer this question, will discuss first a simple scenario  were our beam is 100\% made of pions which arrive as primaries in the TPC (no decay in the beam and no inelastic interaction before the TPC front face). We will then add a layer of complexity by discussing how we handle beamline contamination.
+\subsubsection{Pure beam of pions}
+\subsubsection{Handling beamline contamination}
+What is the beamline contamination? We define beamline contamination every TPC track matched to the WC track which is not a primary pion. There are 4 different types of beamline contaminations:
+\begin{itemize}
+\item[]1) electrons,
+\item[]2) muons,
+\item[]3) secondary pions,
+\item[]4) matched pile up events.
+\end{itemize}
+So, how do we handle this contamination?
+The first step is understanding what percentage of events used in the data cross section calculation is not a primary pion. 
+
+The number of electrons and muons in the pion sample is estimated via the beamline MC. We simulate the beamline composition for each of the magnet settings present on data (-60A and -100A). 
+and we weight for the number of events which pass the mass cut in both the configurations. 
+For each beamline 
+
+We estimate the matched pile up events to be a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match\footnote{ Events with multiple matches are rejected.} with a pile up event in the absence of a real particle  within a four centimeter radius from the WC track projection extremely small.
 

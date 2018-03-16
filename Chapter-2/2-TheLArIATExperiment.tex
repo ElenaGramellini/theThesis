@@ -87,6 +87,23 @@ The maximum event rate acceptable by the chamber system is of 1 MHz: this rate i
 %It is possible to program the time window for acceptance for hits, time offsets, front end threshold, and pulse shaping parameters through the controller via a USB from a PC or through an Ethernet connection.
 
 \subsubsection{Multi-Wire Proportional Chambers functionality}\label{sec:MWPCfunc}
+We use the wire chamber system together with the bending magnets to measure the particles momentum.
+
+In the simplest scenario, only one hit on each and every of the four wire chambers is recorder during a single readout of the detector systems.  Thus, we use the hits position in the two wire chambers upstream to the magnets to form a trajectory before the bent and the hits position in the two wire chambers downstream to the magnets to form a trajectory after the bent. We use the angles in the XZ plane between the upstream and downstream trajectories  to calculate the z component of the momentum as follows:
+
+\begin{equation}
+P_z=\frac{B_{eff}L_{eff}}{3.3(sin(\theta_{DS})-sin(\theta_{US}))},
+\label{eq:momformula}
+\end{equation}
+
+where $B_{eff}$ is the effective maximum field in a square field approximation,  $L_{eff}$ is the effective length of both magnets (twice the effective length of one magnet) and  3.3~$c^{-1}$ the conversion factor from from T*m to MeV/c. By using the hit positions on WC3 and WC4, we estimate the azimutal and polar angles of the particle trajectory, and we are able to calculate the other components of the momentum.
+
+This simple scenario can get complicated in two ways:  the presence of multiple hits in a single wire chamber or by the absence of hits in one (or more) wire chamber. The first complication is due to beam pile up, while the latter is due to wire chamber inefficiency. Even in the case of multiple hits, at most one wire chamber track is reconstructed per event; since the magnets bend particles only in the X direction, we assume the particle trajectory to be roughly constant in the YZ plane, thus we keep the combination of hits most coplanar on YZ plane.  It is possible to reconstruct the particle momentum even in case of wire chamber inefficiency, if the information is missing in either of the two middle wire chambers (WC2 or WC3). %Assuming identical magnets, the upstream and downstream trajectories projected without bending should intersect at some point in the space between the magnets. Over a collection of many tracks, these points of intersection would trace a plane, therefore the term "midplane" is used. The completed half of the wire chamber track is projected to the midplane and the point of intersection is used with the incomplete half to finish the track. 
+
+\textcolor{red}{BETTER EXPLAINATION OF HIGH YIELD}
+\textcolor{red}{UNCERTAINTY ON MOMENTUM MEASUREMENT}
+Events satisfying the simplest scenario of one single hit in each of the four wire chambers form the so called ``Picky track" sample.  We construct an other, higher statistics sample where we loose the requirements on single hit and wire chamber efficiency called "High Yield". For LArIAT Run II, the "High Yield" sample is 
+\textcolor{red}{ HIGH YIELD increase in stat} the "Picky Tracks" sample. We use Picky tracks for calibration purposes: \textcolor{red}{ I DONT UNDERSTAND THIS Plotting the fractional error of the corrected three-point momentum compared to the known four-point momentum shows an uncertainty of approximately 2\%.}
 
 
 \subsection{Time-of-Flight System}\label{sec:TOF}
@@ -302,16 +319,13 @@ For Run II, we coated both  the windows of the ETL PMT and SensL SiPM  with a th
 
 
 \section{Trigger and DAQ}
-%The read-out of a LArIAT event is triggerred by a CAEN V1495 module.
-
-%The LArIAT data acquisition system is triggered to read out the digitizing buffers by a CAEN V1495 module. The V1495 is a powerful, easily configurable coincidence module featuring a user-programmable FPGA.  Sixteen logical inputs  are sampled on a 10~ns clock, checking for matches to any of the sixteen user-defined patterns in the trigger menu.  If a given trigger pattern is satisfied for two consecutive clock ticks, that pattern fires. 
-
-%Scope of the LArIAT DAQ and trigger system is to start the read out of the detector, to convert signals from analog to digital, to interface and synchronize with the accelerator system, to store raw data on disk, transfer data to archival storage and conduct a first pass data quality monitoring. 
+The LArIAT DAQ and trigger system governs the read out of all the many detectors forming LArIAT. 
+The CAEN V1495 module featuring a user-programmable FPGA  is the core of this system.  Every 10~ns, this module checks for matches between sixteen logical inputs and user-defined patterns in the trigger menu; if it finds a match for two consecutive clock ticks, that trigger fires.
 
 
-%A CAEN V1495 governs LArIAT DAQ system. 
+% converts signals from analog to digital, interfaces and synchronizes with the accelerator system, stores raw data on disk, transfers data to archival storage and conduct a first pass data quality monitoring. 
 
-%The system is made by commercial VME electronics from CAEN, a VME time to digital converter for the beamline time of flight system, and a readout system for beamline wire chambers.
+
 
 
 %A CAEN V1495 board is used to perform the trigger of the whole detectors system. It is a VME board, which can be directly customized by the user through two programmable FPGA. For LArIAT experiment 16 trigger input signals are used, see Fig. 2.14. Through the FPGA configuration file  V1495.config  it is possible to define different trigger conditions - trigger output paths, with several logic combinations of the input signals.
