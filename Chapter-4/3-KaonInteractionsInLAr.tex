@@ -153,9 +153,8 @@ What is the beamline contamination? We define beamline contamination every TPC t
 So, how do we handle this contamination?
 The first step is understanding what percentage of events used in the data cross section calculation is not a primary pion. 
 
-The number of electrons and muons in the pion sample is estimated via the beamline MC. We simulate the beamline composition for each of the magnet settings present on data (-60A and -100A). 
-and we weight for the number of events which pass the mass cut in both the configurations. 
-For each beamline 
+The number of electrons and muons in the pion sample is estimated via the beamline MC. We simulate the beamline composition for each of the magnet settings present on data (-60A and -100A). This composition is weighted according to the number of event in each magnet configuration after the mass cut in order to obtain the right electron to pion and muon to pion ratio of the whole sample. We simulate electron, muons and pions with the DDMC and we subject the three samples to the same selection chain (WC2TPC match, shower filter, pile up filter, etc...). The percentage of electrons and muons surviving the cut chain is the number of electrons and muons in the pion sample.
+The number of secondary 
 
 We estimate the matched pile up events to be a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match\footnote{ Events with multiple matches are rejected.} with a pile up event in the absence of a real particle  within a four centimeter radius from the WC track projection extremely small.
 
