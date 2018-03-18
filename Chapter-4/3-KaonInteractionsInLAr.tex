@@ -51,7 +51,7 @@ As described in section \ref{sec:experimentDescription}, LArIAT wire planes coun
 Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Eq.~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC-to-TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
 
 \begin{equation}
- E^{kin}_{Front Face}  = \sqrt{p^2_{Beam} - m^2_{Beam}} - E_{loss},
+ E^{kin}_{Front Face}  = \sqrt{p^2_{Beam} - m^2_{Beam}} - m_{Beam} - E_{loss},
 \label{eq:enFF}
 \end{equation}
 where $E_{loss}$ is a correction for the energy loss in the dead material between the beamline and the TPC front face (more on \ref{sec:Eloss}). The  energy of the hadron at the each slab is determined by subtracting the energy released by the particle in the previous slabs. For example, at the $j^{th}$ point of a track, the kinetic energy will be
@@ -141,7 +141,25 @@ Measuring an hadronic cross section  in LArIAT translates into counting how many
 \end{itemize}
 
 In order to answer this question, will discuss first a simple scenario  were our beam is 100\% made of pions which arrive as primaries in the TPC (no decay in the beam and no inelastic interaction before the TPC front face). We will then add a layer of complexity by discussing how we handle beamline contamination.
+
 \subsubsection{Pure beam of pions}
+Assuming a beam of pure pions gets to the TPC, let us explicit some of the variables in the kinetic energy equation \ref{eq:KEj}  to point out the important quantities in the error budget,
+
+\begin{align}
+ E_{j}^{kin} &=  E_{Beam}^{kin}  - E_{loss} - \sum_{i < j} \frac {dE_i}{dx_i}*dx_i\\
+                  &=  \sqrt{p^2_{Beam} - m^2_{Beam}} - m_{Beam} - E_{loss} - \sum_{i < j} \frac {dE_i}{dx_i}*dx_i.
+\end{align}
+
+Let us start by discussing the uncertainty on $E_{Beam}^{kin}$. Since we are assuming a beam of pions, the uncertainty on the value of mass of the pion ($m_{Beam}$) as given by the pdg is irrelevant compared to the momentum uncertainties, thus $\delta E_{Beam}^{kin} = \delta p_{Beam}^{kin}$. \textcolor{blue}{Ideas on how to estimate the momentum uncertainty. Base line:  4-points track. In case of 3-points track, add an additional 2\%. }
+
+
+KEWC = (pWC2 - m2)?   => ?m very small, ?KEWC = ?pWC
+ELOSS                        => ?ELOSS MC truth spread
+dE/dxi                  => ?dE/dxi MC Reco - Data comparison
+dxi                        => ?dxi      MC Reco - Data comparison
+?TOT, ?i<j                  => Efficiency correction
+
+
 \subsubsection{Handling beamline contamination}
 What is the beamline contamination? We define beamline contamination every TPC track matched to the WC track which is not a primary pion. There are 4 different types of beamline contaminations:
 \begin{itemize}
@@ -170,6 +188,7 @@ We estimate the last type of contamination, the ``matched pile up" events, to be
 
 Once we estimate the contaminants to primary pion ratio, the next step is subtracting their contribution from data for each type of contaminant independently. The contaminant samples are reconstructed and the corresponding interacting and incident histograms are produced. We then perform a bin by bin subtraction in the data interacting and incident histograms separately. A graphical rendering of this procedure is shown in Fig \ref{fig:backgroundSubtraction}
 Once the data is background subtracted, we apply the correction laid out in the previous section.
+\textcolor{blue}{How do we account for the error in the contamination subtraction? We change the electron/pion and muon/pion ratio and we see how much difference we get?}
 
 \begin{figure}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Chapter-4/Images/FakePlot.jpg}
