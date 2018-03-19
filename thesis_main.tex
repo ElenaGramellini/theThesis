@@ -33,6 +33,8 @@
 \bibliographystyle{plain}
 \usepackage{slashed}  
 
+\setcounter{chapter}{-1}
+
 \newenvironment{dedication}
   {%\clearpage           % we want a new page          %% I commented this
    \thispagestyle{empty}% no header and footer
@@ -88,17 +90,18 @@ A lot of people are awesome. But not you, who are reading my thesis before it's 
 %from the youngest to the oldest (again academically speaking). Supraja, Brooke, the depth of your knowledge, your drive and love for our field is a constant inspiration;  Ariana, thanks for keeping me sane for the last four year, love and hugs to you dudette; and last but not least Xiao, I don't think Fermilab has given me a bigger gift than your friendship. 
 % Starts proper arabic numbering of pages and chapters.
 \mainmatter
-
-\input{Chapter-0/0-Introduction}
-\input{Chapter-1/1-LArTPCs}
-\input{Chapter-2/2-TheLArIATExperiment}
-\input{Chapter-4/3-KaonInteractionsInLAr}
+\input{Chapters/0-Introduction}
+\input{Chapter-1/1-Theory}
+\input{Chapter-2/2-LArTPCs}
+\input{Chapter-3/3-TheLArIATExperiment}
+\input{Chapter-4/3-InteractionsInLAr}
 \input{Chapters/4-DataCollection}
 \input{Chapters/4-MonteCarlo}
 \input{Chapters/5-EnergyCalibration}
-\input{Chapter-6/6-TrackingOptimization}
-\input{Chapters/7-KaonCrossSectionAnalysis}
-\input{Chapter-8/8-Uncertainty}
+\input{Chapter-8/8-TrackingOptimization}
+\input{Chapter-7/7-BackgroundSub}
+\input{Chapters/8-CrossSectionAnalysis}
+\input{Chapter-9/9-Uncertainty}
 
 
 % Add additional \chapter{}s as necessary.
@@ -128,9 +131,9 @@ A lot of people are awesome. But not you, who are reading my thesis before it's 
 
 % Only call appendix once, here.
 \appendix
-\input{AppentixA-EField/A-LArIATEField}
-\input{Chapters/B-MicroBooNECRT}
-\input{Chapters/C-PionAna}
+\input{Chapters/A-KaonAna}
+\input{AppendixB-EField/B-LArIATEField}
+\input{Chapters/C-MicroBooNECRT}
 
 % Any chapters such as End Notes go after this.
 \backmatter
