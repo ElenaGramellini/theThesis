@@ -9,9 +9,48 @@ What is the beamline contamination? We define beamline contamination every TPC t
 \end{itemize}
 
 So, how do we handle this contamination?
-
 The first step is to estimate what percentage of events used in the cross section calculation is not a primary pion.  
-We estimate the percentage of electrons and muons in the beam via the beamline MC\footnote{Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
+
+\subsection{Electron and Muon contamination}
+We estimate the percentage of electrons and muons in the beam via the beamline MC. 
+Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-7/Images/Beam60A.png}
+\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-7/Images/Beam100A.png}
+\label{fig:BeamComposition}
+\caption{Beam composition for the -60A runs (left) and -100A runs (right). The solid blue plot represents the pion content, the yellow plot represents the muon content and the grey plot represents the electron content. The plots are area normalized to the number of data events, shown in red. }
+\end{figure}
+
+Table \ref{tab:beamline} shows the beam composition per magnet setting after the mass selection according to the G4simulation, 
+\begin{table}[]
+\centering
+\label{tab:beamline}
+\begin{tabular}{|l|c|c|}
+\hline
+                     & I = -60 A           & I = -100 A \\ \hline
+G4Pions       &   68.8 \%           &      87.4 \%        \\ \hline
+G4Muons     &     4.6 \%           &        3.7 \%         \\ \hline
+G4Electrons &   26.6 \%           &        8.9 \%        \\ \hline
+\end{tabular}
+\caption{Beamline composition per magnet settings}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\label{tab:databreakdown}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+                                                     & I = -60 A          & I = -100 A   & Total     &  w$_{60A}$ &  w$_{100A}$\\ \hline
+Data events after Mass Cut         &     70192          &  76056       & 146248 & 0.52 & 0.48\\ \hline
+Data events for Cross Section     &                         &                   &              & & \\ \hline
+\end{tabular}
+\caption{Data events per magnet settings}
+\end{table}
+
+
+
 We calculate the electron to pion and muon to pion ratio on the whole sample as the weighted sum of the corresponding ratio in the two current settings, 
 \begin{equation}
 \frac{N_e}{N_\pi}_{Data} = w_{60A}\frac{N_e}{N_\pi}_{60A}  + w_{100A}\frac{N_e}{N_\pi}_{100A},
@@ -19,8 +58,12 @@ We calculate the electron to pion and muon to pion ratio on the whole sample as 
 \begin{equation}
 \frac{N_\mu}{N_\pi}_{Data} = w_{60A}\frac{N_\mu}{N_\pi}_{60A}  + w_{100A}\frac{N_\mu}{N_\pi}_{100A},
 \end{equation}
-where the weights $w_{60A}$ and $w_{100A}$ are the percentage of events in the corresponding magnet configuration passing the mass selection in data. }.
+where the weights $w_{60A}$ and $w_{100A}$ are the percentage of events in the corresponding magnet configuration passing the mass selection in data, as shown in \ref{tab:databreakdown}.
+
+
 Once the beam composition is know,  we simulate the electrons, muons and pions with the DDMC and we subject the three samples to the same selection chain (WC2TPC match, shower filter, pile up filter, etc...). The percentage of electrons and muons surviving the selection chain is the  electron and muon contamination in the pion cross section sample.
+
+\subsection{Contamination from secondaries}
 The percentage of secondaries is given in the MC by the number of matched WC2TPC tracks which are not flagged as primary by Geant4.
 We estimate the last type of contamination, the ``matched pile up" events, to be a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} extremely small.
 

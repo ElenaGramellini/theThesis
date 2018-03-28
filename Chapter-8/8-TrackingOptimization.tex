@@ -79,3 +79,15 @@ For LArIAT cross section measurements, we generally prefer purity over efficienc
 \end{figure}
 
 \subsection{Porting optimization to data}
+
+\section{Tracking spatial and angular resolution}
+Scope of this study is understanding and comparing the tracking spatial and angular resolution on data and MC.
+We start by selecting all the WC2TPC matched tracks. 
+We fit a line on all the space points of the track and calculate the $\chi^2$. The $\chi^2$ distribution for data and MC is shown in Figure \ref{fig:Chi2AllPts}.
+
+For the spatial and angular resolution study, we reject tracks with less than 14 space points. For each track, we order the space points according to their Z position and we split them in two sets: the first set counts all the points belonging to the first half of the track and the second set counts all the points belonging to the second half of the track. We remove the last 5 points in the first set and the first 5 points in the second set, so to have a gap in the middle of the original track. We fit the first and the second set of points with a line separately. We reject the event entirely if the  $\chi^2$ for the fit of either of the halves is greater than four.  We define a track middle plane as the plane perpendicular to the original track fit, positioned in the middle of its length. We project the tracks on the middle plane and calculate the impact parameter, $d$, i.e. the distance between the projected points. We also calculate the angle between the original track direction and the fit of the first and second half, called $\alpha_1$ and $\alpha_2$ respectively. The spatial resolution of the track will be $\sigma_S = \frac{d}{\sqrt 2}$ while the angular resolution of the tracks will be  $\sigma_\alpha = \alpha_1 - \alpha_2$. The distributions for data and MC for $\sigma_\alpha$ and $\sigma_S$ are given in \ref{fig:trackingResolution}.
+
+
+
+
+
