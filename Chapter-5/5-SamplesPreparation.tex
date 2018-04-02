@@ -7,23 +7,14 @@
 
 
 \section{Energy Calibration}
-\section{Tracking Optimization}
-In this section, we describe two studies. The first is a description of the selection criteria for the beamline handshake with the TPC information.  We perform this study to maximize  the correct identification of the particles in the TPC associated with the beamline information, while maintaining sufficient statistics for the cross section measurement. 
-The second study is an optimization of the tracking algorithm, with the scope of maximizing the identification of the hadronic interaction point inside the TPC.
+\section{Tracking Studies}
+In this section, we describe three studies. The first is a justification of the selection criteria for the beamline handshake with the TPC information.  We perform this study to boost  the correct identification of the particles in the TPC associated with the beamline information, while maintaining sufficient statistics for the cross section measurement. 
+The second study is an optimization of the tracking algorithm, with the scope of maximizing the identification of the hadronic interaction point inside the TPC. These two studies are related, since the optimization of the tracking is performed on TPC tracks which have been matched to the wire chamber track; in turn, the tracking algorithm for TPC tracks determine the number of reconstructed tracks in each event used to try the matching with the wire chamber track. Starting with a sensible tracking reconstruction, we perform the WC2TPC matching optimization first, then the tracking optimization. The WC2TPC match purity and efficiency  are then calculated again with the optimized tracking.
 
 
 %\section{MC sample and WC2TPC match}
 We perform the following studies on a MC sample of 191000 kaons and 359000 pions produced with the DDMC technique. DDMC particles are shot from the WC4 location into the TPC following the beam profile.
-We mimic the matching between the WC and the TPC track on Monte Carlo by constructing a fake WC track using truth information at wire chamber four. We then apply the same WC to TPC matching algorithm as in data described in\ref{sec:WC2TPC}. 
-
-Plots I want in this section:
-\begin{enumerate}
-\item WC2TPC MC DeltaX, DeltaY and $\alpha$
-\item Delta L, reco - true
-\item Delta L, reco - true Elastic, Delta L, reco - true Inelastic, other
-\item Length Quality cut
-\item Efficiency as a function of true KE and Angle
-\end{enumerate}
+We mimic the matching between the WC and the TPC track on Monte Carlo by constructing a fake WC track using truth information at wire chamber four. We then apply the same WC to TPC matching algorithm as in data described in \ref{ch:WC2TPCMatchMethod}. 
 
 
 
@@ -34,7 +25,13 @@ Plots I want in this section:
 %In MC, we mimic the matching between the WC and the TPC track on Monte Carlo by constructing a fake WC track using truth information at wire chamber four. We then apply the same WC to TPC matching algorithm as in data. 
 
 \subsection{Selection Study for the Wire Chamber to TPC Match}\label{ch:WC2TPCMatchOptimization}
-Scope of this study is assessing the goodness of the wire chamber to TPC match on Monte Carlo and porting the optimized selections to data. A word of caution is necessary here. With this study, we want to minimize pathologies associated with the presence of the primary hadron itself, e.g. the incorrect association between the beamline kaon its decay products inside the TPC.  Assessing the contamination from pile-up\footnote{We remind the reader that the DDMC is a single particle Monte Carlo, where the beam pile up is not simulated.}, albeit related, is beyond the scope of this study.
+Plots I want in this section:
+\begin{enumerate}
+\item WC2TPC MC DeltaX, DeltaY and $\alpha$
+\end{enumerate}
+
+
+Scope of this study is assessing the goodness of the wire chamber to TPC match on Monte Carlo and decide the selection values we will use on data. A word of caution is necessary here. With this study, we want to minimize pathologies associated with the presence of the primary hadron itself, e.g. the incorrect association between the beamline hadron and its decay products inside the TPC.  Assessing the contamination from pile-up\footnote{We remind the reader that the DDMC is a single particle Monte Carlo, where the beam pile up is not simulated.}, albeit related, is beyond the scope of this study.
 
 In MC, we are able to define a correct WC2TPC match using the Geant4 truth information. We are thus able to count how many times the WC tracks is associated with the wrong TPC reconstructed track. 
 
@@ -47,21 +44,22 @@ We define a correct match if the all following conditions are met:
 \end{itemize}
 
 In order to count the wrong matches, we consider all the reconstructed tracks whose Z position of the first reconstructed point lies within 2 cm from the TPC front face. Events with true length in TPC $<$ 2 cm are included. 
-Since kaons are shot 100 cm upstream from the TPC front face, the following two scenarios are possible from a truth standpoint: 
+Since hadrons are shot 100 cm upstream from the TPC front face, the following two scenarios are possible from a truth standpoint: 
 \begin{itemize}
-\item[[$Ta$]] the primary kaon decays or interact strongly before getting to the TPC,
-\item[[$Tb$]] the primary kaon enters the TPC.
+\item[[$Ta$]] the primary hadron decays or interact strongly before getting to the TPC,
+\item[[$Tb$]] the primary hadron enters the TPC.
 \end{itemize}
 
-Once we choose the selection cuts to determine a reconstructed wire chamber-to-TPC match $r_{T}$ and $\alpha_{T}$, the following four scenarios are possible : 
+Once we choose the selection cuts to determine a reconstructed wire chamber-to-TPC match $r_{T}$ and $\alpha_{T}$, the following five scenarios are possible in the truth to reconstruction interplay : 
 \begin{itemize}
-\item[1)] no reconstructed tracks are matched
-\item[2)] the correct track and one (or more) wrong tracks are matched
-\item[3)] only the correct track is matched
-\item[4)] one (or more) wrong track is matched.
+\item[1)] only the correct track is matched
+\item[2)] only one wrong track is matched 
+\item[3)] the correct track and one (or more) wrong tracks are matched
+\item[4)] multiple wrong tracks  matched.
+\item[5)] no reconstructed tracks are matched
 \end{itemize}
 
-If we keep only events with one and only one match, we discard cases 1) and 2) from the cross section measurement. For each set of $r_{T}$ and $\alpha_{T}$ selection value, we define purity and efficiency of the selection as follows:
+Since we keep only events with one and only one match, we discard cases 3), 4) and 5) from the events used in the cross section measurement. For each set of $r_{T}$ and $\alpha_{T}$ selection value, we define purity and efficiency of the selection as follows:
 \begin{equation}
 \text{Efficiency} = \frac{\text{Number of events correctly matched}}{\text{ Number of events with primary in TPC}}
 \end{equation}
@@ -70,9 +68,11 @@ If we keep only events with one and only one match, we discard cases 1) and 2) f
 \text{Purity} = \frac{\text{Number of events correctly matched}}{\text{Total number of matched events}}.
 \end{equation}
 
-Figure \ref{fig:EffPurityK} shows the efficiency (left) and purity (right) for wire chamber-to-TPC match as a function of the radius, $r_{T}$, and angle, $\alpha_{T}$, selection value. It is apparent how both efficiency and purity are fairly flat as a function of the radius selection value at a given angle. This is not surprising, given the fact that the wrong matches can occur  in a single particle gun MC  only for mis-tracking of the primary or for association with decay products, which are generally different in angle, but might be more similar in $x$ and $y$ projection. The radius cut would play a key role in removing pile up events. 
+Figure \ref{fig:EffPurityK} shows the efficiency (left) and purity (right) for wire chamber-to-TPC match as a function of the radius, $r_{T}$, and angle, $\alpha_{T}$, selection value. It is apparent how both efficiency and purity are fairly flat as a function of the radius selection value at a given angle. This is not surprising. Since we are studying a single particle gun Monte Carlo sample, the wrong matches can occur only for mis-tracking of the primary or for association with decay products;  decay products will tend to be produced at large angles compared to the primary, but could be fairly close to the in $x$ and $y$ projection of the primary. The radius cut would play a key role in removing pile up events. 
 
-For LArIAT cross section measurements, we generally prefer purity over efficiency, since a sample of particle of a pure species will lead to a better measurement. In the case of kaons however, efficiency needs not to drop too low, given the smallness of the kaon sample. We choose $(\alpha_{T}$, $r_{T}) = (8 \text{ deg}, 4 \text{ cm} )$ and get a MC 85\% efficiency and 98\% purity.
+For LArIAT cross section measurements, we generally prefer purity over efficiency, since a sample of particles of a pure species will lead to a better measurement. Obviously, purity should be balanced with a sensible efficiency to avoid rejecting the whole sample. 
+
+We choose $(\alpha_{T}$, $r_{T}) = (8 \text{ deg}, 4 \text{ cm} )$ and get a MC 85\% efficiency and 98\% purity for the kaon sample and a MC \textcolor{red}{BOH}\% efficiency and 98\% purity for the \textcolor{red}{BOH} sample.
 
 
 \begin{figure}[hpbt]
@@ -83,6 +83,21 @@ For LArIAT cross section measurements, we generally prefer purity over efficienc
 \end{figure}
 
 \subsection{Interaction Point Optimization}\label{ch:TrackingOptimization}
+Scheme of this subsection
+\subsubsection{Brief Explanation of the reconstruction chain}
+\subsubsection{Explanation of clustering parameters}
+\subsubsection{Figure of merit and  spanning of cluster}
+\subsubsection{Important numbers out of this optimization}
+
+
+Plots I want in this section:
+\begin{enumerate}
+\item Delta L, reco - true
+\item Delta L, reco - true Elastic, Delta L, reco - true Inelastic, other
+\item Length Quality cut
+\item Efficiency as a function of true KE and Angle
+\end{enumerate}
+
 
 \subsection{Tracking spatial and angular resolution}
 Scope of this study is understanding and comparing the tracking spatial and angular resolution on data and MC.

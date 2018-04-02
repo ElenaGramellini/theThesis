@@ -1,19 +1,39 @@
 \begin{thebibliography}{1}
 
-\bibitem{Higgs19642}
-Peter~W. Higgs.
-\newblock Broken symmetries and the masses of gauge bosons.
-\newblock {\em Physical Review Letters}, 13(16):508--509, oct 1964.
+\bibitem{lightsys-pmttests}
+R.~Acciarri et~al.
+\newblock {Demonstration and Comparison of Operation of Photomultiplier Tubes
+  at Liquid Argon Temperature}.
+\newblock {\em JINST}, 7:P01016, 2012.
 
-\bibitem{Higgs1964}
-P.W. Higgs.
-\newblock Broken symmetries, massless particles and gauge fields.
-\newblock {\em Physics Letters}, 12(2):132--133, sep 1964.
+\bibitem{MinervaTestbeam}
+L.~Aliaga et~al.
+\newblock Minerva neutrino detector response measured with test beam data.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 789:28 --
+  42, 2015.
 
-\bibitem{ParticlePhysicsProjectPrioritizationPanel(P5):2014pwa}
-Steve Ritz et~al.
-\newblock {Building for Discovery: Strategic Plan for U.S. Particle Physics in
-  the Global Context}.
-\newblock 2014.
+\bibitem{Fenker}
+H~Fenker.
+\newblock Standard beam pwc for fermilab.
+\newblock Technical report, Fermi National Accelerator Lab., Batavia, IL (USA),
+  1983.
+
+\bibitem{GlassmanPS}
+Glassman High Voltage, Inc., Precision Regulated High Voltage DC Power Supply.
+
+\bibitem{Sten}
+S.~Hansen, D.~Jensen, G.~Savage, E.~Skup, and A.~Soha.
+\newblock Fermilab test beam multi-wire proportional chamber tracking system
+  upgrade.
+\newblock June 2014.
+\newblock International Conference on Technology and Instrumentation in
+  Particle Physics (TIPP 2014).
+
+\bibitem{ASDQchip}
+FM~Newcomer, S~Tedja, R~Van~Berg, J~Van~der Spiegel, and HH~Williams.
+\newblock A fast, low power, amplifier-shaper-discriminator for high rate straw
+  tracking systems.
+\newblock {\em IEEE Transactions on Nuclear Science}, 40(4):630--636, 1993.
 
 \end{thebibliography}
