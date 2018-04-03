@@ -2,65 +2,49 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis_main.aux
 The style file: plain.bst
-Illegal, another \bibstyle command---line 111 of file thesis_main.aux
- : \bibstyle
- :          {plain}
-I'm skipping whatever remains of this command
 Database file #1: bib.bib.bib
-You're missing a field name---line 231 of file bib.bib.bib
- : 
- : %      author         = "Dimopoulos, Savas and Raby, Stuart and Wilczek, Frank",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You're missing a field name---line 243 of file bib.bib.bib
- : 
- : %title = "Threshold corrections to dimension-six proton decay operators in non-minimal \{SUSY\} SU(5) \{GUTs\} ",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "argoneut"
-Warning--I didn't find a database entry for "LAPD"
-Warning--I didn't find a database entry for "sigma-aldrich"
-Warning--I didn't find a database entry for "basf"
+Warning--I didn't find a database entry for "WWW"
 Warning--empty booktitle in Sten
-You've used 6 entries,
+Warning--empty journal in P5
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            542 strings with 5138 characters,
-and the built_in function-call counts, 1741 in all, are:
-= -- 162
-> -- 84
+            580 strings with 5867 characters,
+and the built_in function-call counts, 3445 in all, are:
+= -- 327
+> -- 133
 < -- 0
-+ -- 35
-- -- 28
-* -- 117
-:= -- 300
-add.period$ -- 17
-call.type$ -- 6
-change.case$ -- 32
++ -- 57
+- -- 42
+* -- 224
+:= -- 570
+add.period$ -- 34
+call.type$ -- 13
+change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 61
-empty$ -- 143
-format.name$ -- 28
-if$ -- 355
+cite$ -- 15
+duplicate$ -- 129
+empty$ -- 311
+format.name$ -- 42
+if$ -- 716
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 4
-newline$ -- 32
-num.names$ -- 10
-pop$ -- 36
+int.to.str$ -- 13
+missing$ -- 9
+newline$ -- 63
+num.names$ -- 20
+pop$ -- 72
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 47
 quote$ -- 0
-skip$ -- 43
+skip$ -- 97
 stack$ -- 0
-substring$ -- 95
-swap$ -- 5
+substring$ -- 217
+swap$ -- 11
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 14
-width$ -- 7
-write$ -- 62
-(There were 3 error messages)
+type$ -- 52
+warning$ -- 2
+while$ -- 30
+width$ -- 15
+write$ -- 125
+(There were 3 warnings)

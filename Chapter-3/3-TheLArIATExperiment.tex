@@ -1,7 +1,7 @@
 % This chapter to do:
 % Re-write the red parts
 % write DAQ part
-% write collimators description
+% re-write captions
 % put references
 % re-read
 
@@ -19,7 +19,7 @@ The Fermilab accelerator complex works in supercycles of roughly 60 seconds in d
 LArIAT's home at Fermilab is the Fermilab Test Beam Facility (FTBF), where the experiment characterizes a beam of charge particles downstream from the Meson Center beam line. 
 Here, the primary beam is focused onto a tungsten target to create LArIAT's secondary beam. The composition of the secondary particle beam is mainly positive pions. The momentum peak of the secondary beam was fixed at 64~GeV/c for the LArIAT data considered in this work, although the beam is tunable in momentum between 8-80\,GeV/c; this configuration of the secondary beamline assured a stable beam delivery at the LArIAT experimental hall.
  
-The secondary beam impinges then on a copper target within a steel collimator inside the LArIAT experimental hall (MC7) to create the LArIAT tertiary beam, (shown in  Fig.~\ref{fig:tert-layout}).   The steel collimator selects particles produced with a $13^\circ$ production angle at the target down the beamline.  The particles are then bent by  $~10^\circ$  through a pair of dipole magnets.  By configuring the field intensity of the magnets we allow the particles of LArIAT's tertiary beam to span a momentum range from 0.2 to 1.4~GeV/c. The polarity of the magnet is also configurable and determines the sign of the beamline particles which are focused on the LArTPC. If the magnets polarity is positive the tertiary beam composition counts mostly pions and protons with a small fraction of electrons, muons, and kaons. It is the job of the LArIAT beamline detectors to select the particles polarity,  to perform particle identification (beamPID) and to measure the momentum of the tertiary beam particles before they get to the LArTPC. The LArIAT detectors are described in the following paragraphs.  
+The secondary beam impinges then on a copper target within a steel collimator inside the LArIAT experimental hall (MC7) to create the LArIAT tertiary beam, (shown in  Fig.~\ref{fig:tert-layout}).   The steel collimator selects particles produced with a $13^\circ$ production angle at the target down the beamline.  The particles are then bent by  $~10^\circ$  through a pair of dipole magnets.  By configuring the field intensity of the magnets we allow the particles of LArIAT's tertiary beam to span a momentum range from 0.2 to 1.4~GeV/c. The polarity of the magnet is also configurable and determines the sign of the beamline particles which are focused on the LArTPC. If the magnets polarity is positive the tertiary beam composition counts mostly pions and protons with a small fraction of electrons, muons, and kaons. It is the job of the LArIAT beamline detectors to select the particles polarity,  to perform particle identification in the beamline and to measure the momentum of the tertiary beam particles before they get to the LArTPC. The LArIAT detectors are described in the following paragraphs.  
 
 
 
@@ -63,7 +63,7 @@ We describe here the characteristics and response of one magnet, as the second o
 \vspace{-0.3cm}
 \includegraphics[height=3.0in]{Chapter-3/Images/ExcitationCurves.png}
 \caption{
-{ Magnetic field over current as a function of the current, for one NDB magnet (excitation curve). The data was collected using two Hall probes (blue and green). We fit the readings with a cubic function (black) to average of measurements (red) given in the legend.}
+{ Magnetic field over current as a function of the current, for one NDB magnet (excitation curve). The data was collected using two hall probes (blue and green). We fit the readings with a cubic function (black) to average of measurements (red) given in the legend.}
 }
 \label{fig:magnet_excitation}
 \end{centering}
@@ -79,7 +79,7 @@ Albeit advantageous to enrich the tertiary beam composition with high mass parti
 \vspace{-0.3cm}
 \includegraphics[height=2.3in]{Chapter-3/Images/WireChamber.png}
 \caption{
-{One of the four Multi Wire Proportional Chambers (WC) used in the LArIAT tertiary beamline.}
+{One of the four Multi Wire Proportional Chambers (WC) used in the LArIAT tertiary beamline and relative read-out electronics.}
 }
 \label{fig:wirechamber}
 \end{centering}
@@ -120,19 +120,6 @@ Two scintillator paddles, one upstream to the first set of WCs and one downstrea
 The upstream paddle is made of a 10 x 6 x 1~cm scintillator piece, read out by two PMTs mounted on the beam left side which collect the light from light guides mounted on all four edges of the scintillator. The downstream paddle is a   14 x 14 x 1~cm scintillator piece read out by two PMTs on the opposite ends of the scintillator.
 The relatively thin width on the beamline direction minimizes energy loss of the particles coming from the target in the scintillator material.
 
-%\begin{figure}[!h]
-%\begin{centering}
-%\vspace{-0.3cm}
-%\includegraphics[height=2.3in]{Chapter-3/Images/tofdelay.png}
-%\caption{
-%{\scriptsize \sf Pictures of the TOF system as was deployed during Run-I and Run-II data taking. The left image is of the upstream TOF paddle and the right image is of the downstream TOF paddle }
-%}
-%\label{fig:TOFSystemRunIandII}
-%\end{centering}
-%\end{figure}
-
-
-
 The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling rate of 1 GHz. The 12 bit samples are stored in a circular memory buffer. At trigger time, data from the TOF PMTs are recorded to output in a 28.7 \textmu s windows starting  approximately 8.4 \textmu s before the trigger time. 
 
 
@@ -140,12 +127,20 @@ The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling r
 \subsubsection{TOF functionality}\label{sec:MWPCfunc}
 
 
-The TOF signals rise time (10-90\%) is 4 ns and a full width, half-maximum of 9 ns consistent in time. The signal amplitudes from the upstream TOF and  downstream TOF are slightly different:  200 mV for the upstream PMTs but only 50 mV for downstream PMTs. The time of the pulses was calculated utilizing an oversampled template derived from the data itself. We take the pulse pedestal from samples far from the pulse and subtract it to the pulse amplitude. We then stretch vertically a template to match the pedestal-subtracted pulse amplitude and we move it horizontally to find the time. With this technique, we find a pulse time-pickoff resolution better than 100 ps.  The pulse pile up is not a significant problem given the TOF timing resolution and the rate of the particle beam.  Leveraging on the pulses width uniformity of any given PMT (sigma of 400 ps),  we flag events where two pulses overlap as closely in time as 4 ns with an 90\% efficiency according to simulation. 
+The TOF signals rise time (10-90\%) is 4 ns and a full width, half-maximum of 9 ns consistent in time. The signal amplitudes from the upstream TOF and  downstream TOF are slightly different:  200 mV for the upstream PMTs but only 50 mV for downstream PMTs. The time of the pulses was calculated utilizing an oversampled template derived from the data itself. We take the pulse pedestal from samples far from the pulse and subtract it to the pulse amplitude. We then stretch vertically a template to match the pedestal-subtracted pulse amplitude and we move it horizontally to find the time. With this technique, we find a pulse time-pickoff resolution better than 100 ps.  The pulse pile up is not a significant problem given the TOF timing resolution and the rate of the particle beam.  Leveraging on the pulses width uniformity of any given PMT,  we flag events where two pulses overlap as closely in time as 4 ns with an 90\% efficiency according to simulation. 
 
 
 We combine the pulses from the two PMTs on each paddle to determine the particles' arrival time by averaging the time measured from the single PMT, so to minimize errors due to optical path differences in the scintillator.  However, a time spread of approximately 300~ps is present in both the upstream and downstream detectors, likely due to transit time jitter in the PMTs themselves.  There is no evidence of systematic timing drift over long data-taking periods such as 3-4 months: the maximum variation of the average time differences between pairs of PMTs reading out the same scintillator is of the order of 150~ps.
 
-\textcolor{red}{calculated TOF with error}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{Chapter-3/Images/DSTOF.jpg}
+\caption{Image of the down stream time of flight paddle, PMTs and relative support structure before mounting. } 
+\label{pic:cosmicpaddle}
+\end{figure}
+
+
+%\textcolor{red}{calculated TOF with error}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,24 +149,24 @@ We combine the pulses from the two PMTs on each paddle to determine the particle
 
 The punch-thorough and the muon range stack (MuRS) detectors are located downstream of the TPC. These detectors provide a sample of  TPC crossing tracks without relying on TPC information and can be used to improve particle ID for  muons and pions with momentum higher than  450 MeV/c.
 
-The punch-thorough is simply a \textcolor{red}{? x ? x ?}~cm scintillator piece, read out by \textcolor{red}{ two? Hamamatsu? 2? inch} PMTs. 
-The MuRS is a segmented block of steel with four slots instrumented with scintillation bars. The four steel layers in front of each instrumented slot are 2 cm, 2 cm, 14 cm and 16 cm wide in the beam direction. Each instrumented slot is equipped with four scintillation bars each, positioned vertically in the direction orthogonal to the beam. Each scintillator bar measures  \textcolor{red}{? x ? x 2}~cm and it is read out by  \textcolor{red}{ two? Hamamatsu? 2? inch} PMTs.  
+The punch-thorough is simple sheet of scintillator material, read out by two PMTs. 
+The MuRS is a segmented block of steel with four slots instrumented with scintillation bars. The four steel layers in front of each instrumented slot are 2 cm, 2 cm, 14 cm and 16 cm wide in the beam direction. Each instrumented slot is equipped with four scintillation bars each, positioned horizontally in the direction orthogonal to the beam. Each scintillator bar measures  \textcolor{red}{? x ? x 2}~cm and it is read out by one PMT.  
 
 The signals from both the punch-thorough and the MuRS PMTs are digitized in the CAEN V1740, same as the TPC; the details of this discriminator are laid out in~\ref{sec:TPCCharge}. It is worth noticing that the sampling time of the CAEN V1740 is slow (of the order of 128 ns), so pulse shape information from the PMT is lost.
-Punch-thorough and MuRS hits are formed utilizing the OR between the PMTs digital discriminator signals under threshold at a given time, where we obtain the threshold for each PMT directly on data distributions.
+Punch-thorough and MuRS hits are formed utilizing the digital discriminator signals under threshold at a given time, where we obtain the threshold for each PMT directly on data distributions.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{LArIAT Cosmic Ray Paddle Detectors}\label{sec:CosmicRayPaddle}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Besides on beam data, LArIAT also triggers on cosmic rays events by using two sets of cosmic ray paddle detectors (a.k.a. ``cosmic towers".) The cosmic towers frame the LArIAT cryostat, as one sits in the downstream left corner and the other sits in the upstream right corner of the cryostat. Two paddle sets of four scintillators pieces each, an upper and a lower set, make up each cosmic tower. 
-Of the four paddles, a couple of two matched paddles stands upright while the a second matched pair lies across the top of the assembly in the top sets (or across the bottom of the assembly in the bottom sets). The horizontal couple is used as a veto for particles traveling from the TPC out.  The four signals  from the vertical paddles along one of the body diagonals of the TPC are combined in a logical ``AND''. This allows to select cosmic muons crossing the TPC along one of its diagonals.  Cosmic ray tracks crossing both anode and cathode populate the events triggered this way. This particularly useful sample of tracks (which we can safely assume to be associated with ~5 GeV muons MIPs) can be used for many tasks; for example, we use anode-cathode piercing tracks to cross check the TPC electric field on data (see \ref{ch:AppendixC}), to calibrate the charge response of the TPC wires for the full TPC volume and to measure the electron lifetime in the chamber \textcolor{red}{ ADD reference to different chapters}.
+LArIAT triggers both on beam events and on cosmic rays events. We perform this latter trigger by using two sets of cosmic ray paddle detectors (a.k.a. ``cosmic towers".) The cosmic towers frame the LArIAT cryostat, as one sits in the downstream left corner and the other sits in the upstream right corner of the cryostat. Two paddle sets of four scintillators pieces each make up each cosmic tower, an upper set and a lower set per tower. 
+Of the four paddles, a couple of two matched paddles stands upright while the a second matched pair lies across the top of the assembly in the top sets (or across the bottom of the assembly in the bottom sets). The horizontal couple is used as a veto for particles traveling from inside the TPC out.  The four signals  from the vertical paddles along one of the body diagonals of the TPC are combined in a logical ``AND''. This allows to select cosmic muons crossing the TPC along one of its diagonals.  Cosmic ray tracks crossing both anode and cathode populate the events triggered this way. This particularly useful sample of tracks (which we can safely assume to be associated with ~5 GeV muons) can be used for many tasks; for example, we use anode-cathode piercing tracks to cross check the TPC electric field on data (see Appendix \ref{ch:AppendixB}), to calibrate the charge response of the TPC wires for the full TPC volume and to measure the electron lifetime in the chamber (see section \ref{ch:EnCalibration})\textcolor{red}{ ADD pictures}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-All the paddles are $3.02~cm$ thick and are  trapezoidal in shape. The paddles come in two sizes: the smaller version has bases $32.2~cm$ and $26.7~cm$, and $61.0~cm$ height, while the bigger version has bases $33.2~cm$ and $27.0~cm$, and $70.8~cm$ height.  A Zener-diode Hamamatsu H5783 PMT collects the light from a wavelength-shifting optical fiber which runs along one of the long sides of each paddle.
-A custom-made PMT Amplifier and Discrimination (PAD) circuit mounted at one end of the paddle collects signals from the PMTs and sends them to the Control and Concentrator Unit (CCU). We use the same connection to  power the PMT, control voltage and threshold, and output the PMT signal as logic ECL pulse.
-We retrieved the scintillation paddles from the decommissioning of the CDF detector at Fermilab and we used only the paddles with a counting efficiency greater than 95\% and low noise at working voltage. The measured trigger rate of the whole system is $0.032Hz$, corresponding to $\sim 2$ muons per minute.
+%All the paddles are 3.02~cm thick and are  trapezoidal in shape. The paddles come in two sizes: the smaller version has bases 32.2~cm and 26.7~cm, and 61.0~cm height, while the bigger version has bases 33.2~cm and 27.0~cm, and $70.8~cm$ height. 
+ A Zener-diode Hamamatsu H5783 PMT collects the light from a wavelength-shifting optical fiber which runs along one of the long sides of each paddle. A custom-made PMT Amplifier and Discrimination (PAD) circuit mounted at one end of the paddle collects signals from the PMTs and sends them to the Control and Concentrator Unit (CCU). We use the same connection to  power the PMT, control voltage and threshold, and output the PMT signal as logic ECL pulse.
+We retrieved the scintillation paddles from the decommissioning of the CDF detector at Fermilab and we used only the paddles with a counting efficiency greater than 95\% and low noise at working voltage. The measured trigger rate of the whole system is 0.032~Hz, corresponding to $\sim 2$ muons per minute.
 
 
 \begin{figure}[h!]
@@ -187,17 +182,17 @@ We retrieved the scintillation paddles from the decommissioning of the CDF detec
 
 \section{In the Cryostat}
 \subsection{Cryogenics and Argon Purity}\label{ch:Cryo}
-LArIAT repurposed the ArgoNeuT cryostat \cite{argoneut} in order to use it in a beam of charge particles. We also added a new process piping and a new liquid argon filtration system in FTBF.
+LArIAT repurposed the ArgoNeuT cryostat \cite{ArgoNeuT-det} in order to use it in a beam of charge particles, and added a new process piping and a new liquid argon filtration system in FTBF.  %The main modifications to the ArgoNeuT cryostat are the addition of a beam flange and a port for the light collection system, 
 Inside the LArIAT experimental hall, the cryostat sits on the beam of charge particles with its horizontal main axis oriented parallel to the beam.
 
-Two volumes make up LArIAT cryostat, shown in Figure \ref{fig:LArIATCryoStat}: purified liquid argon fills the inner vessel, while the outer volume insulates it with a vacuum jacket equipped with layers of aluminized mylar superinsulation. The inner vessel is a cylinder of 130~cm length and 6.2~cm diameter, containing about 550~L of LAr, corresponding to a mass of 0.76 ton. We run the signal cables for the LArTPC and the high voltage feedthrough through a ``chimney'' at the top and mid-length of the cryostat.
+Two volumes make up LArIAT cryostat, shown in Figure \ref{fig:LArIATCryoStat}:  the inner vessel and the outer vessel. Purified liquid argon fills the inner vessel, while the outer volume provides insulation through a vacuum jacket equipped with layers of aluminized mylar superinsulation. The inner vessel is a cylinder of 130~cm length and 6.2~cm diameter, containing about 550~L of LAr, corresponding to a mass of 0.76 ton. We run the signal cables for the LArTPC and the high voltage feedthrough through a ``chimney'' at the top and mid-length of the cryostat.
 
 
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.18]{Chapter-3/Images/Cryostat1.jpg}
 \includegraphics[scale=0.07]{Chapter-3/Images/Cryostat2.jpg}
-\caption{\emph{(left)} The LArIAT cryostat open with the TPC placed in the inner volume. \emph{(right)} The LArIAT cryostat fully sealed during initial commissioning prior to installation at Fermilab Testbeam Facility.Access to the internal volume is possible by opening the upstream end caps of the inner and outer vessels. }
+\caption{ Left: the LArIAT TPC in the inner volume of the open cryostat. Right: cryostat fully sealed ready to be transported to FTBF. }
 \label{fig:LArIATCryoStat}
 \end{figure}
 
@@ -208,7 +203,7 @@ We added a ``beam window'' on the front outer end cap and an ``excluder'' on the
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.35]{Chapter-3/Images/CryoMods.png}
-\caption{Pictures of the modified components of the cryostat. $1)$ The addition of an outlet to the bottom of the cryostat to allow connections to the purification system; $2)$ The ``beam-window'' on the outer endcap and the concave inner surface of the inner endcap (referred to as the excluder) to reduce the amount of material through which beam particles must travel before entering the TPC; $3)$ The modified side port for the LArIAT light collection system.}
+\caption{Main modifications to the ArgoNeuT cryostat: $1)$ outlet for connection to the purification system at the bottom of the cryostat; $2)$ the ``beam-window'' on the outer endcap and ``excluder"  which reduce the amount of non-instrumented material before the TPC; $3)$ the side port to host  the  light collection system.}
 \label{fig:LArIATCryoMods}
 \end{figure}
 
@@ -216,8 +211,8 @@ We added a ``beam window'' on the front outer end cap and an ``excluder'' on the
 As in any other LArTPC, argon purity is a crucial parameter for LArIAT. Indeed, the presence of contaminants effects both the basic working principles of a LArTPC: electronegative contaminants such as oxygen and water decrease the number of ionization electrons collected on the wires after drifting through the volume, while contaminants such as Nitrogen decrease the light yield from scintillation light, especially in its slow component.
 In LArIAT, contaminations should not exceed the level of 100 parts per trillion (ppt). We achieve this level of purity in several stages. The specifics required for the commercial argon bought for LArIAT are 2 parts per million (ppm) oxygen, 3.5~ppm water, and 10~ppm nitrogen. This argon is monitored with the use of commercial gas analyzer.
 Argon is stored in a dewar external to LArIAT hall and filtered before filling the TPC. %The argon is delivered from the commercial dewar to the cryostat through 2.54~cm diameter schedule 10 stainless steel piping.  The piping was insulated with 20.32~cm of polyurethane foam by the manufacturer.  The piping was cleaned to remove oil and grease before being welded into the system. 
-LArIAT uses a filtration system designed for the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD}: half of a 77~liter filter contains a 4A molecular sieve (Sigma-Aldrich~\cite{sigma-aldrich}) apt to remove mainly water, while the other half contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, apt to remove mainly oxygen~\cite{basf}. A single pass of argon in the filter is sufficient to achieve the necessary purity, unless the filter is saturated. In case the filter saturates, the media needs to be regenerated by using heated gas; this happened twice during the Run II period\footnote{We deemed the filter regeneration necessary every time the electron lifetime dropped under 100 \textmu s}.
-The filtered argon reaches the inner vessel via a liquid feedthrough on the top of the cryostat. Argon is not recirculated in the system, but it rather boils off and vent to the atmosphere. During data taking, we replenish the argon in the cryostat several times per day to keep the TPC high voltage feedthrough and cold electronics always submerged. In fact, we need to monitor the level, temperatures, and pressures  of the argon both in the commercial dewar and inside the cryostat. 
+LArIAT uses a filtration system designed for the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD}: half of a 77~liter filter contains a 4A molecular sieve (Sigma-Aldrich~\cite{sigma-aldrich}) apt to remove mainly water, while the other half contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, apt to remove mainly oxygen~\cite{basf}. A single pass of argon in the filter is sufficient to achieve the necessary purity, unless the filter is saturated. In case the filter saturates, the media needs to be regenerated by using heated gas; this happened twice during the Run II period\footnote{We deemed the filter regeneration necessary every time the electron lifetime dropped under 100 \textmu s.}.
+The filtered argon reaches the inner vessel via a liquid feedthrough on the top of the cryostat. Argon is not recirculated in the system, rather it boils off and vent to the atmosphere. During data taking, we replenish the argon in the cryostat several times per day to keep the TPC high voltage feedthrough and cold electronics always submerged. In fact, we constantly monitor the level, temperature, and pressure of the argon both in the commercial dewar and inside the cryostat during data taking. 
 \subsection{LArTPC: Charge Collection}\label{sec:TPCCharge}
 The LArIAT Liquid Argon Time Projection Chamber is a rectangular box of dimensions 47 cm (width) x 40 cm (height) x 90 cm (length), containing 170 liters of Liquid Argon.
 The LArTPC three major subcomponents are 
@@ -230,7 +225,7 @@ The LArTPC three major subcomponents are
 
 
 \subsubsection{Cathode and field cage}
-A G10 plain sheet with copper metallization on one of the 40x90~cm inner surfaces forms the cathode. 
+A G10 plain sheet with copper metallization on one of the 40 x 90~cm inner surfaces forms the cathode. 
 A high-voltage feedthrough on the top of the LArIAT cryostat delivers the high voltage to the cathode; scope of the high voltage system (Figure~\ref{fig:HVScheme}) is to drift ionization electrons from the interaction of charged particles in the liquid argon to the wire planes.  The power supply used in this system is a Glassman LX125N16 ~\cite{GlassmanPS} capable of generating up to -125~kV and 16~mA of current, but operated at -23.5kV during LArIAT Run-II. The power supply is connected via high voltage cables to a series of filter pots before finally reaching the cathode. 
 
 \begin{figure}[htb]
@@ -242,15 +237,15 @@ A high-voltage feedthrough on the top of the LArIAT cryostat delivers the high v
 
 
 
-The field cage is made of \textcolor{red}{13 parallel copper rings} framing the inner walls of the G10 TPC structure. A network of voltage-dividing resistors connected to the field cage rings steps down the high voltage from the cathode to form a uniform electric field. The electric field over the entire TPC drift volume is  486 V/cm (see \ref{ch:AppendixA}). The  maximum drift length, i.e. the distance between cathode and anode planes, is 47 cm.
+The field cage is made of twenty-three parallel copper rings framing the inner walls of the G10 TPC structure. A network of voltage-dividing resistors connected to the field cage rings steps down the high voltage from the cathode to form a uniform electric field. The electric field over the entire TPC drift volume is  486 V/cm (see \ref{ch:AppendixB}). The  maximum drift length, i.e. the distance between cathode and anode planes, is 47 cm.
 
 \subsubsection{Wire planes}
 The wire planes measure the charge deposited in the TPC active volume. The drifting charge induces a current on the wire of the inner planes and it is collected on the collection plane wires.
-LArIAT counts three wire planes separated by 4 mm spaces: in order of distance from the cathode, they are the shield, the induction and the collection plane. The distance between two consecutive wires in each given plane (aka wire pitch) is 4 mm.  The shield plane counts 225 parallel wires of equal length oriented vertically. This plane is not connected with the read-out electronics; rather it shields the outer planes from extremely long induction signals due to the ionization chamber in the whole drift volume. As the shield plane acts almost like a Faraday cage, the shape of signals in the first instrumented plane (induction)  results easier to reconstruct.  Both the induction and collection planes count 240 parallel wires of different length oriented at 60$^\circ$ from the vertical with opposite signs.
-Moving electrons moving past the induction plane will induce a bipolar pulse on its wires and will form a unipolar pulse when collected on the last plane wires. 
+LArIAT counts three wire planes separated by 4 mm spaces: in order of increasing distance from the cathode, they are the shield, the induction and the collection plane. The ``wire pitch", i.e., the distance between two consecutive wires in a given plane, is 4 mm.  The shield plane counts 225 parallel wires of equal length oriented vertically. This plane is not connected with the read-out electronics; rather it shields the outer planes from extremely long induction signals due to the ionization chamber in the whole drift volume. As the shield plane acts almost like a Faraday cage, the shape of signals in the first instrumented plane (induction)  results easier to reconstruct.  Both the induction and collection planes count 240 parallel wires of different length oriented at 60$^\circ$ from the vertical with opposite signs.
+Electrons moving past the induction plane will induce a bipolar pulse on its wires and will form a unipolar pulse when collected on the wires of the collection plane. 
 
 The three wire planes and the cathode form three drift volumes, as shown in Figure \ref{fig:driftregions}. 
-The main drift volume is defined as the region between the cathode plane and the shield plane (C-S). The other two drift regions are those between the shield plane and the induction plane (S-I), and between the induction plane and the collection plane (I-C). The electric field in these regions is chosen to satisfy the charge transparency condition to allow for 100$\%$ transmission of the drifting electrons through the shield and then the induction planes. 
+The main drift volume is defined as the region between the cathode plane and the shield plane (C-S). The other two drift regions are those between the shield plane and the induction plane (S-I), and between the induction plane and the collection plane (I-C). The electric field in these regions is chosen to satisfy the charge transparency condition and allow for 100$\%$ transmission of the drifting electrons through the shield and the induction planes. 
 
 \begin{figure}[htb]
 \centering

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{lightsys-pmttests}
 R.~Acciarri et~al.
@@ -6,12 +6,25 @@ R.~Acciarri et~al.
   at Liquid Argon Temperature}.
 \newblock {\em JINST}, 7:P01016, 2012.
 
+\bibitem{ArgoNeuT-det}
+C.~Anderson et~al.
+\newblock {The ArgoNeuT Detector in the NuMI Low-Energy beam line at Fermilab}.
+\newblock {\em JINST}, 7:P10019, 2012.
+
+\bibitem{basf}
+BASF Corp. 100 Park Avenue, Florham Park, NJ 07932 USA.
+
 \bibitem{MinervaTestbeam}
 L.~Aliaga et~al.
 \newblock Minerva neutrino detector response measured with test beam data.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 789:28 --
   42, 2015.
+
+\bibitem{LAPD}
+M~Adamowski et~al.
+\newblock The liquid argon purity demonstrator.
+\newblock {\em Journal of Instrumentation}, 9(07):P07005, 2014.
 
 \bibitem{Fenker}
 H~Fenker.
@@ -30,10 +43,29 @@ S.~Hansen, D.~Jensen, G.~Savage, E.~Skup, and A.~Soha.
 \newblock International Conference on Technology and Instrumentation in
   Particle Physics (TIPP 2014).
 
+\bibitem{Higgs19642}
+Peter~W. Higgs.
+\newblock Broken symmetries and the masses of gauge bosons.
+\newblock {\em Physical Review Letters}, 13(16):508--509, oct 1964.
+
+\bibitem{Higgs1964}
+P.W. Higgs.
+\newblock Broken symmetries, massless particles and gauge fields.
+\newblock {\em Physics Letters}, 12(2):132--133, sep 1964.
+
 \bibitem{ASDQchip}
 FM~Newcomer, S~Tedja, R~Van~Berg, J~Van~der Spiegel, and HH~Williams.
 \newblock A fast, low power, amplifier-shaper-discriminator for high rate straw
   tracking systems.
 \newblock {\em IEEE Transactions on Nuclear Science}, 40(4):630--636, 1993.
+
+\bibitem{P5}
+Steve Ritz et~al.
+\newblock {Building for Discovery: Strategic Plan for U.S. Particle Physics in
+  the Global Context}.
+\newblock 2014.
+
+\bibitem{sigma-aldrich}
+Sigma-Aldrich, P.O. Box 14508, St. Louis, MO 63178 USA.
 
 \end{thebibliography}
