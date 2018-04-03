@@ -338,7 +338,7 @@ LArIAT is a complex ensemble of systems which needed to be monitored at once dur
 \subsubsection{Slow Control}
 We used the Synoptic Java Web Start framework as a real-time display of subsystem conditions. Its simple 
 Graphical User Interface allowed us to change the operating parameters and to graph the trends of several variables of interest for all the tertiary beam detectors.  Among the most important quantities monitored by Synoptic there are the level of argon in both the inner vessel and the external dewar, the operating voltages of cathode and wire planes, of the PMTs and SiPMs, and of the four wire chambers, as well as the magnets temperature. Figure \ref{fig:synoptics} shows an example of the monitoring system.
-LArIAT uses the Accelerator Control NETwork system (ACNET) to monitor the beam conditions of the MCenter beamline. For example, the X and Y position of the beam at the first two wire chambers (WC1 and WC2) are shown in \ref{fig:ACNET}. 
+LArIAT uses the Accelerator Control NETwork system (ACNET) to monitor the beam conditions of the MCenter beamline. For example, the horizontal and vertical position of the beam at the first two wire chambers (WC1 and WC2) are shown in \ref{fig:ACNET} as seen by the shifter during data taking. 
 
 \begin{figure}[htb]
 \centering
@@ -356,7 +356,7 @@ LArIAT uses the Accelerator Control NETwork system (ACNET) to monitor the beam c
 
 \subsubsection{DAQ Monitoring}
 
-We monitor the data taking and the run time evolution with the Run Status Webpage (\href{http://lariat-wbm.fnal.gov/lariat/run.html}{http://lariat-wbm.fnal.gov/lariat/run.html}), a  webpage updated in real-time.  The page displays, among other information, the total number of triggers in the event per CAEN digitizer board, the total number of detectors triggered during a beam spill,  the trigger patterns (the number of times a particular trigger pattern was satisfied  during a beam spill) and current time relative to the Fermilab accelerator complex supercycle. A screen shot of the page is show in figure \ref{fig:runcond}.
+We monitor the data taking and the run time evolution with the Run Status Webpage (\href{http://lariat-wbm.fnal.gov/lariat/run.html}{http://lariat-wbm.fnal.gov/lariat/run.html}), a  webpage updated in real-time.  The page displays, among other information, the total number of triggers in the event, the total number of detectors triggered during a beam spill,  the trigger patterns, the number of times a particular trigger pattern was satisfied  during a beam spill, and the current time relative to the Fermilab accelerator complex supercycle. A screen shot of the page is show in figure \ref{fig:runcond}.
 
 \begin{figure}[htb]
 \centering
@@ -368,17 +368,17 @@ We monitor the data taking and the run time evolution with the Run Status Webpag
 
 
 \subsubsection{Data Quality Monitoring}
-We employ two systems to ensure the quality of out data during data taking: the Near-real-time Data Quality Monitoring and the Event Viewer.
+We employ two systems to ensure the quality of out data during data taking: the Near-Real-Time Data Quality Monitoring and the Event Viewer.
 
-\href{http://lariat-daq01.fnal.gov:5000/}{The Near-real-time Data Quality Monitoring} (DQM). This webpage receives updates from all the VME boards in the trigger system and displays the results of a quick analysis of the DAQ stream of raw data on a spill-by-spill basis. The DQM allows the shifter to monitor almost in real time (typically with a 2-minute delay)  a series of low level-quantities and compare them to past collections of beam spills. Some of the variables monitored in the DQM are  the pedestal mean and RMS on CAEN digitizer boards
-of the TPC wires and PMTs of the beamline detectors, the hit occupancy and timing plots on the multi-wire chambers, and number of data fragments recorded that are used to build a TPC event. Abnormal values for  low-level quantity in the data  activate a series of alarms in the DQM; this quick feedback on the DAQ and beam conditions is fundamental to assure a fast debugging of the detector and a very efficient data taking during beam uptime.
+\href{http://lariat-daq01.fnal.gov:5000/}{The Near-Real-Time Data Quality Monitoring} (DQM) is a  webpage which receives updates from all the VME boards in the trigger system and displays the results of a quick analysis of the DAQ stream of raw data on a spill-by-spill basis. The DQM allows the shifter to monitor almost in real time (typically with a 2-minute delay)  a series of low level-quantities and compare them to past collections of beam spills. Some of the variables monitored in the DQM are  the pedestal mean and RMS on CAEN digitizer boards
+of the TPC wires and PMTs of the beamline detectors, the hit occupancy and timing plots on the wire chambers, and number of data fragments recorded that are used to build a TPC event. Abnormal values for  low-level quantity in the data  activate a series of alarms in the DQM; this quick feedback on the DAQ and beam conditions is fundamental to assure a fast debugging of the detector and a very efficient data taking during beam uptime.
 
 The online Event Viewer displays a two dimensional representation of LArIAT TPC events on both the Induction and the Collection planes in near real time. The raw pulses collected by the DAQ on each wire are plotted as a function of drift time, resulting in an image of the TPC event easily readable by the shifter. This tool guarantees a particularly good  check of the TPC operation which activate an immediate feedback for troubleshooting a number of issues. For example,  it easy for the shifter to spot high occupancy events and request a reduction of the primary beam intensity, or to spot a decrease of the argon purity which requires the regeneration of filters, or to catch the presence of electronic noise and reboot the ASICs. An example of high occupancy event is shown in \ref{fig:highOcc}.
 
 \begin{figure}[htb]
 \centering
-%\includegraphics[scale=0.6]{Chapter-3/Images/RunConditions.png}
-\caption{High occupancy event display.}
+\includegraphics[scale=0.2]{Chapter-3/Images/highOccupancy.png}
+\caption{High occupancy event display: induction plane (top) and collection plane (bottom).}
 \label{fig:highOcc}
 \end{figure}
 
