@@ -11,8 +11,38 @@ C.~Anderson et~al.
 \newblock {The ArgoNeuT Detector in the NuMI Low-Energy beam line at Fermilab}.
 \newblock {\em JINST}, 7:P10019, 2012.
 
+\bibitem{Bajc20161}
+Borut Bajc, Junji Hisano, Takumi Kuwahara, and Yuji Omura.
+\newblock Threshold corrections to dimension-six proton decay operators in
+  non-minimal \{SUSY\} su(5) \{GUTs\}.
+\newblock {\em Nuclear Physics B}, 910:1 -- 22, 2016.
+
 \bibitem{basf}
 BASF Corp. 100 Park Avenue, Florham Park, NJ 07932 USA.
+
+\bibitem{PhysRev.168.1466}
+D.~V. Bugg, R.~S. Gilmore, K.~M. Knight, D.~C. Salter, G.~H. Stafford, E.~J.~N.
+  Wilson, J.~D. Davies, J.~D. Dowell, P.~M. Hattersley, R.~J. Homer, A.~W.
+  O'dell, A.~A. Carter, R.~J. Tapper, and K.~F. Riley.
+\newblock Kaon-nucleon total cross sections from 0.6 to 2.65 gev/ \textit{c}.
+\newblock {\em Phys. Rev.}, 168:1466--1475, Apr 1968.
+
+\bibitem{Dimopoulos:1981dw}
+Savas Dimopoulos, Stuart Raby, and Frank Wilczek.
+\newblock {Proton Decay in Supersymmetric Models}.
+\newblock {\em Phys. Lett.}, B112:133, 1982.
+
+\bibitem{Drakoulakos:2004gn}
+D.~Drakoulakos et~al.
+\newblock {Proposal to perform a high-statistics neutrino scattering experiment
+  using a fine-grained detector in the NuMI beam}.
+\newblock 2004.
+
+\bibitem{Bueno2007}
+Antonio~Bueno et~al.
+\newblock Nucleon decay searches with large liquid argon {TPC} detectors at
+  shallow depths: atmospheric neutrinos and cosmogenic backgrounds.
+\newblock {\em Journal of High Energy Physics}, 2007(04):041--041, apr 2007.
 
 \bibitem{MinervaTestbeam}
 L.~Aliaga et~al.
@@ -31,6 +61,17 @@ H~Fenker.
 \newblock Standard beam pwc for fermilab.
 \newblock Technical report, Fermi National Accelerator Lab., Batavia, IL (USA),
   1983.
+
+\bibitem{fesbach1992theoretical}
+H~Fesbach.
+\newblock Theoretical nuclear physics: Nuclear reactions.
+\newblock 1992.
+
+\bibitem{Friedman:1997eq}
+E.~Friedman et~al.
+\newblock {K+ nucleus reaction and total cross-sections: New analysis of
+  transmission experiments}.
+\newblock {\em Phys. Rev.}, C55:1304--1311, 1997.
 
 \bibitem{GlassmanPS}
 Glassman High Voltage, Inc., Precision Regulated High Voltage DC Power Supply.
@@ -58,6 +99,12 @@ FM~Newcomer, S~Tedja, R~Van~Berg, J~Van~der Spiegel, and HH~Williams.
 \newblock A fast, low power, amplifier-shaper-discriminator for high rate straw
   tracking systems.
 \newblock {\em IEEE Transactions on Nuclear Science}, 40(4):630--636, 1993.
+
+\bibitem{Noether1971}
+Emmy Noether.
+\newblock Invariant variation problems.
+\newblock {\em Transport Theory and Statistical Physics}, 1(3):186--207, jan
+  1971.
 
 \bibitem{P5}
 Steve Ritz et~al.
