@@ -207,45 +207,57 @@ Baryon number is accidentally conserved in the Standard Model. Even though no ba
 
 
 \section{Motivations for Hadronic Cross Sections in Argon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% ---------------------------------------- Hadronic Cross sections ---------------------------------------- %%%%%
+%%%%% ----------------------------------------     Pion Cross Section     ---------------------------------------- %%%%%
 
 \subsection{Pion-Argon Total Hadronic Cross Section}
-\textcolor{red}{Here we put the link to previous sections: why is this important in the current context?}
-\subsubsection{Previous measurements}
+This section outlines the importance of the pion-argon total hadronic cross section. We start by discussing the measurement in the context of neutrino interaction searches and of light mesons interaction with nuclei studies. We then describe the signal signature and historical measurements of pion-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
+\subsubsection{$\pi^{-}$Ar Cross section in the Context of Neutrino Searches}
+\subsubsection{$\pi^{-}$Ar Cross Section in the Context of Light Mesons Interaction with Nuclei}
 \subsubsection{Signal Signatures}
-\subsection{Kaon-Argon Total Hadronic Cross Section}
+\subsubsection{Previous measurements: Lighter and Heavier Nuclei}
+\subsubsection{Pion Interaction Cross Section for thin target in Geant4}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% ---------------------------------------- Hadronic Cross sections ---------------------------------------- %%%%%
+%%%%% ----------------------------------------     Kaon Cross Section     ---------------------------------------- %%%%%
 
-
+\subsection{Kaon-Argon Total Hadronic Cross Section}
+This section outlines the importance of the kaon-argon total hadronic cross section. We start by discussing the measurement in the context of nucleon decay searches and of light mesons interaction with nuclei studies. We then describe the signal signature and historical measurements of kaon-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
 
 \subsubsection{K$^{+}$Ar Cross section in the Context of Nucleon Decay Searches}
-If nucleon decay was experimentally found, additional information about the GUT type may be derived from the dominant decay mode.  Supersymmetric GUTs \cite{Dimopoulos:1981dw,Bajc20161} prefer the presence of kaons in the products of the decay, e.g. $p\rightarrow K^+\bar{\nu}$  (see fig \ref{fig:MandatoryFeynmannDiagrams}, left).
-Gauge mediation GUTs, in which new gauge bosons are introduced that allow for the transformation of quarks into leptons, and vice versa, prefer the mode $p\rightarrow e^+\pi^0$ (see fig \ref{fig:MandatoryFeynmannDiagrams}, right).
-%%%%%%%%%%%%%%%% Find theory papers!!!!!! %%%%%%%%%%
+In case of nucleon decay discovery, the dominant decay mode may uncover additional information about the GUT type.  Supersymmetric GUTs \cite{Dimopoulos:1981dw,Bajc20161} prefer the presence of kaons in the products of the decay, e.g. $p\rightarrow K^+\bar{\nu}$  (see fig \ref{fig:MandatoryFeynmannDiagrams}, left).
+Gauge mediated GUTs, in which new gauge bosons are introduced that allow for the transformation of quarks into leptons, and vice versa, prefer the mode $p\rightarrow e^+\pi^0$ (see fig \ref{fig:MandatoryFeynmannDiagrams}, right).
+
 
 
 \begin{figure}[hbpt]
 \centering
 \includegraphics[width=6.5in]{Chapter-1/Images/MandatoryFeynmannDiagrams.png}
-\caption{Feynman diagrams for proton decay ``golden modes": $p \rightarrow K^+ \bar{\nu}$ for supersymmetric GUTs on the left and  $p \rightarrow e^+ \pi^0$ for gauge-mediation GUTs  on the right.}
+\caption{Feynman diagrams for proton decay ``golden modes": $p \rightarrow K^+ \bar{\nu}$ for supersymmetric GUTs on the left and  $p \rightarrow e^+ \pi^0$ for gauge-mediated GUTs  on the right.}
 \label{fig:MandatoryFeynmannDiagrams}
 \end{figure}
 
 
-LArIAT tiny active volume makes it impossible for the experiment to place competitive limits on nucleon decay searches.  However,  LArIAT provides excellent data to characterize kaons in LAr for the ``LAr golden mode", $p \rightarrow K^+ \bar{\nu}$. The result of these studies will affect future proton decay searches in LArTPCs. Previous work has been done to assess the potential identification efficiency for different decay modes in a LArTPC \cite{Bueno2007}, but, as the time of this  writing, no study of kaon selection efficiency in LArTPCs has been performed on data. 
+LArIAT tiny active volume makes it impossible for the experiment to place competitive limits on nucleon decay searches.  However,  LArIAT provides excellent data to characterize kaons in liquid argon for the ``LAr golden mode", $p \rightarrow K^+ \bar{\nu}$.  The result of these studies will affect future proton decay searches in LArTPCs.  Previous work has been done to assess the potential identification efficiency for different decay modes in a LArTPC \cite{Bueno2007}, but, as the time of this  writing, no study of kaon selection efficiency in LArTPCs has been performed on data. 
 The K$^+$-Ar interaction cross section has never been measured before and can affect the possibility of detecting and measuring kaons when produced in a proton decay event. 
 Kaon interactions with argon can distort the kaon energy spectrum as well as change the topology of single kaon events. In a LArTPC, non-interacting kaons appear as straight tracks with a high ionization depositions at the end (Bragg peak). The topology of interacting kaons can be quite different. In case of elastic scattering, a distinct kink will be present in the track. In case of inelastic scattering the Bragg peak will not be present and additional tracks will populate the event.
 Performing the total hadronic K$^+$-Ar cross section measurement on data serves the double purpose of identifying the rate of ``unusual" topologies (kinks and additional tracks) and of developing tools for kaon tracking in LAr.
 
 \subsubsection{K$^{+}$Ar Cross section in the Context of Light Mesons Interaction with Nuclei}
 \label{sec:theoryStrangeMeson}
-The intrinsic value of this measurement is that kaon interactions complement the measurements of $\pi$ interactions as a probe of  hadron interaction inside the nucleus in the strange sector.  
-\textcolor{red}{CHIEDI REFERENZE A FLAVIO}
+The intrinsic value of the total hadronic K$^{+}$-Ar cross section measurement is that kaon interactions complement the measurements of $\pi$ interactions as a probe of  hadron interaction inside the nucleus in the strange sector.  
+\textcolor{red}{High theoretical interest in probing constituent quark model of nuclear structure with
+KAON-NUCLEON INTERACTIONS CHIEDI REFERENZE A FLAVIO}
 
+
+%Total cross sections for the interaction of mildly relativistic kaons with several nuclei were derived from transmission experiments performed at the alternating-gradient synchrotron in Brookhaven National Laboratory. The high precision of these cross sections ~about 1\% led to analyses of the data in terms of KN nucleus potentials, based on the expectation that the KN nucleus interaction is simply related to the KN interaction. In particular, in this energy range the KN interaction does not vary strongly with energy and together with the relative weakness of the interaction, one expects that optical potentials close to the ??tr?? approximation ~see below will be capable of describing the data. However, all such analyses showed disagreement between calculation and experiment at the level of 5?15\%, which caused speculations about modifications in the nuclear medium of the KN interaction @5?8#. 
 
 \subsubsection{Signal Signatures}\label{sec:KSignalSignature}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -273,33 +285,29 @@ K^{+} + N \rightarrow K^{+} + N\textit{ (elastic)}
 
 
 \subsubsection{Previous Measurements: Lighter and Heavier Nuclei}
-In general, data on kaon cross sections are  extremely scarce. The measurement of kaon interaction cross section would bring the additional benefit of reducing the uncertainties associated  with hadron interaction models adopted in MC simulations for argon targets.
+In general, measurements on kaon cross sections are  extremely scarce. The measurement of the kaon interaction cross section would bring the additional benefit of reducing the uncertainties associated  with hadron interaction models adopted in MC simulations for argon targets, beneficial for both proton decay studies and kaon production from neutrino interaction studies, where the  uncertainties for final state interaction models are big \cite{Drakoulakos:2004gn}. 
 
-The data on nuclear effects for specific hadronic final states are extremely scarce, resulting in big uncertainties in modeling final state interactions \cite{Drakoulakos:2004gn}. Figure \ref{fig:Friedmann} shows a 1997 measurement on several elements as performed by  Friedmann et al.  \cite{Friedman:1997eq}. As a reference, this paper measures a $\sigma_{Tot}$ for Si of  366.5  $\pm$  4.8 mb and a $\sigma_{Tot}$ for Ca of 494.6  $\pm$ 7.7 mb at 488 MeV/c.  The cross section for argon is expected to lie in between these two measurements. 
+Figure \ref{fig:Friedmann} shows a 1997 measurement on several elements as performed by  Friedmann et al.  \cite{Friedman:1997eq}. As a reference, this paper measures a $\sigma_{Tot}$ for Si of  366.5  $\pm$  4.8 mb and a $\sigma_{Tot}$ for Ca of 494.6  $\pm$ 7.7 mb at 488 MeV/c.  The cross section for argon is expected to lie in between these two measurements. 
 Additional data on the kaon cross section are provided by Bugg et al. \cite{PhysRev.168.1466}. Bugg performs a measurement of the total 
 K$^+$ and K$^-$ cross sections on protons and deuterons over the range of 0.6-2.65 GeV/c, as well as a measurement of the total K$^+$ and K$^-$  cross sections on carbon for a number of momenta; the results of this paper on carbon are reported in Figure \ref{fig:Bugg}.
 
 
 
-
 \begin{figure}
-\begin{minipage}[b]{.5\textwidth}  
-  \centering  
-\includegraphics[width=3in]{Chapter-1/Images/Friedmann.png}
-\end{minipage}%  
-\begin{minipage}[b]{0.5\textwidth}  
-  \centering  
-\includegraphics[width=3in]{Chapter-1/Images/Bugg.png}
-\end{minipage}
-\par
-\begin{minipage}[t]{.53\textwidth}
-\caption{Ratios between experimental and calculated cross sections as from \cite{Friedman:1997eq}. Top: Total cross sections. Bottom: reaction cross sections.}
-\label{fig:Friedmann}
-\end{minipage}%
-\begin{minipage}[t]{.5\textwidth}  
-\caption{Total K$^+$  and K$^-$ cross sections on carbon as from \cite{PhysRev.168.1466}.}
-\label{fig:Bugg}
-\end{minipage}  
+\captionsetup{justification=raggedright}  
+	\begin{minipage}[t]{.53\textwidth}  
+	  \centering  
+	   \includegraphics[width=3in]{Chapter-1/Images/Friedmann.png}
+	   	        \caption{Ratios between experimental and calculated cross sections as from \cite{Friedman:1997eq}. Top: Total cross sections. \\Bottom: reaction cross sections.}
+        \label{fig:Friedmann}
+	\end{minipage}%  
+	\begin{minipage}[t]{0.53\textwidth}  
+	  \centering  
+	\includegraphics[width=3in]{Chapter-1/Images/Bugg.png}
+        \caption{Total K$^+$  and K$^-$ cross sections on carbon as from \cite{PhysRev.168.1466}.}
+        \label{fig:Bugg}
+	\end{minipage}
+	\par
 \end{figure}
 
 
@@ -320,9 +328,17 @@ K$^+$ and K$^-$ cross sections on protons and deuterons over the range of 0.6-2.
 
 
  \subsubsection{Kaon Interaction Cross Section for thin target in Geant4}
-Since the kaon cross section in argon has never been measured before, the Geant4 Monte Carlo tunes kaon transportation in argon by extrapolation from lighter and heavier nuclei. As shown in the previous section,  kaon data on carbon are available and  can be used as a metric to evaluate the Geant4 prediction performances.  Figure \ref{fig:TrueCarbon} shows the total hadronic cross section for carbon implemented in Geant4 10.01.p3 overlaid with the Bugg and Friedman data. Unfortunately, the current version of Geant4 does not reproduce the data for carbon closely. On one hand, this evidence makes us even more wary when using the Monte Carlo in simulating the kaon-argon interactions. On the other, it further highlights the importance of kaon measurements.
+Since the kaon cross section in argon has never been measured before, simulation packages tune kaon transportation in argon by extrapolation from lighter and heavier nuclei. LArIAT uses the Geant4 suite for particle transportation.  Since kaon data on carbon are available, we used it as a metric to evaluate the Geant4 prediction performances.  Figure \ref{fig:TrueCarbon} shows the total hadronic cross section for carbon implemented in Geant4 10.01.p3 overlaid with the Bugg and Friedman data. Unfortunately, the current version of Geant4 does not reproduce the data for carbon closely. On one hand, this evidence makes us even more wary when using the Monte Carlo in simulating the kaon-argon interactions. On the other, it further highlights the importance of the kaon measurement.
 
 
+
+\begin{figure}
+\captionsetup{justification=raggedright}  
+  \centering  
+\includegraphics[width=3in]{Chapter-1/Images/CarbonG4.png}
+\caption{total hadronic cross section for carbon implemented in Geant4  10.01.p3  with overlaid with the Bugg and Frideman data.}
+\label{fig:TrueCarbon}
+\end{figure}
 
 
 
