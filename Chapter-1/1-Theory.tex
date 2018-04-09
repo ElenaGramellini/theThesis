@@ -66,9 +66,11 @@ for a fermionic field
 is equivalent to the equaitons
 \begin{equation}
 i\gamma^ \mu \partial_\mu  \psi_L = m \psi_R
+\label{eq:15}
 \end{equation}
 \begin{equation}
 i\gamma^ \mu \partial_\mu  \psi_R = m \psi_L
+\label{eq:16}
 \end{equation}
 
 for the chiral fields $\psi_R$ and $\psi_L$, whose evolution in space and time is coupled through the mass $m$.
@@ -175,8 +177,8 @@ $\Delta m^2_{13}$    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  RENO\\
 
 
 \section{Beyond the Standard Model}
-The discovery of neutrino oscillation and its implication of non-zero neutrino mass mark  the beginning of a new, exciting era in neutrino physics: the era of physics Beyond the Standard Model (BSM) in the neutrino sector.
-We are currently searching for new, deeper theories that can accommodate neutrinos with tiny but non-zero mass, while remaining consistent with the rest of the Standard Model. 
+The discovery of neutrino oscillation and its implication of non-zero neutrino mass mark  the beginning of a new, exciting era in neutrino physics: the era of physics Beyond the Standard Model (BSM) at the intensity frontier.
+We are currently searching for new, deeper theories that can accommodate neutrinos with tiny but non-zero masses, while remaining consistent with the rest of the Standard Model. 
 
 \subsection{Open Questions in Neutrino Physics}
 On one hand, the last three decades of experiments in neutrino oscillations brought spectacular advancements in the understanding of the oscillations pattern, measuring the neutrino mixing angles and mass splitting with a precision of less than 10\%.  On the other, it opened the field for a series of questions needing experimental answers. 
@@ -189,7 +191,7 @@ The  LSND and MiniBooNE $\nu_e$ and $\bar\nu_e$ appearance results, known as the
 The introduction of sterile neutrinos is an appealing line of thinking, since this renormalizable generalization of the Standard Model has the potential to impact long standing questions in high energy physics and cosmology: light sterile neutrinos are candidates for dark matter particles and there are ideas that the theory could be adjusted to explain the baryon asymmetry of the Universe via leptogenesis \cite{1063-7869-57-5-503}. 
 
 %%%%%%%%%%
-\textbf{CP Violation In Lepton Sector.} The measurement of non-zero value for the oscillation parameter $\theta_{13}$ allows the exploration of low-energy CP violation in the lepton sector at neutrino oscillation experiments, enabling the possibility to measure the Dirac CP-violating phase $\delta$. Exciting theoretical results tie $\delta$ directly to the generation of the baryon asymmetry of the Universe at the Grand Unified Theory scale \textcolor{red}{a couple of cit would be nice}. According to theoretical model described in \cite{PASCOLI20071}, for example, leptogenesis can be achieved if $|\sin\theta_{13} \sin \delta| > 0.11$, i.e. $\sin \delta > 0.7$.\\
+\textbf{CP Violation In Lepton Sector.} The measurement of non-zero value for the oscillation parameter $\theta_{13}$ allows the exploration of low-energy CP violation in the lepton sector at neutrino long baseline oscillation experiments, enabling the possibility to measure the Dirac CP-violating phase $\delta$. Exciting theoretical results tie $\delta$ directly to the generation of the baryon asymmetry of the Universe at the Grand Unified Theory scale \textcolor{red}{a couple of cit would be nice}. According to theoretical model described in \cite{PASCOLI20071}, for example, leptogenesis can be achieved if $|\sin\theta_{13} \sin \delta| > 0.11$, i.e. $\sin \delta > 0.7$.\\
 The asymmetry in the oscillation probability of neutrinos and antineutrinos is the observable sensitive to the Dirac CP-violating phase $\delta$ leveraged in neutrino oscillation experiments. Using the parameterization of the PMNS matrix shown in Equation \ref{eq:PMNS},  the difference in the probability of $\nu_e \rightarrow \nu_\mu$ oscillation and the probability of $\bar\nu_e \rightarrow \bar\nu_\mu$ oscillation can be parametrized as follows \cite{Cervera2000},
 \begin{equation}
 P_{\nu_e\rightarrow\nu_\mu} - P_{\bar\nu_e\rightarrow\bar\nu_\mu} = J \cos\Big(\pm\delta - \frac{\Delta_{31}L}{2}\Big) \sin\Big(\frac{\Delta_{21}L}{2}\Big)\sin\Big(\frac{\Delta_{31}L }{2}\Big)
@@ -199,14 +201,28 @@ where
 J = \cos\theta_{13}\sin2\theta_{13}\sin2\theta_{12}\sin2\theta_{23}
 \end{equation}
 is the Jarlskog invariant \cite{Jarlskog1985}, $L$ the neutrino baseline and $\Delta_{ab}$ a factor proportional to the sign and magnitude of the mass splitting. 
-From these equations, it is clear how the relative  large value of $\theta_{13}$ is a happy accident necessary not to completely suppress the sensitivity to CP violation.  The equations also show how the sensitivity to $\delta$ is tied to the measurement of the least precisely measured mixing angle,  $\theta_{23}$ (via the $\sin2\theta_{23}$ term) and to an other unknown quantity, the neutrino ``mass hierarchy" (via the $\Delta_{ab}$ terms). The precise determination of $\theta_{23}$ is often referred as to ``the octant problem". Current experimental results \textcolor{red}{cite NOVA T2K} are consistent with  $\theta_{23}=45^\circ$, which would imply maximal mixing between $\nu_\mu$ - $\nu_\tau$, hinting to an intriguing new symmetry. Therefore, a precise measurement of $\theta_{23}$  is of great interest for theoretical models of quark-lepton universality [59,84,85,86,87,88] , whose  quark and lepton mixing matrices are proportional to the deviation of $\theta_{23}$ from $45^\circ$. The  ``mass hierarchy" problem refers to the unknown ordering of the value of absolute mass of the neutrino mass eigenstates. Current oscillation experiments are sensitive only to the magnitude of the mass splitting, but not to its sign. Therefore, in a framework where the lightest neutrino mass (arbitrarily) corresponds to the first eigenstate $m_1$, we do not know whether $m_2 - m_1 < m_3 - m_1$ (Normal Hierarchy) or $m_2 - m_1 > m_3 - m_1$ (Inverted Hierarchy).
+From these equations, it is clear how the relative  large value of $\theta_{13}$ is a happy accident necessary not to completely suppress the sensitivity to CP violation.  The equations also show how the sensitivity to $\delta$ is tied to the measurement of the least precisely measured mixing angle,  $\theta_{23}$ (via the $\sin2\theta_{23}$ term) and to an other unknown quantity, the neutrino ``mass hierarchy" (via the $\Delta_{ab}$ terms). The precise determination of $\theta_{23}$ is often referred as to ``the octant problem". Current experimental results \textcolor{red}{cite NOVA T2K} are consistent with  $\theta_{23}=45^\circ$, which would imply maximal mixing between $\nu_\mu$ - $\nu_\tau$, hinting to an intriguing new symmetry. Therefore, a precise measurement of $\theta_{23}$  is of great interest for theoretical models of quark-lepton universality [59,84,85,86,87,88] , whose  quark and lepton mixing matrices are proportional to the deviation of $\theta_{23}$ from $45^\circ$. 
 
 
+\textbf{Neutrino mass hierarchy.} The  ``mass hierarchy" problem refers to the unknown ordering of the value of absolute mass of the neutrino mass eigenstates. Current oscillation experiments are sensitive only to the magnitude of the mass splitting, but not to its sign. \textcolor{red}{cite hints} Therefore, in a framework where the lightest neutrino mass (arbitrarily) corresponds to the first eigenstate $m_1$, it is unknown whether $m_2 - m_1 < m_3 - m_1$ (Normal Hierarchy) or $m_2 - m_1 > m_3 - m_1$ (Inverted Hierarchy). The mass hierarchy affects not only the sensitivity to CP violation searches in long baseline oscillation experiments, but also the sensitivity to determine whether neutrinos are Majorana particles in neutrinoless double beta decay experiments.
+
+\textbf{Majorana or Dirac?}
+Evidence of neutrino oscillations demand the introduction in the theory of a mechanism which can give mass to the neutrinos.  This mechanism should possibly also explain why neutrino masses are at least six orders of magnitude lower than all the other SM fermions' masses. 
+In a description of neutrinos as Dirac 4-component spinors, the neutrino field acquires mass  via the Higgs mechanism as any other fermion of the SM. In this case, the neutrino mass is given by 
+\begin{equation} m_a = \frac{y^\nu_a v}{\sqrt2} \end{equation} 
+where $v$ is the Higgs VEV and   $y^\nu_a$ is the Yukawa coupling between the Higgs and the neutrino. The smallness of neutrino masses can only be pinned on a tiny Yukawa coupling which is not justified by the theory.\\
+In 1937, Majorana demonstrated that the introduction of a two components spinor is sufficient to describe a neutral massive fermion, under the assumption that the chiral components $\psi_R$ and $\psi_L$ are correlated as follows
+$$\psi_R = \mathcal{C}\bar\psi_L$$ where $\mathcal{C}$ is the charge conjugation matrix. Neutrinos are the only neutral elementary particles in the SM, thus the only possible Majorana particle candidate.
+\textcolor{red}{ a few words on see-saw}
+
+From a kinematic point of view, Dirac and Majorana neutrinos satisfy the same energy-momentum dispersion relationship. Thus, it is impossible to discern the neutrino nature through kinematic effects such as neutrino oscillations.
+
+Il modo più promettente per capire se il neutrino è una particella di Majorana è cercare sperimentalmente il doppio decadimento ? senza neutrini.
+Il doppio decadimento. E? chiaro inoltre che tale processo viola il numero leptonico di due unità
+
+The puzzle of the neutrino mass hints to the fascinating idea of considering the SM as an effective theory at low energy, obtained as the limit of a more complete theory.
 
 \begin{enumerate}
-
-\item CP violation in the neutrino sector, and mass ordering and determination of the octant => hidden symmetries and . 
-
 \item Neutrino nature Majorana or Dirac?
 \item Neutrino masses?
 \end{enumerate}
@@ -218,7 +234,7 @@ Following the recommendation of the latest Particle Physics Project Prioritizati
 The main goals of these research programs include:
 \begin{itemize}
 \item[-] Assessment of the existence of right-handed sterile neutrinos. 
-\item[-] Determination of the sign of $\Delta m^2_{13}$ (or $\Delta m^2_{23}$), i.e., the ``neutrino mass ordering".
+\item[-] Determination of the sign of $\Delta m^2_{13}$ (or $\Delta m^2_{23}$), i.e., the neutrino mass hierarchy.
 \item[-] Determination of the octant, i.e.  whether $\theta_{23}$ is maximal.
 \item[-] Determination the status of CP symmetry in the lepton sector.
 \end{itemize}
