@@ -49,6 +49,12 @@ D.~V. Bugg, R.~S. Gilmore, K.~M. Knight, D.~C. Salter, G.~H. Stafford, E.~J.~N.
 \newblock Kaon-nucleon total cross sections from 0.6 to 2.65 gev/ \textit{c}.
 \newblock {\em Phys. Rev.}, 168:1466--1475, Apr 1968.
 
+\bibitem{Cervera2000}
+A.~Cervera, A.~Donini, M.B. Gavela, J.J.~Gomez C{\'{a}}denas,
+  P.~Hern{\'{a}}ndez, O.~Mena, and S.~Rigolin.
+\newblock Golden measurements at a neutrino factory.
+\newblock {\em Nuclear Physics B}, 579(1-2):17--55, jul 2000.
+
 \bibitem{Aad2012}
 ATLAS Collaboration.
 \newblock Observation of a new particle in the search for the standard model
@@ -147,6 +153,13 @@ Peter~W. Higgs.
 P.W. Higgs.
 \newblock Broken symmetries, massless particles and gauge fields.
 \newblock {\em Physics Letters}, 12(2):132--133, sep 1964.
+
+\bibitem{Jarlskog1985}
+C.~Jarlskog.
+\newblock A basis independent formulation of the connection between quark mass
+  matrices, {CP} violation and experiment.
+\newblock {\em Zeitschrift f\"{u}r Physik C Particles and Fields},
+  29(3):491--497, sep 1985.
 
 \bibitem{ASDQchip}
 FM~Newcomer, S~Tedja, R~Van~Berg, J~Van~der Spiegel, and HH~Williams.
