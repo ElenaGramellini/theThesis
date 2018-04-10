@@ -280,11 +280,11 @@ Baryon number is accidentally conserved in the Standard Model. Even though no ba
 This section outlines the importance of the pion-argon total hadronic cross section. We start by discussing the measurement in the context of neutrino interaction searches and of light mesons interaction with nuclei studies. We then describe the signal signature and historical measurements of pion-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
 
 \subsubsection{$\pi^{-}$Ar Cross section in the Context of Neutrino Searches}
-As outlined in \ref{ch:NuInt}, neutrino experiments use the products of neutrino interactions to identify the energy and flavor of the incoming neutrino. In particular,  assumptions on the nuclear models and on the interaction of hadrons in the nucleus bridge the measurement of the products of a neutrino interaction to the reconstruction of the neutrino energy and flavor. Understanding pion hadronic interactions with the nucleus is particularly important to model resonant, DIS and coherent pion production in neutrino interactions, where the presence of pions in the nucleus is abundant. For example, in case of resonant scattering 
+As outlined in \ref{ch:NuInt}, neutrino experiments use the products of neutrino interactions to identify the energy and flavor of the incoming neutrino. In particular,  assumptions on the nuclear models and on the interaction of hadrons in the nucleus performed at the level of the neutrino event generator bridge the measurement of the products of a neutrino interaction to the reconstruction of the neutrino energy and flavor. Understanding pion hadronic interactions with the nucleus is particularly important to model correctly resonant, DIS and coherent pion production in neutrino interactions, where the presence of pions in the nucleus is abundant. For example, in case of resonant scattering 
 \begin{equation}
-\nu_l + N \rightarrow l + \Delta/N^* \rightarrow l+ \pi + N' 
+\nu_l + N \rightarrow l + \Delta/N^* \rightarrow l+ \pi + N', 
 \end{equation}
-the $\Delta$ and $N^*$ and excited states will decay inside the nucleus producing pions. The decay modes for the lower mass $\Delta$ (1232) and $N^*$(1440)  are listed in table \ref{tab:decaysdelta}.
+the $\Delta$ and $N^*$ and excited states will decay hadronically in matters of $\sim10^{-24}$~s inside the nucleus producing pions which will bounce within the nuclear medium. The decay modes for the lower mass $\Delta$ (1232) and $N^*$(1440)  are listed in table \ref{tab:decaysdelta}.
 
 \begin{table}[b]
 \centering
@@ -301,6 +301,11 @@ $\Delta^{-} \text{(ddd)} \rightarrow n \pi^-$  &                         \\ \hli
 \caption{Main decay modes of the lightest Delta resonance and Nucleon excited state.}
 \label{tab:decaysdelta}
 \end{table}
+
+The key elements of a neutrino event generators for resonance and DIS events are the nuclear model and the hadron treatment (both production and transportation). As one of the most popular event generators for LAr experiments, we take GENIE~\cite{Andreopoulos:2009rq} here as an example.
+The nuclear model used by GENIE for all processes is a relativistic Fermi gas (RFG) modified to incorporate short range nucleon-nucleon correlations \cite{PhysRevD.24.1400}. This means that the initial momentum and binding energy of the struck nucleon is determined by assuming nucleons inside the nucleus are quasi-free, acting independently in the mean field of the nucleus. For A $ >$ 20 like argon, the 2-parameter Woods-Saxon shell model for density function is used.  The GENIE module INTRANUKE \cite{Juszczak2006} is used to simulate the final-state interactions (FSI) which is the hadron re-interaction inside the nucleus. This module places the outgoing particles in the nucleus and propagates them.  In the INRANUKE model, hadrons cannot undergo more than one FSI per event. When possible, external hadron-nucleus scattering data are used to tune INTRANUKE. Since no data is available for Argon, an interpolation of data from heavier and lighter nuclei is used for  the pion-argon cross section.
+ 
+
 
 \subsubsection{$\pi^{-}$Ar Cross Section in the Context of Light Mesons Interaction with Nuclei}
 \subsubsection{Signal Signatures}

@@ -27,6 +27,11 @@ C.~Anderson et~al.
 \newblock {The ArgoNeuT Detector in the NuMI Low-Energy beam line at Fermilab}.
 \newblock {\em JINST}, 7:P10019, 2012.
 
+\bibitem{Andreopoulos:2009rq}
+C.~Andreopoulos et~al.
+\newblock {The GENIE Neutrino Monte Carlo Generator}.
+\newblock {\em Nucl. Instrum. Meth.}, A614:87--104, 2010.
+
 \bibitem{Athanassopoulos:1997pv}
 C.~Athanassopoulos et~al.
 \newblock {Evidence for nu(mu) $\rightarrow$ nu(e) neutrino oscillations from
@@ -42,12 +47,24 @@ Borut Bajc, Junji Hisano, Takumi Kuwahara, and Yuji Omura.
 \bibitem{basf}
 BASF Corp. 100 Park Avenue, Florham Park, NJ 07932 USA.
 
+\bibitem{PhysRevD.24.1400}
+A.~Bodek and J.~L. Ritchie.
+\newblock Further studies of fermi-motion effects in lepton scattering from
+  nuclear targets.
+\newblock {\em Phys. Rev. D}, 24:1400--1402, Sep 1981.
+
 \bibitem{PhysRev.168.1466}
 D.~V. Bugg, R.~S. Gilmore, K.~M. Knight, D.~C. Salter, G.~H. Stafford, E.~J.~N.
   Wilson, J.~D. Davies, J.~D. Dowell, P.~M. Hattersley, R.~J. Homer, A.~W.
   O'dell, A.~A. Carter, R.~J. Tapper, and K.~F. Riley.
 \newblock Kaon-nucleon total cross sections from 0.6 to 2.65 gev/ \textit{c}.
 \newblock {\em Phys. Rev.}, 168:1466--1475, Apr 1968.
+
+\bibitem{Casper2002}
+D.~Casper.
+\newblock The nuance neutrino physics simulation, and the future.
+\newblock {\em Nuclear Physics B - Proceedings Supplements}, 112(1-3):161--170,
+  nov 2002.
 
 \bibitem{Cervera2000}
 A.~Cervera, A.~Donini, M.B. Gavela, J.J.~Gomez C{\'{a}}denas,
@@ -170,6 +187,12 @@ C.~Jarlskog.
   matrices, {CP} violation and experiment.
 \newblock {\em Zeitschrift f\"{u}r Physik C Particles and Fields},
   29(3):491--497, sep 1985.
+
+\bibitem{Juszczak2006}
+Cezary Juszczak, Jaros{\l}aw~A. Nowak, and Jan~T. Sobczyk.
+\newblock Simulations from a new neutrino event generator.
+\newblock {\em Nuclear Physics B - Proceedings Supplements}, 159:211--216, sep
+  2006.
 
 \bibitem{Majorana1937}
 Ettore Majorana.
