@@ -14,45 +14,45 @@ Warning--empty journal in Drakoulakos:2004gn
 Warning--empty journal in fesbach1992theoretical
 Warning--empty booktitle in Sten
 Warning--empty journal in P5
-You've used 40 entries,
+You've used 41 entries,
             2118 wiz_defined-function locations,
-            788 strings with 10574 characters,
-and the built_in function-call counts, 12236 in all, are:
-= -- 1202
-> -- 514
+            794 strings with 10672 characters,
+and the built_in function-call counts, 12535 in all, are:
+= -- 1234
+> -- 521
 < -- 0
-+ -- 213
-- -- 168
-* -- 916
-:= -- 2061
-add.period$ -- 115
-call.type$ -- 40
-change.case$ -- 196
++ -- 216
+- -- 170
+* -- 940
+:= -- 2110
+add.period$ -- 118
+call.type$ -- 41
+change.case$ -- 200
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 424
-empty$ -- 1007
-format.name$ -- 168
-if$ -- 2501
+cite$ -- 47
+duplicate$ -- 435
+empty$ -- 1034
+format.name$ -- 170
+if$ -- 2562
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 36
-newline$ -- 198
-num.names$ -- 72
-pop$ -- 164
+int.to.str$ -- 41
+missing$ -- 37
+newline$ -- 203
+num.names$ -- 74
+pop$ -- 166
 preamble$ -- 1
-purify$ -- 158
+purify$ -- 161
 quote$ -- 0
-skip$ -- 299
+skip$ -- 306
 stack$ -- 0
-substring$ -- 916
-swap$ -- 36
+substring$ -- 946
+swap$ -- 37
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
+type$ -- 164
 warning$ -- 6
-while$ -- 119
-width$ -- 42
-write$ -- 418
+while$ -- 123
+width$ -- 43
+write$ -- 429
 (There were 11 warnings)
