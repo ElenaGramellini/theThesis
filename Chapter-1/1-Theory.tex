@@ -173,15 +173,14 @@ $\Delta m^2_{13}$    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  RENO\\
 \end{tabular}
 \end{table}
 
-\subsection{Make up of Neutrino Interactions}
+\subsection{Make up of Neutrino Interactions}\label{ch:NuInt}
 All neutrino experiments involving the detection of single neutrinos are concerned with neutrino interactions (and neutrino cross sections) on nuclei. 
 Given the invisible nature of the neutrino, characterizing the products of its interaction is the only method to a) assess the neutrino presence, b) detect its flavor in case of a charge current interaction and c) eventually reconstruct its energy. 
 
 Historically, neutrino interactions with the nucleus in the GeV region are divided into three categories as a function of increasing neutrino energy: quasi elastic (QE), resonant, and deep inelastic (DIS) scattering. All current and forthcoming oscillation experiments live in the 0.1-10 GeV transition region, which encompasses the energy where the QE neutrino-nucleus interaction transitions into resonant scattering and the energy  where resonance scattering  transitions into DIS. 
- Neutrino and antineutrino QE charge current scattering refers to the process $\nu_\mu n \rightarrow \mu^- p$ and $\bar\nu_\mu p \rightarrow \mu^+ n$ where a charged lepton and single nucleon are ejected in the elastic interaction and the target nucleus remains at ground state. %of a neutrino (or antineutrino) with a nucleon in the target material.  
+ Neutrino and antineutrino QE charge current scattering refers to the process $\nu_l n \rightarrow l^- p$ and $\bar\nu_l p \rightarrow l^+ n$ where a charged lepton and single nucleon are ejected in the elastic interaction and the target nucleus remains at ground state. %of a neutrino (or antineutrino) with a nucleon in the target material.  
  Resonant scattering refers to an inelastic collision producing a nucleon excited state ($\Delta$,N*) -- the resonance, indeed -- which then quickly decays, most often to a nucleon and single-pion final state. DIS refers to the head-on collision between the neutrino and a parton inside the nucleon, producing hadronization and subsequent  abundant production of mesons and nucleons.  In addition to such interactions between the neutrino and a single component of the nucleus, neutrinos can also interact with the nucleus as a whole, albeit more rarely, a well documented process called coherent meson production scattering \cite{Vilain1993}; the signature of such process is the production of a distinctly forward-scattered single meson final state, most often a pion.  This simple picture of neutrino interactions works rather well for scattering 
 off of light targets, such as the H$_2$ and D$_2$ of bubble chamber experiments \cite{RevModPhys.84.1307}, but the complexity of the nuclear structure for heavier nuclei such as argon complicates this model. 
-
 
 
 As we will discuss in Chapter \ref{ch:2}, the properties of argon make it a good candidate for interacting medium in neutrino experiments; in particular the density of its interaction centers  augments the yield of neutrino interactions and allows for relatively compact detectors. Though, the choice of a relatively heavy nuclear target comes at the cost of enhancing  nuclear effects which modify the kinematic and final state of the neutrino interaction products.  
@@ -279,7 +278,30 @@ Baryon number is accidentally conserved in the Standard Model. Even though no ba
 
 \subsection{Pion-Argon Total Hadronic Cross Section}
 This section outlines the importance of the pion-argon total hadronic cross section. We start by discussing the measurement in the context of neutrino interaction searches and of light mesons interaction with nuclei studies. We then describe the signal signature and historical measurements of pion-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
+
 \subsubsection{$\pi^{-}$Ar Cross section in the Context of Neutrino Searches}
+As outlined in \ref{ch:NuInt}, neutrino experiments use the products of neutrino interactions to identify the energy and flavor of the incoming neutrino. In particular,  assumptions on the nuclear models and on the interaction of hadrons in the nucleus bridge the measurement of the products of a neutrino interaction to the reconstruction of the neutrino energy and flavor. Understanding pion hadronic interactions with the nucleus is particularly important to model resonant, DIS and coherent pion production in neutrino interactions, where the presence of pions in the nucleus is abundant. For example, in case of resonant scattering 
+\begin{equation}
+\nu_l + N \rightarrow l + \Delta/N^* \rightarrow l+ \pi + N' 
+\end{equation}
+the $\Delta$ and $N^*$ and excited states will decay inside the nucleus producing pions. The decay modes for the lower mass $\Delta$ (1232) and $N^*$(1440)  are listed in table \ref{tab:decaysdelta}.
+
+\begin{table}[b]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+$\Delta$ (1232) 3/2$^+$                 & $N^*$ (1440) 1/2$^+$    \\ \hline
+$\Delta^{++} \text{(uuu)} \rightarrow p \pi^+$ & $N^* \rightarrow N \pi$ \\
+$\Delta^{+} \text{(uud)} \rightarrow n \pi^+$  &  $N^* \rightarrow N \pi\pi$\\ 
+$\Delta^{+} \text{(uud)} \rightarrow p \pi^0$  &                         \\ 
+$\Delta^{0} \text{(udd)} \rightarrow n \pi^0$  &                         \\ 
+$\Delta^{0} \text{(udd)} \rightarrow p \pi^-$  &                         \\ 
+$\Delta^{-} \text{(ddd)} \rightarrow n \pi^-$  &                         \\ \hline
+\end{tabular}
+\caption{Main decay modes of the lightest Delta resonance and Nucleon excited state.}
+\label{tab:decaysdelta}
+\end{table}
+
 \subsubsection{$\pi^{-}$Ar Cross Section in the Context of Light Mesons Interaction with Nuclei}
 \subsubsection{Signal Signatures}
 \subsubsection{Previous measurements: Lighter and Heavier Nuclei}
