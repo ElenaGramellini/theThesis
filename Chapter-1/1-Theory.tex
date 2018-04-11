@@ -405,6 +405,11 @@ As an example of a fairly well studied target, Figure \ref{fig:pi2} reports the 
 \subsubsection{Pion Interaction Cross Section in generators}
 A broad review of the current status of negative and positive pion simulation in Geant4 and GENIE for $^{12}$C, $^{56}$Fe, and $^{40}$Ca can be found in \cite{Irene} \textcolor{red}{Irene}. From that work, we report the results for $^{12}$C (left) in Figure \ref{fig:pionC} and  $^{40}$Ca (right) in Figure \ref{fig:pionCa}, since the argon cross section should lie in between. 
 
+\textcolor{red}{explain geant4 }
+\textcolor{red}{explain Genie }
+Figure \ref{fig:PionTrueArgon} shows the Geant4 prediction for the total, elastic and reaction cross section for $\pi^-$ on argon.
+
+
 
 \begin{figure}
 \captionsetup{justification=raggedright}  
@@ -423,7 +428,12 @@ A broad review of the current status of negative and positive pion simulation in
 	\par
 \end{figure}
 
-
+\begin{figure}[hbpt]
+\centering
+\includegraphics[width=3in]{Chapter-1/Images/cPionsG4.png}
+\caption{Total, elastic and reaction hadronic cross section for $\pi^-$-argon implemented in Geant4  10.01.p3.}
+\label{fig:PionTrueArgon}
+\end{figure}
 
 \clearpage
 
@@ -526,16 +536,25 @@ K$^+$ and K$^-$ cross sections on protons and deuterons over the range of 0.6-2.
 
 
  \subsubsection{Kaon Interaction Cross Section for thin target in Geant4}
-Since the kaon cross section in argon has never been measured before, simulation packages tune kaon transportation in argon by extrapolation from lighter and heavier nuclei. LArIAT uses the Geant4 suite for particle transportation.  Since kaon data on carbon are available, we used it as a metric to evaluate the Geant4 prediction performances.  Figure \ref{fig:TrueCarbon} shows the total hadronic cross section for carbon implemented in Geant4 10.01.p3 overlaid with the Bugg and Friedman data. Unfortunately, the current version of Geant4 does not reproduce the data for carbon closely. On one hand, this evidence makes us even more wary when using the Monte Carlo in simulating the kaon-argon interactions. On the other, it further highlights the importance of the kaon measurement.
+Since the kaon cross section in argon has never been measured before, simulation packages tune kaon transportation in argon by extrapolation from lighter and heavier nuclei. LArIAT uses the Geant4 suite for particle transportation.  Since kaon data on carbon are available, we used it as a metric to evaluate the Geant4 prediction performances.  Figure \ref{fig:TrueCarbon} shows the total hadronic cross section for carbon implemented in Geant4 10.01.p3 overlaid with the Bugg and Friedman data. Unfortunately, the current version of Geant4 does not reproduce the data for carbon closely. On one hand, this evidence makes us even more wary when using the Monte Carlo in simulating the kaon-argon interactions. On the other, it further highlights the importance of the kaon measurement. 
+Figure \ref{fig:TrueArgon} shows the Geant4 prediction for the total, elastic and reaction cross section for $K^+$ on argon.
 
 
-
-\begin{figure}[b!]
+\begin{figure}
 \captionsetup{justification=raggedright}  
-  \centering  
+	\begin{minipage}[t]{.48\textwidth}  
+	  \centering  
 \includegraphics[width=3in]{Chapter-1/Images/CarbonG4.png}
-\caption{total hadronic cross section for carbon implemented in Geant4  10.01.p3  with overlaid with the Bugg and Frideman data.}
+\caption{Total hadronic cross section for carbon implemented in Geant4  10.01.p3  with overlaid with the Bugg and Frideman data.}
 \label{fig:TrueCarbon}
+	\end{minipage}%  
+	\begin{minipage}[t]{0.48\textwidth}  
+	  \centering  
+\includegraphics[width=3in]{Chapter-1/Images/cKaonsG4.png}
+\caption{Total, elastic and reaction hadronic cross section for $K^+$-argon implemented in Geant4  10.01.p3.}
+\label{fig:TrueArgon}
+	\end{minipage}
+	\par
 \end{figure}
 
 
