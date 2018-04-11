@@ -303,19 +303,28 @@ Assumptions on the nuclear models and on the interaction of hadrons inside the n
 the $\Delta$ and $N^*$ and excited states will decay hadronically in matters of $\sim10^{-24}$~s inside the nucleus producing pions which will bounce within the nuclear medium. The decay modes for the lower mass $\Delta$ (1232) and $N^*$(1440)  are listed in table \ref{tab:decaysdelta}.
 \begin{table}[b]
 \centering
-\begin{tabular}{|l|l|}
+\begin{tabular}{|l|l|l|}
 \hline
-$\Delta$ (1232) 3/2$^+$                 & $N^*$ (1440) 1/2$^+$    \\ \hline
-$\Delta^{++} \text{(uuu)} \rightarrow p \pi^+$ & $N^* \rightarrow N \pi$ \\
-$\Delta^{+} \text{(uud)} \rightarrow n \pi^+$  &  $N^* \rightarrow N \pi\pi$\\ 
-$\Delta^{+} \text{(uud)} \rightarrow p \pi^0$  &                         \\ 
-$\Delta^{0} \text{(udd)} \rightarrow n \pi^0$  &                         \\ 
-$\Delta^{0} \text{(udd)} \rightarrow p \pi^-$  &                         \\ 
-$\Delta^{-} \text{(ddd)} \rightarrow n \pi^-$  &                         \\ \hline
+Resonance  & Decay Mode & Lifetime (s)\\
+\hline
+    &  &  \\
+$\Delta$ (1232) 3/2$^+$  & \begin{tabular}{@{}l@{}} $\Delta^{++} \text{(uuu)} \rightarrow p \pi^+$ \\$\Delta^{+} \text{(uud)} \rightarrow n \pi^+$  \\ $\Delta^{+} \text{(uud)} \rightarrow p \pi^0$\\$\Delta^{0} \text{(udd)} \rightarrow n \pi^0$ \\ $\Delta^{0} \text{(udd)} \rightarrow p \pi^-$ \\$\Delta^{-} \text{(ddd)} \rightarrow n \pi^-$  \end{tabular}
+ & $\sim5.6 \times10^{-24}$\\
+     &  &  \\
+\hline
+    &  &  \\
+$N^*$ (1440) 1/2$^+$     & \begin{tabular}{@{}l@{}}$N^* \rightarrow N \pi$ \\$N^* \rightarrow N \pi\pi$\end{tabular} &   $\sim2.2 \times10^{-24}$\\
+    &  &  \\
+\hline
 \end{tabular}
 \caption{Main decay modes of the lightest Delta resonance and Nucleon excited state.}
 \label{tab:decaysdelta}
 \end{table}
+
+
+
+
+
 The key elements of a neutrino event generators for resonance and DIS events are the nuclear model and the hadron treatment (both production and transportation). As one of the most popular event generators for LAr experiments, we take GENIE~\cite{Andreopoulos:2009rq} here as an example.
 The nuclear model used by GENIE for all processes is a relativistic Fermi gas (RFG) modified to incorporate short range nucleon-nucleon correlations \cite{PhysRevD.24.1400}. This means that the initial momentum and binding energy of the struck nucleon is determined by assuming nucleons inside the nucleus are quasi-free, acting independently in the mean field of the nucleus. For A $ >$ 20 like argon, the 2-parameter Woods-Saxon shell model for density function is used.  The GENIE module INTRANUKE \cite{Juszczak2006} is used to simulate the final-state interactions (FSI) which is the hadron re-interaction inside the nucleus. This module places the outgoing particles in the nucleus and propagates them.  In the INRANUKE model, hadrons cannot undergo more than one FSI per event. When possible, external hadron-nucleus scattering data are used to tune INTRANUKE. Since no data is available for Argon, GENIE uses an interpolation of data from heavier and lighter nuclei for the pion-argon cross section leading to big uncertainties in the INTRANUKE module.
  
@@ -371,11 +380,15 @@ N $\pi$ in FS & Channel Name & Reaction &  Notes \\
 
 
 \subsubsection{Previous measurements: Lighter and Heavier Nuclei}
-Many experiments with pion beams have studied the hadronic interaction of pions on light and heavy materials, such as  He, Li, C, Fe, Pb\textcolor{red}{\cite{s}}. However, data on Argon are rare: the total differential hadronic cross section has never been measured before on argon. Simulation packages like Geant base their pion transportation for argon on data from lighter and heavier nuclei: the goal of LArIAT's dedicated measurement on argon is to bridge this gap in data, thus reducing the uncertainties related to pions interaction in argon in both neutrino event generators and in simulation packages of pion transportation.
+Many experiments with pion beams have studied the hadronic interaction of pions on light and heavy materials, such as  He, Li, C, Fe, Pb\textcolor{red}{\cite{s}}. However, data on argon are rare: the total differential hadronic cross section has never been measured before on argon. Simulation packages like Geant base their pion transportation for argon on data from lighter and heavier nuclei: the goal of LArIAT's dedicated measurement on argon is to bridge this gap in data, thus reducing the uncertainties related to pions interaction in argon in both neutrino event generators and in simulation packages of pion transportation.
 
+The shape of the pion-nucleus interaction cross section in the energy range considered shows the distinct features that indicate the presence of a resonance. The mean free path of a pion of kinetic energy between 100 and 400 MeV is much shorter than the average distance between nucleons (which is of the order of 1 fm). Therefore, the pion interacts with surface nucleons. A $\Delta$ resonance is often produced in the interaction, which subsequently decays inside the nucleus.
+
+Experimental results on several nuclei are reported in Figure as from \cite{}.
 
 \subsubsection{Pion Interaction Cross Section for thin target in Geant4}
 
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
