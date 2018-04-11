@@ -60,6 +60,12 @@ D.~V. Bugg, R.~S. Gilmore, K.~M. Knight, D.~C. Salter, G.~H. Stafford, E.~J.~N.
 \newblock Kaon-nucleon total cross sections from 0.6 to 2.65 gev/ \textit{c}.
 \newblock {\em Phys. Rev.}, 168:1466--1475, Apr 1968.
 
+\bibitem{PhysRevC.14.635}
+A.~S. Carroll, I.~H. Chiang, C.~B. Dover, T.~F. Kycia, K.~K. Li, P.~O. Mazur,
+  D.~N. Michael, P.~M. Mockett, D.~C. Rahm, and R.~Rubinstein.
+\newblock Pion-nucleus total cross sections in the (3,3) resonance region.
+\newblock {\em Phys. Rev. C}, 14:635--638, Aug 1976.
+
 \bibitem{Casper2002}
 D.~Casper.
 \newblock The nuance neutrino physics simulation, and the future.
@@ -113,6 +119,11 @@ Antonio~Bueno et~al.
 \newblock Nucleon decay searches with large liquid argon {TPC} detectors at
   shallow depths: atmospheric neutrinos and cosmogenic backgrounds.
 \newblock {\em Journal of High Energy Physics}, 2007(04):041--041, apr 2007.
+
+\bibitem{Clough1974}
+A.S.~Clough et~al.
+\newblock Pion-nucleus total cross sections from 88 to 860 {MeV}.
+\newblock {\em Nuclear Physics B}, 76(1):15--28, jul 1974.
 
 \bibitem{Athanassopoulos1997}
 C~Athanassopoulos et~al.
@@ -253,6 +264,12 @@ Hermann Weyl.
 \newblock Gravitation and the electron.
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 15(4):323--334, 1929.
+
+\bibitem{Wilkin:1973xd}
+Colin et~al Wilkin.
+\newblock {A comparison of pi+ and pi- total cross-sections of light nuclei
+  near the 3-3 resonance}.
+\newblock {\em Nucl. Phys.}, B62:61--85, 1973.
 
 \bibitem{PhysRev.105.1413}
 C.~S. Wu, E.~Ambler, R.~W. Hayward, D.~D. Hoppes, and R.~P. Hudson.
