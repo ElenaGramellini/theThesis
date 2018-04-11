@@ -3,9 +3,13 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis_main.aux
 The style file: plain.bst
 Database file #1: bib.bib.bib
-Warning--I didn't find a database entry for ""
+You're missing a field part---line 1484 of file bib.bib.bib
+ : number = 
+ :          ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Adams:LBNE"
 Warning--I didn't find a database entry for "s"
+Warning--I didn't find a database entry for "Irene"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
 Warning--I didn't find a database entry for "PhysRevLett.115.121803"
 Warning--I didn't find a database entry for "Acciarri:Dune"
@@ -16,45 +20,46 @@ Warning--empty journal in Drakoulakos:2004gn
 Warning--empty journal in fesbach1992theoretical
 Warning--empty booktitle in Sten
 Warning--empty journal in P5
-You've used 50 entries,
+Warning--empty year in osti_4488432
+You've used 54 entries,
             2118 wiz_defined-function locations,
-            858 strings with 12058 characters,
-and the built_in function-call counts, 15440 in all, are:
-= -- 1520
-> -- 659
+            884 strings with 12580 characters,
+and the built_in function-call counts, 16700 in all, are:
+= -- 1643
+> -- 713
 < -- 0
-+ -- 272
-- -- 216
-* -- 1157
-:= -- 2608
-add.period$ -- 145
-call.type$ -- 50
-change.case$ -- 247
++ -- 294
+- -- 234
+* -- 1254
+:= -- 2824
+add.period$ -- 157
+call.type$ -- 54
+change.case$ -- 268
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 536
-empty$ -- 1259
-format.name$ -- 216
-if$ -- 3150
+cite$ -- 61
+duplicate$ -- 579
+empty$ -- 1359
+format.name$ -- 234
+if$ -- 3405
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 48
-newline$ -- 248
-num.names$ -- 92
-pop$ -- 209
+int.to.str$ -- 54
+missing$ -- 52
+newline$ -- 268
+num.names$ -- 100
+pop$ -- 226
 preamble$ -- 1
-purify$ -- 201
+purify$ -- 218
 quote$ -- 0
-skip$ -- 371
+skip$ -- 398
 stack$ -- 0
-substring$ -- 1150
-swap$ -- 46
+substring$ -- 1246
+swap$ -- 50
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 196
-warning$ -- 6
-while$ -- 153
-width$ -- 52
-write$ -- 526
-(There were 13 warnings)
+type$ -- 212
+warning$ -- 7
+while$ -- 165
+width$ -- 56
+write$ -- 568
+(There was 1 error message)

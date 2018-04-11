@@ -32,6 +32,12 @@ C.~Andreopoulos et~al.
 \newblock {The GENIE Neutrino Monte Carlo Generator}.
 \newblock {\em Nucl. Instrum. Meth.}, A614:87--104, 2010.
 
+\bibitem{PhysRevC.23.2173}
+D.~Ashery, I.~Navon, G.~Azuelos, H.~K. Walter, H.~J. Pfeiffer, and F.~W.
+  Schlep\"utz.
+\newblock True absorption and scattering of pions on nuclei.
+\newblock {\em Phys. Rev. C}, 23:2173--2185, May 1981.
+
 \bibitem{Athanassopoulos:1997pv}
 C.~Athanassopoulos et~al.
 \newblock {Evidence for nu(mu) $\rightarrow$ nu(e) neutrino oscillations from
@@ -125,6 +131,11 @@ A.S.~Clough et~al.
 \newblock Pion-nucleus total cross sections from 88 to 860 {MeV}.
 \newblock {\em Nuclear Physics B}, 76(1):15--28, jul 1974.
 
+\bibitem{ALLARDYCE19731}
+B.W.~Allardyce et~al.
+\newblock Pion reaction cross sections and nuclear sizes.
+\newblock {\em Nuclear Physics A}, 209(1):1 -- 51, 1973.
+
 \bibitem{Athanassopoulos1997}
 C~Athanassopoulos et~al.
 \newblock The liquid scintillator neutrino detector and {LAMPF} neutrino
@@ -132,6 +143,11 @@ C~Athanassopoulos et~al.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment},
   388(1-2):149--172, mar 1997.
+
+\bibitem{BINON1970168}
+F.~Binon et~al.
+\newblock Scattering of negative pions on carbon.
+\newblock {\em Nuclear Physics B}, 17(1):168 -- 188, 1970.
 
 \bibitem{MinervaTestbeam}
 L.~Aliaga et~al.
@@ -255,6 +271,11 @@ Steve Ritz et~al.
 \newblock {Building for Discovery: Strategic Plan for U.S. Particle Physics in
   the Global Context}.
 \newblock 2014.
+
+\bibitem{osti_4488432}
+L.M. Saunders.
+\newblock Electromagnetic production of pions from nuclei.
+\newblock {\em Nucl. Phys., B7: 293-310(1968).}
 
 \bibitem{sigma-aldrich}
 Sigma-Aldrich, P.O. Box 14508, St. Louis, MO 63178 USA.

@@ -348,7 +348,7 @@ A summary of the pion final states in order of pion multiplicity is given in tab
  Since pion capture can be considered an electromagnetic process and pion decay is a weak process, this energy region is purposely excluded from the hadronic cross section measurement.
 
 
-\begin{sidewaystable}
+\begin{sidewaystable}[hp]
 %\Rotatebox{90}{%
 \begin{tabular}{| c | l | m{7cm} | m{8cm} |}
 \hline
@@ -380,20 +380,50 @@ N $\pi$ in FS & Channel Name & Reaction &  Notes \\
 
 
 \subsubsection{Previous measurements: Lighter and Heavier Nuclei}
-Many experiments with pion beams have studied the hadronic interaction of pions on light and heavy materials, such as  He, Li, C, Fe, Pb\textcolor{red}{\cite{s}}. However, data on argon are rare: the total differential hadronic cross section has never been measured before on argon. Simulation packages like Geant base their pion transportation for argon on data from lighter and heavier nuclei: the goal of LArIAT's dedicated measurement on argon is to bridge this gap in data, thus reducing the uncertainties related to pions interaction in argon in both neutrino event generators and in simulation packages of pion transportation.
+Many experiments with pion beams have studied the hadronic interaction of pions on light and heavy materials, such as  He, Li, C, Fe, Pb\textcolor{red}{\cite{s}}. However, data on argon are rare: the total differential hadronic cross section has never been measured before on argon. Simulation packages like Geant4 base their pion transportation for argon on data from lighter and heavier nuclei: the goal of LArIAT's dedicated measurement on argon is to bridge this gap in data, thus reducing the uncertainties related to pions interaction in argon in both neutrino event generators and in simulation packages of pion transportation.
 
-The shape of the pion-nucleus interaction cross section in the energy range considered shows the distinct features that indicate the presence of a resonance. The mean free path of a pion of kinetic energy between 100 and 400 MeV is much shorter than the average distance between nucleons (which is of the order of 1 fm). Therefore, the pion interacts with surface nucleons. A $\Delta$ resonance is often produced in the interaction, which subsequently decays inside the nucleus.
+The shape of the pion-nucleus interaction cross section in the energy range considered shows the distinct features that indicate the presence of a resonance. In fact, the mean free path of a pion of kinetic energy between 100 and 400 MeV is much shorter than the average distance between nucleons (which is of the order of 1 fm). Therefore, the pion interacts with surface nucleons. A $\Delta$ resonance is often produced in the interaction, which subsequently decays inside the nucleus.
+Experimental results on several nuclei as reported in \cite{PhysRevC.14.635} are shown in Figure \ref{fig:pi1}; it is interesting to notice here how the shape fo the $\Delta$ resonance become less pronounced as a function of the mass number of the target nucleus. Pion interactions with heavier nuclei also shift the peak of the resonance at lower energy; this effect is due to kinematic considerations and to the difference in propagation of the $\Delta$ inside the nucleus. Multiple scattering effect modify the resonance width, which is larger than the natural-decay width.
+As an example of a fairly well studied target, Figure \ref{fig:pi2} reports the negative pion cross section on Carbon for the elastic and reaction\footnote{What we refer as to ``reaction channel" is called ``inelastic" in the paper.} channels, and their sum \cite{BINON1970168}.
 
-Experimental results on several nuclei are reported in Figure as from \cite{PhysRevC.14.635}.
 
 \begin{figure}[hbpt]
 \centering
-\includegraphics[]{Chapter-1/Images/PionsOnNuclei.png}
+\includegraphics[scale=0.7]{Chapter-1/Images/PionsOnNuclei.png}
 \caption{Pion-nucleus total cross sections:  $\sigma_{\pi^+}$ for positive pions (right) and $\sigma_{AV}$ (left) for the average between positive and negative pions $\sigma_{AV} = \frac{\sigma_{\pi^+} + \sigma_{\pi^-}}{2}$  in  the $\Delta$ resonance region.  The error bars include estimates of systematic uncertainties. The curves are the results of fits to the data assuming a Breit-Wigner shape. This summary plot  is reported in \cite{PhysRevC.14.635} and uses data from \cite{Clough1974, Wilkin:1973xd}.
 }
+\label{fig:pi1}
 \end{figure}
 
-\subsubsection{Pion Interaction Cross Section for thin target in Geant4}
+\begin{figure}[hbpt]
+\centering
+\includegraphics[scale=0.7]{Chapter-1/Images/PionCarbon.png}
+\caption{Negative pion nucleus total, elastic and reaction cross sections on $^{12}$C as from \cite{BINON1970168}.  }
+\label{fig:pi2}
+\end{figure}
+
+\subsubsection{Pion Interaction Cross Section in generators}
+A broad review of the current status of negative and positive pion simulation in Geant4 and GENIE for $^{12}$C, $^{56}$Fe, and $^{40}$Ca can be found in \cite{Irene} \textcolor{red}{Irene}. From that work, we report the results for $^{12}$C (left) in Figure \ref{fig:pionC} and  $^{40}$Ca (right) in Figure \ref{fig:pionCa}, since the argon cross section should lie in between. 
+
+
+\begin{figure}
+\captionsetup{justification=raggedright}  
+	\begin{minipage}[t]{.53\textwidth}  
+	  \centering  
+	   \includegraphics[width=3in]{Chapter-1/Images/IreneCarbon.png}
+	   	        \caption{ Total, elastic and reaction cross section for $\pi^-$ on $^{12}$C. Comparison between results from Geant4 simulation (Bertini cascade model) and experimental data \cite{Clough1974, PhysRevC.23.2173, ALLARDYCE19731,osti_4488432}.}
+        \label{fig:pionC}
+	\end{minipage}%  
+	\begin{minipage}[t]{0.53\textwidth}  
+	  \centering  
+	\includegraphics[width=3in]{Chapter-1/Images/IreneCalcium.png}
+        \caption{Total, elastic and reaction cross section for $\pi^-$ on $^{40}$Ca. Comparison between results from Geant4 simulation (Bertini cascade model),  Genie simulation (hA model), and experimental data \cite{ALLARDYCE19731}.}
+        \label{fig:pionCa}
+	\end{minipage}
+	\par
+\end{figure}
+
+
 
 \clearpage
 
@@ -500,7 +530,7 @@ Since the kaon cross section in argon has never been measured before, simulation
 
 
 
-\begin{figure}
+\begin{figure}[b!]
 \captionsetup{justification=raggedright}  
   \centering  
 \includegraphics[width=3in]{Chapter-1/Images/CarbonG4.png}
