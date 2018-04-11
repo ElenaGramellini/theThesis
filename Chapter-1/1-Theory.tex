@@ -289,9 +289,10 @@ The main goals of these research programs include:
 %%%%% ----------------------------------------     Pion Cross Section     ---------------------------------------- %%%%%
 
 \subsection{Pion-Argon Total Hadronic Cross Section}
-This section outlines the importance of the pion-argon total hadronic cross section. We start by discussing the measurement in the context of neutrino interaction searches and of light mesons interaction with nuclei studies. We then describe the signal signature and historical measurements of pion-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
+This section outlines the importance of the pion-argon total hadronic cross section. We start by discussing the measurement in the context of neutrino interaction searches. % and of light mesons interaction with nuclei studies. 
+ We then describe the signal signature and historical measurements of pion-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
 
-\subsubsection{$\pi^{-}$Ar Cross section in the Context of Neutrino Searches}
+\subsubsection{$\pi^{-}$Ar Cross Section in the Context of Neutrino Searches}
 As outlined in \ref{ch:NuInt}, neutrino experiments use the products of neutrino interactions to identify the energy and flavor of the incoming neutrino.
 Pions are a common product of neutrino interaction, especially in resonant scattering, DIS and coherent pion production. For neutrino experiments in argon, there are two main reasons why understanding pion hadronic interactions with argon is important: to model the behavior of the pion inside the nucleus struck by the neutrino and to model the behavior of the pion during its propagation inside the detector medium. 
 
@@ -321,9 +322,9 @@ The nuclear model used by GENIE for all processes is a relativistic Fermi gas (R
 Once the pion has left the target nucleus, the pion-argon hadronic cross section plays an important role in the pion transportation inside the argon medium: processes like pion absorption with emission of protons or pion charge exchange can greatly modify the topology of a neutrino interactions in the detector and lead to errors in the event classification.
 Being able to reconstruct the details of pions inside the detector is an imperative for modern liquid argon neutrino experiment to achieve the design resolution for their key physics measurements.
 
-\subsubsection{$\pi^{-}$Ar Cross Section in the Context of Light Mesons Interaction with Nuclei}
+%\subsubsection{$\pi^{-}$Ar Cross Section in the Context of Light Mesons Interaction with Nuclei}
 \subsubsection{Signal Signatures}
-The strong force determines most of the interactions between an argon nucleus and a charged pion in the [100 -1200] MeV/c momentum range. The total hadronic $\pi^{-}$-Ar interaction cross section is defined as the one related to the single (hadronic) process driven only by the strong interaction. In measuring the ``total" cross section, we include both the elastic and  reaction channels, regardless of the final state, 
+The strong force determines most of the interactions between an argon nucleus and a charged pion in the [100 -1200] MeV energy range. The total hadronic $\pi^{-}$-Ar interaction cross section is defined as the one related to the single (hadronic) process driven only by the strong interaction. In measuring the ``total" cross section, we include both the elastic and  reaction channels, regardless of the final state, 
 \begin{equation}
 \sigma_{Tot} = \sigma_{Elastic}+ \sigma_{Reaction};
 \end{equation}
@@ -332,24 +333,39 @@ the reaction channel is further characterizes by several exclusive channels with
 \sigma_{Reaction} = \sigma_{Inelastic} + \sigma_{abs} + \sigma_{chex}+ \sigma_{\pi prod}.
 \end{equation}
 
-A summary of the pion final states in order of pion multiplicity is given in table 
+A summary of the pion final states in order of pion multiplicity is given in table \ref{tab:pionFinal}. Pion capture on the argon orbital and pion decay at rest dominate the cross section under 100 MeV. Since pion capture can be considered an electromagnetic process and pion decay is a weak process, this energy region is purposely excluded from the hadronic cross section measurement.
 
-%\ref{tab:pionFinal}
-\Rotatebox{90}{%
-\begin{tabular}{llll}
+
+\begin{sidewaystable}
+%\Rotatebox{90}{%
+\begin{tabular}{| c | l | m{7cm} | m{8cm} |}
 \hline
-N $\pi$ in final state & Channel Name & Channel description & Reaction \\
+                    &              &                     &           \\
+N $\pi$ in FS & Channel Name & Reaction &  Notes \\
+                    &              &                     &           \\
 \hline
-                       &              &                     &          \\
-                       &              &                     &          \\
-                       &              &                     &          \\
-                       &              &                     &          \\
-                       &              &                     &         \\
+                    &              &                     &           \\
+ 0  & \textbf{Pion Absorption}, $\sigma_{abs}$ &  \begin{tabular}{@{}l@{}} $\pi^- (np) \rightarrow nn$ (2-body abs) \\ $\pi^- (nnp) \rightarrow nnn$ (3-body abs)  \\ $\pi^- (npp) \rightarrow pnn$ (3-body abs)\\  $\pi^- (nnpp) \rightarrow pnn$ (Multi-body abs)  \end{tabular}  &Suppressed on single nucleon by energy conservation: the process occurs on at least two nucleons system.     \\
+                    &              &                     &           \\
+ \hline
+                     &              &                     &           \\
+ 1 &  \textbf{Elastic Scattering}, $\sigma_{el}$ & $\pi^- + N \rightarrow \pi^- + N$   & Scattering on nucleon or nucleus, the target is left in ground state         \\
+                    &              &                     &           \\
+ 1 &  \textbf{Charge Exchange}, $\sigma_{chex}$ & \begin{tabular}{@{}l@{}} $\pi^- + p \rightarrow \Delta^0 \rightarrow \pi^0+n$ \\ $\pi^- + N \rightarrow \pi^+ + $ nucleons  \end{tabular} &\begin{tabular}{@{}m{8cm}@{}}Single charge exchange: charged pion converts into neutral pion \\  \\Double charge exchange: charged pion converts into opposite charge pion  \end{tabular}   \\
+                    &              &                     &           \\
+  1 &  \textbf{Inelastic Scattering}, $\sigma_{inel}$ &    \begin{tabular}{@{}l@{}} $\pi^- + p \rightarrow \Delta^0 \rightarrow \pi^-+p$ (knock-out)  \\  $\pi^- + n \rightarrow \Delta^- \rightarrow \pi^-+n$ (knock-out)   \end{tabular}  &\begin{tabular}{@{}m{8cm}@{}} Other possible reactions: \\ Pure  Inelastic scattering:  population of low energy bound excited states \\ Nuclear break-up with nucleons or fragments knock-out    \end{tabular}   \\
+                    &              &                     &           \\
+  \hline
+                      &              &                     &           \\
+ 2+ & \textbf{Pion Production}, $\sigma_{\pi prod}$    &           $\pi^- + N \rightarrow \ge2 \pi $ + nucleons            &  Possible if pion K.E $\ge$ 500 Mev/c       \\
+                    &              &                     &           \\
 \hline
 \end{tabular}
-}
+%}
+\caption{Summary of negative pion hadronic interactions as a function of the pion multiplicity in the final state in the energy range [100-1200] MeV. }
+\label{tab:pionFinal}
+\end{sidewaystable}
 
-Pion capture on the argon orbital and pion decay at rest dominate the cross section under 100 MeV/c. Since pion capture can be considered an electromagnetic process and pion decay is a weak process, this energy region is purposely excluded from the hadronic cross section measurement.
 
 \subsubsection{Previous measurements: Lighter and Heavier Nuclei}
 \subsubsection{Pion Interaction Cross Section for thin target in Geant4}
@@ -362,7 +378,8 @@ Pion capture on the argon orbital and pion decay at rest dominate the cross sect
 %%%%% ----------------------------------------     Kaon Cross Section     ---------------------------------------- %%%%%
 
 \subsection{Kaon-Argon Total Hadronic Cross Section}
-This section outlines the importance of the kaon-argon total hadronic cross section. We start by discussing the measurement in the context of nucleon decay searches and of light mesons interaction with nuclei studies. We then describe the signal signature and historical measurements of kaon-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
+This section outlines the importance of the kaon-argon total hadronic cross section. We start by discussing the measurement in the context of nucleon decay searches. % and of light mesons interaction with nuclei studies. 
+ We then describe the signal signature and historical measurements of kaon-nucleus cross section, as well as the implementation of this cross sections in the current version of the simulation package used by LArIAT.
 
 \subsubsection{K$^{+}$Ar Cross section in the Context of Nucleon Decay Searches}
 In case of nucleon decay discovery, the dominant decay mode may uncover additional information about the GUT type.  Supersymmetric GUTs \cite{Dimopoulos:1981dw,Bajc20161} prefer the presence of kaons in the products of the decay, e.g. $p\rightarrow K^+\bar{\nu}$  (see fig \ref{fig:MandatoryFeynmannDiagrams}, left).
@@ -383,11 +400,11 @@ The K$^+$-Ar interaction cross section has never been measured before and can af
 Kaon interactions with argon can distort the kaon energy spectrum as well as change the topology of single kaon events. In a LArTPC, non-interacting kaons appear as straight tracks with a high ionization depositions at the end (Bragg peak). The topology of interacting kaons can be quite different. In case of elastic scattering, a distinct kink will be present in the track. In case of inelastic scattering the Bragg peak will not be present and additional tracks will populate the event.
 Performing the total hadronic K$^+$-Ar cross section measurement on data serves the double purpose of identifying the rate of ``unusual" topologies (kinks and additional tracks) and of developing tools for kaon tracking in LAr.
 
-\subsubsection{K$^{+}$Ar Cross section in the Context of Light Mesons Interaction with Nuclei}
-\label{sec:theoryStrangeMeson}
-The intrinsic value of the total hadronic K$^{+}$-Ar cross section measurement is that kaon interactions complement the measurements of $\pi$ interactions as a probe of  hadron interaction inside the nucleus in the strange sector.  
-\textcolor{red}{High theoretical interest in probing constituent quark model of nuclear structure with
-KAON-NUCLEON INTERACTIONS CHIEDI REFERENZE A FLAVIO}
+%\subsubsection{K$^{+}$Ar Cross section in the Context of Light Mesons Interaction with Nuclei}
+%\label{sec:theoryStrangeMeson}
+%The intrinsic value of the total hadronic K$^{+}$-Ar cross section measurement is that kaon interactions complement the measurements of $\pi$ interactions as a probe of  hadron interaction inside the nucleus in the strange sector.  
+%\textcolor{red}{High theoretical interest in probing constituent quark model of nuclear structure with
+%KAON-NUCLEON INTERACTIONS CHIEDI REFERENZE A FLAVIO}
 
 
 %Total cross sections for the interaction of mildly relativistic kaons with several nuclei were derived from transmission experiments performed at the alternating-gradient synchrotron in Brookhaven National Laboratory. The high precision of these cross sections ~about 1\% led to analyses of the data in terms of KN nucleus potentials, based on the expectation that the KN nucleus interaction is simply related to the KN interaction. In particular, in this energy range the KN interaction does not vary strongly with energy and together with the relative weakness of the interaction, one expects that optical potentials close to the ??tr?? approximation ~see below will be capable of describing the data. However, all such analyses showed disagreement between calculation and experiment at the level of 5?15\%, which caused speculations about modifications in the nuclear medium of the KN interaction @5?8#. 
@@ -399,14 +416,6 @@ In this case, ``total" indicates all strong interactions regardless of the final
 $$\sigma_{Tot} = \sigma_{Elastic}+ \sigma_{Reaction}.$$
 
 
-%For this analysis, kaons are selected from the LArIAT beamline in the momentum range between \textcolor{red}{500} MeV/c and \textcolor{red}{1000} MeV/c (see Fig \ref{fig:TOFK}).
-
-%\begin{figure}[hpbt]
-%\centering
-%\includegraphics[width=5in]{Chapter-1/Images/KaonTOF}
-%\caption{Time of flight versus momentum distributions as produced by the LArIAT TOF and Wire Chambers systems. The Kaon population lies between the proton and the muon/pion populations, allowing PID of Kaons in the beam line.  }
-%\label{fig:TOFK}
-%\end{figure}
 
 For the LArIAT cross section analysis, the kaons considered span a momentum inside the TPC from 800 MeV/c and 100 MeV/c. In this energy range, the relevant K-Nucleon interactions are according to \cite{fesbach1992theoretical}:
 
