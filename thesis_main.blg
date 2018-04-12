@@ -7,7 +7,9 @@ You're missing a field part---line 1484 of file bib.bib.bib
  : number = 
  :          ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Adams:LBNE"
+Warning--I didn't find a database entry for "supersymmetry"
+Warning--I didn't find a database entry for "LHC"
+Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "s"
 Warning--I didn't find a database entry for "Irene"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
@@ -29,45 +31,45 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
 while executing---line 1090 of file plain.bst
-You've used 57 entries,
+You've used 60 entries,
             2118 wiz_defined-function locations,
-            900 strings with 12941 characters,
-and the built_in function-call counts, 17698 in all, are:
-= -- 1747
-> -- 740
-< -- 2
-+ -- 305
-- -- 242
-* -- 1308
-:= -- 2980
-add.period$ -- 166
-call.type$ -- 57
-change.case$ -- 281
+            921 strings with 13465 characters,
+and the built_in function-call counts, 18825 in all, are:
+= -- 1862
+> -- 783
+< -- 3
++ -- 322
+- -- 256
+* -- 1386
+:= -- 3156
+add.period$ -- 175
+call.type$ -- 60
+change.case$ -- 297
 chr.to.int$ -- 0
-cite$ -- 64
-duplicate$ -- 626
-empty$ -- 1443
-format.name$ -- 242
-if$ -- 3632
+cite$ -- 67
+duplicate$ -- 671
+empty$ -- 1536
+format.name$ -- 256
+if$ -- 3875
 int.to.chr$ -- 0
-int.to.str$ -- 57
-missing$ -- 55
-newline$ -- 283
-num.names$ -- 106
-pop$ -- 237
+int.to.str$ -- 60
+missing$ -- 58
+newline$ -- 298
+num.names$ -- 112
+pop$ -- 252
 preamble$ -- 1
-purify$ -- 228
+purify$ -- 241
 quote$ -- 0
-skip$ -- 438
+skip$ -- 473
 stack$ -- 0
-substring$ -- 1322
-swap$ -- 67
-text.length$ -- 2
+substring$ -- 1415
+swap$ -- 80
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 224
+type$ -- 236
 warning$ -- 7
-while$ -- 176
-width$ -- 59
-write$ -- 601
+while$ -- 188
+width$ -- 62
+write$ -- 634
 (There were 5 error messages)
