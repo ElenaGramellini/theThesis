@@ -389,7 +389,7 @@ As an example of a fairly well studied target, Figure \ref{fig:pi2} reports the 
 
 \begin{figure}[hbpt]
 \centering
-\includegraphics[scale=0.7]{Chapter-1/Images/PionsOnNuclei.png}
+\includegraphics[scale=0.9]{Chapter-1/Images/PionsOnNuclei.png}
 \caption{Pion-nucleus total cross sections:  $\sigma_{\pi^+}$ for positive pions (right) and $\sigma_{AV}$ (left) for the average between positive and negative pions $\sigma_{AV} = \frac{\sigma_{\pi^+} + \sigma_{\pi^-}}{2}$  in  the $\Delta$ resonance region.  The error bars include estimates of systematic uncertainties. The curves are the results of fits to the data assuming a Breit-Wigner shape. This summary plot  is reported in \cite{PhysRevC.14.635} and uses data from \cite{Clough1974, Wilkin:1973xd}.
 }
 \label{fig:pi1}
@@ -397,24 +397,19 @@ As an example of a fairly well studied target, Figure \ref{fig:pi2} reports the 
 
 \begin{figure}[hbpt]
 \centering
-\includegraphics[scale=0.7]{Chapter-1/Images/PionCarbon.png}
+\includegraphics[scale=0.9]{Chapter-1/Images/PionCarbon.png}
 \caption{Negative pion nucleus total, elastic and reaction cross sections on $^{12}$C as from \cite{BINON1970168}.  }
 \label{fig:pi2}
 \end{figure}
 
 \subsubsection{Pion Interaction Cross Section in generators}
-A broad review of the current status of negative and positive pion simulation in Geant4 and GENIE for $^{12}$C, $^{56}$Fe, and $^{40}$Ca can be found in \cite{Irene} \textcolor{red}{Irene}. From that work, we report the results for $^{12}$C (left) in Figure \ref{fig:pionC} and  $^{40}$Ca (right) in Figure \ref{fig:pionCa}, since the argon cross section should lie in between. 
+LArIAT uses Geant4 as the default simulation package. In particular, pions (and kaons) transportation is achieved through the Geant4 FTFP\_BERT physics list. In this physics list, Geant4 uses the Bertini cascade model  \cite{Wright:2015xia}  to simulate the products of the pion-nucleus interaction as well as the secondary hadrons re-interactions inside the target nucleus (intra-nuclear cascade).  The target nucleus is represented as a continuous gas where the nuclear potential follows concentrical shells whose depths approximate the Woods-Saxon shape.  The CERN-HERA compilations \cite{Compilation1,Compilation2} of hadron-nucleon interaction data is the data base used for the decision making process after the cascade is invoked. The cross section model determines if the pion interacts, the eventual type of interaction and the interaction multiplicity. For  hadron projectiles with energy less than 20 GeV, Geant4 reports  the uncertainty on the cross section model to be about the size of the error bars on the data used, or about 10\%, increasing to 20-30\% in energy regions where data is sparse. 
 
-LArIAT uses Geant4 as the default simulation package. In particular, pions (and kaons) transportation is achieved through the Geant4 FTFP\_BERT physics list. In this physics list, Geant4 uses the Bertini cascade model  \cite{Wright:2015xia}  to simulate the products of the pion-nucleus interaction as well as the hadrons re-interactions inside the target nucleus (intra-nuclear cascade).  REWRITE THE FOLLOWING
-%The target nucleus is treated as an average nuclear medium, in which the nucleons are assumed to have a Fermi gas momentum distribution. The final state of each collision is sampled according to free-particle cross section data. Clusters of nucleons are considered only in case of pion absorption which requires at least dinucleons. Nuclear effects, i.e. secondaries which can interact with other protons and neutrons inside the nucleus and so on until the last secondaries es-cape the nucleus or are absorbed, are also taken in account. This model reproduces detailed cross section data for nucleons, pions and kaons in the region below 1 GeV and is expected to do reasonably well in the multi-GeV region.
+The relevance of the GENIE generator for neutrino physics and its basic working principles have been outlined earlier in this section. Given GENIE's modularity, information on hadron-nucleus interactions can be extracted from the  INTRANUKE module and directly compared against the Geant4 predictions.%, as shown in Figure    \ref{fig:pionCa}.
 
+A broad review of the current status of negative and positive pion simulation in Geant4 and GENIE for $^{12}$C, $^{56}$Fe, and $^{40}$Ca can be found in \cite{Irene} \textcolor{red}{Irene}. From that work, we report the results for $^{12}$C in Figure \ref{fig:pionC} as it allows a direct comparison between Geant4, GENIE and data.  Geant4 predictions for $\pi^-$  on Carbon are in good agreement with data over all the spectrum, while GENIE predictions seem to show some features at around 500 MeV and 900 MeV maybe due ti higher resonances in the hA model. From the same work, we also report the negative pion cross section on $^{40}$Ca in Figure \ref{fig:pionCa}, since the this is the nuclear medium closest argon with some available data. The predictions from both Geant4 and GENIE agree with data in the high energy region. The predictions diverge in the resonance region, where data is not available. 
 
-%Genie
-The relevance of the GENIE generator for neutrino physics and its basic working principles have been outlined earlier in this section. Information on hadron-nucleus interactions can be extracted from the  INTRANUKE module and compared against the Geant4 predictions, as shown in Figure    \ref{fig:pionCa}.
-%Calcium explained
-%Carbon explained
-
-Figure \ref{fig:PionTrueArgon} shows the Geant4 prediction for the total, elastic and reaction cross section for $\pi^-$ on argon.
+For the $\pi^-$ argon total cross section measurement, we use the Geant4 Bertini Cascade model, whose  predictions for the total, elastic and reaction cross sections are show in Figure \ref{fig:PionTrueArgon}.
 
 
 
@@ -423,7 +418,7 @@ Figure \ref{fig:PionTrueArgon} shows the Geant4 prediction for the total, elasti
 	\begin{minipage}[t]{.53\textwidth}  
 	  \centering  
 	   \includegraphics[width=3in]{Chapter-1/Images/IreneCarbon.png}
-	   	        \caption{ Total, elastic and reaction cross section for $\pi^-$ on $^{12}$C. Comparison between results from Geant4 simulation (Bertini cascade model) and experimental data \cite{Clough1974, PhysRevC.23.2173, ALLARDYCE19731,osti_4488432}.}
+	   	        \caption{ Total, elastic and reaction cross section for $\pi^-$ on $^{12}$C. Comparison between results from Geant4 simulation (Bertini cascade model), Genie simulation (hA model), and experimental data \cite{Clough1974, PhysRevC.23.2173, ALLARDYCE19731,osti_4488432}.}
         \label{fig:pionC}
 	\end{minipage}%  
 	\begin{minipage}[t]{0.53\textwidth}  

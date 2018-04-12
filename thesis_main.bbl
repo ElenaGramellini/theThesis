@@ -280,6 +280,18 @@ L.M. Saunders.
 \bibitem{sigma-aldrich}
 Sigma-Aldrich, P.O. Box 14508, St. Louis, MO 63178 USA.
 
+\bibitem{Compilation1}
+D.R.O. Morrison N.~Rivoire V.~Flaminio, W.G.~Moorhead.
+\newblock {Compilation of Cross Sections I: $\pi^+$ and $\pi^-$ Induced
+  Reactions}.
+\newblock {\em CERN-HERA}, pages 83--01, 1983.
+
+\bibitem{Compilation2}
+D.R.O. Morrison N.~Rivoire V.~Flaminio, W.G.~Moorhead.
+\newblock {Compilation of Cross Sections II: $K^+$ and $K^-$ Induced
+  Reactions}.
+\newblock {\em CERN-HERA}, pages 83--02, 1983.
+
 \bibitem{Weyl:10.2307}
 Hermann Weyl.
 \newblock Gravitation and the electron.
@@ -291,6 +303,11 @@ Colin et~al Wilkin.
 \newblock {A comparison of pi+ and pi- total cross-sections of light nuclei
   near the 3-3 resonance}.
 \newblock {\em Nucl. Phys.}, B62:61--85, 1973.
+
+\bibitem{Wright:2015xia}
+D.~H. Wright and M.~H. Kelsey.
+\newblock {The Geant4 Bertini Cascade}.
+\newblock {\em Nucl. Instrum. Meth.}, A804:175--188, 2015.
 
 \bibitem{PhysRev.105.1413}
 C.~S. Wu, E.~Ambler, R.~W. Hayward, D.~D. Hoppes, and R.~P. Hudson.

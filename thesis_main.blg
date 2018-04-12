@@ -15,51 +15,59 @@ Warning--I didn't find a database entry for "PhysRevLett.115.121803"
 Warning--I didn't find a database entry for "Acciarri:Dune"
 Warning--I didn't find a database entry for "WWW"
 Warning--to sort, need author or key in 2006257
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1049 of file plain.bst
 Warning--empty author in 2006257
 Warning--empty journal in Drakoulakos:2004gn
 Warning--empty journal in fesbach1992theoretical
 Warning--empty booktitle in Sten
 Warning--empty journal in P5
 Warning--empty year in osti_4488432
-You've used 54 entries,
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1090 of file plain.bst
+You've used 57 entries,
             2118 wiz_defined-function locations,
-            884 strings with 12580 characters,
-and the built_in function-call counts, 16700 in all, are:
-= -- 1643
-> -- 713
-< -- 0
-+ -- 294
-- -- 234
-* -- 1254
-:= -- 2824
-add.period$ -- 157
-call.type$ -- 54
-change.case$ -- 268
+            900 strings with 12941 characters,
+and the built_in function-call counts, 17698 in all, are:
+= -- 1747
+> -- 740
+< -- 2
++ -- 305
+- -- 242
+* -- 1308
+:= -- 2980
+add.period$ -- 166
+call.type$ -- 57
+change.case$ -- 281
 chr.to.int$ -- 0
-cite$ -- 61
-duplicate$ -- 579
-empty$ -- 1359
-format.name$ -- 234
-if$ -- 3405
+cite$ -- 64
+duplicate$ -- 626
+empty$ -- 1443
+format.name$ -- 242
+if$ -- 3632
 int.to.chr$ -- 0
-int.to.str$ -- 54
-missing$ -- 52
-newline$ -- 268
-num.names$ -- 100
-pop$ -- 226
+int.to.str$ -- 57
+missing$ -- 55
+newline$ -- 283
+num.names$ -- 106
+pop$ -- 237
 preamble$ -- 1
-purify$ -- 218
+purify$ -- 228
 quote$ -- 0
-skip$ -- 398
+skip$ -- 438
 stack$ -- 0
-substring$ -- 1246
-swap$ -- 50
-text.length$ -- 0
+substring$ -- 1322
+swap$ -- 67
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 212
+type$ -- 224
 warning$ -- 7
-while$ -- 165
-width$ -- 56
-write$ -- 568
-(There was 1 error message)
+while$ -- 176
+width$ -- 59
+write$ -- 601
+(There were 5 error messages)
