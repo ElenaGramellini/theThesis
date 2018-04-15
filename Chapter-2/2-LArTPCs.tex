@@ -6,8 +6,6 @@ In the next few years, LArTPC experiments -- such as the Short-Baseline Neutrino
 
 \section{Liquid Argon Time Projection Chambers at the Intensity Frontier}
 
-%Bubble-chamber experiments played a key role in probing the properties of ?-interactions. The Liquid Argon Time Projection Chambers (LArTPC) technology,  first proposed by C.Rubbia in 1977 with ICARUS project [14], is considered the modern evolution of bubble-camber concept, with the additional features of three-dimensional event reconstruction, high-resolution calorimetry, active mass coincident with detector sensitive mass and can intrinsically supply a trigger signal (self-triggering) by means of the scintillation light produced in the liquid noble gas. This technology is ideal to perform $\nu$-studies in a broad energy range, from MeV up to few GeV, with high event reconstruction efficiency, thanks to the capability of particle identifcation and detailed reconstruction of different interaction topologies. In Figure 1.4 is shown a neutrino interaction event, producing a proton, a pion and a muon, as seen in a bubble chamber and in a LArTPC.
-
 
 \subsection{Time Projection Chamber}
 \subsection{Ionization Detectors with Noble Liquids}
@@ -18,7 +16,36 @@ In the next few years, LArTPC experiments -- such as the Short-Baseline Neutrino
 \subsubsection{Recombination Effect}
 \subsection{Liquid Argon scintillation Light Detection}
 \subsubsection{LAr Scintillation Process}
+Liquid argon emits scintillation light at the passage of charge particle. The light yield depends on the argon purity, the electric field, the dE/dx and particle type, averaging at the tens of thousands of photons per MeV. Light emission peaks in the ultraviolet at a 128 nm, shown in comparison to Xenon and Kypton in Figure  [183]. 
+
+The de-excitation of Rydberg dimers in the argon is responsible for the scintillation light.
+Rydberg dimers exist in two states:  a singlet and a triplet. The time constant for the singlet radiative decay is 6 ns, resulting in a prompt component for the scintillation light. The decay of the triplet is delayed by intersystem crossing, producing a slow component with a time constant of $\sim$~1500 ns.  ``Self-trapped exciton luminescence" and  ``recombination luminescence" are the two processes responsible for the creation of the Rydberg dimers. In the first process, a charged particle excites an argon atom which becomes self-trapped in the surrounding bulk of argon,  forming a dimer; the dimer is in the singlet state 65\% of the times and in the triplet state 35\% of the times. In case of recombination luminescence, the charged particle transfers enough energy to ionize the argon. The argon form a charged argon dimer state, which quickly recombines with the thermalized free electron cloud. Excimer states are produced in the recombination, roughly half in the singlet and half in the triplet state. The light yield dependency on the electric field, on the dEdx and particle type derives from the role of free charge in the recombination luminescence process. The separation between the argon ions and the free electron cloud depend on the electric field. On one hand, a strong electric field diminishes the recombination probability, leading to a smaller light yield; on the other, it increases the free charge drifting towards the anode plane. Hence, charge and light as a function of the electric field are anti-correlated.
+
+
+%The recombination rate is proportional to the local densities of both free electrons and
+%positive ions, so the square of the local ionization density. Recombination is therefore
+%enhanced for highly ionizing particles [102]. This results in a characteristic dE/dx
+%dependence in the time profile of scintillation light [106], which can be used for pulseshape-based particle identification [186], [187].
+
+%Although attempts to measure the absorption length of pure argon at 128 nm
+%have been hindered by the presence of impurities [188], it is expected to be much
+%longer than the length scale of existing or proposed LArTPCs. 
+
+The production mechanism through emission from bound excimer states implies that argon is  transparent  to its own scintillation light: the emitted photons are not energetic enough to re-excite the argon bulk.
+%Scattering processes, on the other hand, do occur on length scales comparable to
+%the size of existing detectors. In particular, Rayleigh scattering of 128 nm light
+%from thermal density fluctuations in the liquid has a predicted scattering length of
+%approximately 90 cm [190]. Scattering causes the light propagating between a source
+%and optical detector to take a longer path than the direct line of sight, and affects the
+%arrival times and directions of detected photons. This is particularly important for ??0
+%determination in a LArPC. A direct measurement of the Rayleigh scattering length
+%has been made [191] and a value 66 cm was obtained, shorter than the theoretical
+%prediction.
+
+
+
 \subsubsection{Wavelength Shifting of LAr Scintillation Light}
+\subsection{Signal processing}
 \section{The SBN Program: Neutrino Interaction and Detection}
 %\subsection{SBN Goals}
 %\subsection{Neutrino Interactions and Detection }
