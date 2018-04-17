@@ -107,6 +107,37 @@ We fit a line on all the space points of the track and calculate the $\chi^2$. T
 For the spatial and angular resolution study, we reject tracks with less than 14 space points. For each track, we order the space points according to their Z position and we split them in two sets: the first set counts all the points belonging to the first half of the track and the second set counts all the points belonging to the second half of the track. We remove the last 5 points in the first set and the first 5 points in the second set, so to have a gap in the middle of the original track. We fit the first and the second set of points with a line separately. We reject the event entirely if the  $\chi^2$ for the fit of either of the halves is greater than four.  We define a track middle plane as the plane perpendicular to the original track fit, positioned in the middle of its length. We project the tracks on the middle plane and calculate the impact parameter, $d$, i.e. the distance between the projected points. We also calculate the angle between the original track direction and the fit of the first and second half, called $\alpha_1$ and $\alpha_2$ respectively. The spatial resolution of the track will be $\sigma_S = \frac{d}{\sqrt 2}$ while the angular resolution of the tracks will be  $\sigma_\alpha = \alpha_1 - \alpha_2$. The distributions for data and MC for $\sigma_\alpha$ and $\sigma_S$ are given in \ref{fig:trackingResolution}.
 
 
+\subsection{Estimate of $E_{loss}$ before the TPC}
+The beamline particles travel a path from when their momentum is measured by the beamline detector, until they are tracked inside the TPC. In the current LArIAT geometry, a particle leaving the fourth wire chamber will encounter the materials listed in Table \ref{tab:budget} before being registered again. The energy lost by the particle in this non instrumented material modifies the particle's kinetic energy and directly affects the cross section measurement, as shown in equation \ref{eq:enFF}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Material  & density {[}g/cm$^3${]} & width {[}cm{]}    \\ \hline
+Fiberglass laminate (G10)      & 1.7                             & 1.28                              \\
+Liquid Argon                           & 1.4                             & 3.72                             \\
+Stainless Steel                        & 7.7                            & 0.23                             \\
+Titanium                                  & 4.5                            & 0.04                             \\ 
+Air                                            &  1.2 $\cdot10^{-3}$  & 89.43                              \\
+Plastic Scintillator                    & 1.03                          & 5.30                              \\ \hline
+\end{tabular}
+\caption{LArIAT material budget from WC4 to the TPC Front Face.}
+\label{tab:budget}
+\end{table}
+
+
+We estimate the uncertainty on the energy loss between the beamline momentum measurement and the TPC, $E_{loss}$, using the DDMC pion sample. We shoot pions from WC4 with the same momentum distribution as in the beamline data and plot the true $E_{loss}$ for that sample. The distribution for $E_{loss}$ for the pion sample is shown in Figure \ref{fig:Eloss}. We estimate the energy loss for pions to be $E_{loss} = 37 \pm 7 $~MeV where we use the average energy lost as the central value and the standard deviation of the distribution as the uncertainty. 
+
+\begin{figure}[hpbt]
+\centering
+\includegraphics[scale=0.4]{Chapter-5/Images/cELossPions.png}
+\caption{Energy loss by simulated negative pions downstream from WC4 and upstream from the TPC.}
+\label{fig:Eloss}
+\end{figure}
+
+
+
 
 
 
