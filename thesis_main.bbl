@@ -1,9 +1,33 @@
 \begin{thebibliography}{1}
 
+\bibitem{1748-0221-5-06-P06003}
+R~Acciarri, M~Antonello, B~Baibussinov, M~Baldo-Ceolin, P~Benetti, F~Calaprice,
+  E~Calligarich, M~Cambiaghi, N~Canci, F~Carbonara, F~Cavanna, S~Centro, A~G
+  Cocco, F~Di Pompeo, G~Fiorillo, C~Galbiati, V~Gallo, L~Grandi, G~Meng,
+  I~Modena, C~Montanari, O~Palamara, L~Pandola, G~B~Piano Mortari,
+  F~Pietropaolo, G~L Raselli, M~Roncadelli, M~Rossella, C~Rubbia, E~Segreto,
+  A~M Szelc, S~Ventura, and C~Vignoli.
+\newblock Effects of nitrogen contamination in liquid argon.
+\newblock {\em Journal of Instrumentation}, 5(06):P06003, 2010.
+
+\bibitem{GEHMAN2011116}
+V.M. Gehman, S.R. Seibert, K.~Rielage, A.~Hime, Y.~Sun, D.-M. Mei, J.~Maassen,
+  and D.~Moore.
+\newblock Fluorescence efficiency and visible re-emission spectrum of
+  tetraphenyl butadiene films at extreme ultraviolet wavelengths.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 654(1):116
+  -- 121, 2011.
+
 \bibitem{1748-0221-8-07-P07011}
 B~J~P Jones, C~S Chiu, J~M Conrad, C~M Ignarra, T~Katori, and M~Toups.
 \newblock A measurement of the absorption of liquid argon scintillation light
   by dissolved nitrogen at the part-per-million level.
 \newblock {\em Journal of Instrumentation}, 8(07):P07011, 2013.
+
+\bibitem{1748-0221-8-01-C01003}
+N~Yahlali, L~M~P Fernandes, K~González, A~N~C Garcia, and A~Soriano.
+\newblock Imaging with sipms in noble-gas detectors.
+\newblock {\em Journal of Instrumentation}, 8(01):C01003, 2013.
 
 \end{thebibliography}
