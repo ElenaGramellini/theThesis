@@ -1,24 +1,25 @@
 \chapter{Liquid Argon Detectors at the Intensity Frontier}\label{ch:2}
+In the next few years, LArTPC experiments -- such as the Short-Baseline Neutrino program (SBN) and DUNE -- will  be the tools to answer some of the burning questions in neutrino physics today.  This section illustrates the operational principles of this detector technology, as well as the scope of SBN, DUNE and LArIAT in the current intensity frontier panorama.
 
 
-In the next few years, LArTPC experiments -- such as the Short-Baseline Neutrino program (SBN) and DUNE -- will be major players in the intensity frontier field. 
-
-
-\section{Liquid Argon Time Projection Chambers at the Intensity Frontier}
-
+\section{The Liquid Argon Time Projection Chamber Technology}
 
 \subsection{Time Projection Chamber}
-\subsection{Ionization Detectors with Noble Liquids}
 \subsection{LArTPC: Principles of Operation}\label{sec:LArTPCWorkingPrinciple}
 
 %The time projection chamber (TPC) was invented by Nygren in 1974 [91]. The proposal to implement a liquid argon TPC (LArTPC) for neutrino physics was made by Rubbia in 1977 [92], and the concept was implemented by the ICARUS collaboration [93]. 
 
-To the bare bones, a LArTPC is a bulk of liquid argon sandwiched in a flat capacitor, equipped with a light collection system. A uniform electric field of the order of 500 V/cm is maintained constant between the faces of the capacitor. The anode is sensitive to ionization charge and it is usually made of two or more planes segmented into multiple parallel sense wires; different geometries for the anode segmentation are under study \cite{1748-0221-8-07-P07002}. Two processes occurs when an ionizing radiation traverses the argon active volume: the argon ionize and scintillates along the charge particle's trajectory. Details on the production and detection of ionization charge and scintillation light are provided in \ref{sec:light} and \ref{sec:light} respectively. The optical part of the detector collects the argon scintillation light in matters of nanoseconds. This flash of light determines the start time of an event in the chamber, $t_0$. The uniform electric field drifts the electrons from ionization towards the anode plane where the anode sense wires see either an induced current by the drifting charge (on induction planes) or the injection of the ionization charge (collection plane) [94] \footnote{The ionized argon also drifts,  in the opposite directions compared to the electrons and with a much longer drift time, given that the drift time is proportional to the particle mass.  Ionized argon is collected on the cathode which is not instrumented, so it is not used to infer information about the interactions in the chamber.}. The arrival time of the charge on the anode sense wires is used to measure the position of the original ionizing radiation in the drift direction. In fact, since the constant electric field implies that the drift velocity is also constant in the chamber, the position of the original ionization is simply given by the multiplication of the drift velocity by the drift time, where we define as ``drift time" the difference between $t_0$ and the charge arrival time on the wire planes. 
-Combining the spatial information on the different wire planes results in the mapping of a bi-dimensional projection of the interaction pattern in the plane perpendicular to the drift direction.  
+To the bare bones, a LArTPC is a bulk of liquid argon sandwiched in a flat capacitor, equipped with a light collection system. A uniform electric field of the order of 500 V/cm is maintained constant between the faces of the capacitor. The anode is sensitive to ionization charge and it is usually made of two or more planes segmented into several hundreds parallel sense wires a few millimeters apart; different geometries for the anode segmentation are under study \cite{1748-0221-8-07-P07002}. 
 
+Argon ionization and scintillation are the processes leveraged to detect particles in the LArTPC active volume.  When a ionizing radiation traverses the argon active volume it leaves a trail of ionization electrons along its trajectory and it excites the argon, leading to the production of scintillation light -- details on the production and detection of ionization charge and scintillation light are provided in \ref{sec:light} and \ref{sec:light} respectively. The optical part of the detector collects the argon scintillation light in matters of nanoseconds. This flash of light determines the start time of an event in the chamber, $t_0$. The uniform electric field drifts the ionization  electrons from the production point towards the anode plane in order of hundreds of microseconds or more depending on the chamber dimensions\footnote{The ionized argon also drifts, but  in the opposite directions compared to the electrons. Since the drift time is proportional to the particle mass,  the ions drift time is much longer than the electrons'.  Ionized argon is collected on the cathode which is not instrumented, so it is not used to infer information about the interactions in the chamber.}. The anode sense wires see either an induced current by the drifting charge (on induction planes) or an injection of the ionization charge (collection plane) [94].    An appropriate choice of the voltage bias on each wire plane assures ideal charge transparency, so that all the ionization charge is collected on the collection plane and none on the induction planes [95].  
+
+The arrival time of the charge on the anode sense wires is used to measure the position of the original ionizing radiation in the drift direction. In fact, since the constant electric field implies that the drift velocity is also constant in the chamber, the position of the original ionization is simply given by the multiplication of the drift velocity by the drift time, where we define as ``drift time" the difference between $t_0$ and the charge arrival time on the wire planes. The spacial resolution on this dimension is limited by the time resolution of the electronics or by longitudinal diffusion of the electrons.
+The spatial information on the different wire planes maps a bi-dimensional projection of the interaction pattern in the plane perpendicular to the drift direction. The spacial resolution on this dimension is limited by the transverse electron diffusion in argon and by the grain of the anode segmentation, i.e. the spacing between the wires in the sense planes [100].  The off-line combination of the 2-D information on the wire planes with the timing information allows for the 3D reconstruction of the event in the chamber.
+
+ 
 Calorimetry  
 
-\subsection{Liquid Argon Ionization Charge Detection}\label{sec:charge}
+\subsection{Liquid Argon: Ionization Charge}\label{sec:charge}
 \subsubsection{Electron Life Time \& purity}
 LArTPCs use  hermetically sealed and leak-checked vessels to abate the leakage and diffusion of contaminants into the system. The liquid argon filling of the volume occurs after the vessel is evacuated or purged with gaseous argon [205]  to reduce remaining gases in the volume. Even so, the construction of a pure tank of argon is unviable, as several sources of impurity remain.  In particular, impurities can come from the raw argon supply, the argon filtration system and from the outgassing from internal surfaces. Outgassing is a continuous diffusive process  producing contaminants, especially water, even after the vessel is sealed, particularly from materials in the ullage region\footnote{.  While the liquid argon low temperature reduces outgassing in the liquid, this process remains significant for absorptive material (such as plastic) above the surface of the liquid phase}.  Since research-grade argon comes from the industrial distillation of air, the impurities with the highest concentration are nitrogen, oxygen and water, generally maintained under the 1 part per million level by the vendor.  Even so, a higher level of purity is necessary to achieve a free electron life time usable in meter scale detectors. Thus, argon  is constantly  filtered in the cryogenic system, which reduce the oxygen and water contamination to less than 100 parts per trillion. The filtration system depends on the size and drift distance of the experiment and, for experiments on several meters scale, it includes an argon recirculation system.
 
@@ -28,7 +29,7 @@ LArTPCs use  hermetically sealed and leak-checked vessels to abate the leakage a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%                     Light Detection             %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Liquid Argon Scintillation Light }\label{sec:light}
+\subsection{Liquid Argon: Scintillation Light }\label{sec:light}
 Liquid argon emits scintillation light at the passage of charged particles. LArTPCs  leverage this property to determine when the ionization charge begins to drift towards the anode plane. %Scintillation light can also be used for particle identification, as discussed in the next sections.
 
 \subsubsection{Scintillation Process}
@@ -55,10 +56,12 @@ TPB, whose chemical structure is shown in figure , absorbs the vacuum ultraviole
 Neutrino experiments typically coat their optical detector system evaporating a layer of TPB either directly on the PMTs glass surface or on acrylic plates mounted in front of the PMTs \textcolor{red}{cite microboone}; this technique allows the fast detection light coming directly from the neutrino interaction. Dark matter experiments typically evaporate TPB on reflective foils mounted on the inside walls of the sensitive volume and detect the light after it has been reflected; this technique leads to a higher and more uniform light yield, though scattering effects for both the visible and VUV light augment the propagation time and hinder directionality information\textcolor{red}{some DM detector} . In order to take advantage of both these techniques, hybrid systems with PMT coating and foils are being considered for the next generation of large neutrino detectors \textcolor{red}{cite SBND?}. 
 
 \subsection{Signal processing}
-\section{The SBN Program: Neutrino Interaction and Detection}
+
+\section{The Intensity Frontier Program}
+\subsection{SBN: Neutrino Interaction and Detection}
 %\subsection{SBN Goals}
 %\subsection{Neutrino Interactions and Detection }
-\section{DUNE: Rare Decay Searches}
+\subsection{DUNE: Rare Decay Searches}
 The key elements for a rare decay experiment are: massive active volume, long exposure, high identification efficiency and low background. 
 %The limit to proton lifetime in case of absence of signal and backgrounds is set by calculating
 %$$\tau/B > M\times \epsilon\times T \times 10^{32},$$ 
@@ -86,7 +89,7 @@ LArTPCs can complement nucleon decay searches in modes where water Cherenkov det
 %\subsection{Non-Accelerator Physics Program}
 %\subsection{Rare Decay Searches: Experimental Limit}
 %\subsection{Nucleon Decay Detection in LAr}
-\section{Enabling the next generation of discoveries: LArIAT}
+\subsection{Enabling the next generation of discoveries: LArIAT}
 LArIAT, a small Liquid Argon Time Projection Chamber (LArTPC) in a test beam,  is designed to perform an extensive physics campaign centered on charged particle cross section measurements while characterizing the detector performance for future LArTPCs. LArTPC represents one of the most advanced experimental technologies for physics at the Intensity Frontier due to its full 3D-imaging, excellent particle identification and precise calorimetric energy reconstruction. This complex technology however needs a thorough calibration and dedicated measurements of some key quantities to achieve the precision required for the next generation of discoveries at the Intensity Frontier which LArIAT can provide. 
 
 The LArIAT LArTPC is deployed in a dedicated calibration test beamline at Fermilab.
