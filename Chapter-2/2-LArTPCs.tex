@@ -1,10 +1,36 @@
 \chapter{Liquid Argon Detectors at the Intensity Frontier}\label{ch:2}
-In the next few years, LArTPC experiments -- such as the Short-Baseline Neutrino program (SBN) and DUNE -- will  be the tools to answer some of the burning questions in neutrino physics today.  This section illustrates the operational principles of this detector technology, as well as the scope of SBN, DUNE and LArIAT in the current intensity frontier panorama.
+In the next few years, LArTPCs will  be the tools to answer some of the burning questions in neutrino physics today.  This section illustrates the operational principles of this detector technology, as well as the scope of the key detectors in the US liquid argon program -- SBN, DUNE and LArIAT.
 
 
 \section{The Liquid Argon Time Projection Chamber Technology}
 
-\subsection{Time Projection Chamber}
+\subsection{Argon, Particle Detectors and TPCs}
+
+%% Noble elements in particle phyisics
+
+%% Table with argon properties
+
+
+%Ionization detectors have been frequently used in Experimental Particle Physics for the possibility to reconstruct particle trajectories and to have calorimetric information with a non-destructive technique. 
+
+%Among them the most used have been the proportional counters, as Multi Wire Proportional Chambers (MWPC) and Drift Chambers, in which the charge collected after an ionizing process is directly proportional to the energy deposit of the primary particle that crosses the active volume or interacts there.
+
+%% Why liquid?
+Using nobles elements in the liquid form for neutrino detectors is advantageous with respect to noble gases for several reasons.  The density of liquids is $\sim$1000 times greater than gases, increasing the number of target centers for neutrino's interaction in the same volume. Since the energy loss of charged particle is proportional to the target material density, as shown in the Bethe-Block equation in \ref{eq:BB}, the increased density reflects into a proportionally higher energy loss per particle, enhancing the calorimetry capability of detectors with a liquid active medium. Additionally, the ionization energy of liquids is smaller than gasses by the order of tens of eV. Thus, at the passage of charged particles, liquid generally produce more ionization electrons than gas for the same deposited energy and force the particles to deposit more energy in a shorter range. The downside of using noble liquid gasses in experiments is that they require a cryogenic system to cool the gas until it transitions to its the liquid form.
+
+
+%%% TPCs
+David Nygren designed the first Time Projection Chamber (TPC) in the late 1970s [15] for the  PEP-4, a detector  apt to study electron-positron collisions at the PEP storage ring at the SLAC National Accelerator Laboratory.
+From the original design  in the seventies -- a cylindrical chamber filled with methane gas -- the TPC detector concept has seen many incarnations, the employment of several different active media and a variety of different particle physics applications, including, but not limited to the study of electron/positron storage rings (e.g. PEP4, TOPAZ, ALEPH and DELPHI), heavy ions collisions in fixed target and collider experiments (e.g. EOS/HISS and ALICE ), dark matter (ArDM), rare decays and capture (e.g. TRIUMP, MuCap),  neutrino detectors and nucleon decay (ICARUS, SBN, DUNE), and neutrino less double beta decay (Next). A nice review of the history of TPCs and working principles is provided in \cite{0034-4885-73-11-116201}.
+
+The many useful characteristics of TPC make this technology a very versatile tool for particle detection and explain such a wide popularity. TPCs are the only electronically read detector which deliver simultaneous  three-dimensional track information and a measurement of the particle energy loss. Leveraging on both tracking and calorimetry,  particle identification (PID) capabilities are enhanced  over a wide momentum range.
+
+Carlo Rubbia first proposed the use of a Liquid Argon TPC for a neutrino experiment, ICARUS [14], in 1977.
+LArTPCs are some times referred as to ``electronic" bubble-camber, for the similar tracking and energy resolution. Compared to these historic detectors however, LArTPC bestow tridimensional tracking and a self triggering mechanism provided by the scintillation light in the noble gas.
+
+
+
+
 \subsection{LArTPC: Principles of Operation}\label{sec:LArTPCWorkingPrinciple}
 
 %The time projection chamber (TPC) was invented by Nygren in 1974 [91]. The proposal to implement a liquid argon TPC (LArTPC) for neutrino physics was made by Rubbia in 1977 [92], and the concept was implemented by the ICARUS collaboration [93]. 
@@ -20,6 +46,12 @@ The spatial information on the different wire planes maps a bi-dimensional proje
 Calorimetry  
 
 \subsection{Liquid Argon: Ionization Charge}\label{sec:charge}
+
+\begin{eqnarray*}
+			- \frac{dE}{dx} = K z^2 \frac{Z}{A} \varrho \frac{1}{\beta^2} \left[ \frac{1}{2} \ln{\frac{2 m_e c^2 \beta^2 \gamma^2 T_{max}}{I^2}} - \beta^2 - \frac{\delta}{2}\right] 
+			\label{eq:BB}
+		\end{eqnarray*}
+		
 \subsubsection{Electron Life Time \& purity}
 LArTPCs use  hermetically sealed and leak-checked vessels to abate the leakage and diffusion of contaminants into the system. The liquid argon filling of the volume occurs after the vessel is evacuated or purged with gaseous argon [205]  to reduce remaining gases in the volume. Even so, the construction of a pure tank of argon is unviable, as several sources of impurity remain.  In particular, impurities can come from the raw argon supply, the argon filtration system and from the outgassing from internal surfaces. Outgassing is a continuous diffusive process  producing contaminants, especially water, even after the vessel is sealed, particularly from materials in the ullage region\footnote{.  While the liquid argon low temperature reduces outgassing in the liquid, this process remains significant for absorptive material (such as plastic) above the surface of the liquid phase}.  Since research-grade argon comes from the industrial distillation of air, the impurities with the highest concentration are nitrogen, oxygen and water, generally maintained under the 1 part per million level by the vendor.  Even so, a higher level of purity is necessary to achieve a free electron life time usable in meter scale detectors. Thus, argon  is constantly  filtered in the cryogenic system, which reduce the oxygen and water contamination to less than 100 parts per trillion. The filtration system depends on the size and drift distance of the experiment and, for experiments on several meters scale, it includes an argon recirculation system.
 
