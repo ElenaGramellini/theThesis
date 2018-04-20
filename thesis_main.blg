@@ -7,49 +7,68 @@ You're missing a field part---line 1484 of file bib.bib.bib
  : number = 
  :          ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "s"
+Warning--I didn't find a database entry for "supersymmetry"
+Warning--I didn't find a database entry for "LHC"
 Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "Irene"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
 Warning--I didn't find a database entry for "PhysRevLett.115.121803"
 Warning--I didn't find a database entry for "Acciarri:Dune"
-You've used 5 entries,
+Warning--to sort, need author or key in 2006257
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1049 of file plain.bst
+Warning--empty author in 2006257
+Warning--empty journal in Drakoulakos:2004gn
+Warning--empty journal in fesbach1992theoretical
+Warning--empty booktitle in Sten
+Warning--empty journal in P5
+Warning--empty year in osti_4488432
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1090 of file plain.bst
+You've used 66 entries,
             2118 wiz_defined-function locations,
-            539 strings with 5803 characters,
-and the built_in function-call counts, 3219 in all, are:
-= -- 258
-> -- 325
-< -- 0
-+ -- 130
-- -- 124
-* -- 338
-:= -- 589
-add.period$ -- 15
-call.type$ -- 5
-change.case$ -- 77
+            956 strings with 15086 characters,
+and the built_in function-call counts, 22299 in all, are:
+= -- 2147
+> -- 1115
+< -- 3
++ -- 455
+- -- 382
+* -- 1742
+:= -- 3783
+add.period$ -- 193
+call.type$ -- 66
+change.case$ -- 378
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 55
-empty$ -- 134
-format.name$ -- 124
-if$ -- 589
+cite$ -- 73
+duplicate$ -- 737
+empty$ -- 1695
+format.name$ -- 382
+if$ -- 4520
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 5
-newline$ -- 28
-num.names$ -- 10
-pop$ -- 67
+int.to.str$ -- 66
+missing$ -- 64
+newline$ -- 328
+num.names$ -- 124
+pop$ -- 321
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 316
 quote$ -- 0
-skip$ -- 35
+skip$ -- 515
 stack$ -- 0
-substring$ -- 125
-swap$ -- 5
-text.length$ -- 0
+substring$ -- 1563
+swap$ -- 86
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
-warning$ -- 0
-while$ -- 15
-width$ -- 6
-write$ -- 57
-(There was 1 error message)
+type$ -- 260
+warning$ -- 7
+while$ -- 206
+width$ -- 68
+write$ -- 700
+(There were 5 error messages)
