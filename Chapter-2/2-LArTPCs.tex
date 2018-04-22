@@ -113,10 +113,20 @@ In this section we illustrate the processing and reconstruction chain of the TPC
 The next steps in the event reconstruction chain will then decide if rejecting hits with poor fits.
 It is important to notice how the height and width of the hit depend on the topology of the event: for example, a particle running  parallel to the wire planes will leave a series of sharp hits on many consecutive wires, while a particle traveling towards the planes will leave a long, wide hit on very few wires. The height of the hits and their integral is proportional to the charge collected on the wire, so it depends on the particle type.
 
-The event reconstruction chain uses collection of hits to form more complex objects associated with the particles in the detector. The development of different approaches to accomplish this task is an extremely hot topic in LArTPC event reconstruction which spans from more traditional approaches such as line-clustering  \cite{MicroBooNE} \textcolor{red}{argoneut paper} to the use of machine learning tools \cite{MicroBooNE} \textcolor{red}{KAZU'S paper}. Generally speaking, the scope of hit clustering and event reconstruction to provide shower-like or track like-objects with an associated energy reconstruction. This is because different particles have different topology in the detector -- electrons and photon create electromagnetic showers,  resulting in shower-like topologies, while muons and hadrons  leave track-like signals.  For the scope of these thesis, we will describe only LArIAT's approach to track reconstruction even if we recognize the breath of LArTPC event reconstruction is much wider. We are interested in the reconstruction of pions and kaons in the active volume, whose topology is track-like.
+The event reconstruction chain uses collection of hits to form more complex objects associated with the particles in the detector. The development of different approaches to accomplish this task is an extremely hot topic in LArTPC event reconstruction which spans from more traditional approaches such as line-clustering  \cite{MicroBooNE} \textcolor{red}{argoneut paper} to the use of machine learning tools \cite{MicroBooNE} \textcolor{red}{KAZU'S paper}. Generally speaking, the scope of hit clustering and event reconstruction to provide shower-like or track like-objects with an associated energy reconstruction. This is because different particles have different topology in the detector -- electrons and photon create electromagnetic showers,  resulting in shower-like topologies, while muons and hadrons  leave track-like signals.  For the scope of these thesis, we will describe only LArIAT's approach to track reconstruction even if we recognize the breath of LArTPC event reconstruction is much wider. We are interested in the reconstruction of pions and kaons in the active volume, whose topology is track-like.\\
 
+\textbf{2D Clustering Reconstruction.} 
+The LArIAT reconstruction of track-like objects starts by clustering hits on the collection and induction planes separately with the use of the TrajCluster clustering package\cite{Bruce} \textcolor{red}{Bruce}. 
+TrajCluster looks for a collection of hits in the wire-time 2D space which can be described with a line-like 2D trajectory. TrajCluster reconstructs trajectories by adding trajectory points to the leading edge of the trajectory while stepping through the 2D space of hits. Several factors determine whether a hit is added to the trajectory, including but not limited to
+\begin{enumerate}
+\item the goodness of the fit of the single hit,
+\item the charge of the hit compared to the average charge and RMS of the hits already forming the trajectory,
+\item the goodness of trajectory fit with and without the hit addition,
+\item the angle between the two lines formed by the collection of hits before and after the considered hit in the trajectory.
+\end{enumerate}
 
-\textbf{Track Reconstruction} 
+\textbf{TrackReconstruction.} 
+
 \section{The Intensity Frontier Program}
 \subsection{SBN: Neutrino Interaction and Detection}
 %\subsection{SBN Goals}
