@@ -103,13 +103,26 @@ TPB, whose chemical structure is shown in figure , absorbs the vacuum ultraviole
 
 Neutrino experiments typically coat their optical detector system evaporating a layer of TPB either directly on the PMTs glass surface or on acrylic plates mounted in front of the PMTs \textcolor{red}{cite microboone}; this technique allows the fast detection light coming directly from the neutrino interaction. Dark matter experiments typically evaporate TPB on reflective foils mounted on the inside walls of the sensitive volume and detect the light after it has been reflected; this technique leads to a higher and more uniform light yield, though scattering effects for both the visible and VUV light augment the propagation time and hinder directionality information\textcolor{red}{some DM detector} . In order to take advantage of both these techniques, hybrid systems with PMT coating and foils are being considered for the next generation of large neutrino detectors \textcolor{red}{cite SBND?}. 
 
-\subsection{Signal processing}
+\subsection{Signal Processing and Event Reconstruction}
+In this section we illustrate the processing and reconstruction chain of the TPC signals, from the pulses on the sense wire to the construction of three dimensional objects with associated calorimetry.\\
 
+\textbf{Deconvolution.} Induction and collection planes have different field responses, given the different nature of the signals on these planes: the wires on the induction planes see inductive signal of the drifting charge, while the wires on the collection planes see the current derived from the charge entering the conductor. Thus, signals on the induction plane are bi-polar pulse and signal on the collection plane are unipolar pulses, see Figure \textcolor{red}{ADD PULSES FIGURE}. The first step in signal processing is deconvolution, that is a series of off-line algorithms geared towards undoing the detector effects. The result of the deconvolution step is  the production of  a comparable set waveforms on all planes presenting unipolar, approximately gaussian-like pulses. Signal from all planes are treated on equal footage beyond this point. Some LArTPC apply noise filtering in the frequency domain just after the deconvolution to clean up wire cross talk. Since signals from the LArIAT TPC are extremely clean, noise filtering is not necessary.\\
+
+
+\textbf{Hit Reconstruction.} The second stage of the signal processing is the reconstruction of hits, indicating an energy deposition in the detector.  A peak finder scans the deconvolved TPC waveforms for each wire on the whole readout time looking for spikes  above  the waveform's baseline. It then fits these peaks with gaussian shapes and stores the fit parameters such as the quality of the fit, the peak time, height and area under the gaussian fit. The information resulting fron this process a single spike form a single reconstructed ``hit".
+The next steps in the event reconstruction chain will then decide if rejecting hits with poor fits.
+It is important to notice how the height and width of the hit depend on the topology of the event: for example, a particle running  parallel to the wire planes will leave a series of sharp hits on many consecutive wires, while a particle traveling towards the planes will leave a long, wide hit on very few wires. The height of the hits and their integral is proportional to the charge collected on the wire, so it depends on the particle type.
+
+The event reconstruction chain uses collection of hits to form more complex objects associated with the particles in the detector. The development of different approaches to accomplish this task is an extremely hot topic in LArTPC event reconstruction which spans from more traditional approaches such as line-clustering  \cite{MicroBooNE} \textcolor{red}{argoneut paper} to the use of machine learning tools \cite{MicroBooNE} \textcolor{red}{KAZU'S paper}. Generally speaking, the scope of hit clustering and event reconstruction to provide shower-like or track like-objects with an associated energy reconstruction. This is because different particles have different topology in the detector -- electrons and photon create electromagnetic showers,  resulting in shower-like topologies, while muons and hadrons  leave track-like signals.  For the scope of these thesis, we will describe only LArIAT's approach to track reconstruction even if we recognize the breath of LArTPC event reconstruction is much wider. We are interested in the reconstruction of pions and kaons in the active volume, whose topology is track-like.
+
+
+\textbf{Track Reconstruction} 
 \section{The Intensity Frontier Program}
 \subsection{SBN: Neutrino Interaction and Detection}
 %\subsection{SBN Goals}
 %\subsection{Neutrino Interactions and Detection }
 \subsection{DUNE: Rare Decay Searches}
+DUNE will achieve a wide non-accelerator physics program.
 The key elements for a rare decay experiment are: massive active volume, long exposure, high identification efficiency and low background. 
 %The limit to proton lifetime in case of absence of signal and backgrounds is set by calculating
 %$$\tau/B > M\times \epsilon\times T \times 10^{32},$$ 
