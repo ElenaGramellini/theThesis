@@ -46,11 +46,27 @@ The spatial information on the different wire planes maps a bi-dimensional proje
 Since the charge deposited by the ionizing radiation in the chamber is proportional to the deposited energy and the charge collected on the sense plane is a function of the deposited charge, LArTPC allow the measurement of the energy deposit in the active volume. Effects due to the presence of free charge and impurities in the active volume, such as a finite electron lifetime, recombination and space charge, complicate the relationship between deposited and collected charge affecting the measurement of the particle's energy, as described in the next section.
  
 \subsection{Liquid Argon: Ionization Charge}\label{sec:charge}
-
+The mean rate of energy loss by moderately relativistic elementary charge particles heavier than electrons in the region $0.1 < \frac{\beta}{\sqrt{1-\beta^2}} < 1000$ is well described by the modified Bethe-Bloch \cite{BB} equation
 \begin{eqnarray*}
-			- \frac{dE}{dx} = K z^2 \frac{Z}{A} \varrho \frac{1}{\beta^2} \left[ \frac{1}{2} \ln{\frac{2 m_e c^2 \beta^2 \gamma^2 T_{max}}{I^2}} - \beta^2 - \frac{\delta}{2}\right] 
+			- \frac{dE}{dx} = K z^2 \frac{Z}{A} \varrho \frac{1}{\beta^2} \left[ \frac{1}{2} \ln{\frac{2 m_e c^2 \beta^2 \gamma^2 T_{max}}{I^2}} - \beta^2 - \frac{\delta}{2}\right] ,
 			\label{eq:BB}
-		\end{eqnarray*}
+\end{eqnarray*}
+where $K = 0.307 075 \text{ MeV g}^1\text{ cm}^2$ is a numerical conversion, $z$ is the number of unit charge of the ionizing radiation, $Z$, $A$  and $\varrho$ are the atomic number, mass number and density of the medium,  $m_e$  is the electron mass, $\gamma = \frac{\beta}{\sqrt{1-\beta^2}} $ is the Lorentz factor of the ionizing radiation,  $T_{max}$ is the maximum kinetic energy which can be
+imparted to a free electron in a single collision, $I$ is the mean excitation energy on eV and  $\delta$ is the  density correction. The Bethe-Bloch treats as an uniform and continuous process the energy loss by an ionizing radiation via quantum-mechanical collisions producing ionization or an excitation in the medium. The density correction  terms becomes relevant for incident particle with high energy, where screening effects due to the polarization of the medium by high energy particles occur.
+
+Excitation and ionization of the detector medium occur in similar amounts. Since the ionizing collisions occur randomly, we can parametrize their number $k$ in a segment of length $s$ along the track  with a Poissonian function
+\begin{equation}
+P(k) = \frac{s^k}{k! \lambda^k} e^{-s/ \lambda }, 
+\end{equation}
+where $\lambda = 1/N_{e}\sigma_i$, with $N_{e}$ being the electron density of $\sigma_i$ the ionization cross-section per electron.  About 66\% of the ionizing collisions in Argon produce only a single electron/ion pair \cite{0034-4885-73-11-116201}; in the other cases, the transferred kinetic energy is enough for the primary electron to liberate one or more secondary electrons, which usually stay close to the original pair.  
+Occasionally, electrons can receive enough energy to be ejected with high energy, forming so-called ``$\delta$-ray": a detectable ionization short track off the particle trajectory, as shown in figure \textcolor{red}{ADD figure}. 
+The average number of $\delta$-ray  with energy E$>$E$_0$ per cm follows the empirical form
+\begin{equation}
+P(E>E_0) \sim \frac{y}{\beta^2 E_0},
+\end{equation}
+where $y$ is an empirical factor depending on the medium (0.114 for  gaseous Ar), and $\beta$ is $v/c$.
+
+
 		
 \subsubsection{Purity \& Electron Life Time }
 The presence of electronegative contaminants in liquid argon, such as oxygen and water, is particularly
@@ -125,7 +141,8 @@ TrajCluster looks for a collection of hits in the wire-time 2D space which can b
 \item the angle between the two lines formed by the collection of hits before and after the considered hit in the trajectory.
 \end{enumerate}
 
-\textbf{TrackReconstruction.} 
+\textbf{3D TrackReconstruction.} The 3D tracking set of algorithms uses clusters close in time on the induction and collection planes as starting point to form a 3D track. Firstly, it construct a tentative 3D trajectory using the edges of the clusters. Then, it  projected back the tentative trajectory on to the planes and adjusts the parameters of the 3D track fit such that they minimize the distance between the fit projections and the track hits in all wire planes simultaneously.  The track algorithm can use multiple clusters in one plane, but it can never break them in smaller groups of hits. This algorithm was first developed for the ICARUS collaboration\cite{Antonello2013}.
+
 
 \section{The Intensity Frontier Program}
 \subsection{SBN: Neutrino Interaction and Detection}
@@ -137,7 +154,7 @@ The key elements for a rare decay experiment are: massive active volume, long ex
 %The limit to proton lifetime in case of absence of signal and backgrounds is set by calculating
 %$$\tau/B > M\times \epsilon\times T \times 10^{32},$$ 
 %where M is the detector mass in kton, $\epsilon$ the signal detection efficiency after cuts to suppress backgrounds (dependent on the considered decay mode), T is the exposure in years, B the assumed branching fraction for the considered mode and  $10^{32}$ is a factor accounting for the number of nucleons in a kton of material \cite{Bueno2007}.
-Figure \ref{fig:PDKExperimentalLImit} shows the current best experimental limits on nucleon decay lifetime over branching ratio (dots). Historically, the dominant technology used in these searches has been water Cherenkov detectors: all the best experimental limits on every decay mode are indeed set by Super-Kamiokande \cite{PhysRevD.90.072005,PhysRevLett.115.121803}.  It is particularly important to notice that the kaon energy for the proton decay mode $p \rightarrow K^+ \bar{\nu}$ is under Cherenkov threshold.  Super-Kamiokande set the limit on the lifetime for the $p \rightarrow K^+ \bar{\nu}$ mode by  relying exclusively on photons from nuclear de-excitation. For this reason, an attractive alternative approach to identifying nucleon decay is the use of a Liquid Argon Time Projection Chamber (LArTPC). 
+Figure \ref{fig:PDKExperimentalLImit} shows the current best experimental limits on nucleon decay lifetime over branching ratio (dots). Historically, the dominant technology used in these searches has been water Cherenkov detectors: all the best experimental limits on every decay mode are indeed set by Super-Kamiokande \cite{PhysRevD.90.072005,PhysRevLett.115.121803}.  It is particularly important to notice that the kaon energy for the proton decay mode $p \rightarrow K^+ \bar{\nu}$ is under Cherenkov threshold.  Super-Kamiokande set the limit on the lifetime for the $p \rightarrow K^+ \bar{\nu}$ mode by  relying  on photons from nuclear de-excitation and on the muon tagging in the kaon decay leptonic mode. For this reason, an attractive alternative approach to identifying nucleon decay is the use of a Liquid Argon Time Projection Chamber (LArTPC). 
 
 LArTPCs can complement nucleon decay searches in modes where water Cherenkov detectors are less sensitive, especially $p\rightarrow K^+\bar{\nu}$. According to \cite{Acciarri:Dune}, DUNE will have an active volume large enough, have sufficient shielding from the surface, and will run for lengths of time sufficient to compete with Hyper-K, opening up the opportunity for the discovery of nucleon decay. 
 
