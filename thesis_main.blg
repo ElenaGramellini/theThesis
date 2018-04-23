@@ -7,50 +7,71 @@ You're missing a field part---line 1484 of file bib.bib.bib
  : number = 
  :          ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "s"
+Warning--I didn't find a database entry for "supersymmetry"
+Warning--I didn't find a database entry for "LHC"
+Warning--I didn't find a database entry for "BB"
 Warning--I didn't find a database entry for "MicroBooNE"
 Warning--I didn't find a database entry for "Bruce"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
 Warning--I didn't find a database entry for "PhysRevLett.115.121803"
 Warning--I didn't find a database entry for "Acciarri:Dune"
-You've used 8 entries,
+Warning--I didn't find a database entry for "WWW"
+Warning--to sort, need author or key in 2006257
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1049 of file plain.bst
+Warning--empty author in 2006257
+Warning--empty journal in Drakoulakos:2004gn
+Warning--empty journal in fesbach1992theoretical
+Warning--empty booktitle in Sten
+Warning--empty institution in Nutini2015
+Warning--empty journal in P5
+Warning--empty year in osti_4488432
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1090 of file plain.bst
+You've used 78 entries,
             2118 wiz_defined-function locations,
-            563 strings with 7549 characters,
-and the built_in function-call counts, 6712 in all, are:
-= -- 515
-> -- 778
-< -- 0
-+ -- 312
-- -- 302
-* -- 740
-:= -- 1245
-add.period$ -- 24
-call.type$ -- 8
-change.case$ -- 175
+            1036 strings with 26699 characters,
+and the built_in function-call counts, 43952 in all, are:
+= -- 3675
+> -- 4153
+< -- 4
++ -- 1670
+- -- 1584
+* -- 4322
+:= -- 7881
+add.period$ -- 229
+call.type$ -- 78
+change.case$ -- 1016
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 88
-empty$ -- 209
-format.name$ -- 302
-if$ -- 1191
+cite$ -- 86
+duplicate$ -- 878
+empty$ -- 2001
+format.name$ -- 1584
+if$ -- 8184
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 8
-newline$ -- 43
-num.names$ -- 16
-pop$ -- 159
+int.to.str$ -- 78
+missing$ -- 75
+newline$ -- 388
+num.names$ -- 148
+pop$ -- 941
 preamble$ -- 1
-purify$ -- 167
+purify$ -- 941
 quote$ -- 0
-skip$ -- 56
+skip$ -- 614
 stack$ -- 0
-substring$ -- 193
-swap$ -- 8
-text.length$ -- 0
+substring$ -- 1838
+swap$ -- 107
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
-warning$ -- 0
-while$ -- 25
-width$ -- 9
-write$ -- 90
-(There was 1 error message)
+type$ -- 308
+warning$ -- 8
+while$ -- 245
+width$ -- 80
+write$ -- 831
+(There were 5 error messages)
