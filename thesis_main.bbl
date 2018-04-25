@@ -49,6 +49,11 @@ M.~Antonello, B.~Baibussinov, P.~Benetti, E.~Calligarich, N.~Canci, S.~Centro,
 \bibitem{basf}
 BASF Corp. 100 Park Avenue, Florham Park, NJ 07932 USA.
 
+\bibitem{DERENZO1974319}
+S.E. Derenzo, A.R. Kirschbaum, P.H. Eberhard, R.R. Ross, and F.T. Solmitz.
+\newblock Test of a liquid argon chamber with 20 μm rms resolution.
+\newblock {\em Nuclear Instruments and Methods}, 122:319 -- 327, 1974.
+
 \bibitem{1748-0221-8-07-P07002}
 A~Ereditato, C~C Hsu, S~Janos, I~Kreslo, M~Messina, C~Rudolf von Rohr, B~Rossi,
   T~Strauss, M~S Weber, and M~Zeller.
@@ -115,6 +120,11 @@ D.~R. Nygren.
 \newblock The time projection chamber: A new 4 $\pi$ detector for charged
   particles.
 \newblock Technical report, 1974.
+
+\bibitem{Patrignani:2016xqp}
+C.~Patrignani et~al.
+\newblock {Review of Particle Physics}.
+\newblock {\em Chin. Phys.}, C40(10):100001, 2016.
 
 \bibitem{Rubbia:1977zz}
 C.~Rubbia.

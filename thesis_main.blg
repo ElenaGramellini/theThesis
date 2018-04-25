@@ -7,7 +7,6 @@ You're missing a field part---line 1484 of file bib.bib.bib
  : number = 
  :          ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "BB"
 Warning--I didn't find a database entry for "MicroBooNE"
 Warning--I didn't find a database entry for "Bruce"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
@@ -17,45 +16,45 @@ Warning--I didn't find a database entry for "WWW"
 Warning--empty booktitle in Sten
 Warning--empty institution in FirstTPC
 Warning--empty journal in Rubbia:1977zz
-You've used 20 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            634 strings with 9127 characters,
-and the built_in function-call counts, 9705 in all, are:
-= -- 795
-> -- 898
+            648 strings with 9447 characters,
+and the built_in function-call counts, 10442 in all, are:
+= -- 865
+> -- 939
 < -- 0
-+ -- 365
-- -- 340
-* -- 920
-:= -- 1741
-add.period$ -- 55
-call.type$ -- 20
-change.case$ -- 230
++ -- 381
+- -- 354
+* -- 980
+:= -- 1868
+add.period$ -- 61
+call.type$ -- 22
+change.case$ -- 242
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 203
-empty$ -- 480
-format.name$ -- 340
-if$ -- 1815
+cite$ -- 25
+duplicate$ -- 225
+empty$ -- 534
+format.name$ -- 354
+if$ -- 1965
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 15
-newline$ -- 98
-num.names$ -- 34
-pop$ -- 231
+int.to.str$ -- 22
+missing$ -- 17
+newline$ -- 108
+num.names$ -- 38
+pop$ -- 239
 preamble$ -- 1
-purify$ -- 211
+purify$ -- 221
 quote$ -- 0
-skip$ -- 142
+skip$ -- 158
 stack$ -- 0
-substring$ -- 356
-swap$ -- 17
+substring$ -- 411
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
+type$ -- 88
 warning$ -- 3
-while$ -- 49
-width$ -- 22
-write$ -- 201
+while$ -- 55
+width$ -- 24
+write$ -- 223
 (There was 1 error message)
