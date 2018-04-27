@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis_main.aux
 The style file: plain.bst
-Illegal, another \bibstyle command---line 66 of file thesis_main.aux
+Illegal, another \bibstyle command---line 132 of file thesis_main.aux
  : \bibstyle
  :          {plainnat}
 I'm skipping whatever remains of this command
@@ -12,48 +12,59 @@ You're missing a field part---line 1484 of file bib.bib.bib
  :          ,
 I'm skipping whatever remains of this entry
 Unbalanced braces---line 1960 of file bib.bib.bib
- : archivePrefix = "arXiv
+ : archiveprefix = "arXiv
  :                       },
 I'm skipping whatever remains of this entry
-You've used 1 entry,
+Warning--I didn't find a database entry for "MicroBooNE"
+Warning--I didn't find a database entry for "Bruce"
+Warning--I didn't find a database entry for "PhysRevD.90.072005"
+Warning--I didn't find a database entry for "PhysRevLett.115.121803"
+Warning--I didn't find a database entry for "Acciarri:Dune"
+Warning--empty journal in Boulay:2004dk
+Warning--empty institution in detectorPaper
+Warning--empty journal in SpaceCharge
+Warning--empty institution in FirstTPC
+Warning--empty institution in LArIATLifeTime
+Warning--empty journal in Rubbia:1977zz
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            503 strings with 4113 characters,
-and the built_in function-call counts, 247 in all, are:
-= -- 23
-> -- 7
+            722 strings with 11360 characters,
+and the built_in function-call counts, 14094 in all, are:
+= -- 1213
+> -- 1208
 < -- 0
-+ -- 3
-- -- 2
-* -- 11
-:= -- 50
-add.period$ -- 4
-call.type$ -- 1
-change.case$ -- 3
++ -- 488
+- -- 452
+* -- 1335
+:= -- 2555
+add.period$ -- 90
+call.type$ -- 30
+change.case$ -- 316
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 12
-empty$ -- 23
-format.name$ -- 2
-if$ -- 51
+cite$ -- 36
+duplicate$ -- 315
+empty$ -- 710
+format.name$ -- 452
+if$ -- 2632
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 6
+int.to.str$ -- 30
+missing$ -- 26
+newline$ -- 153
+num.names$ -- 60
+pop$ -- 273
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 284
 quote$ -- 0
-skip$ -- 6
+skip$ -- 211
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 629
+swap$ -- 24
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 2
-warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 13
+type$ -- 120
+warning$ -- 6
+while$ -- 90
+width$ -- 32
+write$ -- 323
 (There were 3 error messages)
