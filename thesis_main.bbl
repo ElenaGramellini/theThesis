@@ -27,6 +27,12 @@ M~Adamowski, B~Carls, E~Dvorak, A~Hahn, W~Jaskierny, C~Johnson, H~Jostlein,
 \newblock The liquid argon purity demonstrator.
 \newblock {\em Journal of Instrumentation}, 9(07):P07005, 2014.
 
+\bibitem{Amoruso:2004dy}
+S.~Amoruso et~al.
+\newblock {Study of electron recombination in liquid argon with the ICARUS
+  TPC}.
+\newblock {\em Nucl. Instrum. Meth.}, A523:275--286, 2004.
+
 \bibitem{Antonello2013}
 M.~Antonello, B.~Baibussinov, P.~Benetti, E.~Calligarich, N.~Canci, S.~Centro,
   A.~Cesana, K.~Cieslik, D.~B. Cline, A.~G. Cocco, A.~Dabrowska, D.~Dequal,
@@ -41,6 +47,19 @@ M.~Antonello, B.~Baibussinov, P.~Benetti, E.~Calligarich, N.~Canci, S.~Centro,
 \newblock Precise 3d track reconstruction algorithm for the {ICARUS} t600
   liquid argon time projection chamber detector.
 \newblock {\em Advances in High Energy Physics}, 2013:1--16, 2013.
+
+\bibitem{0370-1298-64-10-303}
+J~B Birks.
+\newblock Scintillations from organic crystals: Specific fluorescence and
+  relative response to different radiations.
+\newblock {\em Proceedings of the Physical Society. Section A}, 64(10):874,
+  1951.
+
+\bibitem{Boulay:2004dk}
+Mark~G. Boulay and A.~Hime.
+\newblock {Direct WIMP detection using scintillation time discrimination in
+  liquid argon}.
+\newblock 2004.
 
 \bibitem{detectorPaper}
 The~LArIAT Collaboration.
@@ -72,17 +91,50 @@ H~J Hilke.
 \newblock Time projection chambers.
 \newblock {\em Reports on Progress in Physics}, 73(11):116201, 2010.
 
+\bibitem{Jaff1913}
+George Jaff{\'{e}}.
+\newblock Zur theorie der ionisation in kolonnen.
+\newblock {\em Annalen der Physik}, 347(12):303--344, 1913.
+
 \bibitem{1748-0221-8-07-P07011}
 B~J~P Jones, C~S Chiu, J~M Conrad, C~M Ignarra, T~Katori, and M~Toups.
 \newblock A measurement of the absorption of liquid argon scintillation light
   by dissolved nitrogen at the part-per-million level.
 \newblock {\em Journal of Instrumentation}, 8(07):P07011, 2013.
 
+\bibitem{Jones:2015bya}
+Benjamin J.~P. Jones.
+\newblock {\em {Sterile Neutrinos in Cold Climates}}.
+\newblock PhD thesis, MIT, 2015.
+
+\bibitem{PhysRevC.78.035801}
+W.~H. Lippincott, K.~J. Coakley, D.~Gastler, A.~Hime, E.~Kearns, D.~N.
+  McKinsey, J.~A. Nikkel, and L.~C. Stonehill.
+\newblock Scintillation time dependence and pulse shape discrimination in
+  liquid argon.
+\newblock {\em Phys. Rev. C}, 78:035801, Sep 2008.
+
+\bibitem{SpaceCharge}
+M.~Mooney.
+\newblock The microboone experiment and the impact of space charge effects.
+\newblock 2015.
+
+\bibitem{Morikawa1989}
+E.~Morikawa, R.~Reininger, P.~G\"{u}rtler, V.~Saile, and P.~Laporte.
+\newblock Argon, krypton, and xenon excimer luminescence: From the dilute gas
+  to the condensed phase.
+\newblock {\em The Journal of Chemical Physics}, 91(3):1469--1477, aug 1989.
+
 \bibitem{FirstTPC}
 D.~R. Nygren.
 \newblock The time projection chamber: A new 4 $\pi$ detector for charged
   particles.
 \newblock Technical report, 1974.
+
+\bibitem{PhysRev.54.554}
+L.~Onsager.
+\newblock Initial recombination of ions.
+\newblock {\em Phys. Rev.}, 54:554--557, Oct 1938.
 
 \bibitem{Patrignani:2016xqp}
 C.~Patrignani et~al.
@@ -99,6 +151,11 @@ C.~Rubbia.
 \newblock {The Liquid Argon Time Projection Chamber: A New Concept for Neutrino
   Detectors}.
 \newblock 1977.
+
+\bibitem{PhysRevA.36.614}
+J.~Thomas and D.~A. Imel.
+\newblock Recombination of electron-ion pairs in liquid argon and liquid xenon.
+\newblock {\em Phys. Rev. A}, 36:614--616, Jul 1987.
 
 \bibitem{1748-0221-8-01-C01003}
 N~Yahlali, L~M~P Fernandes, K~González, A~N~C Garcia, and A~Soriano.
