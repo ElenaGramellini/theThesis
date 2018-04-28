@@ -2,10 +2,6 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis_main.aux
 The style file: plain.bst
-Illegal, another \bibstyle command---line 133 of file thesis_main.aux
- : \bibstyle
- :          {plainnat}
-I'm skipping whatever remains of this command
 Database file #1: bib.bib.bib
 You're missing a field part---line 1484 of file bib.bib.bib
  : number = 
@@ -15,56 +11,74 @@ Unbalanced braces---line 1960 of file bib.bib.bib
  : archiveprefix = "arXiv
  :                       },
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "MicroBooNE"
-Warning--I didn't find a database entry for "Bruce"
+Warning--I didn't find a database entry for "s"
+Warning--I didn't find a database entry for "supersymmetry"
+Warning--I didn't find a database entry for "LHC"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
 Warning--I didn't find a database entry for "PhysRevLett.115.121803"
 Warning--I didn't find a database entry for "Acciarri:Dune"
+Warning--to sort, need author or key in 2006257
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1049 of file plain.bst
+Warning--empty author in 2006257
+Warning--empty institution in Baller2016
 Warning--empty journal in Boulay:2004dk
+Warning--empty journal in EricFChurck
 Warning--empty institution in detectorPaper
+Warning--empty journal in Drakoulakos:2004gn
+Warning--empty journal in fesbach1992theoretical
 Warning--empty journal in SpaceCharge
+Warning--empty institution in Nutini2015
 Warning--empty institution in FirstTPC
 Warning--empty institution in LArIATLifeTime
+Warning--empty journal in P5
 Warning--empty journal in Rubbia:1977zz
-You've used 31 entries,
+Warning--empty year in osti_4488432
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1090 of file plain.bst
+You've used 94 entries,
             2118 wiz_defined-function locations,
-            728 strings with 11527 characters,
-and the built_in function-call counts, 14369 in all, are:
-= -- 1240
-> -- 1215
-< -- 0
-+ -- 491
-- -- 454
-* -- 1355
-:= -- 2602
-add.period$ -- 93
-call.type$ -- 31
-change.case$ -- 320
+            1137 strings with 29666 characters,
+and the built_in function-call counts, 49814 in all, are:
+= -- 4233
+> -- 4525
+< -- 4
++ -- 1820
+- -- 1716
+* -- 4827
+:= -- 8967
+add.period$ -- 282
+call.type$ -- 94
+change.case$ -- 1133
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 326
-empty$ -- 736
-format.name$ -- 454
-if$ -- 2689
+cite$ -- 109
+duplicate$ -- 1048
+empty$ -- 2345
+format.name$ -- 1716
+if$ -- 9289
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 27
-newline$ -- 158
-num.names$ -- 62
-pop$ -- 275
+int.to.str$ -- 94
+missing$ -- 90
+newline$ -- 473
+num.names$ -- 186
+pop$ -- 1012
 preamble$ -- 1
-purify$ -- 287
+purify$ -- 1037
 quote$ -- 0
-skip$ -- 218
+skip$ -- 719
 stack$ -- 0
-substring$ -- 652
-swap$ -- 25
-text.length$ -- 0
+substring$ -- 2178
+swap$ -- 116
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
-warning$ -- 6
-while$ -- 93
-width$ -- 33
-write$ -- 334
-(There were 3 error messages)
+type$ -- 372
+warning$ -- 15
+while$ -- 300
+width$ -- 96
+write$ -- 1013
+(There were 6 error messages)
