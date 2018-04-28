@@ -82,6 +82,12 @@ A~Ereditato, C~C Hsu, S~Janos, I~Kreslo, M~Messina, C~Rudolf von Rohr, B~Rossi,
 \newblock Design and operation of argontube: a 5 m long drift liquid argon tpc.
 \newblock {\em Journal of Instrumentation}, 8(07):P07002, 2013.
 
+\bibitem{1748-0221-12-03-P03011}
+R.~Acciarri et~al.
+\newblock Convolutional neural networks applied to neutrino events in a liquid
+  argon time projection chamber.
+\newblock {\em Journal of Instrumentation}, 12(03):P03011, 2017.
+
 \bibitem{Acciarri2017}
 R.~Acciarri et~al.
 \newblock Design and construction of the {MicroBooNE} detector.
