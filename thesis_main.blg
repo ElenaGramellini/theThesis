@@ -23,6 +23,7 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1049 of file plain.bst
 Warning--empty author in 2006257
 Warning--empty journal in Adams:2013qkq
+Warning--empty journal in Antonello:2015lea
 Warning--empty institution in Baller2016
 Warning--empty journal in Boulay:2004dk
 Warning--empty journal in EricFChurck
@@ -40,45 +41,45 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
 while executing---line 1090 of file plain.bst
-You've used 95 entries,
+You've used 100 entries,
             2118 wiz_defined-function locations,
-            1139 strings with 29775 characters,
-and the built_in function-call counts, 50050 in all, are:
-= -- 4255
-> -- 4538
-< -- 4
-+ -- 1825
-- -- 1720
-* -- 4838
-:= -- 9011
-add.period$ -- 285
-call.type$ -- 95
-change.case$ -- 1137
+            1168 strings with 30579 characters,
+and the built_in function-call counts, 51424 in all, are:
+= -- 4391
+> -- 4597
+< -- 5
++ -- 1848
+- -- 1738
+* -- 4927
+:= -- 9259
+add.period$ -- 301
+call.type$ -- 100
+change.case$ -- 1157
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 1058
-empty$ -- 2362
-format.name$ -- 1720
-if$ -- 9336
+cite$ -- 117
+duplicate$ -- 1110
+empty$ -- 2471
+format.name$ -- 1738
+if$ -- 9617
 int.to.chr$ -- 0
-int.to.str$ -- 95
-missing$ -- 91
-newline$ -- 478
-num.names$ -- 188
-pop$ -- 1018
+int.to.str$ -- 100
+missing$ -- 95
+newline$ -- 504
+num.names$ -- 198
+pop$ -- 1031
 preamble$ -- 1
-purify$ -- 1040
+purify$ -- 1055
 quote$ -- 0
-skip$ -- 728
+skip$ -- 768
 stack$ -- 0
-substring$ -- 2183
-swap$ -- 116
-text.length$ -- 4
+substring$ -- 2262
+swap$ -- 120
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 376
-warning$ -- 16
-while$ -- 302
-width$ -- 97
-write$ -- 1022
+type$ -- 396
+warning$ -- 17
+while$ -- 315
+width$ -- 103
+write$ -- 1078
 (There were 6 error messages)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{2006257}
 Precision electroweak measurements on the z resonance.
@@ -83,6 +83,18 @@ R~Acciarri, M~Antonello, B~Baibussinov, M~Baldo-Ceolin, P~Benetti, F~Calaprice,
 \newblock Effects of nitrogen contamination in liquid argon.
 \newblock {\em Journal of Instrumentation}, 5(06):P06003, 2010.
 
+\bibitem{MicroBooNE-det}
+R.~Acciarri et~al.
+\newblock {Design and Construction of the MicroBooNE Detector}.
+\newblock {\em JINST}, 12(02):P02017, 2017.
+
+\bibitem{Acciarri:2016sli}
+R.~Acciarri et~al.
+\newblock {First Observation of Low Energy Electron Neutrinos in a Liquid Argon
+  Time Projection Chamber}.
+\newblock {\em Phys. Rev.}, D95(7):072005, 2017.
+\newblock [Phys. Rev.D95,072005(2017)].
+
 \bibitem{1748-0221-9-07-P07005}
 M~Adamowski, B~Carls, E~Dvorak, A~Hahn, W~Jaskierny, C~Johnson, H~Jostlein,
   C~Kendziora, S~Lockwitz, B~Pahlka, R~Plunkett, S~Pordes, B~Rebel, R~Schmitt,
@@ -149,6 +161,11 @@ S.~Amoruso et~al.
   TPC}.
 \newblock {\em Nucl. Instrum. Meth.}, A523:275--286, 2004.
 
+\bibitem{ArgoNeuT-det}
+C.~Anderson et~al.
+\newblock {The ArgoNeuT Detector in the NuMI Low-Energy beam line at Fermilab}.
+\newblock {\em JINST}, 7:P10019, 2012.
+
 \bibitem{Andreopoulos:2009rq}
 C.~Andreopoulos et~al.
 \newblock {The GENIE Neutrino Monte Carlo Generator}.
@@ -168,6 +185,12 @@ M.~Antonello, B.~Baibussinov, P.~Benetti, E.~Calligarich, N.~Canci, S.~Centro,
 \newblock Precise 3d track reconstruction algorithm for the {ICARUS} t600
   liquid argon time projection chamber detector.
 \newblock {\em Advances in High Energy Physics}, 2013:1--16, 2013.
+
+\bibitem{Antonello:2015lea}
+M.~Antonello et~al.
+\newblock {A Proposal for a Three Detector Short-Baseline Neutrino Oscillation
+  Program in the Fermilab Booster Neutrino Beam}.
+\newblock 2015.
 
 \bibitem{PhysRevC.23.2173}
 D.~Ashery, I.~Navon, G.~Azuelos, H.~K. Walter, H.~J. Pfeiffer, and F.~W.
@@ -477,6 +500,13 @@ Dae-Gyu Lee, R.~N. Mohapatra, M.~K. Parida, and Merostar Rani.
 \newblock Predictions for the proton lifetime in minimal nonsupersymmetric
   so(10) models: An update.
 \newblock {\em Phys. Rev. D}, 51:229--235, Jan 1995.
+
+\bibitem{LeiguideOliveira:1953730}
+M~A Leigui~de Oliveira.
+\newblock {Expression of Interest for a Full-Scale Detector Engineering Test
+  and Test Beam Calibration of a Single-Phase LAr TPC}.
+\newblock Technical Report CERN-SPSC-2014-027. SPSC-EOI-011, CERN, Geneva, Oct
+  2014.
 
 \bibitem{PhysRevC.78.035801}
 W.~H. Lippincott, K.~J. Coakley, D.~Gastler, A.~Hime, E.~Kearns, D.~N.

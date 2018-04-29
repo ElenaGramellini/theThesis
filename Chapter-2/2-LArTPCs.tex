@@ -204,10 +204,19 @@ Even if calorimetry is done in 2D, it benefits from the 3D tracking information;
 
 \section{The Intensity Frontier Program}
 \subsection{Prospects for LArTPCs in Neutrino Physics: SBN and DUNE}
+The ArgoNeut  experiment \cite{ArgoNeuT-det} initiated the US LArTPC neutrino program. Following the success of this small TPC on the NuMI beam, a wide program of LArTPCs on neutrino beams has flourished. The construction of  LArTPCs as near and far detectors at different baseline allows for the exploration of different fundamental questions in neutrino physics today. 
+
+The Short-Baseline Neutrino (SBN) \cite{Antonello:2015lea} program at Fermilab  is tasked with conclusively addressing the ``LSND and MiniBooNE anomalies" \cite{Aguilar:2001ty, Athanassopoulos:1997pv, Aguilar-Arevalo:2013pmq}, whose $\nu_e$ and $\bar\nu_e$ appearance results may be interpreted under the assumption of a new sterile neutrino.  The SBN program entails three surface LArTPCs positioned on the Booster Neutrino Beam at different distances from the neutrino production in oder to fully exploit  the L/E dependence of the oscillation pattern:  SBND (100 m from the decay pipe), MicroBooNE (450 m), and ICARUS (600 m). 
+Within the oscillation context, the choice of the LArTPC technology for the SBN detectors changes the set of systematics with respect to LSND and MiniBooNE, whose detection techniques were both based on Cherenkov light.  In particular, LArTPCs provide excellent electron/photon separation \cite{Acciarri:2016sli} lacking in Cherenkov detectors which can be leveraged to abate the photon background from neutral current interactions  in $\nu_e$ searches.
+MicroBooNE\cite{MicroBooNE-det}, the first detector of the SBN program to be fully operational, started its first neutrino run in October 2015. MicroBooNE is a 89 ton active volume LArTPC, single drift chamber with TPC dimensions of 2.6 m (drift) x 2.3 m (heigh) x 10.4 m (depth). MicroBooNE is positioned at a very similar L/E on the Booster neutrino beam as MiniBooNE has the scope to directly cross check the MiniBooNE oscillation measurement. 
+In case MicroBooNE confirms the presence of the ``low energy excess" anomaly, SBND and ICARUS will provide the full measurement of the oscillation parameters. SBND and ICARUS are both dual drift chambers, whose active volume is respectively 112 ton and 600 ton. ICARUS is scheduled to become operational by the end of 2018 and SBND shortly after. Besides the oscillation analysis, the second main goals of SBN is to perform an extensive campaign of neutrino cross section measurements in argon. Given the importance of nuclear effects in (relatively) heavy materials, both the oscillation analysis of the SBN program and the measurements of neutrino properties in DUNE will benefit from such a campaign. 
+
+On a different neutrino beam and baseline, the DUNE  experiment, n\'ee LBNE\cite{Adams:2013qkq},  is the flagship experiment on the medium-long term of US-based neutrino physics, scheduled to start data taking in 2026. Shooting neutrinos from Fermilab for 800 miles to the SURF laboratory in South Dakota, DUNE is tasked with preforming conclusive measurements of CP violation in the lepton sector,  the neutrino mass ordering and the $\theta_{23}$ octant. The DUNE far detector will count four 10 kton LArTPCs, roughly of dimensions of  19 m (horizontally) x 18 m (vertically) x 66 m (depth).
+
 %\subsection{SBN Goals}
 %\subsection{Neutrino Interactions and Detection }
 \subsection{Prospects for LArTPCs in GUT Physics: DUNE}
-The experimental exploration of a manifestation of Grand Unified Theory is possible in DUNE thanks to its sheer huge mass.  In particular, proton decay searches are a capital topic of DUNE's wide non-accelerator physics program.
+The experimental exploration of a manifestation of Grand Unified Theory is possible in DUNE thanks to its sheer mass.  In particular, proton decay searches are a capital topic of DUNE's wide non-accelerator physics program.
 The key elements for a rare decay experiment are: massive active volume, long exposure, high identification efficiency and low background. 
 %The limit to proton lifetime in case of absence of signal and backgrounds is set by calculating
 %$$\tau/B > M\times \epsilon\times T \times 10^{32},$$ 
@@ -224,24 +233,37 @@ According to \cite{Adams:2013qkq}, DUNE will have an active volume large enough,
 \end{figure}
 
 
-\begin{figure}[hbpt]
-\centering
-\includegraphics[width=3.5in]{Chapter-2/Images/pdkGenie.png}
-\caption{Momentum of the kaon outgoing a proton decay event as simulated by the Genie 2.8.10 event generator in argon. The red line represents the kaon momentum distribution before undergoing the simulated final state interaction inside the argon nucleus, while the blue line represents the momentum distribution after FSI. }
-\label{fig:PDKGENIE}
-\end{figure}
-
-
 %\subsection{Non-Accelerator Physics Program}
 %\subsection{Rare Decay Searches: Experimental Limit}
 %\subsection{Nucleon Decay Detection in LAr}
 \subsection{Enabling the next generation of discoveries: LArIAT}
 LArIAT, a small LArTPC in a test beam,  is designed to perform an extensive physics campaign centered on charged particle cross section measurements while characterizing the detector performance for future LArTPCs. Since LArTPCs represent the most advanced experiments for physics at the Intensity Frontier, their complex technology needs a thorough calibration and dedicated measurements of some key quantities to achieve the precision required for the next generation of discoveries.  LArIAT's goal is to provide such calibration and dedicated measurements. The LArIAT LArTPC is deployed in a dedicated calibration test beamline at Fermilab. We use the LArIAT beamline to characterize the charge particles before they enter the TPC: the particle type and initial momentum is known from beamline information. The precise calorimetric energy reconstruction of the LArTPC technology enables the measurement of the total differential cross section for  tagged hadrons. 
-The Pion-Nucleus and Kaon-Nucleus total hadronic interaction cross section have never been measured before in argon and they are a fundamental step to shed light on light meson interaction in nuclei per se, while providing a key input to neutrino physics and proton decay studies in future LArTPC experiments like SBN and DUNE.
+The Pion-Nucleus and Kaon-Nucleus total hadronic interaction cross section have never been measured before in argon and they are a fundamental step to shed light on light meson interaction in nuclei per se, while providing a key input to neutrino physics and proton decay studies in future LArTPC experiments like SBN and DUNE. 
+
+In order to showcase LArIAT's utility to SBN and DUNE, we illustrate briefly two comparisons as examples: one regarding neutrino interactions and the second regarding proton decay studies.\\
+The left side of figure \ref{fig:NuSimulation} shows the distribution of products in momentum spectrum and particle type as simulated in a $\nu_e$ CC interaction in DUNE (according to \cite{LeiguideOliveira:1953730}) as  a comparative example to the momentum distribution of particles in the LArIAT beamline -- shown on the right side of figure \ref{fig:NuSimulation}. The momentum spectrum in the LArIAT beamline for electrons, muons and pions -- the most abundant particles produced in  a $\nu_e$ CC interaction -- covers a wide range of the expected momentum distribution in a neutrino event.
 
 
-\textcolor{red}{Add Kaons and Pions spectrum}
+The signature of a proton decay event in the ``LAr golden mode" is the presence of a single kaon of about 400 MeV in the detector; the momentum spectrum of the kaon pre and post FSI in such an event is shown on the left side of figure \ref{fig:PDKGENIE}. The right side of figure \ref{fig:PDKGENIE} shows the momentum spectrum of kaons in the LArIAT beamline. Kaons arriving to the LArIAT TPC are ideal for proton decay studies, since their momentum in the beamline is just above the typical momentum for kaons in a proton decay event: the majority of LArIAT kaons slow down in the TPC enough to enter the desired momentum window.
 
 
-\textcolor{red}{ADD genie proton decay kaon distribution and lariat beamline overlaied}
-The signature of a proton decay event in the ``LAr golden mode" is the presence of a single kaon of about 400 MeV in the detector. 
+\begin{figure}[hbpt]
+\centering
+\includegraphics[width=0.45\textwidth]{Chapter-2/Images/NueCCSim.png}	
+\includegraphics[width=0.45\textwidth]{Chapter-2/Images/MomentumKaonsDatabeamline.png}
+\caption{$Left$. Simulation of the products of a $\nu_e$ CC interaction in DUNE, both in particles type and momentum. \\
+$Right$. Momentum spectrum for low mass particles ($e,\mu,\pi$) in the LArIAT beamline,  negative tune. Data is shown in black, while the beamline simulation is shown in solid colors. }
+\label{fig:NuSimulation}
+\end{figure}
+
+
+\begin{figure}[hbpt]
+\centering
+\includegraphics[width=0.45\textwidth]{Chapter-2/Images/pdkGenie.png}	
+\includegraphics[width=0.45\textwidth]{Chapter-2/Images/MomentumKaonsDatabeamline.png}
+\caption{$Left$. Momentum of the kaon outgoing a proton decay $p\rightarrow K^+\bar\nu$ event as simulated by the Genie 2.8.10 event generator in argon. The red line represents the kaon momentum distribution before undergoing the simulated final state interaction inside the argon nucleus, while the blue line represents the momentum distribution after FSI.\\
+$Right$. Positive Kaon momentum spectrum in the LArIAT beamline. }
+\label{fig:PDKGENIE}
+\end{figure}
+
+
