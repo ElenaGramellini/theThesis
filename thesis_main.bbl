@@ -83,6 +83,12 @@ R~Acciarri, M~Antonello, B~Baibussinov, M~Baldo-Ceolin, P~Benetti, F~Calaprice,
 \newblock Effects of nitrogen contamination in liquid argon.
 \newblock {\em Journal of Instrumentation}, 5(06):P06003, 2010.
 
+\bibitem{lightsys-pmttests}
+R.~Acciarri et~al.
+\newblock {Demonstration and Comparison of Operation of Photomultiplier Tubes
+  at Liquid Argon Temperature}.
+\newblock {\em JINST}, 7:P01016, 2012.
+
 \bibitem{MicroBooNE-det}
 R.~Acciarri et~al.
 \newblock {Design and Construction of the MicroBooNE Detector}.
@@ -142,6 +148,11 @@ P.~Adamson, L.~Aliaga, D.~Ambrose, N.~Anfimov, A.~Antoshkin, E.~Arrieta-Diaz,
 \newblock Constraints on oscillation parameters from ${\ensuremath{\nu}}_{e}$
   appearance and ${\ensuremath{\nu}}_{\ensuremath{\mu}}$ disappearance in nova.
 \newblock {\em Phys. Rev. Lett.}, 118:231801, Jun 2017.
+
+\bibitem{agresti2013categorical}
+Alan Agresti.
+\newblock {\em Categorical Data Analysis}.
+\newblock Wiley Series in Probability and Statistics. Wiley, 2013.
 
 \bibitem{Aguilar:2001ty}
 A.~Aguilar-Arevalo et~al.
@@ -219,6 +230,9 @@ B.~Baller.
 Gary Barker.
 \newblock Neutrino event reconstruction in a liquid argon {TPC}.
 \newblock {\em Journal of Physics: Conference Series}, 308:012015, jul 2011.
+
+\bibitem{basf}
+BASF Corp. 100 Park Avenue, Florham Park, NJ 07932 USA.
 
 \bibitem{0370-1298-64-10-303}
 J~B Birks.
@@ -361,6 +375,18 @@ F.~Binon et~al.
 \newblock Scattering of negative pions on carbon.
 \newblock {\em Nuclear Physics B}, 17(1):168 -- 188, 1970.
 
+\bibitem{MinervaTestbeam}
+L.~Aliaga et~al.
+\newblock Minerva neutrino detector response measured with test beam data.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 789:28 --
+  42, 2015.
+
+\bibitem{LAPD}
+M~Adamowski et~al.
+\newblock The liquid argon purity demonstrator.
+\newblock {\em Journal of Instrumentation}, 9(07):P07005, 2014.
+
 \bibitem{Vilain1993}
 P.~Vilain et~al.
 \newblock Coherent single charged pion production by neutrinos.
@@ -382,6 +408,12 @@ C.~E.~Aalseth et~al.l.
 \newblock {DarkSide}-20k: A 20 tonne two-phase {LAr} {TPC} for direct dark
   matter detection at {LNGS}.
 \newblock {\em The European Physical Journal Plus}, 133(3), mar 2018.
+
+\bibitem{Fenker}
+H~Fenker.
+\newblock Standard beam pwc for fermilab.
+\newblock Technical report, Fermi National Accelerator Lab., Batavia, IL (USA),
+  1983.
 
 \bibitem{fesbach1992theoretical}
 H~Fesbach.
@@ -418,6 +450,9 @@ D.Y. Wong~(editor) G.L. Shaw~(Editor).
 \newblock {\em Pion-nucleon Scattering}.
 \newblock John Wiley \& Sons Inc, 1969.
 
+\bibitem{GlassmanPS}
+Glassman High Voltage, Inc., Precision Regulated High Voltage DC Power Supply.
+
 \bibitem{1063-7869-57-5-503}
 D~S Gorbunov.
 \newblock Sterile neutrinos and their role in particle physics and cosmology.
@@ -427,6 +462,14 @@ D~S Gorbunov.
 C.~Green, J.~Kowalkowski, M.~Paterno, M.~Fischler, L.~Garren, and Q.~Lu.
 \newblock {The Art Framework}.
 \newblock {\em J. Phys. Conf. Ser.}, 396:022020, 2012.
+
+\bibitem{Sten}
+S.~Hansen, D.~Jensen, G.~Savage, E.~Skup, and A.~Soha.
+\newblock Fermilab test beam multi-wire proportional chamber tracking system
+  upgrade.
+\newblock June 2014.
+\newblock International Conference on Technology and Instrumentation in
+  Particle Physics (TIPP 2014).
 
 \bibitem{0295-5075-103-2-21001}
 J.~Harada.
@@ -548,6 +591,12 @@ E.~Morikawa, R.~Reininger, P.~G\"{u}rtler, V.~Saile, and P.~Laporte.
   to the condensed phase.
 \newblock {\em The Journal of Chemical Physics}, 91(3):1469--1477, aug 1989.
 
+\bibitem{ASDQchip}
+FM~Newcomer, S~Tedja, R~Van~Berg, J~Van~der Spiegel, and HH~Williams.
+\newblock A fast, low power, amplifier-shaper-discriminator for high rate straw
+  tracking systems.
+\newblock {\em IEEE Transactions on Nuclear Science}, 40(4):630--636, 1993.
+
 \bibitem{Noether1971}
 Emmy Noether.
 \newblock Invariant variation problems.
@@ -622,6 +671,9 @@ Qaisar Shafi and Zurab Tavartkiladze.
 \newblock Neutrino democracy, fermion mass hierarchies, and proton decay from
   5d su(5).
 \newblock {\em Phys. Rev. D}, 67:075007, Apr 2003.
+
+\bibitem{sigma-aldrich}
+Sigma-Aldrich, P.O. Box 14508, St. Louis, MO 63178 USA.
 
 \bibitem{Teague1968}
 R.~K. Teague and C.~J. Pings.
