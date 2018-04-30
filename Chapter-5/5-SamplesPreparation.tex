@@ -23,24 +23,32 @@ Since LArIAT data are taken under different beam conditions, G4Beamline simulate
 \subsection{Data Driven MC}\label{sec:DDMC}
 The Data Driven single particle Monte Carlo (DDMC) is a single particle MC gun which simulates the particle transportation from WC4 into the TPC leveraging on the beamline data information. The DDMC uses the data momentum and position at WC4 to derive its initial conditions: a general sketch of the DDMC workflow is shown in Figure \ref{fig:DDMCSketch}.
 
-
-\begin{figure}[hpbt]
-\centering
-\includegraphics[width=\textwidth]{Chapter-5/Images/DDMCQuantities.png}
-\caption{Workflow for Data Driven single particle Monte Carlo production.}
-\label{fig:DDMCSketch}
-\end{figure}
-
-When producing a DDMC sample, beam line data from a particular running period and/or running condition are selected first. Figure 18 schematically shows the data quantities of interest: the measured momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. The momentum and position of the selected data is sampled thousand of times through a 5-dimensional hit-or-miss sampling procedure. This produces MC distributions with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the considered variables. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the sampled momentum and position distributions as a template. An illustration of this procedure is shown in Figure 17 with the results of the DDMC generation compared to a sample of wire chamber track data. Using this technique ensures the MC and data have very similar momentum, position and angular distributions at Wire-Chamber 4 and allow us to calibrate the energy loss upstream of the TPC as precisely as possible. The DDMC is a single particle Monte Carlo: the beam pile-up is not simulated. A sample of \textcolor{red}{NUMBERS} pions and \textcolor{red}{NUMBERS} kaons have been generated with the DDMC and used for the MC cross section study.
+When producing a DDMC sample, beam line data from a particular running period and/or running condition are selected first. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the particle position ($X, Y$) at WC4 directly from the data measurement. On the contrary, we calculate the components of the momentum using the beamline measurement of the momentum magnitude (see section \ref{sec:MWPCfunc}) in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector. The momentum and position of the selected data is sampled thousand of times through a 5-dimensional hit-or-miss sampling procedure. This produces MC distributions with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the considered variables. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the sampled momentum and position distributions as a template. 
+As an example, the results of the DDMC generation compared to data for the pion 60A sample are shown in figure \ref{DDMCComparison}; as expected, MC and data agree within the statistical uncertainty by construction. Using this technique ensures the MC and data particles have very similar momentum, position and angular distributions at WC4 and allow us to us the MC sample in several occasions, for example to calibrate the energy loss upstream of the TPC or account for the WC2TPC match inefficiency. A small caveat is in order here: the DDMC is a single particle Monte Carlo, which means that the beam pile-up is not simulated. 
+Three sample of \textcolor{red}{NUMBERS} pions, muons and electrons, as well as  a sample of \textcolor{red}{NUMBERS} kaons have been generated with the DDMC and are used for the MC cross section study.
 
 \begin{figure}[hpbt]
 \centering
 \includegraphics[width=\textwidth]{Chapter-5/Images/DDMCScheme.png}
 \caption{Workflow for Data Driven single particle Monte Carlo production.}
+\label{fig:DDMCSketch}
+\end{figure}
+
+
+\begin{figure}[hpbt]
+\centering
+\includegraphics[width=\textwidth]{Chapter-5/Images/DDMCQuantities.png}
+\caption{Scheme of the quantities of interest for the DDMC event generation: $P_x, P_y, P_z, X, Y$ at WC4.}
 \label{fig:DDMCQuantities}
 \end{figure}
 
 
+\begin{figure}[hpbt]
+\centering
+\includegraphics[width=\textwidth]{Chapter-5/Images/.png}
+\caption{Comparison between generated quantities and data distributions for the 60A pion sample: Z component of the momentum (top left), X position at Wire Chamber 4 (top right), Y position at Wire Chamber 4 (bottom).}
+\label{fig:DDMCComparison}
+\end{figure}
 
 \section{Energy Calibration}\label{ch:energyCalibration}
 \section{Tracking Studies}
