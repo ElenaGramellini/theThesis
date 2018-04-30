@@ -1,9 +1,45 @@
 \chapter{Samples Preparation}\label{ch:samples}
-This chapter describes the data and Monte Carlo samples used for the cross section analyses, % as well as the work necessary to prepare the samples in a usable state for the physics analyses.
+This chapter describes the preparation of the data and Monte Carlo samples used for the cross section analyses. This entails:
+\begin{enumerate}
+\item the beamline event selection on data,
+\item the MC production,
+\item the energy calibration of the detector both in data and MC,
+\item the optimization of the tracking algorithm for the total cross section analyses.
+\end{enumerate}
+
 \section{LArIAT Data}
 \section{LArIAT Monte Carlo}
+For the simulation of LArIAT events and their particle make up, we use a combination of two MC generators: the G4Beamline Monte Carlo and the Data Driven single particle Monte Carlo (DDMC). We use the G4Beamline MC to simulate the particle transportation in the beamline and calculate the particle composition of the beam just past the fourth Wire Chamber (WC4). In order to simulate the beam line particles after WC4 and in the TPC, we use the DDMC.
 \subsection{G4Beamline}\label{beamlineComposition}
+G4Beamline simulates the beam collision with the LArIAT secondary target, the energy deposited by the particles in the LArIAT beamline detectors and the action of the LArIAT magnets, effectively accounting for particle transportation through the beam line from the LArIAT target until ``Big Disk", a fictional, void detector located just before the cryostat. 
+ At the moment of this writing, G4Beamline does not simulated the responses of the beam line detectors. It is possible to interrogate the truth level information of the simulated particles in several points of the geometry. In order to ease the handshake between G4Beamline and the DDMC, we ask for the beam composition just after WC4.
+Since LArIAT data are taken under different beam conditions, G4Beamline simulates separately the beam composition according to the magnets' settings and the secondary beam intensity. For the pion cross section analysis the relevant beam conditions are  secondary beam energy of 64 GeV, negative polarity magnet with current of 100 A and 60 A. For the kaon cross section analysis the relevant beam conditions is a secondary beam energy of 64 GeV, positive polarity magnet with current of 100 A. 
+
+\textcolor{red}{DECIDE IF YOU WANT THE BEAM COMPOSITION HERE}
+%Figure 16 shows the tertiary beam spectra for the 64 GeV and 100 A. 
+
+%In Table 3, the beam composition is given in terms of percentage of different particle species per spill for positive polarity. The values reported are the weighted average on the two beam conditions considered. The weights are calculated according to the fourth column of Table 2.
+
 \subsection{Data Driven MC}\label{sec:DDMC}
+The Data Driven single particle Monte Carlo (DDMC) is a single particle MC gun which simulates the particle transportation from WC4 into the TPC leveraging on the beamline data information. The DDMC uses the data momentum and position at WC4 to derive its initial conditions: a general sketch of the DDMC workflow is shown in Figure \ref{fig:DDMCSketch}.
+
+
+\begin{figure}[hpbt]
+\centering
+\includegraphics[width=\textwidth]{Chapter-5/Images/DDMCQuantities.png}
+\caption{Workflow for Data Driven single particle Monte Carlo production.}
+\label{fig:DDMCSketch}
+\end{figure}
+
+When producing a DDMC sample, beam line data from a particular running period and/or running condition are selected first. Figure 18 schematically shows the data quantities of interest: the measured momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. The momentum and position of the selected data is sampled thousand of times through a 5-dimensional hit-or-miss sampling procedure. This produces MC distributions with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the considered variables. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the sampled momentum and position distributions as a template. An illustration of this procedure is shown in Figure 17 with the results of the DDMC generation compared to a sample of wire chamber track data. Using this technique ensures the MC and data have very similar momentum, position and angular distributions at Wire-Chamber 4 and allow us to calibrate the energy loss upstream of the TPC as precisely as possible. The DDMC is a single particle Monte Carlo: the beam pile-up is not simulated. A sample of \textcolor{red}{NUMBERS} pions and \textcolor{red}{NUMBERS} kaons have been generated with the DDMC and used for the MC cross section study.
+
+\begin{figure}[hpbt]
+\centering
+\includegraphics[width=\textwidth]{Chapter-5/Images/DDMCScheme.png}
+\caption{Workflow for Data Driven single particle Monte Carlo production.}
+\label{fig:DDMCQuantities}
+\end{figure}
+
 
 
 \section{Energy Calibration}\label{ch:energyCalibration}
