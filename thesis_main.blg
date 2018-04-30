@@ -11,7 +11,6 @@ Unbalanced braces---line 1960 of file bib.bib.bib
  : archiveprefix = "arXiv
  :                       },
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "s"
 Warning--I didn't find a database entry for "supersymmetry"
 Warning--I didn't find a database entry for "LHC"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
@@ -46,45 +45,45 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
 while executing---line 1090 of file plain.bst
-You've used 110 entries,
+You've used 112 entries,
             2118 wiz_defined-function locations,
-            1220 strings with 31828 characters,
-and the built_in function-call counts, 53937 in all, are:
-= -- 4625
-> -- 4697
+            1234 strings with 34895 characters,
+and the built_in function-call counts, 59398 in all, are:
+= -- 5002
+> -- 5498
 < -- 5
-+ -- 1892
-- -- 1770
-* -- 5079
-:= -- 9664
-add.period$ -- 327
-call.type$ -- 110
-change.case$ -- 1202
++ -- 2212
+- -- 2088
+* -- 5751
+:= -- 10704
+add.period$ -- 333
+call.type$ -- 112
+change.case$ -- 1367
 chr.to.int$ -- 0
-cite$ -- 128
-duplicate$ -- 1208
-empty$ -- 2707
-format.name$ -- 1770
-if$ -- 10150
+cite$ -- 130
+duplicate$ -- 1230
+empty$ -- 2760
+format.name$ -- 2088
+if$ -- 11059
 int.to.chr$ -- 0
-int.to.str$ -- 110
-missing$ -- 102
-newline$ -- 549
-num.names$ -- 212
-pop$ -- 1097
+int.to.str$ -- 112
+missing$ -- 104
+newline$ -- 559
+num.names$ -- 216
+pop$ -- 1258
 preamble$ -- 1
-purify$ -- 1093
+purify$ -- 1256
 quote$ -- 0
-skip$ -- 840
+skip$ -- 854
 stack$ -- 0
-substring$ -- 2396
-swap$ -- 129
+substring$ -- 2455
+swap$ -- 131
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 434
+type$ -- 442
 warning$ -- 18
-while$ -- 334
-width$ -- 113
-write$ -- 1170
+while$ -- 341
+width$ -- 115
+write$ -- 1192
 (There were 6 error messages)
