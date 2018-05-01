@@ -57,6 +57,12 @@ H~Fenker.
 \newblock Technical report, Fermi National Accelerator Lab., Batavia, IL (USA),
   1983.
 
+\bibitem{Geiger1909}
+H.~Geiger and E.~Marsden.
+\newblock On a diffuse reflection of the formula-particles.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
+  Engineering Sciences}, 82(557):495--500, jul 1909.
+
 \bibitem{GlassmanPS}
 Glassman High Voltage, Inc., Precision Regulated High Voltage DC Power Supply.
 
@@ -81,5 +87,12 @@ T.~Yang R.~Acciarri, M.~Stancari.
 
 \bibitem{sigma-aldrich}
 Sigma-Aldrich, P.O. Box 14508, St. Louis, MO 63178 USA.
+
+\bibitem{WWW}
+W.~Walkowiak.
+\newblock Drift velocity of free electrons in liquid argon.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  449(1-2):288--294, jul 2000.
 
 \end{thebibliography}
