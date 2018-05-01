@@ -120,8 +120,7 @@ The relatively thin width on the beamline direction minimizes energy loss of the
 The CAEN 1751 digitizer is used to digitize the TOF PMTs signals at a sampling rate of 1 GHz. The 12 bit samples are stored in a circular memory buffer. At trigger time, data from the TOF PMTs are recorded to output in a 28.7 \textmu s windows starting  approximately 8.4 \textmu s before the trigger time. 
 
 
-
-\subsubsection{TOF functionality}\label{sec:MWPCfunc}
+\subsubsection{TOF functionality}\label{sec:TOFfunc}
 
 
 The TOF signals rise time (10-90\%) is 4 ns and a full width, half-maximum of 9 ns consistent in time. The signal amplitudes from the upstream TOF and  downstream TOF are slightly different:  200 mV for the upstream PMTs but only 50 mV for downstream PMTs. The time of the pulses was calculated utilizing an oversampled template derived from the data itself. We take the pulse pedestal from samples far from the pulse and subtract it to the pulse amplitude. We then stretch vertically a template to match the pedestal-subtracted pulse amplitude and we move it horizontally to find the time. With this technique, we find a pulse time-pickoff resolution better than 100 ps.  The pulse pile up is not a significant problem given the TOF timing resolution and the rate of the particle beam.  Leveraging on the pulses width uniformity of any given PMT,  we flag events where two pulses overlap as closely in time as 4 ns with an 90\% efficiency according to simulation. 
@@ -152,7 +151,7 @@ The MuRS is a segmented block of steel with four slots instrumented with scintil
 The signals from both the punch-thorough and the MuRS PMTs are digitized in the CAEN V1740, same as the TPC; the details of this discriminator are laid out in~\ref{sec:TPCCharge}. It is worth noticing that the sampling time of the CAEN V1740 is slow (of the order of 128 ns), so pulse shape information from the PMT is lost.
 Punch-thorough and MuRS hits are formed utilizing the digital discriminator signals under threshold at a given time, where we obtain the threshold for each PMT directly on data distributions.
 
-
+It is worth mentioning here the presence of an additional scintillation paddle between WC4 and the downstream paddle of the TOF system, called halo. The halo is a 39x38x1 cm$^3$ paddle with a 6.5 cm radius hole in the center, whose original function was to reject  beam particles slightly offset from the beamline center. Data from this paddle turned out to be unusable, so our data events include both particle going through the halo scintillation material or through the halo hole.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{LArIAT Cosmic Ray Paddle Detectors}\label{sec:CosmicRayPaddle}
