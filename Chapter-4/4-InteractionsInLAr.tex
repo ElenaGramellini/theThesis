@@ -18,17 +18,37 @@ We use both the LArIAT  beamline detectors and the LArTPC information to measure
 \subsubsection{Beamline events}\label{ch:beamlineDetectorsData}
 As will be clear in section \ref{ch:ThinSliceMethod}, beamline particle identification and momentum measurement before entering the TPC are fundamental information for the hadronic cross sections measurements in LArIAT. Thus, we apply selections to the LArIAT data to keep only events whose wire chamber and time of flight information is registered. Additionally, we perform a check of the plausibility of the trajectory inside the beamline detectors: given the position of the hits in the four wire chambers, we make sure the particle trajectory does not cross any impenetrable material such as the collimator and the magnets steel.
 
+\begin{table}[]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+                                                        & Run-II Negative Polarity   &  Run-II Positive Polarity  \\ \hline
+Events Reconstructed in Beamline &  158396  & 260810  \\ \hline
+Events with Plausible Trajectory     &   147468 & 240954  \\ \hline
+Candidate $\pi^-/\mu^-/e^-$            &   138481 &     N.A.   \\ \hline
+Candidate $K^+$                            &    N.A       & 2837     \\ \hline
+Events Surviving Pile Up Filter       &                 &              \\ \hline
+Events with WC2TPC Match          &                 &              \\ \hline
+Events Surviving Shower Filter      &                 &  N.A.     \\ \hline
+\end{tabular}
+\caption{Number of data events for Run-II Negative and Positive polarity }
+\label{tab:beamlineDataSelection}
+\end{table}
+
+
+
 \subsubsection{Particle Identification in the beamline}
 In data, the main tool to establish the identity of the hadron of interest is the LArIAT tertiary beamline, in its function of mass spectrometer. We combine the measurement of the time of flight, $TOF$, and the beamline momentum, $p_{Beam}$, to reconstruct the invariant mass of the particles in the beamline, $m_{Beam}$, as follows
 \begin{equation}
 m_{Beam} = \frac{p_{Beam}}{c}\sqrt{\biggl(\frac{TOF*c}{l}\biggr)^2 -1},
+\label{eq:mass}
 \end{equation}
  where $c$ is the speed of light and $l$ is the length of the particle trajectory between the time of flight paddels. 
 
 Figure \ref{fig:mass} shows the mass distribution for the Run II negative polarity runs on the left and positive polarity runs on the right. We perform the classification of events into the different samples as follows:
 
 \begin{itemize}
-\item \underline{$\pi, \mu, e$:} 0~MeV $<$ mass $<$ 350~MeV
+\item \underline{$\pi, \mu, e$:}  mass $<$ 350~MeV
 
 \item \underline{kaon:} 350~MeV $<$ mass $<$ 650~MeV
 
@@ -39,16 +59,9 @@ Figure \ref{fig:mass} shows the mass distribution for the Run II negative polari
 
 %\begin{comment}     
 \begin{figure}
-%\captionsetup{justification=raggedright}  
-\begin{minipage}[b]{.53\textwidth}  
   \centering  
-\includegraphics[width=3in]{Chapter-4/Images/massRunIIPos.png}
-\end{minipage}%  
-\begin{minipage}[b]{0.53\textwidth}  
-  \centering  
-\includegraphics[width=3in]{Chapter-4/Images/face-smile-big.png}
-\end{minipage}
-\caption{The mass plotted for a sample of Run-II events reconstructed in the beamline, negative polarity runs on the left and positive polarity runs on the right. The classification of the events into $\pi, \mu, e$, kaon, or proton is based on this distribution.\textcolor{red}{CHANGE PLOTS}}
+\includegraphics[width=\textwidth]{Chapter-4/Images/massRunII.png}
+\caption{Distribution of the beamline mass as calculated according to equation \ref{eq:mass} for the Run-II events reconstructed in the beamline, negative polarity runs on the left and positive polarity runs on the right. The classification of the events into $\pi^\pm/ \mu^\pm/e^\pm$, K$^\pm$, or (anti)proton is based on these distributions, whose selection cut are represented by the vertical colored lines.}
 \label{fig:mass}
 \end{figure}
 
