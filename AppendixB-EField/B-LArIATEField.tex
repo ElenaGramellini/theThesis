@@ -41,7 +41,15 @@ With these basic parameters established, we can now move on to calculating the e
 \subsection*{Single line diagram method}
 The electric field strength in the LArIAT main drift volume can be determined knowing the voltage applied to the cathode, the voltage applied at the shield plane, and the distance between them. We assume the distance between the cathode and the shield plane to be 470 mm and any length contraction due to the liquid argon is negligibly small ($\sim$2~mm).
 
-The voltage applied to the cathode can be calculated using Ohm's law and the single line diagram shown in Figure \ref{fig:circuit}.  A set of two of filter pots for emergency power dissipation are positioned between the Glassman power supply and the cathode, one at each end of the feeder cable, each with an internal resistance of 40~M$\Omega$.  The output current of the Glassman power supply is then used to determine the electric field strength.  Figure \ref{fig:currentMeasurement} shows an average current of 0.004172 mA from the Glassman power supply.  
+The voltage applied to the cathode can be calculated using Ohm's law and the single line diagram shown in Figure \ref{fig:circuit}.  A set of two of filter pots for emergency power dissipation are positioned between the Glassman power supply and the cathode, one at each end of the feeder cable, each with an internal resistance of 40~M$\Omega$. 
+
+
+Given the TPC resistor chain, the total TPC impedance is ~6 G$\Omega$. Since the total resistance on the circuit is driven by the TPC impedance, we expect the resulting current to be 
+\begin{equation}
+I=V_{PS} /R_{tot} = -23.5\text{ kV}/6 \text{ G}\Omega  \sim 4 \text{ $\mu$A}, 
+\end{equation}
+
+which we measure with the Glassman power supply, shown in  Figure \ref{fig:currentMeasurement}.  
 
 \begin{figure}[h]
 \centering
@@ -63,8 +71,8 @@ Using this current, the voltage at the cathode is calculated as
 \begin{equation} \label{eq:VBC}
 V_{BC}=V_{PS} - (I \times R_{eq}) = -23.5\text{ kV} + ( 0.00417\text{ mA} \times 80\text{ M}\Omega ) = -23.17\text{ kV}, 
 \end{equation}
-where $I$ is the current and $R_{eq}$ is the equivalent resistor representing the two filter pots. The electric field, drift voltage, and drift time are then calculated to be
-\begin{equation}E_{\text{field}} = \frac{V_{BC} - V_{\text{shield}}}{\Delta x} = 486.54\text{ V/cm}
+where $I$ is the current and $R_{eq}$ is the equivalent resistor representing the two filter pots. The electric field is then calculated to be
+\begin{equation}E_{\text{field}} = \frac{V_{BC} - V_{\text{shield}}}{\Delta x} = 486.54\text{ V/cm}.
 \end{equation}
 %\begin{equation}v_{drift} = \mu E_{field} = 1.5097 \textit{ mm/$\mu$s}
 %\end{equation}
@@ -80,13 +88,13 @@ where $I$ is the current and $R_{eq}$ is the equivalent resistor representing th
 \begin{minipage}{0.45\textwidth}
 \centering
 \includegraphics[width=3in]{AppendixB-EField/Images/TPCCrossSectionView.png}
-\caption{Pictorial representation of the YX view of the TPC. The distance within the anode planes and between the shield plane and the cathode is purposely out of proportion to illustrate the time difference between hits on collection and induciton. A ACP track is shown as an example.}
+\caption{Pictorial representation of the YX view of the TPC. The distance within the anode planes and between the shield plane and the cathode is purposely out of proportion to illustrate the time difference between hits on collection and induction. An ACP track is shown as an example.}
 \label{fig:Scheme}
 \end{minipage}\hfill
 \begin{minipage}{0.45\textwidth}
 \centering
 \includegraphics[width=3in]{AppendixB-EField/Images/AngleDef.png}
-\caption{Angle definition in the context of LArIAT coordinates system.}
+\caption{Angle definition in the context of LArIAT coordinate system.}
 \label{fig:AngleDef}
 \end{minipage}
 \end{figure}
@@ -94,7 +102,7 @@ We devise an independent method to measure the drift time (and consequently drif
 The basic idea is simple:
 \begin{itemize}
 \item[0.] Select cosmic ray events with only 1 reconstructed track 
-\item[1.] Reduce the events to the one contaoning tracks that cross both anode and cathode
+\item[1.] Reduce the events to the one containing tracks that cross both anode and cathode
 \item[2.] Identify the first and last hit of the track
 \item[3.] Measure the time difference between these two hits ($\Delta t$).
 \end{itemize}
@@ -110,13 +118,13 @@ One of the main features of this method is that it doesn't rely on the measureme
 \item horizontal position (Z) of first and last hits within 2 and 86 cm from TPC front face (avoid through going tracks) 
 \item track length greater than 48 cm (more likely to be crossing)
 \item angle from the drift direction (phi in figure \ref{fig:AngleDef}) smaller than 50 deg (more reliable tracking)
-\item angle from the beam direction (theta in figure \ref{fig:AngleDef}) grater than 50 deg (more reliable tracking)
+\item angle from the beam direction (theta in figure \ref{fig:AngleDef}) greater than 50 deg (more reliable tracking)
 \end{itemize}
 
 
 Tracks passing all these selection requirements are used for the $\Delta t$ calculation.
 
-For each track passing our selection, we loop through the associated hits in order to retrieve the timing information. The analysis is performed separately on hits on the collection plane and induction plane, but lead to consistent results. As an example of the time difference, figures \ref{fig:Run2PosColFit} and \ref{fig:Run2PosIndFit} represent the difference in time between the last and first hit of the selected tracks for Run-II Positive Polarity sample on the collection and induction plane respectively.  We fit with a Gaussian to the peak of the $\Delta t$ distributions to extract the mean drift time and the uncertainty associated with it. The long tail at low $\Delta t$ represent contamination of non-ACP tracks in the track selection.  We apply the same procedure to Run-I and Run-II, positive and negative polarity alike.
+For each track passing our selection, we loop through the associated hits to retrieve the timing information. The analysis is performed separately on hits on the collection plane and induction plane, but lead to consistent results. As an example of the time difference, figures \ref{fig:Run2PosColFit} and \ref{fig:Run2PosIndFit} represent the difference in time between the last and first hit of the selected tracks for Run-II Positive Polarity sample on the collection and induction plane respectively.  We fit with a Gaussian to the peak of the $\Delta t$ distributions to extract the mean drift time and the uncertainty associated with it. The long tail at low $\Delta t$ represents contamination of non-ACP tracks in the track selection.  We apply the same procedure to Run-I and Run-II, positive and negative polarity alike.
 
    
 \begin{figure}[h!]
@@ -134,13 +142,13 @@ For each track passing our selection, we loop through the associated hits in ord
 \end{minipage}
 \end{figure}
 
-To convert $\Delta t$ recorded for the hits on the induction plane to the drift time we utilize the formula
+To convert $\Delta t$ recorded for the hits on the induction plane to the drift time we employ the formula
 \begin{equation}
 t_{drift} = \Delta t - t_{S-I}
 \end{equation}
 where $t_{drift}$ is the time the charge takes to drift in the main volume between the cathode and the shield plane and $t_{S-I}$ is the time it takes for the charge to drift from the shield plane to the induction plane. In Table \ref{tab:Efields} we calculated the drift velocity in the S-I region, thus we can calculate $t_{S-I}$ as 
 \begin{equation}
-t_{S-I} = \frac{l_{S-I}}{v_{S-I}} = \frac{4 mm}{1.745 mm/ \mu s}
+t_{S-I} = \frac{l_{S-I}}{v_{S-I}} = \frac{4 mm}{1.73 mm/ \mu s}
 \end{equation}
 where $\l_{S-I}$ is the distance between the shield and induction plane and $v_{S-I}$ is the drift velocity in the same region. A completely analogous procedure is followed for the hits on the collection plane, taking into account the time the charge spent in drifting from shield to induction as well as between the induction and collection plane
 The value for $\Delta t_{drift}$ , the calculated drift velocity ($v_{drift}$), and corresponding drift electric field for the various run periods is given in Table \ref{tab:deltaTACP} and are consistent with the electric field value calculated with the single line diagram method.
