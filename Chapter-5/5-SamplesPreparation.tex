@@ -56,14 +56,19 @@ Three sample of \textcolor{red}{NUMBERS} pions, muons and electrons, as well as 
 %%%%%%%%%%%%%%         Energy Calibration         %%%%%%%%%%%%%%         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Energy Calibration}\label{ch:energyCalibration}
-Scope of the energy calibration is to identify the factors which convert the charge collected (dQ) to energy deposited in the chamber(dE). As described in section \ref{sec:SignalProc}, this is a multi-step procedure. In LArIAT, we first correct the raw charge by the electronic noise on the considered wire \cite{technote}, then by the electron life time \cite{technote},  and then by the recombination effect using the ArgoNeut recombination values. Lastly, we apply overall calibration of the energy, i.e. we determine the ``calorimetry constants" using the procedure described in this paragraph.
-
-The general idea is to use a parametrization of the energy deposited per unit length (dE/dX) as a function of momentum to independently determine the calorimetry constants for the data and Monte Carlo in the LArIAT Run-II data samples.  This is done by comparing the stopping power measured on reconstructed quantities against the Bethe-Bloch theoretical prediction for various particle species.
- 
+Scope of the energy calibration is to identify the factors which convert the charge collected (dQ) to energy deposited in the chamber(dE). As described in section \ref{sec:SignalProc}, this is a multi-step procedure. In LArIAT, we first correct the raw charge by the electronic noise on the considered wire \cite{technote}, then by the electron lifetime \cite{LArIATLifeTime},  and then by the recombination using the ArgoNeut recombination values. Lastly, we apply overall calibration of the energy, i.e. we determine the ``calorimetry constants" using the procedure described in this section.
 
 
-This is best represented by Figure \ref{fig:PDGEnergyLoss}, taken from the Particle Data Group \cite{PDG}. Using the tables provided by the PDG for liquid argon (\cite{PDG-Argon}), we calculate the theoretical values for the most probably value for the stopping power of pions ($\pi$), muons ($\mu$), kaons ($K$), and protons ($p$) in the momentum range most relevant for LArIAT, shown in Figure \ref{fig:PDGEnergyLossArgon}.
+We independently determine  the calorimetry constants for Data and Monte Carlo in the LArIAT Run-II Data samples using  a parametrization of the energy deposited per unit length (dE/dX) as a function of momentum. This is done by comparing the stopping power measured on reconstructed quantities against the Bethe-Bloch theoretical prediction for various particle species (see equation \ref{eq:BB}).  We obtain the theoretical expectation for the dE/dX most probable value of pions ($\pi$), muons ($\mu$), kaons ($K$), and protons ($p$) in the momentum range most relevant for LArIAT (Figure \ref{fig:PDGEnergyLossArgon}) using the tables provided by the Particle Data Group \cite{Patrignani:2016xqp} for liquid argon \cite{PDG-Argon}.
 
+The basic idea of this calibration technique is to utilize the most upstream portion of a TPC track which has a well known momentum and particle species to measure its $dE/dX$. Once a sample of particles dE/dX has been measured at various momenta, we then tune to calorimetry constants within the reconstruction software to align these measured values to match the theoretical ones found in Figure \ref{fig:PDGEnergyLossArgon}. 
+
+In data, we start by selecting a sample of beamline positive pion candidates without any restriction on their measured momentum.
+We then apply the WC2TPC match and subtract the energy loss upstream to the TPC front face, determining the momentum at the TPC front face. For each surviving pion candidate,  we measure the dE/dx at each of the first 12 spacepoints associated the 3D reconstructed track, corresponding to a $\sim$ 5 cm portion. These dE/dX measurements are then put into a histogram that corresponds to measured momentum of the track. The dE/dX histograms are sampled every 50 MeV in momentum (e.g. 150~MeV/c $< P <$ 200~MeV/c, 200~MeV/c $< P <$ 250/c~MeV, etc...).   This process of selecting, sampling, and recording the dE/dX for various momentum bins is repeated over the entire sample of events, allowing us to collect sufficient statistic in most of the momentum bins between 150~MeV/c and 1100~MeV/c.
+Each 50 MeV/c momentum binned dE/dX histogram is now fit with a simple Landau function. The most probable value (MPV) and the associated error on the MPV from the fit are extracted and plotted on Figure \ref{fig:PDGEnergyLossArgon}. Depending on the outcome of the fit, we modify the calorimetry constants and we repeat the procedure until a qualitative agreement is achieved.  We perform this  tuning for the collection and induction plane separately. 
+As a cross check to the determined calorimetry constants using the positive pions, we plot the dE/dx vs momentum distribution all the other particle species identifiable in the beamline data ($\pi$, K , p, in both polarities) against the corresponding Beth-Bloch prediction in a similar fashion. On average, pions and muons only lose $\sim$10 MeV in this 5~cm section of the track and protons lose $\sim$20 MeV. Thus choosing 50 MeV size bins for our histograms covers the energy spread within those bins due to energy loss from ionization.  The results of the tuning and cross check for Run-II data on the collection plane is shown in Figure \ref{fig:BBandData} positive polarity data on the left, negative polarity data on the right.
+
+In MC, we simulate the corresponding positive pion sample with the DDMC (see section \ref{sec:DDMC}) and follow the same steps as in data. The calorimetry tuning is explained in all his gory details in \cite{technote}.
 
 
 \begin{figure}[htb]
@@ -81,22 +86,8 @@ This is best represented by Figure \ref{fig:PDGEnergyLoss}, taken from the Parti
 \label{fig:PDGEnergyLossArgon}
 \end{figure}
 
-Using the predictions in Figure \ref{fig:PDGEnergyLossArgon}, allows us to tune the calorimetry constants. The goal is to have the data and the Bethe-Bloch prediction agree across the broad range of momentum. 
 
 
-
-The basic idea of this calibration technique is to utilize a portion of a track within the LArTPC that has a well known momentum and particle species to measure the stopping power (or  energy deposited per unit length, $dE/dX$) as recorded inside the TPC. Once a sample of particles $dE/dX$ has been measured at various momenta, we then tune to calorimetry constants within the reconstruction software to align these measured values to match the theoretical ones found in Figure \ref{fig:PDGEnergyLossArgon}.
-
-
-The calibration procedure follows the following steps:
-\begin{itemize}
-\item \textbf{Species and Momentum Determination} We first select a sample of beamline events that correspond to either a sample of $\pi, \mu, e$, kaons or protons. This is done by selecting based on the invariant beamline mass as shown in section \ref{}. The beamline particle is matched to the TPC information. In order to determine the particle momentum at the TPC front face, we use the momentum measured by the LArIAT spectrometer and we apply a flat correction for the energy loss between the beamline and the TPC.  For the Monte Carlo, no such beamline identification is done and instead we generate DDMC for each particle species.
-
-
-\item \textbf{dE/dX sampling:} With the track within the TPC identified and the momentum for that track measured, we require the track to be of a minimum length of 10~cm long (to ensure we are away from any interaction point where the track may be broken into subsequent tracks). We then take the first twelve spacepoints of the track (excluding the first point to avoid edge effects near the field cage) and sample the reconstructed dE/dX for each point along the track. On average, this samples 5~cm of the track (shown in Section \ref{sec:Results}). These dE/dX measurements are then put into a histogram that corresponds to measured momentum of the track. The dE/dX histograms are sampled every 50 MeV in momentum (e.g. 150~MeV $< P <$ 200~MeV, 200~MeV $< P <$ 250~MeV, etc...). On average, pions and muons only lose $\sim$10 MeV in this 5~cm section of the track and protons lose $\sim$20 MeV. Thus choosing 50 MeV size bins for our histograms covers the energy spread within those bins due to energy loss from ionization. This process of selecting, sampling, and recording the dE/dX for various momentum bins is now repeated over the entire sample of events, allowing us to collect sufficient statistic in most of the momentum bins between 150~MeV and 1100~MeV.
-
-\item \textbf{Fit, tune, repeat:} Each 50 MeV momentum binned dE/dX histogram is now fit with a simple Landau function. The most probable value (MPV) and the associated error on the MPV from the fit are extracted and plotted on Figure \ref{fig:PDGEnergyLossArgon}. Depending on the outcome of the fit, the calorimetry constants are either tuned up or down.  The values are tuned for both the collection and induction plane to try to achieve the best possible match to the theoretical curve. The exact match is left as a qualitative exercise and is not quantitatively evaluated. 
-\end{itemize}
 
 \begin{figure}[htb]
 \centering
