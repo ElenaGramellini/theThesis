@@ -1,4 +1,4 @@
-\chapter{Total Hadronic Cross Section Measurement Methodology}\label{ch:Interactions}
+\chapter{Total Ha($\pi^{-}$,Ar)dronic Cross Section Measurement Methodology}\label{ch:Interactions}
 This chapter describes the general procedure employed to measure a total hadronic differential cross section in LArIAT.
 Albeit with small differences, both the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section measurements rely on the same procedure described in details in the following sections. We start by selecting the particle of interest using a combination of beamline detectors and TPC information (Section \ref{ch:ParticleSelectionMethod}). We then perform a handshake between the beamline information and the TPC tracking to assure the selection of the right TPC track (Section \ref{ch:WC2TPCMatchMethod}). Finally, we apply the ``thin slice" method and measure the ``raw" hadronic cross section (Section \ref{ch:ThinSliceMethod}). A series of corrections are then evaluated to obtain the ``true" cross section (Section \ref{ch:MCCorrections}). 
 
@@ -106,12 +106,12 @@ We discard events with multiple WC2TPC matches. We use only those TPC tracks tha
 \end{figure}
 
 \section{The Thin Slice Method}\label{ch:ThinSliceMethod}
-Once the pool of hadron candidate is selected and the TPC track corresponding to the beamline event is identified, we apply the thin slice method to measure the cross section, as the following sections describe. 
+Once we have selected the pool of hadron candidates and we have identified the TPC track corresponding to the beamline event, we apply the thin slice method to measure the cross section, as the following sections describe. 
 \subsection{Cross Sections on Thin Target}
 Cross section measurements on a thin target have been the bread and butter of nuclear and particle experimentalists since the Geiger-Marsden experiments \cite{Geiger1909}. At their core, these types of experiments consist in shooting a beam of particles with a known flux on a thin target and recording the outgoing flux. 
 
 
-In general, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and that the target is thin compared to the interaction length so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{Interacting}$ and number of incident particles $N_{Incident}$ determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
+In general, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and that the target is thin compared to the projectile interaction length,WC2TPC so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{Interacting}$ and number of incident particles $N_{Incident}$ determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
 Equation \ref{eq:thinTargetXS} 
 \begin{equation}
 P_{Survival} = 1- P_{Interacting} = 1 - \frac{N_{Interacting}}{N_{Incident}} = e^{-\sigma_{TOT} n \delta X}
@@ -130,11 +130,11 @@ Solving for the cross section, we find:
 \end{equation}
 
 \subsection{Not-so-Thin Target: Slicing the Argon}
-The LArIAT TPC, with its 90 cm of length, is not a thin target. However, the fine-grained tracking of the LArIAT LArTPC allows us to treat the argon volume as a sequence of many adjacent thin targets. 
+The interaction length of pions and kaons in argon is expected to be of the order of 50 cm for pions and 100 cm for kaons. Thus, the LArIAT TPC, with its 90 cm of length, is not a thin target. However, the fine-grained tracking of the LArIAT LArTPC allows us to treat the argon volume as a sequence of many adjacent thin targets. 
 
 As described in Chapter \ref{sec:experimentDescription}, LArIAT wire planes consist of 240 wires each. The wires are oriented at +/- $60^{\circ}$ from the vertical direction at 4 mm spacing, while the beam direction is oriented 3 degrees off the $z$ axis in the $XZ$ plane.  The wires collect signals proportional to the energy loss of the hadron along its path in a  $\delta${\emph{X}} = 4 mm/sin($60^{\circ}$) $\approx$ 4.7~mm slab of liquid argon. Thus, one can think to slice the TPC into many thin targets of $\delta${\emph{X}} = 4.7~mm thickness along the direction of the incident particle, making a measurement at each wire along the path.
 
-Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Eq.~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC-to-TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
+Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Eq.~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC2TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
 
 \begin{equation}
  E^{kin}_{Front Face}  = \sqrt{p^2_{Beam} - m^2_{Beam}} - m_{Beam} - E_{loss},
@@ -177,18 +177,56 @@ where:
 \end{eqnarray}
 
 
+
+
+
+\subsection{Corrections to the Raw Cross Section}\label{ch:MCCorrections}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+Equation \ref{eq:thinTargetXSSolved}  is a prescription for measuring the cross section in case of a pure beam of the hadron of interest and 100\% efficiency in the determination of the interaction point.  For example, if LArIAT had a beam of pure pions and were 100\% efficient in determining the interaction point within the TPC, the pion cross section in each energy bin would be given by
+
+\begin{equation}
+ \sigma^{\pi^-}(E_{i})  = \frac{1}{n \delta X}\frac{N^{\pi^-}_{ \text{Interacting}} (E_{i})}{N^{\pi^-}_{ \text{Incident}}(E_{i})}.
+\label{eq:thinTargetXSSolved2}
+\end{equation}
+
+Unfortunately, this is not the case. In fact, the selection used to isolate pions in the LArIAT beam allows for the presence of some muons and electrons as background. Also, the LArIAT TPC is not 100\% efficient in determining the interaction point. Therefore we need to apply two corrections evaluated on the MC in order to extract the cross section from LArIAT data: the background subtraction and the efficiency correction. 
+Still using the pion case as example, we estimate the pion cross section in each energy bin changing  the equation \ref{eq:thinTargetXSSolved2} into
+\begin{equation}
+ \sigma^{\pi^-}(E_{i})  =\frac{1}{n \delta X}\frac{N^{\pi^-}_{ \text{Interacting}} (E_{i})}{N^{\pi^-}_{ \text{Incident}}(E_{i})} = \frac{1}{n \delta X}\frac{ \epsilon^{inc}_i [ N^{ \text{TOT}}_{ \text{Interacting}} (E_{i}) - B_{ \text{Interacting}} (E_i)] }{   \epsilon^{int}_i [N^{ \text{TOT}}_{ \text{Incident}}(E_{i}) - B_{ \text{Incident}} (E_i)]},
+\label{eq:True}
+\end{equation}
+
+
+
+ 
+where  $N^{\text{TOT}}_{\text{Interacting}} (E_{i})$ and $N^{\text{TOT}}_{\text{Incident}} (E_{i})$ is the measured content of the interacting and incident histograms for events that pass the event selection, $B_{interacting} (E_i)$ and $B_{\text{Incident}} (E_i)$ represent the contributions from beamline background, and  $\epsilon^{int}_i$ and  $\epsilon^{inc}_i$ are the efficiency corrections for said histograms. 
+
+As we will show in section \ref{sec:Correction}, the background subtraction for the interacting and incident histograms can be translated into a corresponding corrections $C^{\pi MC}_{Interacting} (E_{i})$ and $C^{\pi MC}_{Incident} (E_{i})$ and the cross section re-written as follows
+
+\begin{equation}
+   \sigma^{\pi^-}(E_{i})  = \frac{1}{n \delta X}\frac{ \epsilon^{inc}_i  \text{  } N^{\text{TOT}}_{\text{Interacting}} (E_{i}) \text{  } C^{\pi MC}_{Interacting} (E_{i}) }{   \epsilon^{int}_i \text{  }N^{\text{TOT}}_{\text{Incident}} (E_{i})\text{  } C^{\pi MC}_{Incident} (E_{i})}.
+\label{eq:C}
+\end{equation}
+
+
+
+
+%The following sections describe the procedures used to evaluate  the background subtraction (section \ref{sec:beamCont}) and the efficiency correction (section \ref{sec:EffCorrection}), as well as  their uncertainties. 
+%The reader might be concerned about bin-by-bin migration of events in the interacting and incident plots due to the finite resolution of the energy reconstruction. In section \ref{sec:Energy}, we make an argument to why we expect the smearing matrix to be extremely close to diagonal, such that its calculation and relative corrections are left for an improvement of the analysis.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \section{Procedure testing with truth quantities}\label{ch:procedureTesting}
-The $\pi^{-}$-Ar and K$^{+}$-Ar total hadronic cross section implemented in Geant4 can be used as a tool to validate the measurement methodology.  We describe here a closure test done on Monte Carlo to prove that the methodology of slicing the TPC retrieves the underlying cross section distribution implemented in Geant4 within the statistical uncertainty. %under the working assumption of perfect reconstruction.
+The ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section implemented in Geant4 can be used as a tool to validate the measurement methodology.  We describe here a closure test done on Monte Carlo to prove that the methodology of slicing the TPC retrieves the underlying cross section distribution implemented in Geant4 within the statistical uncertainty. %under the working assumption of perfect reconstruction.
 
 For pions in the considered energy range, \textcolor{red}{the Geant4 inelastic model adopted to is ``BertiniCascade", while the elastic model ``hElasticLHEP".}
 For kaons, the Geant4 inelastic model adopted to is ``BertiniCascade", while the elastic model ``hElasticLHEP".  
 
 
-For the validation test, we fire about 390000 pions and 140000 kaons inside the LArIAT TPC active volume using the Data Driven Monte Carlo (see section \ref{sec:DDMC}). We apply  the thin-sliced method using only true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects from issues with the methodology.  For each slab of 4.7 mm length along the path of the hadron, we integrate the true energy deposition as given by the Geant4 transportation model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Doing so, we obtain the true interacting and incident distributions for the considered hadron and we obtain the true MC cross section as a function of the hadron true kinetic energy. 
+For the validation test, we fire about a sample of pions and a sample of kaons inside the LArIAT TPC active volume using the Data Driven Monte Carlo (see section \ref{sec:DDMC}). We apply  the thin-sliced method using only true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects from issues with the methodology.  For each slab of 4.7 mm length along the path of the hadron, we integrate the true energy deposition as given by the Geant4 transportation model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Since the MC is a pure beam of the hadron of interest and truth information is used to retrieve the interaction point, no correction is applied. Doing so, we obtain the true interacting and incident distributions for the considered hadron and we obtain the true MC cross section as a function of the hadron true kinetic energy. 
 
 Figure \ref{fig:TrueMCXS2} shows the total hadronic cross section for argon implemented in Geant4 10.01.p3 (solid lines) overlaid with the true MC cross section as obtained with the sliced TPC method (markers) for pions on the left and kaons on the right; the total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.  The nice agreement with the Geant4 distribution and the cross section  obtained with the sliced TPC method gives us confidence in the  validity of the methodology. 
         
@@ -203,12 +241,12 @@ Figure \ref{fig:TrueMCXS2} shows the total hadronic cross section for argon impl
   \centering  
 \includegraphics[width=3in]{Chapter-4/Images/KaonTrueXS.png}
 \end{minipage}
-\caption{Hadronic cross sections for $\pi^-$-Ar (left) and K$^+$-Ar (right) implemented in Geant4 10.01.p3 (solid lines) overlaid the true MC cross section as obtained with the sliced TPC method (markers). The total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.}
+\caption{Hadronic cross sections for ($\pi^-$,Ar) on the left and (K$^+$,Ar) on the right as implemented in Geant4 10.01.p3 (solid lines) overlaid the true MC cross section as obtained with the sliced TPC method (markers). The total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.}
 \label{fig:TrueMCXS2}
 \end{figure}
 %\end{comment}
 
 
-\section{Corrections to Data}\label{ch:MCCorrections}
+
 
 
