@@ -1,6 +1,6 @@
 \chapter{Background subtraction}
 \section{Assessing Beamline Contamination}
-Even if pions are by far the biggest beam component in negative polarity runs, the LArIAT beam is not a pure pion beam. While useful to discriminate between pions, kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the contamination from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects.
+%Even if pions are by far the biggest beam component in negative polarity runs, the LArIAT beam is not a pure pion beam. While useful to discriminate between pions, kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the contamination from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects.
 
 
 We define beamline contamination every TPC track matched to the WC track which is not a primary pion. Potentially, there are 4 different types of beamline contaminations:
@@ -16,57 +16,57 @@ The first step is to estimate what percentage of events used in the cross sectio
 We estimate the last type of contamination, the ``matched pile up" events, to be a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small.
 
 
-\subsection{Electron and Muon contamination}\label{ch:beamlineComposition}
-We estimate the percentage of electrons and muons in the beam via the G4Beamline MC. 
-Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
+%\subsection{Electron and Muon contamination}\label{ch:beamlineComposition}
+%We estimate the percentage of electrons and muons in the beam via the G4Beamline MC. 
+%Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
 
-\begin{figure}
-\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-7/Images/Beam60A.png}
-\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-7/Images/Beam100A.png}
-\caption{Beam composition for the -60A runs (left) and -100A runs (right). The solid blue plot represents the simulated pion content, the yellow plot represents the simulated muon content and the grey plot represents the simulated electron content. The plots are area normalized to the number of data events, shown in red. }
-\label{fig:BeamComposition}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-7/Images/Beam60A.png}
+%\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-7/Images/Beam100A.png}
+%\caption{Beam composition for the -60A runs (left) and -100A runs (right). The solid blue plot represents the simulated pion content, the yellow plot %represents the simulated muon content and the grey plot represents the simulated electron content. The plots are area normalized to the number of %data events, shown in red. }
+%\label{fig:BeamComposition}
+%\end{figure}
 
-Table \ref{tab:beamline} shows the beam composition per magnet setting after the mass selection according to the G4Beamline simulation.
-\begin{table}[]
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-                     & I = -60 A           & I = -100 A \\ \hline
-G4Pions       &   68.8 \%           &      87.4 \%        \\ \hline
-G4Muons     &     4.6 \%           &        3.7 \%         \\ \hline
-G4Electrons &   26.6 \%           &        8.9 \%        \\ \hline
-\end{tabular}
-\caption{Simulated beamline composition per magnet settings}
-\label{tab:beamline}
-\end{table}
-
-
-\begin{table}[]
-\centering
-\begin{tabular}{|l|c|c|c|c|c|}
-\hline
-                                                     & I = -60 A          & I = -100 A   & Total     &  w$_{60A}$ &  w$_{100A}$\\ \hline
-N Data Events after Mass Selection     &     70192          &  76056       & 146248 & 0.48 & 0.52\\ \hline
-%Data events for Cross Section          &                         &                   &              & & \\ \hline
-%Estimated e in the beamline             &   18671.1         &    6769.0  &              & & \\ \hline
-%Estimated $\mu$ in the beamline     &     3228.8         &     2814.1     &              & & \\ \hline
-%Estimated $\pi$ in the beamline       &    48292.1        &   66472.9   &              & & \\ \hline
-\end{tabular}
-\caption{Number of data events which fit the pion mass hypothesis as a function of magnet settings. The last two columns represent the faction of the data in the given magnet setting.}
-\label{tab:databreakdown}
-\end{table}
+%Table \ref{tab:beamline} shows the beam composition per magnet setting after the mass selection according to the G4Beamline simulation.
+%\begin{table}[]
+%\centering
+%\begin{tabular}{|l|c|c|}
+%\hline
+ %                    & I = -60 A           & I = -100 A \\ \hline
+%G4Pions       &   68.8 \%           &      87.4 \%        \\ \hline
+%G4Muons     &     4.6 \%           &        3.7 \%         \\ \hline
+%G4Electrons &   26.6 \%           &        8.9 \%        \\ \hline
+%\end{tabular}
+%\caption{Simulated beamline composition per magnet settings}
+%\label{tab:beamline}
+%\end{table}
 
 
+%\begin{table}[]
+%\centering
+%\begin{tabular}{|l|c|c|c|c|c|}
+%\hline
+%                                                     & I = -60 A          & I = -100 A   & Total     &  w$_{60A}$ &  w$_{100A}$\\ \hline
+%N Data Events after Mass Selection     &     70192          &  76056       & 146248 & 0.48 & 0.52\\ \hline
+%%Data events for Cross Section          &                         &                   &              & & \\ \hline
+%%Estimated e in the beamline             &   18671.1         &    6769.0  &              & & \\ \hline
+%%Estimated $\mu$ in the beamline     &     3228.8         &     2814.1     &              & & \\ \hline
+%%Estimated $\pi$ in the beamline       &    48292.1        &   66472.9   &              & & \\ \hline
+%\end{tabular}
+%\caption{Number of data events which fit the pion mass hypothesis as a function of magnet settings. The last two columns represent the faction of the %data in the given magnet setting.}
+%\label{tab:databreakdown}
+%\end{table}
 
-We calculate the electron to pion, as well as the muon to pion ratio on the whole sample as the weighted sum of the corresponding ratio in the two current settings, 
-\begin{equation}
-\frac{N_e}{N_\pi}_{Data} = w_{60A}\frac{N_e}{N_\pi}_{60A}  + w_{100A}\frac{N_e}{N_\pi}_{100A},
-\end{equation}
-\begin{equation}
-\frac{N_\mu}{N_\pi}_{Data} = w_{60A}\frac{N_\mu}{N_\pi}_{60A}  + w_{100A}\frac{N_\mu}{N_\pi}_{100A},
-\end{equation}
-where the weights $w_{60A}$ and $w_{100A}$ are the percentage of events in the corresponding magnet configuration passing the mass selection in data, as shown in table \ref{tab:databreakdown}. Figure \ref{fig:BeamComposition} shows the mometum predictions from G4Beamline overlaid with data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area normalized to data. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC. We attribute  the difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in the center of the momentum distribution.
+
+
+%We calculate the electron to pion, as well as the muon to pion ratio on the whole sample as the weighted sum of the corresponding ratio in the two %current settings, 
+%\begin{equation}
+%\frac{N_e}{N_\pi}_{Data} = w_{60A}\frac{N_e}{N_\pi}_{60A}  + w_{100A}\frac{N_e}{N_\pi}_{100A},
+%\end{equation}
+%\begin{equation}
+%\frac{N_\mu}{N_\pi}_{Data} = w_{60A}\frac{N_\mu}{N_\pi}_{60A}  + w_{100A}\frac{N_\mu}{N_\pi}_{100A},
+%\end{equation}
+%where the weights $w_{60A}$ and $w_{100A}$ are the percentage of events in the corresponding magnet configuration passing the mass selection in %data, as shown in table \ref{tab:databreakdown}. Figure \ref{fig:BeamComposition} shows the mometum predictions from G4Beamline overlaid with %data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area %normalized to data. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC. We attribute  the %difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in %the center of the momentum distribution.
 
 
 Once the beam composition is know,  we simulate the electrons, muons and pions with the DDMC and we subject the three samples to the same selection chain (WC2TPC match, shower filter, pile up filter). The percentage of electrons and muons surviving the selection chain weighted by the beam composition is the  electron and muon contamination in the pion cross section sample, as shown in Table \ref{tab:MCafterCutContaminants}.
