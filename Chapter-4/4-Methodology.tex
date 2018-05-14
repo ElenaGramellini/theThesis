@@ -19,10 +19,10 @@ Events Reconstructed in Beamline        &  158396  & 260810  \\ \hline
 Events with Plausible Trajectory            &   147468 & 240954  \\ \hline
 Beamline $\pi^-/\mu^-/e^-$  Candidate  &   138481 &     N.A.   \\ \hline
 Beamline $K^+$   Candidate                 &    N.A       & 2837     \\ \hline
-Events Surviving Pile Up Filter              &   108929  &              \\ \hline
-Events with WC2TPC Match                 &    41757   &              \\ \hline
+Events Surviving Pile Up Filter              &   108929  & 2389       \\ \hline
+Events with WC2TPC Match                 &    41757   & 1081 \\ \hline
 Events Surviving Shower Filter             &    40841    &  N.A.     \\ \hline
-Available Events For Cross Section      &   40841    &       \\ \hline
+Available Events For Cross Section      &   40841    &   1081    \\ \hline
 \end{tabular}
 \caption{Number of data events for Run-II Negative and Positive polarity }
 \label{tab:beamlineDataSelection}
@@ -72,7 +72,7 @@ Anyhow, we devise a selection on the TPC information to mitigate the presence of
 
 \begin{figure}
   \centering  
-\includegraphics[width=3in]{Chapter-4/Images/Shower.png}
+\includegraphics[width=\textwidth]{Chapter-4/Images/Shower.png}
 \caption{Visual rendering of the shower filter. The ROI is a cut cone, with a small radius of 4 cm, a big radius of 10 cm and an height of 42 cm (corresponding to 3 radiation lengths for electrons in Argon).}
 \label{fig:showerFilt}
 \end{figure}
@@ -80,25 +80,33 @@ Anyhow, we devise a selection on the TPC information to mitigate the presence of
 
 
 \section{Beamline and TPC Handshake: the Wire Chamber to TPC Match}\label{ch:WC2TPCMatchMethod}
-For each event passing the selection on its beamline information, we need to identify the track inside the TPC corresponding to the particle which triggered the beamline detectors, a procedure we refer to as ``WC to TPC match" (WC2TPC for short). In general, the TPC tracking algorithm will reconstruct more than one track in the event, partially due to the fact that hadrons interact in the chamber and partially because of pile up particles during the triggered TPC drift time, as shown in figure \ref{fig:kaonInteraction}. 
-\textcolor{red}{ADD EVENT DISPLAYS}
+For each event passing the selection on its beamline information, we need to identify the track inside the TPC corresponding to the particle which triggered the beamline detectors, a procedure we refer to as ``WC to TPC match" (WC2TPC for short). In general, the TPC tracking algorithm will reconstruct more than one track in the event, partially due to the fact that hadrons interact in the chamber and partially because of pile up particles during the triggered TPC readout time, as shown in figure~\ref{fig:kaonInteraction}. 
 
 
 \begin{figure}
   \centering  
-\includegraphics[width=3in]{Chapter-4/Images/face-smile-big.png}
+\includegraphics[width=\textwidth]{Chapter-4/Images/KaonExample.png}
 \caption{Kaon candidate event: on the right, event display showing raw quantities; on the left, event display showing reconstructed tracks. In the reconstructed event display, different colors represent different track objects. A kink is visible in the kaon ionization, signature of a hadronic interaction: the tracking correctly stops at the kink position and two tracks are formed. An additional pile-up track is so present in the event (top track).}
 \label{fig:kaonInteraction}
 \end{figure}
 
 
 
-We attempt to uniquely match one wire chamber track to one and only one reconstructed TPC track. In data, this match leverages on a geometrical selection exploiting both the position of the wire chamber and TPC tracks, and the angle between them. We consider only TPC tracks whose first point is in the first 2 cm upstream portion of the TPC for the match.  We project the wire chamber track to the TPC front face where we define the $x_{FF}$ and $y_{FF}$ coordinates used for evaluating the match.  We define $\Delta$X as the difference between the $x$ position of the most upstream point of the TPC track and $x_{FF}$.  $\Delta$Y is defined analogously. We define the radius difference, $\Delta$R, as $ \Delta \text{R} =  \sqrt{ \Delta \text{X}^2 +  \Delta \text{Y}^2}  $. The angle between the incident WC track and the TPC track in the plane that contains them defines $\alpha$.  If  $\Delta \text{R} < 4 $~cm, $\alpha < 8^\circ $,  a match between WC-track and TPC reconstructed track is found. We describe  how we determinate the best value for the radius and angular selection in sec \ref{ch:WC2TPCMatchOptimization}.
+We attempt to uniquely match one wire chamber track to one and only one reconstructed TPC track. 
+In order to determine if the presence of a match, we apply a geometrical selection on the relative the position of the wire chamber and TPC tracks. 
+We start by considering only TPC tracks whose first point is in the first 2 cm upstream portion of the TPC for the match.  We project the wire chamber track to the TPC front face where we define the coordinates of the projected point as  $x_{FF}$ and $y_{FF}$.  For each considered TPC track, we define $\Delta$X as the difference between the $x$ position of the most upstream point of the TPC track and $x_{FF}$.  $\Delta$Y is defined analogously. We define the radius difference, $\Delta$R, as $ \Delta \text{R} =  \sqrt{ \Delta \text{X}^2 +  \Delta \text{Y}^2}  $. We define  as $\alpha$ the angle between the incident WC track and the TPC track in the plane that contains them.  If  $\Delta \text{R} < 4 $~cm, $\alpha < 8^\circ $,  a match between WC-track and TPC reconstructed track is found. We describe  how we determine the value for the radius and angular selection in sec \ref{ch:WC2TPCMatchOptimization}.
 In MC, we mimic the matching between the WC and the TPC track by constructing a fake WC track using truth information at wire chamber four. We then apply the same WC to TPC matching algorithm as in data. 
 We discard events with multiple WC2TPC matches. We use only those TPC tracks that are matched to WC tracks in the cross section calculation.
 
+\begin{figure}
+  \centering  
+\includegraphics[width=\textwidth]{Chapter-4/Images/Shower.png}
+\caption{Visual rendering of the wire chamber to TPC match.}
+\label{fig:showerFilt}
+\end{figure}
 
 \section{The Thin Slice Method}\label{ch:ThinSliceMethod}
+Once the pool of hadron candidate is selected and the TPC track corresponding to the beamline event is identified, we apply the thin slice method to measure the cross section, as the following sections describe. 
 \subsection{Cross Sections on Thin Target}
 Cross section measurements on a thin target have been the bread and butter of nuclear and particle experimentalists since the Geiger-Marsden experiments \cite{Geiger1909}. At their core, these types of experiments consist in shooting a beam of particles with a known flux on a thin target and recording the outgoing flux. 
 
