@@ -1,4 +1,4 @@
-\chapter{Total Ha($\pi^{-}$,Ar)dronic Cross Section Measurement Methodology}\label{ch:Interactions}
+\chapter{Total Hadronic Cross Section Measurement Methodology}\label{ch:Interactions}
 This chapter describes the general procedure employed to measure a total hadronic differential cross section in LArIAT.
 Albeit with small differences, both the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section measurements rely on the same procedure described in details in the following sections. We start by selecting the particle of interest using a combination of beamline detectors and TPC information (Section \ref{ch:ParticleSelectionMeEquationthod}). We then perform a handshake between the beamline information and the TPC tracking to assure the selection of the right TPC track (Section \ref{ch:WC2TPCMatchMethod}). Finally, we apply the ``thin slice" method and measure the ``raw" hadronic cross section (Section \ref{ch:ThinSliceMethod}). A series of corrections are then evaluated to obtain the ``true" cross section (Section \ref{ch:MCCorrections}). 
 
@@ -29,11 +29,11 @@ Available Events For Cross Section      &   40841    &   1081    \\ \hline
 \end{table}
 
 
-\subsubsection{Selection of Beamline Events}\label{ch:beamlineDetectorsData}
+\subsection{Selection of Beamline Events}\label{ch:beamlineDetectorsData}
 As shown in equation \ref{eq:enFF}, we leverage the beamline particle identification and momentum measurement before entering the TPC as in input to evaluate the kinetic energy for the hadrons used in the  cross sections measurements. Thus, we select the LArIAT data to keep only events whose wire chamber and time of flight information is registered (line 2 in in Table \ref{tab:beamlineDataSelection}). Additionally, we perform a check of the plausibility of the trajectory inside the beamline detectors: given the position of the hits in the four wire chambers, we make sure the particle's trajectory does not cross any impenetrable material such as the collimator and the magnets steel (line 3 in in Table \ref{tab:beamlineDataSelection}).
 
 
-\subsubsection{Particle Identification in the beamline}
+\subsection{Particle Identification in the Beamline}
 In data, the main tool to establish the identity of the hadron of interest is the LArIAT tertiary beamline, in its function of mass spectrometer. We combine the measurement of the time of flight, $TOF$, and the beamline momentum, $p_{Beam}$, to reconstruct the invariant mass of the particles in the beamline, $m_{Beam}$, as follows
 \begin{equation}
 m_{Beam} = \frac{p_{Beam}}{c}\sqrt{\biggl(\frac{TOF*c}{l}\biggr)^2 -1},
@@ -62,11 +62,11 @@ Lines 4 and 5 in in Table \ref{tab:beamlineDataSelection} show the number of neg
 \label{fig:mass}
 \end{figure}
 
-\subsubsection{TPC Selection: Halo mitigation }\label{ch:pileUp}
+\subsection{TPC Selection: Halo Mitigation }\label{ch:pileUp}
 The secondary beam impinging on LArIAT secondary target produces a plethora of particles which propagates downstream. The presence of upstream and downstream collimators greatly abates the number of particles tracing down the LArIAT tertiary beamline. However, it is possible that more than one particle sneaks into the LArTPC during its readout time: the TPC readout is triggered by the particle  firing the beamline detectors, but particles from the beam halo might be present in the TPC at the same time. We call ``pile up" the additional traces in the TPC. We adjusted the primary beam intensity between LArIAT Run I and Run II to reduce the presence of events with high pile up particles in the data sample. For the cross section analyses, we remove events with more than 4 tracks in the first 14 cm upstream portion of the TPC from the sample (line 6 in in Table \ref{tab:beamlineDataSelection}).
 
 
-\subsubsection{TPC Selection: Shower Removal}\label{ch:electrons}
+\subsection{TPC Selection: Shower Removal}\label{ch:electrons}
 In the case of the ($\pi^-$,Ar) cross section, the resolution of  beamline mass spectrometer is not sufficient to select a beam of pure pions. In fact, muons and electrons survive the selection on the beamline mass. It is important to notice that the composition of the negative polarity beam is mostly pions, as will be discussed in section \ref{ch:beamlineComposition}.
 Anyhow, we devise a selection on the TPC information to mitigate the presence of electrons in the sample used for the pion cross section. The selection relies on the different topologies of a pion and an electron event in the argon: while the former will trace a track inside the TPC active volume, the latter will tend to ``shower", i.e. interact with the medium, producing bremsstrahlung photons which pair convert into several short tracks. In order to remove the shower topology, we create a region of interest (ROI) around the TPC track corresponding to the beamline particle (more details on this in the next section). We look for short tracks contained in the ROI, as depicted in figure \ref{fig:showerFilt}:  if more then 5 tracks shorter than 10 cm are in the ROI, we reject the event. Line 8 in in Table \ref{tab:beamlineDataSelection}) shows the number of events surviving this selection.
 

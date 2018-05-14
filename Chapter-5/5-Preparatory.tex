@@ -1,30 +1,70 @@
 \chapter{Preparatory Work}\label{ch:samples}
-This chapter describes the preparatory work done on the the data and Monte Carlo samples used for the cross section analyses. This entails:
+%{\raggedleft ``\emph{Il dolce non lo mangi mai, ma qualche volta ti rifai.} \par}
+%{\raggedleft \emph{Abbracciami}"\par}
+%{\raggedleft -- Pietro Ciampi, L'amore e' tutto qui, 1971 -- \par}
+%\vspace{0.5cm}
 
-\begin{enumerate}
-\item the MC production,
-\item the energy calibration of the detector both in data and MC,
-\item the optimization of the tracking algorithm for the total cross section analyses.
-\end{enumerate}
+%{\raggedleft ``\emph{You never eat dessert, but, sometimes, you make up for it.} \par}
+%{\raggedleft \emph{Hug me}"\par}
+%{\raggedleft -- Pietro Ciampi, L'amore e' tutto qui, 1971 -- \par}
+%\vspace{0.5cm}
 
-\section{Construction of a Monte Carlo Simulation for LArIAT}
+
+This chapter describes the preparatory work done on the the data and Monte Carlo samples used for the cross section analyses. 
+This entails the choice of the data set and the production of the information needed to construct the Monte Carlo Simulation~(section \ref{sec:dataSet}),  the construction and use of said Monte Carlo simulation~(section \ref{sec:MCSet}), the study and optimization of the tracking in the TPC for the cross section analyses~(section \ref{sec:TrackingStudies}),  the calibration of the calorimetry response and related energy studies~(section \ref{ch:energyCal}). 
+
+
+
+\section{Cross Section Analyses Data Set}\label{sec:dataSet}
+We choose LArIAT Run-II as the data period for the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section analyses. 
+Data taking for the this period started on 03/15/2016  and ended on 07/31/2016. 
+Since we are interested in beamline and TPC information, we ask basic requirements on the operational status of the time of fight, wire chambers and TPC to form the good run list for this period, which we informally call ``lovely runs".
+
+The subset of lovely runs  chosen for the  ($\pi^{-}$,Ar) total hadronic cross section analysis includes only the -60A and -100A magnet configurations in negative polarity, even if LArIAT explored several other beamline configurations during Run-II. The -60A and -100A combined data set accounts for approximately 90\% of the total Run-II negative polarity runs.   Since the production of beamline Monte Carlo depends on the wanted beamline configuration, the choice of only two beamline settings limits the need for beamline MC production. 
+
+Similarly, the subset of lovely runs chosen  for the (K$^{+}$,Ar)  total hadronic cross section analysis includes only the +60A and +100A magnet configurations in positive polarity. It should be noted that kaons are extremely rare in the +60A sample, thus the data sample for the (K$^{+}$,Ar) cross section after the mass selection is about 90\% +100A runs, as shown in Table \ref{tab:databreakdown}.
+
+For the first measurements in LArIAT that uses both beamline and TPC information, we choose strict requirements on the reconstruction of the WC tracks, the so-called ``Picky Track" sample (see \ref{sec:MWPCfunc}). This choice presents two advantages:  the uncertainty on the momentum reconstruction for the ``Picky Tracks" sample is smaller compared to the ``High Yield" sample, and the comparison with the beamline MC results is straightforward. A possible future update and cross check of these analysis would be the use of the High Yield sample, where the statistics is about three times higher. 
+
+The breakdown of beamline events as a function of the magnets settings is shown in Table \ref{tab:databreakdown}. 
+The choice of the data sets determines the production of beamline MC and serves as basis for the production of Data Driven MC, as shown in the next sections.
+
+\begin{table}[b]
+\centering
+\begin{tabular}{|l|c|c|c|}  
+\hline
+                                                              & I = 60 A          & I = 100 A   & Total     \\ \hline
+Data Events after $\pi/\mu/e$ Mass Selection     &     67068          &  71413  & 138481 \\ \hline
+Data Events after $K$ Mass Selection                &     274              &   2563   & 2837  \\ \hline
+\end{tabular}
+\caption{Number of data events which fit the $\pi/\mu/e$ or $K$ mass hypothesis as a function of magnet settings.}
+\label{tab:databreakdown}
+\end{table}
+
+
+
+\section{Construction of a Monte Carlo Simulation for LArIAT}\label{sec:MCSet}
+For the simulation of LArIAT events and their particle make up, we use a combination of two MC generators: the G4Beamline Monte Carlo and the Data Driven single particle Monte Carlo (DDMC). We use the G4Beamline MC to simulate the particle transportation in the beamline and calculate the particle composition of the beam just after the fourth Wire Chamber (WC4). In order to simulate the beamline particles after WC4 and in the TPC, we use the DDMC.
+
 \subsection{G4Beamline}\label{ch:beamlineComposition}
-\subsection{Data Driven MC}\label{sec:DDMC}
+G4Beamline simulates the beam collision with the LArIAT secondary target, the energy deposited by the particles in the LArIAT beamline detectors and the action of the LArIAT magnets, effectively accounting for particle transportation through the beam line from the LArIAT target until ``Big Disk", a fictional, void detector located just before the LArIAT cryostat. 
+ At the moment of this writing, G4Beamline does not simulated the responses of the beam line detectors. It is possible to interrogate the truth level information of the simulated particles in several points of the geometry. In order to ease the handshake between G4Beamline and the DDMC, we ask for the beam composition just after WC4.
+Since LArIAT data are taken under different beam conditions, G4Beamline simulates separately the beam composition according to the magnets' settings and the secondary beam intensity. For the pion cross section analysis the relevant beam conditions are  secondary beam energy of 64 GeV, negative polarity magnet with current of 100 A and 60 A. For the kaon cross section analysis the relevant beam conditions is a secondary beam energy of 64 GeV, positive polarity magnet with current of 100 A. 
 
-\section{Tracking Studies}
+
+\subsection{Data Driven MC}\label{sec:DDMC}
+\subsection{Estimate of Energy Loss before the TPC}
+
+\section{Tracking Studies}\label{sec:TrackingStudies}
 \subsection{Study of WC to TPC Match}\label{ch:WC2TPCMatchOptimization}
 
-\section{Energy Calibration and Studies}
+\section{Energy Calibration and Studies}\label{ch:energyCal}
 
-\section{Estimate of Energy Loss before the TPC}
+
 
 \begin{comment}
 \section{Construction of a Monte Carlo Simulation for LArIAT}
-For the simulation of LArIAT events and their particle make up, we use a combination of two MC generators: the G4Beamline Monte Carlo and the Data Driven single particle Monte Carlo (DDMC). We use the G4Beamline MC to simulate the particle transportation in the beamline and calculate the particle composition of the beam just past the fourth Wire Chamber (WC4). In order to simulate the beam line particles after WC4 and in the TPC, we use the DDMC.
 \subsection{G4Beamline}\label{beamlineComposition}
-G4Beamline simulates the beam collision with the LArIAT secondary target, the energy deposited by the particles in the LArIAT beamline detectors and the action of the LArIAT magnets, effectively accounting for particle transportation through the beam line from the LArIAT target until ``Big Disk", a fictional, void detector located just before the cryostat. 
- At the moment of this writing, G4Beamline does not simulated the responses of the beam line detectors. It is possible to interrogate the truth level information of the simulated particles in several points of the geometry. In order to ease the handshake between G4Beamline and the DDMC, we ask for the beam composition just after WC4.
-Since LArIAT data are taken under different beam conditions, G4Beamline simulates separately the beam composition according to the magnets' settings and the secondary beam intensity. For the pion cross section analysis the relevant beam conditions are  secondary beam energy of 64 GeV, negative polarity magnet with current of 100 A and 60 A. For the kaon cross section analysis the relevant beam conditions is a secondary beam energy of 64 GeV, positive polarity magnet with current of 100 A. 
 
 \textcolor{red}{DECIDE IF YOU WANT THE BEAM COMPOSITION HERE}
 %Figure 16 shows the tertiary beam spectra for the 64 GeV and 100 A. 
