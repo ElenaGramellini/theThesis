@@ -1,6 +1,6 @@
 \chapter{Total Ha($\pi^{-}$,Ar)dronic Cross Section Measurement Methodology}\label{ch:Interactions}
 This chapter describes the general procedure employed to measure a total hadronic differential cross section in LArIAT.
-Albeit with small differences, both the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section measurements rely on the same procedure described in details in the following sections. We start by selecting the particle of interest using a combination of beamline detectors and TPC information (Section \ref{ch:ParticleSelectionMethod}). We then perform a handshake between the beamline information and the TPC tracking to assure the selection of the right TPC track (Section \ref{ch:WC2TPCMatchMethod}). Finally, we apply the ``thin slice" method and measure the ``raw" hadronic cross section (Section \ref{ch:ThinSliceMethod}). A series of corrections are then evaluated to obtain the ``true" cross section (Section \ref{ch:MCCorrections}). 
+Albeit with small differences, both the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section measurements rely on the same procedure described in details in the following sections. We start by selecting the particle of interest using a combination of beamline detectors and TPC information (Section \ref{ch:ParticleSelectionMeEquationthod}). We then perform a handshake between the beamline information and the TPC tracking to assure the selection of the right TPC track (Section \ref{ch:WC2TPCMatchMethod}). Finally, we apply the ``thin slice" method and measure the ``raw" hadronic cross section (Section \ref{ch:ThinSliceMethod}). A series of corrections are then evaluated to obtain the ``true" cross section (Section \ref{ch:MCCorrections}). 
 
 At the end of this chapter, we show a sanity check of the methodology against MC truth information (Section \ref{ch:procedureTesting}).
 
@@ -134,7 +134,7 @@ The interaction length of pions and kaons in argon is expected to be of the orde
 
 As described in Chapter \ref{sec:experimentDescription}, LArIAT wire planes consist of 240 wires each. The wires are oriented at +/- $60^{\circ}$ from the vertical direction at 4 mm spacing, while the beam direction is oriented 3 degrees off the $z$ axis in the $XZ$ plane.  The wires collect signals proportional to the energy loss of the hadron along its path in a  $\delta${\emph{X}} = 4 mm/sin($60^{\circ}$) $\approx$ 4.7~mm slab of liquid argon. Thus, one can think to slice the TPC into many thin targets of $\delta${\emph{X}} = 4.7~mm thickness along the direction of the incident particle, making a measurement at each wire along the path.
 
-Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Eq.~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC2TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
+Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Equation~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC2TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
 
 \begin{equation}
  E^{kin}_{Front Face}  = \sqrt{p^2_{Beam} - m^2_{Beam}} - m_{Beam} - E_{loss},
@@ -190,7 +190,7 @@ Equation \ref{eq:thinTargetXSSolved}  is a prescription for measuring the cross 
 \end{equation}
 
 Unfortunately, this is not the case. In fact, the selection used to isolate pions in the LArIAT beam allows for the presence of some muons and electrons as background. Also, the LArIAT TPC is not 100\% efficient in determining the interaction point. Therefore we need to apply two corrections evaluated on the MC in order to extract the cross section from LArIAT data: the background subtraction and the efficiency correction. 
-Still using the pion case as example, we estimate the pion cross section in each energy bin changing  the equation \ref{eq:thinTargetXSSolved2} into
+Still using the pion case as example, we estimate the pion cross section in each energy bin changing  Equation \ref{eq:thinTargetXSSolved2} into
 \begin{equation}
  \sigma^{\pi^-}(E_{i})  =\frac{1}{n \delta X}\frac{N^{\pi^-}_{ \text{Interacting}} (E_{i})}{N^{\pi^-}_{ \text{Incident}}(E_{i})} = \frac{1}{n \delta X}\frac{ \epsilon^{inc}_i [ N^{ \text{TOT}}_{ \text{Interacting}} (E_{i}) - B_{ \text{Interacting}} (E_i)] }{   \epsilon^{int}_i [N^{ \text{TOT}}_{ \text{Incident}}(E_{i}) - B_{ \text{Incident}} (E_i)]},
 \label{eq:True}
