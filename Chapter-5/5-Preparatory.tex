@@ -159,8 +159,27 @@ Plastic Scintillator                    & 1.03                          & 1.20 (
 
 We derive an estimate of the energy loss between the beamline momentum measurement and the TPC ($E_{loss}$) from the pion DDMC sample, since this quantity is not  measurable directly on data. 
 The $E_{loss}$ distribution for the 60A  and 100A pion sample is shown in figure \ref{fig:ELoss60A}, left and right respectively. A clear double peaked structure is visible, which is due to the particles either missing or hitting the HALO paddle: a schematic rendering of this occurrence is  shown in figure \ref{fig:Halo}. The kinematic at WC4 determines the trajectory of a particle and whether or not it will hit the halo paddle. In figure \ref{fig:PxVsXTrue} , we plot the true  horizontal component of the momentum $P_x$ versus the true $X$ position at WC4 for pions missing the halo paddle (left) and for pions hitting the halo paddle (right) for the 60A MC simulation runs -- analogous plots are obtained with the 100A simulation. These distributions can be separated drawing a line in this position-momentum space. 
-We use a logistic regression  \cite{agresti2013categorical}  as a classifier to find the best separating line, shown in both plots as the red line. We classify as ``hitting the halo paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02* X - 0.4 < 0 $$ and as ``missing the halo  paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02*X - 0.4 > 0, $$ where the coefficients of the line are empirically found by the logistic regression estimation. Overall, this simple methode classifies in the right category (hit or miss) about 86\% of the pion events.
-We apply the same classifier on data. We assign  $E_{loss} = 32 \pm 4 $~MeV for pion events classified as ``hitting the halo paddle"; we assign  $E_{loss} = 24 \pm 3 $~MeV for pion events classified as ``missing the halo paddle".
+We use a logistic regression  \cite{agresti2013categorical}  as a classifier to find the best separating line, shown in both plots as the red line. We classify as ``hitting the halo paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02* X - 0.4 < 0 $$ and as ``missing the halo  paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02*X - 0.4 > 0, $$ where the coefficients of the line are empirically found by the logistic regression estimation. Overall, this simple methode classifies in the right category (hit or miss) about 86\% of the pion events. In MC, we assign  $E_{loss} = 32 \pm 4 $~MeV for pion events classified as ``hitting the halo paddle"; we assign  $E_{loss} = 24 \pm 3 $~MeV for pion events classified as ``missing the halo paddle". We apply the same classifier on data. A survey of the simulated geometry showed an excess of 3 cm of un-instrumented argon compared with the measured geometry used in data. Thus, we account for this difference by assigning in data $E_{loss} = 24 \pm 6 $~MeV for pion events classified as ``hitting the halo paddle" and  $E_{loss} = 17 \pm 6 $~MeV for pion events classified as ``missing the halo paddle", where the uncertainty is derived as the standard deviation of the double peaked distribution.
+
+The analogous study on the kaon MC sample resulted in an energy loss of $E_{loss} = 37 \pm 5 $~MeV for kaon events classified as ``hitting the halo paddle" and $E_{loss} = 31 \pm 4 $~MeV for kaon events classified as ``missing the halo paddle".
+
+
+
+s\begin{table}[b]
+\centering
+\begin{tabular}{|l|c|c|}  
+\hline
+                          & Hitting Halo          & Missing Halo     \\ \hline
+Pion  MC           &  $32 \pm 4 $         &    $24 \pm 3$     \\ \hline
+Pion Data          &  $25 \pm 6$          &    $17 \pm 6 $    \\ \hline
+Kaon  MC          &  $37 \pm 5 $        &     $31 \pm 4 $    \\ \hline
+Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
+\end{tabular}
+\caption{Energy loss for pions and kaons.}
+\label{tab:Eloss}
+\end{table}
+
+
 
 %We use the separation of these two distributions to decide what the energy loss for each event on data. 
 %Thus,  we assign the value for energy loss is used in the data.
