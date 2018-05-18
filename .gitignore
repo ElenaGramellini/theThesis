@@ -4,6 +4,8 @@ bigtable.pdf
 bigtable.tex
 # Compiled source #
 ###################
+TrashCh6/*
+
 *.com
 *.class
 *.dll
