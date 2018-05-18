@@ -212,17 +212,79 @@ Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
 
 \section{Tracking Studies}\label{sec:TrackingStudies}
 In this section, we describe three studies. The first is a justification of the selection criteria for the beamline handshake with the TPC information.  We perform this study to boost  the correct identification of the particles in the TPC associated with the beamline information, while maintaining sufficient statistics for the cross section measurement.  The second study is an optimization of the tracking algorithm, with the scope of maximizing the identification of the hadronic interaction point inside the TPC.  These two studies are related, since the optimization of the tracking is performed on TPC tracks which have been matched to the wire chamber track; in turn, the tracking algorithm for TPC tracks determines the number of reconstructed tracks in each event used to try the matching with the wire chamber track. Starting with a sensible tracking reconstruction, we perform the WC2TPC matching optimization first, then the tracking optimization. The WC2TPC match purity and efficiency  are then calculated again with the optimized tracking.
+
 The third study is an evaluation of  the angular resolution of the tracking algorithm in data and MC, which is particularly important in the context of the cross section analyses.
 
 
 
 \subsection{Study of WC to TPC Match}\label{ch:WC2TPCMatchOptimization}
+
+Plots I want in this section:
+\begin{enumerate}
+\item WC2TPC MC DeltaX, DeltaY and $\alpha$
+\end{enumerate}
+
+
+Scope of this study is assessing the goodness of the wire chamber to TPC match on Monte Carlo and decide the selection values we will use on data. A word of caution is necessary here. With this study, we want to minimize pathologies associated with the presence of the primary hadron itself, e.g. the incorrect association between the beamline hadron and its decay products inside the TPC.  Assessing the contamination from pile-up\footnote{We remind the reader that the DDMC is a single particle Monte Carlo, where the beam pile up is not simulated.}, albeit related, is beyond the scope of this study.
+
+In MC, we are able to define a correct WC2TPC match using the Geant4 truth information. We are thus able to count how many times the WC tracks is associated with the wrong TPC reconstructed track. 
+
+We define a correct match if the all following conditions are met:
+\begin{itemize}
+\item[-] the length of the true primary Geant4 track in the TPC is greater than 2 cm,  
+\item[-] the length of the reconstructed track length is greater than 2 cm,
+\item[-] the Z position of the first reconstructed point is within 2 cm from the TPC front face
+\item[-] the distance between the reconstructed track and the true entering point is the minimum compared with all the other reconstructed tracks.
+\end{itemize}
+
+In order to count the wrong matches, we consider all the reconstructed tracks whose Z position of the first reconstructed point lies within 2 cm from the TPC front face. Events with true length in TPC $<$ 2 cm are included. 
+Since hadrons are shot 100 cm upstream from the TPC front face, the following two scenarios are possible from a truth standpoint: 
+\begin{itemize}
+\item[[$Ta$]] the primary hadron decays or interact strongly before getting to the TPC,
+\item[[$Tb$]] the primary hadron enters the TPC.
+\end{itemize}
+
+As described in Section \ref{ch:WC2TPCMatchMethod}, we define a WC2TPC match according to the relative position of the WC and TPC track parametrized with $\Delta R$ and the angle between them, parametrized with $\alpha$. Once we choose the selection values $r_{T}$ and $\alpha_{T}$ to determine a reconstructed WC2TPC match, the following five scenarios are possible in the truth to reconstruction interplay : 
+\begin{itemize}
+\item[1)] only the correct track is matched
+\item[2)] only one wrong track is matched 
+\item[3)] the correct track and one (or more) wrong tracks are matched
+\item[4)] multiple wrong tracks  matched.
+\item[5)] no reconstructed tracks are matched
+\end{itemize}
+
+Since we keep only events with one and only one match, we discard cases 3), 4) and 5) from the events used in the cross section measurement. For each set of $r_{T}$ and $\alpha_{T}$ selection value, we define purity and efficiency of the selection as follows:
+\begin{equation}
+\text{Efficiency} = \frac{\text{Number of events correctly matched}}{\text{ Number of events with primary in TPC}},
+\end{equation}
+
+\begin{equation}
+\text{Purity} = \frac{\text{Number of events correctly matched}}{\text{Total number of matched events}}.
+\end{equation}
+
+Figure \ref{fig:EffPurityK} shows the efficiency (left) and purity (right) for WC2TPC match as a function of the radius, $r_{T}$, and angle, $\alpha_{T}$, selection value. It is apparent how both efficiency and purity are fairly flat as a function of the radius selection value at a given angle. This is not surprising. Since we are studying a single particle gun Monte Carlo sample, the wrong matches can occur only for mis-tracking of the primary or for association with decay products;  decay products will tend to be produced at large angles compared to the primary, but could be fairly close to the in $x$ and $y$ projection of the primary. The radius cut would play a key role in removing pile up events. 
+
+For LArIAT cross section measurements, we generally prefer purity over efficiency, since a sample of particles of a pure species will lead to a better measurement. Obviously, purity should be balanced with a sensible efficiency to avoid rejecting the whole sample. 
+
+We choose $(\alpha_{T}$, $r_{T}) = (8 \text{ deg}, 4 \text{ cm} )$ and get a MC 85\% efficiency and 98\% purity for the kaon sample and a MC 95\% efficiency and 90\% purity for the pion sample.
+
+
+\begin{figure}[hpbt]
+\centering
+\includegraphics[width=15cm]{Chapter-5/Images/KEffPurity.png}
+\caption{Efficiency (left) and purity (right) for WC2TPC match as a function of the radius and angle selections for the kaon sample.}
+\label{fig:EffPurityK}
+\end{figure}
+
+
+
+
 \subsection{Tracking Optimization}\label{ch:TrackOptimization}
-\subsection{Study of WC to TPC Match}\label{ch:WC2TPCMatchOptimization}
+
 
 \subsection{Angular Resolution}\label{sec:angleRes}
 Scope of this study is to understand and compare the tracking performances and angular resolution of the TPC tracking on data and MC. 
-We use the angular resolution of the tracking to determine  the value of smallest angle that we can reconstruct with a non-zero efficiency, effectively determining a selection on the angular distribution of the cross section measurement due to the tracking performance.
+We use the angular resolution of the tracking to determine  the value of smallest angle that we can reconstruct with a non-zero efficiency, effectively determining a selection on the angular distribution of the cross section measurement due to the tracking performance. This study is performed on the pion sample, but its results are extrapolated to the kaon case.
 
 We start by selecting all the WC2TPC matched tracks used for the cross section analysis.  These tracks can contain from a minimum of 3 3D-space points to a maximum of 240  3D-space points.  We fit a line to all the 3D-space points associated with the track. 
 For each track we calculate the average distance between each point in space and the fit line as follows 
@@ -235,7 +297,7 @@ A visual representation of the procedure used to evaluate the angular resolution
 For each track, we order the space points according to their Z position along the positive beam direction (panel a) and we split them in two sets: the first set contains all the points belonging to the first half of the track and the second set contains all the points belonging the second half of the track. We remove the last four points in the first set and the first four points in the second set, so to have a gap in the middle of the original track (panel b). We fit the first and the second set of points with two lines  (panel c). We then calculate the angle between the fit of the first and second half $\alpha$ (panel d). The angle $\alpha$ determines the spatial resolution of the tracking. The distributions for data and MC for $\alpha$ are given in Figure \ref{fig:trackingResolution}. The mean of the data and MC angular resolution are respectively 
 
 \begin{equation}
-\bar\alpha_{Data} = (5.0 \pm 4.5) \text{ deg} 
+\bar\alpha_{Data} = (5.0 \pm 4.5) \text{ deg}, 
 \end{equation}
 
 \begin{equation}
@@ -371,63 +433,6 @@ We mimic the matching between the WC and the TPC track on Monte Carlo by constru
 
 
 \subsection{Selection Study for the Wire Chamber to TPC Match}\label{ch:WC2TPCMatchOptimization}
-Plots I want in this section:
-\begin{enumerate}
-\item WC2TPC MC DeltaX, DeltaY and $\alpha$
-\end{enumerate}
-
-
-Scope of this study is assessing the goodness of the wire chamber to TPC match on Monte Carlo and decide the selection values we will use on data. A word of caution is necessary here. With this study, we want to minimize pathologies associated with the presence of the primary hadron itself, e.g. the incorrect association between the beamline hadron and its decay products inside the TPC.  Assessing the contamination from pile-up\footnote{We remind the reader that the DDMC is a single particle Monte Carlo, where the beam pile up is not simulated.}, albeit related, is beyond the scope of this study.
-
-In MC, we are able to define a correct WC2TPC match using the Geant4 truth information. We are thus able to count how many times the WC tracks is associated with the wrong TPC reconstructed track. 
-
-We define a correct match if the all following conditions are met:
-\begin{itemize}
-\item[-] the length of the true primary Geant4 track in the TPC is greater than 2 cm,  
-\item[-] the length of the reconstructed track length is greater than 2 cm,
-\item[-] the Z position of the first reconstructed point is within 2 cm from the TPC front face
-\item[-] the distance between the reconstructed track and the true entering point is the minimum compared with all the other reconstructed tracks.
-\end{itemize}
-
-In order to count the wrong matches, we consider all the reconstructed tracks whose Z position of the first reconstructed point lies within 2 cm from the TPC front face. Events with true length in TPC $<$ 2 cm are included. 
-Since hadrons are shot 100 cm upstream from the TPC front face, the following two scenarios are possible from a truth standpoint: 
-\begin{itemize}
-\item[[$Ta$]] the primary hadron decays or interact strongly before getting to the TPC,
-\item[[$Tb$]] the primary hadron enters the TPC.
-\end{itemize}
-
-Once we choose the selection cuts to determine a reconstructed wire chamber-to-TPC match $r_{T}$ and $\alpha_{T}$, the following five scenarios are possible in the truth to reconstruction interplay : 
-\begin{itemize}
-\item[1)] only the correct track is matched
-\item[2)] only one wrong track is matched 
-\item[3)] the correct track and one (or more) wrong tracks are matched
-\item[4)] multiple wrong tracks  matched.
-\item[5)] no reconstructed tracks are matched
-\end{itemize}
-
-Since we keep only events with one and only one match, we discard cases 3), 4) and 5) from the events used in the cross section measurement. For each set of $r_{T}$ and $\alpha_{T}$ selection value, we define purity and efficiency of the selection as follows:
-\begin{equation}
-\text{Efficiency} = \frac{\text{Number of events correctly matched}}{\text{ Number of events with primary in TPC}}
-\end{equation}
-
-\begin{equation}
-\text{Purity} = \frac{\text{Number of events correctly matched}}{\text{Total number of matched events}}.
-\end{equation}
-
-Figure \ref{fig:EffPurityK} shows the efficiency (left) and purity (right) for wire chamber-to-TPC match as a function of the radius, $r_{T}$, and angle, $\alpha_{T}$, selection value. It is apparent how both efficiency and purity are fairly flat as a function of the radius selection value at a given angle. This is not surprising. Since we are studying a single particle gun Monte Carlo sample, the wrong matches can occur only for mis-tracking of the primary or for association with decay products;  decay products will tend to be produced at large angles compared to the primary, but could be fairly close to the in $x$ and $y$ projection of the primary. The radius cut would play a key role in removing pile up events. 
-
-For LArIAT cross section measurements, we generally prefer purity over efficiency, since a sample of particles of a pure species will lead to a better measurement. Obviously, purity should be balanced with a sensible efficiency to avoid rejecting the whole sample. 
-
-We choose $(\alpha_{T}$, $r_{T}) = (8 \text{ deg}, 4 \text{ cm} )$ and get a MC 85\% efficiency and 98\% purity for the kaon sample and a MC \textcolor{red}{BOH}\% efficiency and 98\% purity for the \textcolor{red}{BOH} sample.
-
-
-\begin{figure}[hpbt]
-\centering
-\includegraphics[width=15cm]{Chapter-5/Images/KEffPurity.png}
-\caption{Efficiency (left) and purity (right) for wire chamber-to-TPC match as a function of the radius and angle selections.}
-\label{fig:EffPurityK}
-\end{figure}
-
 \subsection{Interaction Point Optimization}\label{ch:TrackingOptimization}
 Scheme of this subsection
 \subsubsection{Brief Explanation of the reconstruction chain}
@@ -443,15 +448,6 @@ Plots I want in this section:
 \item Length Quality cut
 \item Efficiency as a function of true KE and Angle
 \end{enumerate}
-
-
-\subsection{Tracking spatial and angular resolution}
-Scope of this study is understanding and comparing the tracking spatial and angular resolution on data and MC.
-We start by selecting all the WC2TPC matched tracks. 
-We fit a line on all the space points of the track and calculate the $\chi^2$. The $\chi^2$ distribution for data and MC is shown in Figure \ref{fig:Chi2AllPts}.
-
-For the spatial and angular resolution study, we reject tracks with less than 14 space points. For each track, we order the space points according to their Z position and we split them in two sets: the first set counts all the points belonging to the first half of the track and the second set counts all the points belonging to the second half of the track. We remove the last 5 points in the first set and the first 5 points in the second set, so to have a gap in the middle of the original track. We fit the first and the second set of points with a line separately. We reject the event entirely if the  $\chi^2$ for the fit of either of the halves is greater than four.  We define a track middle plane as the plane perpendicular to the original track fit, positioned in the middle of its length. We project the tracks on the middle plane and calculate the impact parameter, $d$, i.e. the distance between the projected points. We also calculate the angle between the original track direction and the fit of the first and second half, called $\alpha_1$ and $\alpha_2$ respectively. The spatial resolution of the track will be $\sigma_S = \frac{d}{\sqrt 2}$ while the angular resolution of the tracks will be  $\sigma_\alpha = \alpha_1 - \alpha_2$. The distributions for data and MC for $\sigma_\alpha$ and $\sigma_S$ are given in \ref{fig:trackingResolution}.
-
 
 
 

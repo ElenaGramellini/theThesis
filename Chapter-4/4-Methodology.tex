@@ -100,7 +100,7 @@ We discard events with multiple WC2TPC matches. We use only those TPC tracks tha
 
 \begin{figure}
   \centering  
-\includegraphics[width=\textwidth]{Chapter-4/Images/Shower.png}
+\includegraphics[width=\textwidth]{Chapter-4/Images/WC2TPCMatchTracks.png}
 \caption{Visual rendering of the wire chamber to TPC match.}
 \label{fig:showerFilt}
 \end{figure}
@@ -129,7 +129,7 @@ Solving for the cross section, we find:
 \label{eq:thinTargetXSSolved}
 \end{equation}
 
-\subsection{Not-so-Thin Target: Slicing the Argon}
+\subsection{Not-so-Thin Target: Slicing the Argon}\label{ch:XSRaw}
 The interaction length of pions and kaons in argon is expected to be of the order of 50 cm for pions and 100 cm for kaons. Thus, the LArIAT TPC, with its 90 cm of length, is not a thin target. However, the fine-grained tracking of the LArIAT LArTPC allows us to treat the argon volume as a sequence of many adjacent thin targets. 
 
 As described in Chapter \ref{sec:experimentDescription}, LArIAT wire planes consist of 240 wires each. The wires are oriented at +/- $60^{\circ}$ from the vertical direction at 4 mm spacing, while the beam direction is oriented 3 degrees off the $z$ axis in the $XZ$ plane.  The wires collect signals proportional to the energy loss of the hadron along its path in a  $\delta${\emph{X}} = 4 mm/sin($60^{\circ}$) $\approx$ 4.7~mm slab of liquid argon. Thus, one can think to slice the TPC into many thin targets of $\delta${\emph{X}} = 4.7~mm thickness along the direction of the incident particle, making a measurement at each wire along the path.
@@ -151,30 +151,6 @@ where $\Delta E_i$ is the energy deposited at each argon slice before the $j^{th
 
 If the particle enters a slice, it contributes to $N_{Incident}( E^{kin})$ in the energy bin corresponding to its kinetic energy in that slice. If it interacts in the slice, it then also contributes to $N_{Interacting}(E^{kin})$ in the appropriate energy bin. The cross section as a function of kinetic energy, $\sigma_{TOT}( E^{kin})$ will then be proportional to the ratio $\frac{N_{Interacting}( E^{kin})}{N_{Incident}( E^{kin})}$ .
 
-
-The statistical uncertainty for each energy bin is calculated by error propagation from the statistical  uncertainty on $N_{Incident}$ and $N_{Interacting}$. 
-Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{Incident}$ is distributed as a poissonian with mean and $\sigma^2$ equal to $N_{Incident}$ in each bin.  
-On the other hand, $N_{Interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The square of the variance for the binomial is given by  
-\begin{equation}
-\sigma^2 = \mathcal{N}P_{Interacting}(1-P_{Interacting});
-\label{eq:binVar}
-\end{equation}
-
-since the interaction probability $P_{Interacting}$ is $\frac{ N_{Interacting}}{N_{Incident}}$ and the number of tries $\mathcal{N}$ is $N_{Incident}$, equation \ref{eq:binVar} translates into
-\begin{equation}
-\sigma^2 = N_{Incident}\frac{ N_{Interacting}}{N_{Incident}} (1-\frac{ N_{Interacting}}{N_{Incident}}) = N_{Interacting}(1-\frac{ N_{Interacting}}{N_{Incident}}).
-\end{equation}
-
-$N_{Incident}$ and $N_{Interacting}$ are not independent.
-The uncertainty on the cross section is thus calculated as 
-\begin{equation}
-\delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N_{Interacting}}{N_{Interacting}}+\frac{\delta N_{Incident}}{N_{Incident}}\Big) 
-\end{equation}
-where:
-\begin{eqnarray}
-\delta N_{Incident} = \sqrt[]{N_{Incident}} \\
-\delta N_{Interacting} = \sqrt[]{N_{Interacting}\Big(1-\frac{ N_{Interacting}}{N_{Incident}}\Big)}.
-\end{eqnarray}
 
 
 
