@@ -101,7 +101,7 @@ With 12 iterations of this method we find a proton contamination of  0.2 $\pm$ 0
 \subsection{Data Driven MC}\label{sec:DDMC}
 The Data Driven single particle Monte Carlo (DDMC) is a single particle gun which simulates the particle transportation from WC4 into the TPC leveraging on the beamline data information. The DDMC uses the data momentum and position at WC4 to derive the event generation: a general sketch of the DDMC workflow is shown in Figure \ref{fig:DDMCSketch}.
 
-When producing a DDMC sample, beam line data from a particular running period and/or running condition are selected first. For example, data for the negative 60A runs and for the negative 100A runs inform the event generation stage of two different DDMC samples. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the  particle position ($X, Y$) at WC4 directly from the data measurement; we calculate the components of the momentum using the beamline measurement of the momentum magnitude in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector, as described in section \ref{sec:MWPCfunc}. The momentum and position of the selected data form a 5-dimensional tupla, which we sample thousands of times through a 5-dimensional hit-or-miss sampling procedure to generate the MC events. This produces MC $P_x, P_y, P_z, X, Y$ distributions  with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the considered variables.  As an example, the results of the DDMC generation compared to data for the kaon +100A sample are shown in figure \ref{DDMCComparison} for the $P_z$, $X$ and $Y$ distributions; as expected, MC and data agree within the statistical uncertainty by construction. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the MC generated events. The particles are free to decay and interact in their path from WC4 to the TPC according to the Geant4 simulation.
+When producing a DDMC sample, beam line data from a particular running period and/or running condition are selected first. For example, data for the negative 60A runs and for the negative 100A runs inform the event generation stage of two different DDMC samples. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the  particle position ($X, Y$) at WC4 directly from the data measurement; we calculate the components of the momentum using the beamline measurement of the momentum magnitude in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector, as described in section \ref{sec:MWPCfunc}. The momentum and position of the selected data form a 5-dimensional tupla, which we sample thousands of times through a 5-dimensional hit-or-miss sampling procedure to generate the MC events. This produces MC $P_x, P_y, P_z, X, Y$ distributions  with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the considered variables.  As an example, the results of the DDMC generation compared to data for the kaon +100A sample are shown in figure \ref{fig:DDMCComparison} for the $P_z$, $X$ and $Y$ distributions; as expected, MC and data agree within the statistical uncertainty by construction. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the MC generated events. The particles are free to decay and interact in their path from WC4 to the TPC according to the Geant4 simulation.
 
 Using the DDMC technique ensures that the MC and data particles have very similar momentum, position and angular distributions at WC4 and allows us to use the MC sample in several occasions, for example to calibrate the energy loss upstream of the TPC (see Section \ref{ch:eloss}) or to study the tracking and the calorimetric performance (sections \ref{sec:TrackingStudies} and \ref{ch:energyCal}). A small caveat is in order here: the DDMC is a single particle Monte Carlo, which means that the beam pile-up is not simulated. 
 
@@ -353,18 +353,70 @@ A small $0.5 \text{ deg}$ systematic shift between the mean of the data and MC a
 \begin{figure}[p]
 \centering
 \includegraphics[width=0.48\textwidth]{Chapter-5/Images/cTrueXSAngle.png}
-\caption{ True ($\pi^-{-}, Ar$) cross section for interaction angles greater than 0 deg (green), 4.5 deg (red), 5.0 deg  (blue) and 9.0 deg (yellow). }
+\caption{ True ($\pi^-, Ar$) cross section for interaction angles greater than 0 deg (green), 4.5 deg (red), 5.0 deg  (blue) and 9.0 deg (yellow). }
 \label{fig:trueWithAngles}
 \end{figure}
 
 
 
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Energy Calibration and Studies}\label{ch:energyCal} 
+\section{Calorimetry Studies}\label{ch:energyCal} 
+The ability to measure the kinetic energy of hadrons in the TPC is fundamental for the cross section analyses. 
+Thus, we describe first how we calibrate the TPC calorimetric response (Section \ref{ch:energyCalibration}) and how we measure the kinetic energy of the hadrons in the TPC (Section \ref{ch:kinEn}).
+
 \subsection{Energy Calibration}\label{ch:energyCalibration}
-\subsection{Uncertainty on Kinetic Energy}\label{ch:kinEn}
-The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill. With this study, we determine the uncertainty of the kinetic energy measurement which we will propagate into the cross section measurement, as discussed in Section \ref{ch:SysUncertaintyXSRaw} for the pion cross section and in Section \ref{ch:SysUncertaintyXSRawKaon} for the kaon cross section.
+Scope of the energy calibration is to identify the factors which convert the charge collected (dQ) to energy deposited in the chamber (dE). As described in section \ref{sec:SignalProc}, this is a multi-step procedure. In LArIAT, we first correct the raw charge by the electronic noise on the considered wire \cite{LArIATdqdx}, then by the electron lifetime \cite{LArIATLifeTime},  and then by the recombination using the ArgoNeut recombination values. Lastly, we apply overall calibration of the energy, i.e. we determine the ``calorimetry constants" using the procedure described in this section.
+
+
+We independently determine  the calorimetry constants for Data and Monte Carlo in the LArIAT Run-II Data samples using  a parametrization of the stopping power (a.k.a. energy deposited per unit length, $dE/dX$)  as a function of momentum. This is done by comparing the stopping power measured on reconstructed quantities against the Bethe-Bloch theoretical prediction for various particle species (see Equation \ref{eq:BB}).  We obtain the theoretical expectation for the $dE/dX$ most probable value of pions ($\pi$), muons ($\mu$), kaons ($K$), and protons ($p$) in the momentum range most relevant for LArIAT (Figure \ref{fig:PDGEnergyLossArgon}) using the tables provided by the Particle Data Group \cite{Patrignani:2016xqp} for liquid argon \cite{PDG-Argon}.
+
+The basic idea of this calibration technique is to utilize a sample of beamline events with known particle species and momentum to measure the $dE/dX$ of the corresponding tracks in the TPC. In particular, we decided to use positive pions as calibration sample and all the other particle species as cross check. Once the $dE/dX$ of a sample of positive pions  has been measured at various momenta, we tune to calorimetry constants within the reconstruction software to align the measured values to match the theoretical ones found in Figure \ref{fig:PDGEnergyLossArgon}. 
+
+In data, we start by selecting a sample of beamline positive pion beamline candidates without any restriction on their measured momentum\footnote{it should be noted that some muon and position contamination is present in the $\pi^+$ sample}.
+We then apply the WC2TPC match and subtract the energy loss upstream to the TPC front face, determining the momentum at the TPC front face. For each surviving pion candidate,  we measure the $dE/dx$ at each of the first 12 spacepoints associated the 3D reconstructed track, corresponding to a $\sim$ 5 cm portion. These $dE/dX$ measurements are then put into a histogram that corresponds to measured momentum of the track. The $dE/dX$ histograms are sampled every 50 MeV/c in momentum (e.g. 150~MeV/c $< P <$ 200~MeV/c, 200~MeV/c $< P <$ 250/c~MeV, etc...).   This process of selecting, sampling, and recording the $dE/dX$ for various momentum bins is repeated over the entire sample of events, allowing us to collect sufficient statistic in most of the momentum bins between 150~MeV/c and 1100~MeV/c. On average, pions and muons only lose $\sim$10 MeV in this 5~cm section of the track and protons lose $\sim$20 MeV. Thus choosing 50 MeV/c size bins for our histograms covers the energy spread within those bins due to energy loss from ionization for all the particle species identifiable in the beamline. 
+Each 50 MeV/c momentum binned $dE/dX$ histogram is now fit with a simple Landau function. The most probable value (MPV) and the associated error on the MPV from the fit are extracted and plotted against the theoretical prediction Figure \ref{fig:PDGEnergyLossArgon}. Depending on the outcome of the fit, we modify the calorimetry constants and we repeat the procedure until a qualitative agreement is achieved.  We perform this  tuning for the collection and induction plane separately. 
+As a cross check to the calorimetry constants determined using the positive pions, we lock the constants and  plot the $dE/dx$ versus momentum distribution of all the other particle species identifiable in the beamline data ($\pi/\mu/e$, K , p, in both polarities) against the corresponding Beth-Bloch prediction. The agreement between data from the other particle species and the predictions is the expected result of this cross check.
+The results of the tuning and cross check for Run-II data on the collection plane is shown in Figure \ref{fig:BBandData}  negative polarity data on top, positive polarity data on the bottom.
+
+In MC, we simulate the corresponding positive pion sample with the DDMC (see section \ref{sec:DDMC}) and follow the same steps as in data. More details on the calorimetry tuning can be found in \cite{LArIATCalo}.
+
+\textcolor{red}{Add agreement between data and MC for dedx for pions}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.50\textwidth]{Chapter-5/Images/dEdXvsMomentumTemplate.png}
+\caption{Stopping power for pions, muons, kaons, and protons in liquid argon over the momentum range most relvant for LArIAT according to the Beth-Bloch equation. The solid lines represent the prediction for the mean energy $dE/dX$, while the dashed lines are the predictions for the MPV.}
+\label{fig:PDGEnergyLossArgon}
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.50\textwidth]{Chapter-5/Images/RunIINegTotaldEdXvsMomentum.png}
+\includegraphics[width=0.50\textwidth]{Chapter-5/Images/RunIIPosTotaldEdXvsMomentum.png}
+\caption{Stopping power versus Momentum for Run-II negative (top) and positive (bottom) polarity data. We achieve the agreement between the Bethe-Bloch predictions and the distribution obtained with of the positive pions (top plot, red dots) by tuning the calorimetry constants. Once the calorimetry constants are locked in, the agreement between the other particle species and the Bethe-Bloch predictions follows naturally.}
+\label{fig:BBandData}
+\end{figure}
+
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.50\textwidth]{images/CalibrationExample.png}
+%\caption{Illustration of the calibration technique. Here we depict a 325 MeV wire chamber track (shown in green) which enters the TPC (taking into account the energy loss from the upstream material) and we sample the first 12 spacepoints (shown in teal) to extract the dE/dX distribution which is fit with a Landau.}
+%\label{fig:CalibrationExample}
+%\end{figure}
+
+
+
+
+
+
+\subsection{Kinetic Energy Measurement}\label{ch:kinEn}
+The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill. In this section, we define the measurement on the kinetic energy and  determine the related uncertainty. We will propagate this uncertainty into the cross section measurement, as discussed in Section \ref{ch:SysUncertaintyXSRaw} for the pion cross section and in Section \ref{ch:SysUncertaintyXSRawKaon} for the kaon cross section.
 
 The kinetic energy of a hadron at the $j^{\text{th}}$ slice of argon in the TPC is given by
 
@@ -381,7 +433,7 @@ The uncertainty on $KE_{j}$ is then given by
 where we have dropped the uncertainty on the mass, since it is orders of magnitude smaller than the other uncertainties.
 We assume the relative uncertainty on $p_{Beam}$ to be 2\%, and the uncertainty on the energy loss upstream to be 7~MeV, as calculated in Section \ref{ch:eloss}. We describe the estimate of the uncertainty on $E_{\text{FF-j}}$ in the rest of this section.
 
-The energy deposited from the TPC front face until the $j^{\text{th}}$ slice is the sum of the measured energy deposited in each previous slabs $E_{i}$, i.e.
+The energy deposited by the hadron from the TPC front face until the $j^{\text{th}}$ slice is the sum of the measured energy deposited in each previous slabs $E_{i}$, i.e.
 \begin{equation}
 E_{\text{FF-j}} = \sum_{i<j} E_{i}, 
 \end{equation}
@@ -392,22 +444,18 @@ If we assume conservatively that the measurements of $E_{i}$ are not independent
 \end{equation}
 where $\delta E_{i}$ is the uncertainty on the energy loss in one slab of argon.
 
-Figure \ref{fig:EnergyDeposited} shows the distribution of the energy deposited in each slab of argon, for the 60A negative pion dataset in black and for the pion only MC in blue. The distributions are fitted with a landau displayed in red for data and in teal for MC.
+The left side of Figure \ref{fig:EnergyDeposited} shows the distribution of the energy deposited in each slab of argon, for the 60A negative pion dataset in black and for the pion only MC in blue. The analogous plot for the -100A negative pion data set  is show on the right side of Figure \ref{fig:EnergyDeposited}.  The distributions are fitted with a landau displayed in red for data and in teal for MC.
 The uncertainty on $E_{i}$ is given by the width of the Landau fit to the data. A small systematic uncertainty  is given by a 1.0\% difference between the most probable value of the landau fits in data and MC.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{Chapter-5/Images/DepEnergy_Fit_v4.png}
-\caption[]{ Energy Deposited in Pion MC and 60A data.  } \label{fig:EnergyDeposited}
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/DepEnergy_Fit_v4.png}
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/DepEnergy_Fit_v4100A.png}
+\caption[]{ Energy deposited  $E_{i}$ in a single slab of argon for the pion -60A runs (left) and -100A runs (right).  The data is shown in black, the MC in blue. The distributions are fitted with a landau displayed in red for data and in teal for MC. } \label{fig:EnergyDeposited}
 \end{figure}
 
 
-
-So the uncertainty on the incident kinetic energy is given by
-
-\begin{equation}
-\delta KE^{Incident} = \sqrt{ (\delta KE_{Initial})^2 + (\delta E^{Slab}_{j})^2} = \sqrt{(12 MeV)^2 + (2 MeV)^2} = 12.1 MeV
-\end{equation}
+\begin{comment}
 
 Figure \ref{fig:EnergyDepositedStacked} shows the stacked version of the Energy Deposited plots with the backgrounds stacked. The backgrounds are given in the ratio of 68.8\% pion, 4.6\% muon, and 26.6\% electron. Once they are taken in these ratios, the sum of the MC is normalized to the sum of the data.
 
@@ -427,8 +475,6 @@ and has the exact same uncertainty as the incident kinetic energy plot. Thus the
 
 
 
-
-A study we did was to look at the difference between DATA/MC in the dE/dX and energy deposited. We basically found there is very little difference between the two and we try to quantify how much the difference is.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{dE/dX}
@@ -464,105 +510,12 @@ For completeness, the log scale versions of are shown in Figure \ref{fig:dEdXLog
 \caption[]{ dE/dX for 60Amp data and MC shown in log scale  } \label{fig:dEdXLogScale}
 \end{figure}
 
-Plotting scripts can be found here on lariatgpvm \begin{verbatim}
-/lariat/app/users/jasaadi/v06_34_01_PionWeek/PlottingScripts
-\end{verbatim} and the samples were put here \begin{verbatim}
-/lariat/data/users/elenag/theFinalPions/TPCDATA
 
-/lariat/data/users/elenag/theFinalPions/TPC_MC/
-\end{verbatim}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Energy Deposited}\label{sec:Energy}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
-\begin{comment}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%         Energy Calibration         %%%%%%%%%%%%%%         
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Energy Calibration}\label{ch:energyCalibration}
-Scope of the energy calibration is to identify the factors which convert the charge collected (dQ) to energy deposited in the chamber(dE). As described in section \ref{sec:SignalProc}, this is a multi-step procedure. In LArIAT, we first correct the raw charge by the electronic noise on the considered wire \cite{technote}, then by the electron lifetime \cite{LArIATLifeTime},  and then by the recombination using the ArgoNeut recombination values. Lastly, we apply overall calibration of the energy, i.e. we determine the ``calorimetry constants" using the procedure described in this section.
-
-
-We independently determine  the calorimetry constants for Data and Monte Carlo in the LArIAT Run-II Data samples using  a parametrization of the energy deposited per unit length (dE/dX) as a function of momentum. This is done by comparing the stopping power measured on reconstructed quantities against the Bethe-Bloch theoretical prediction for various particle species (see equation \ref{eq:BB}).  We obtain the theoretical expectation for the dE/dX most probable value of pions ($\pi$), muons ($\mu$), kaons ($K$), and protons ($p$) in the momentum range most relevant for LArIAT (Figure \ref{fig:PDGEnergyLossArgon}) using the tables provided by the Particle Data Group \cite{Patrignani:2016xqp} for liquid argon \cite{PDG-Argon}.
-
-The basic idea of this calibration technique is to utilize the most upstream portion of a TPC track which has a well known momentum and particle species to measure its $dE/dX$. Once a sample of particles dE/dX has been measured at various momenta, we then tune to calorimetry constants within the reconstruction software to align these measured values to match the theoretical ones found in Figure \ref{fig:PDGEnergyLossArgon}. 
-
-In data, we start by selecting a sample of beamline positive pion candidates without any restriction on their measured momentum.
-We then apply the WC2TPC match and subtract the energy loss upstream to the TPC front face, determining the momentum at the TPC front face. For each surviving pion candidate,  we measure the dE/dx at each of the first 12 spacepoints associated the 3D reconstructed track, corresponding to a $\sim$ 5 cm portion. These dE/dX measurements are then put into a histogram that corresponds to measured momentum of the track. The dE/dX histograms are sampled every 50 MeV in momentum (e.g. 150~MeV/c $< P <$ 200~MeV/c, 200~MeV/c $< P <$ 250/c~MeV, etc...).   This process of selecting, sampling, and recording the dE/dX for various momentum bins is repeated over the entire sample of events, allowing us to collect sufficient statistic in most of the momentum bins between 150~MeV/c and 1100~MeV/c.
-Each 50 MeV/c momentum binned dE/dX histogram is now fit with a simple Landau function. The most probable value (MPV) and the associated error on the MPV from the fit are extracted and plotted on Figure \ref{fig:PDGEnergyLossArgon}. Depending on the outcome of the fit, we modify the calorimetry constants and we repeat the procedure until a qualitative agreement is achieved.  We perform this  tuning for the collection and induction plane separately. 
-As a cross check to the determined calorimetry constants using the positive pions, we plot the dE/dx vs momentum distribution all the other particle species identifiable in the beamline data ($\pi$, K , p, in both polarities) against the corresponding Beth-Bloch prediction in a similar fashion. On average, pions and muons only lose $\sim$10 MeV in this 5~cm section of the track and protons lose $\sim$20 MeV. Thus choosing 50 MeV size bins for our histograms covers the energy spread within those bins due to energy loss from ionization.  The results of the tuning and cross check for Run-II data on the collection plane is shown in Figure \ref{fig:BBandData} positive polarity data on the left, negative polarity data on the right.
-
-In MC, we simulate the corresponding positive pion sample with the DDMC (see section \ref{sec:DDMC}) and follow the same steps as in data. The calorimetry tuning is explained in all his gory details in \cite{technote}.
-
-
-\begin{figure}[htb]
-\centering
-%\includegraphics[width=0.50\textwidth]{images/PDGdEdX.png}
-\caption{Mean energy loss in various materials over a range of particle momenta as produced in Reference \cite{PDG}.}
-\label{fig:PDGEnergyLoss}
-\end{figure}
-
-
-\begin{figure}[htb]
-\centering
-%\includegraphics[width=0.50\textwidth]{images/dEdXvsMomentumTemplate}
-\caption{Mean energy loss for pions, muons, and protons in liquid argon over the momentum range most relvant for LArIAT.}
-\label{fig:PDGEnergyLossArgon}
-\end{figure}
-
-
-
-
-\begin{figure}[htb]
-\centering
-%\includegraphics[width=0.50\textwidth]{images/CalibrationExample.png}
-\caption{Illustration of the calibration technique. Here we depict a 325 MeV wire chamber track (shown in green) which enters the TPC (taking into account the energy loss from the upstream material) and we sample the first 12 spacepoints (shown in teal) to extract the dE/dX distribution which is fit with a Landau.}
-\label{fig:CalibrationExample}
-\end{figure}
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%         Energy Calibration         %%%%%%%%%%%%%%         
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-\section{Tracking Studies}
-
-
-%\section{MC sample and WC2TPC match}
-We perform the following studies on a MC sample of 191000 kaons and 359000 pions produced with the DDMC technique. DDMC particles are shot from the WC4 location into the TPC following the beam profile.
-We mimic the matching between the WC and the TPC track on Monte Carlo by constructing a fake WC track using truth information at wire chamber four. We then apply the same WC to TPC matching algorithm as in data described in \ref{ch:WC2TPCMatchMethod}. 
-
-
-
-\subsection{Selection Study for the Wire Chamber to TPC Match}\label{ch:WC2TPCMatchOptimization}
-\subsection{Interaction Point Optimization}\label{ch:TrackingOptimization}
-Scheme of this subsection
-\subsubsection{Brief Explanation of the reconstruction chain}
-\subsubsection{Explanation of clustering parameters}
-\subsubsection{Figure of merit and  spanning of cluster}
-\subsubsection{Important numbers out of this optimization}
-
-
-Plots I want in this section:
-\begin{enumerate}
-\item Delta L, reco - true
-\item Delta L, reco - true Elastic, Delta L, reco - true Inelastic, other
-\item Length Quality cut
-\item Efficiency as a function of true KE and Angle
-\end{enumerate}
 
 
 

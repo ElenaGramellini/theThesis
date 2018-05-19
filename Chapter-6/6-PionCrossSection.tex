@@ -49,20 +49,20 @@ Figure \ref{fig:XSRaw} shows the raw cross section for the 60A dataset on the le
 
 
 \subsection{Statistical Uncertainty}\label{ch:StatUncertaintyXSRaw}
-The statistical uncertainty for each kinetic energy bin of the cross section plot is calculated by error propagation from the statistical uncertainty on $N_{Incident}$ and $N_{Interacting}$ correspondent bin.  Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{Incident}$ is distributed as a poissonian with mean and $\sigma^2$ equal to $N_{Incident}$ in each bin.  
-On the other hand, $N_{Interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The square of the variance for the binomial is given by  
+The statistical uncertainty for each kinetic energy bin of the cross section plot is calculated by error propagation from the statistical uncertainty on $N_{Incident}$ and $N_{Interacting}$ correspondent bin.  Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{Incident}$ is distributed as a poissonian with mean and variance equal to $N_{Incident}$ in each bin.  
+On the other hand, $N_{Interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The variance for the binomial is given by  
 \begin{equation}
-\sigma^2 = \mathcal{N}P_{Interacting}(1-P_{Interacting});
+\text{\textsf{Var[$N_{Incident}$]}} = \mathcal{N}P_{Interacting}(1-P_{Interacting});
 \label{eq:binVar}
 \end{equation}
 
 since the interaction probability $P_{Interacting}$ is $\frac{ N_{Interacting}}{N_{Incident}}$ and the number of tries $\mathcal{N}$ is $N_{Incident}$, equation \ref{eq:binVar} translates into
 \begin{equation}
-\sigma^2 = N_{Incident}\frac{ N_{Interacting}}{N_{Incident}} (1-\frac{ N_{Interacting}}{N_{Incident}}) = N_{Interacting}(1-\frac{ N_{Interacting}}{N_{Incident}}).
+\text{\textsf{Var[$N_{Incident}$]}} = N_{Incident}\frac{ N_{Interacting}}{N_{Incident}} (1-\frac{ N_{Interacting}}{N_{Incident}}) = N_{Interacting}(1-\frac{ N_{Interacting}}{N_{Incident}}). 
 \end{equation}
 
 $N_{Incident}$ and $N_{Interacting}$ are not independent.
-The uncertainty on the cross section is thus calculated as 
+The statistical uncertainty on the cross section is thus calculated as 
 \begin{equation}
 \delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N_{Interacting}}{N_{Interacting}}+\frac{\delta N_{Incident}}{N_{Incident}}\Big) 
 \end{equation}
@@ -75,7 +75,7 @@ where:
 
 
 \subsection{Treatment of Systematics} \label{ch:SysUncertaintyXSRaw}
-
+The only systematic effect considered in the measurement of the raw cross section come from the propagation of the uncertainty associate with the measurement of the kinetic energy at each slab.
 
 
 \section{Corrections to the Raw Cross Section}\label{ch:PionXSCorrections}
