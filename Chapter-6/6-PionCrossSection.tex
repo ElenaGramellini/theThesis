@@ -115,52 +115,52 @@ $\epsilon^{\text{Int}}(E_i)$  and $\epsilon^{\text{Inc}}(E_i)$ and the propagati
 
 
 \subsection{Background subtraction}\label{ch:BKGsubXS}
-Even if pions are by far the biggest component of the beam in negative polarity runs, the LArIAT beam is not a pure pion beam. While useful to discriminate  pions/muons/electrons from kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the background from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects.
+%Even if pions are by far the biggest component of the beam in negative polarity runs, the LArIAT beam is not a pure pion beam. While useful to discriminate  pions/muons/electrons from kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the background from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects.
 
-\subsubsection{Beam Composition}\label{sec:BeamAtWC4}
-We define beamline background every TPC track matched to the WC track which is not a primary pion. Potentially, there are 4 different types of beamline background:
-\begin{itemize}
-\item[]1) electrons,
-\item[]2) muons,
-\item[]3) secondaries from pion events,
-\item[]4) matched pile up events.
-\end{itemize}
+%\subsubsection{Beam Composition}\label{sec:BeamAtWC4}
+%We define beamline background every TPC track matched to the WC track which is not a primary pion. Potentially, there are 4 different types of beamline background:
+%\begin{itemize}
+%\item[]1) electrons,
+%\item[]2) muons,
+%\item[]3) secondaries from pion events,
+%\item[]4) matched pile up events.
+%\end{itemize}
 
-The first step is to estimate what percentage of events used in the cross section calculation is not a primary pion.  The next two sections will illustrate this estimate for the electrons, muons and secondaries from pion event.
-We estimate the last type of background, the ``matched pile up" events, to be a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small. \textcolor{red}{SHOW VTX distribution in WC2TPC match}
+%The first step is to estimate what percentage of events used in the cross section calculation is not a primary pion.  The next two sections will illustrate this estimate for the electrons, muons and secondaries from pion event.
+%We estimate the last type of background, the ``matched pile up" events, to be a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small. \textcolor{red}{SHOW VTX distribution in WC2TPC match}
 
 
-\subsubsection{Background from Beamline Electrons and Muons}\label{stionEMu}
-\begin{figure}[b]
+%\subsubsection{Background from Beamline Electrons and Muons}\label{stionEMu}
+%\begin{figure}[b]
 %\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Studies/Figures//Beam60A.png}
 %\includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Studies/Figures//Beam100A.png}
-\caption{Beam composition for the -60A runs (left) and -100A runs (right). The solid blue plot represents the simulated pion content, the yellow plot represents the simulated muon content and the grey plot represents the simulated electron content. The plots are area normalized to the number of data events, shown in red. }
-\label{fig:BeamComposition}
-\end{figure}
+%\caption{Beam composition for the -60A runs (left) and -100A runs (right). The solid blue plot represents the simulated pion content, the yellow plot represents the simulated muon content and the grey plot represents the simulated electron content. The plots are area normalized to the number of data events, shown in red. }
+%\label{fig:BeamComposition}
+%\end{figure}
 
-We estimate the percentage of electrons and muons in the beam via the G4Beamline MC. 
-Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
-Table \ref{tab:beamline} shows the beam composition per magnet setting after the mass selection according to the G4Beamline simulation.
-\begin{table}[p]
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-                     & I = -60 A           & I = -100 A \\ \hline
-G4Pions       &   68.8 \%           &      87.4 \%        \\ \hline
-G4Muons     &     4.6 \%           &        3.7 \%         \\ \hline
-G4Electrons &   26.6 \%           &        8.9 \%        \\ \hline
-\end{tabular}
-\caption{Simulated beamline composition per magnet settings}
-\label{tab:beamline}
-\end{table}
+%We estimate the percentage of electrons and muons in the beam via the G4Beamline MC. 
+%Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
+%Table \ref{tab:beamline} shows the beam composition per magnet setting after the mass selection according to the G4Beamline simulation.
+%\begin{table}[p]
+%\centering
+%\begin{tabular}{|l|c|c|}
+%\hline
+ %                   & I = -60 A           & I = -100 A \\ \hline
+%G4Pions       &   68.8 \%           &      87.4 \%        \\ \hline
+%G4Muons     &     4.6 \%           &        3.7 \%         \\ \hline
+%G4Electrons &   26.6 \%           &        8.9 \%        \\ \hline
+%\end{tabular}
+%\caption{Simulated beamline composition per magnet settings}
+%\label{tab:beamline}
+%\end{table}
 
 
-Figure \ref{fig:BeamComposition} shows the momentum predictions from G4Beamline overlaid with data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area normalized to data, which is shown in red. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC. We attribute  the difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in the center of the momentum distribution.
+%Figure \ref{fig:BeamComposition} shows the momentum predictions from G4Beamline overlaid with data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area normalized to data, which is shown in red. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC. We attribute  the difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in the center of the momentum distribution.
 
-Once the beam composition at WC4 is know,  we simulate the electrons, muons and pions with the DDMC and we subject the three samples to the same selection chain (WC2TPC match, shower filter, pile up filter). The percentage of electrons and muons surviving the selection chain weighted by the beam composition is the  electron and muon background in the pion cross section sample, as shown in Table \ref{tab:MCafterCutContaminants}.
+%Once the beam composition at WC4 is know,  we simulate the electrons, muons and pions with the DDMC and we subject the three samples to the same selection chain (WC2TPC match, shower filter, pile up filter). The percentage of electrons and muons surviving the selection chain weighted by the beam composition is the  electron and muon background in the pion cross section sample, as shown in Table \ref{tab:MCafterCutContaminants}.
 
-\subsubsection{Background from secondaries at TPC Front Face}
-Pions can travel the length of the LArIAT beamline and interact hadronically in the steel or in the non-instrumented argon upstream to the TPC front face. Or, they could decay in flight between WC4 and the TPC. One of the interaction products can leak into the TPC and be matched with the WC track, contributing to the pool of events used for the cross section calculation. We call this type of particles ``secondaries" from pion events, with a terminology inspired by Geant4. 
+%\subsubsection{Background from secondaries at TPC Front Face}
+%Pions can travel the length of the LArIAT beamline and interact hadronically in the steel or in the non-instrumented argon upstream to the TPC front face. Or, they could decay in flight between WC4 and the TPC. One of the interaction products can leak into the TPC and be matched with the WC track, contributing to the pool of events used for the cross section calculation. We call this type of particles ``secondaries" from pion events, with a terminology inspired by Geant4. 
 We estimate the number of secondaries using the DDMC pion sample.  The percentage of secondaries is given by the number of matched WC2TPC tracks whose corresponding particle is not flagged as primary by Geant4.  The secondary to pion ratio is 4.9\% in the 60A sample and $Y$\% in the 100A sample.
 
 \subsection{Background Contribution to the Cross Section}\label{sec:Correction}

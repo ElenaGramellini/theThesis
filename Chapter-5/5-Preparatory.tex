@@ -142,6 +142,7 @@ The MC used for the kaon cross section analysis is a sample of \textcolor{red}{N
 
 
 \section{Estimate of Backgrounds in the Pion Cross Section}\label{ch:PionXSBkgSub}
+
 We use the beamline simulation and the DDMC simulation to estimate the background in the total hadronic pion cross section. Two categories of background exists for the negative pion cross section measurement: the one related to the pion interaction in the chamber, discussed in Section \ref{ch:CaptureAndDecay} and the one related to the beamline contamination, discussed in Section \ref{ch:PionXSBkgSub2}.
 
 \subsection{Background from Pion Capture and Decay}\label{ch:CaptureAndDecay}
@@ -180,10 +181,25 @@ Figure \ref{fig:evtRatio} shows the ratio of events which end their life in capt
 \end{minipage}
 \end{figure}
 
-
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Beamline Background}\label{ch:PionXSBkgSub2}
+We define beamline background every TPC track matched to the WC track which is not a primary pion. Potentially, there are 4 different types of beamline background:
+\begin{itemize}
+\item[]1) electrons,
+\item[]2) muons,
+\item[]3) secondaries from pion events,
+\item[]4) matched pile up events.
+\end{itemize}
+
+The first step is to estimate what percentage of events used in the cross section calculation is not a primary pion.  We start by noting that the last type of background, the ``matched pile up" events, is a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small. %\textcolor{red}{SHOW VTX distribution in WC2TPC match}
+
 As shown in Section \ref{ch:beamlineComposition}, we use G4Beamline to estimate the beam composition at WC4, obtaining the composition shown in Table \ref{tab:beamline}.
-Once we have estimated the beam composition at WC4, the next step to estimate the beamline background in the cross section measurement by propagating pions, muons and electrons to the TPC and evaluate their contribution to the cross section. To do so, we simulate the same number of electrons, muons and pions with the DDMC and we apply the same selection filters on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}.
+The next step to estimate the beamline background in the cross section measurement is propagating pions, muons and electrons to the TPC and evaluate their contribution to the cross section. To do so, we simulate the same number of electrons, muons and pions with the DDMC and we apply the same selection filters on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}.
+
+Pions can travel the length of the LArIAT beamline and interact hadronically in the steel or in the non-instrumented argon upstream to the TPC front face. Or, they could decay in flight between WC4 and the TPC. One of the interaction products can leak into the TPC and be matched with the WC track, contributing to the pool of events used for the cross section calculation. We call this type of particles ``secondaries" from pion events, with a terminology inspired by Geant4. 
+We estimate the number of secondaries using the DDMC pion sample.  The percentage of secondaries is given by the number of matched WC2TPC tracks whose corresponding particle is not flagged as primary by Geant4.  The secondary to pion ratio is 4.9\% in the 60A sample and 4.3\% in the 100A sample.
+
 
 \begin{table}[]
 \centering
@@ -214,7 +230,7 @@ Beam Composition  @TPC FF &  88.5\%   & 8.2\%   & 3.3 \%   & 94.0\%	& 5.3\% & 0.
 
 \begin{figure}[p]
 \centering
-%\includegraphics[width=\textwidth]{Studies/Figures/Staggered60A.png}
+\includegraphics[width=\textwidth]{Chapter-5/Images/Background60A.pdf}
 \caption{Left: staggered contributions to the interacting kinetic energy distribution for electron (grey), muons (yellow) and pion (blue) in the 60A simulation sample. Right: staggered contributions to the incident kinetic energy distribution for electron (grey), muons (yellow) and pion (blue) in the 60A simulation sample.  }
 \label{fig:stag60A}
 \end{figure}
