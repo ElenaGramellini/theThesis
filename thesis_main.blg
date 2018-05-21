@@ -11,63 +11,87 @@ Unbalanced braces---line 2024 of file bib.bib.bib
  : archiveprefix = "arXiv
  :                       },
 I'm skipping whatever remains of this entry
+Repeated entry---line 2300 of file bib.bib.bib
+ : @conference{Sten
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "LHC"
 Warning--I didn't find a database entry for "PhysRevD.90.072005"
 Warning--I didn't find a database entry for "PhysRevLett.115.121803"
+Warning--to sort, need author or key in 2006257
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in PDG-Argon
 Warning--empty author in PDG-Argon
 Warning--empty institution in PDG-Argon
 Warning--empty year in PDG-Argon
+Warning--empty author in 2006257
 Warning--empty journal in Adams:2013qkq
+Warning--empty institution in Synoptic
 Warning--empty journal in Antonello:2015lea
 Warning--empty institution in Baller2016
 Warning--empty journal in Boulay:2004dk
+Warning--empty institution in CAEN1495
+Warning--empty institution in CAENV1740
 Warning--empty journal in EricFChurck
 Warning--empty institution in detectorPaper
+Warning--empty journal in Drakoulakos:2004gn
+Warning--empty journal in fesbach1992theoretical
+Warning--empty booktitle in Sten
 Warning--empty institution in LArIATCalo
 Warning--empty journal in SpaceCharge
+Warning--empty institution in Nutini2015
 Warning--empty institution in FirstTPC
 Warning--empty institution in LArIATdqdx
 Warning--empty institution in LArIATLifeTime
+Warning--empty journal in P5
 Warning--empty journal in Rubbia:1977zz
-You've used 49 entries,
+Warning--empty year in osti_4488432
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
+while executing---line 1090 of file plain.bst
+You've used 119 entries,
             2118 wiz_defined-function locations,
-            825 strings with 14112 characters,
-and the built_in function-call counts, 19138 in all, are:
-= -- 1709
-> -- 1415
-< -- 1
-+ -- 571
-- -- 516
-* -- 1667
-:= -- 3450
-add.period$ -- 148
-call.type$ -- 49
-change.case$ -- 400
+            1258 strings with 35442 characters,
+and the built_in function-call counts, 60886 in all, are:
+= -- 5152
+> -- 5547
+< -- 5
++ -- 2233
+- -- 2102
+* -- 5848
+:= -- 10975
+add.period$ -- 353
+call.type$ -- 119
+change.case$ -- 1401
 chr.to.int$ -- 0
-cite$ -- 65
-duplicate$ -- 508
-empty$ -- 1117
-format.name$ -- 516
-if$ -- 3657
+cite$ -- 146
+duplicate$ -- 1289
+empty$ -- 2878
+format.name$ -- 2102
+if$ -- 11349
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 41
-newline$ -- 248
-num.names$ -- 96
-pop$ -- 342
+int.to.str$ -- 119
+missing$ -- 105
+newline$ -- 593
+num.names$ -- 228
+pop$ -- 1287
 preamble$ -- 1
-purify$ -- 346
+purify$ -- 1277
 quote$ -- 0
-skip$ -- 349
+skip$ -- 891
 stack$ -- 0
-substring$ -- 920
-swap$ -- 36
-text.length$ -- 1
+substring$ -- 2515
+swap$ -- 132
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 194
-warning$ -- 16
-while$ -- 137
-width$ -- 51
-write$ -- 522
-(There were 2 error messages)
+type$ -- 470
+warning$ -- 27
+while$ -- 355
+width$ -- 122
+write$ -- 1260
+(There were 7 error messages)

@@ -158,14 +158,14 @@ In order to choose the selection value for the wire chamber momentum, it is bene
 Selecting pions with momentum greater than 420 MeV/c reduces the capture events by ~99\% while maintaining about 80\% of the total data sample. 
 Figure \ref{fig:evtRatio} shows the ratio of events which end their life in capture (green) or decay (blue) over the total number of events as a as a function of the true momentum at wire chamber four. This ratio is slightly dependent on the inelastic cross section implemented in Geant4, as we are able to register a pion capture (or decay) only if it did not interact inelastically in the TPC. We choose a momentum threshold of 420~MeV/c because the percentage of capture events drops below 1\% and the percentage of decays is never above 2\% for momenta greater than 420~MeV/c. After the momentum selection, we evaluate the contribution of capture and decay to be a negligibly small background to the cross section measurement compared to the background related to the beamline.
 
-\begin{figure}[p]
+\begin{figure}[]
 \centering
 \includegraphics[width=15cm]{Chapter-7/Images/CDAsMomentumFunct.png}
 \caption{True momentum distribution at wire chamber 4 for every simulated pion arriving in the TPC (pink), ending its life in capture (green) or in decay (blue) in the TPC, linear vertical axis on the left, logarithmic on the right. }
 \label{fig:CaptureMom}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[]
 \centering
 \begin{minipage}[t]{0.45\textwidth}
 \centering
@@ -183,7 +183,7 @@ Figure \ref{fig:evtRatio} shows the ratio of events which end their life in capt
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Beamline Background}\label{ch:PionXSBkgSub2}
+\subsection{Contributions from the Beamline Background}\label{ch:PionXSBkgSub2}
 We define beamline background every TPC track matched to the WC track which is not a primary pion. Potentially, there are 4 different types of beamline background:
 \begin{itemize}
 \item[]1) electrons,
@@ -192,13 +192,14 @@ We define beamline background every TPC track matched to the WC track which is n
 \item[]4) matched pile up events.
 \end{itemize}
 
-The first step is to estimate what percentage of events used in the cross section calculation is not a primary pion.  We start by noting that the last type of background, the ``matched pile up" events, is a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small. %\textcolor{red}{SHOW VTX distribution in WC2TPC match}
+The first step to quantify the effect of the beamline background on the pion cross section is to estimate what percentage of events used in the cross section calculation is not a primary pion.  We start by noting that the last type of background, the ``matched pile up" events, is a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small. %\textcolor{red}{SHOW VTX distribution in WC2TPC match}
+As shown in Section \ref{ch:beamlineComposition}, we use G4Beamline to estimate the percentage of pions, muons and electrons at WC4, obtaining the composition shown in Table \ref{tab:beamline}. The next step is to simulate those pions, muons and electrons from WC4 to the TPC with the DDMC and evaluate their contribution to the cross section. To do so, we start by simulating the same number of electrons, muons and pions with the DDMC and we apply the same selection filters on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}. In order to reproduce the closest make up of the beam to data, we weight each event of a given particle species according to the estimated beam composition. In case of 60A runs, for example, the weights are 0.688 for pions,  0.046 for muons  and 0.266 for electrons.
 
-As shown in Section \ref{ch:beamlineComposition}, we use G4Beamline to estimate the beam composition at WC4, obtaining the composition shown in Table \ref{tab:beamline}.
-The next step to estimate the beamline background in the cross section measurement is propagating pions, muons and electrons to the TPC and evaluate their contribution to the cross section. To do so, we simulate the same number of electrons, muons and pions with the DDMC and we apply the same selection filters on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}.
 
-Pions can travel the length of the LArIAT beamline and interact hadronically in the steel or in the non-instrumented argon upstream to the TPC front face. Or, they could decay in flight between WC4 and the TPC. One of the interaction products can leak into the TPC and be matched with the WC track, contributing to the pool of events used for the cross section calculation. We call this type of particles ``secondaries" from pion events, with a terminology inspired by Geant4. 
-We estimate the number of secondaries using the DDMC pion sample.  The percentage of secondaries is given by the number of matched WC2TPC tracks whose corresponding particle is not flagged as primary by Geant4.  The secondary to pion ratio is 4.9\% in the 60A sample and 4.3\% in the 100A sample.
+It should be noted that pions may  interact hadronically in the steel or in the non-instrumented argon upstream to the TPC front face while travelling the length of between WC4 and the TPC. Or, they could decay in flight between WC4 and the TPC. One of the interaction products can leak into the TPC and be matched with the WC track, contributing to the pool of events used for the cross section calculation. We call this type of particles ``secondaries" from pion events, with a terminology inspired by Geant4.  We estimate the number of secondaries using the DDMC pion sample.  The percentage of secondaries is given by the number of matched WC2TPC tracks whose corresponding particle is not flagged as primary by Geant4.  The secondary to pion ratio is 4.9\% in the 60A sample and 4.3\% in the 100A sample.
+
+
+
 
 
 \begin{table}[]
@@ -235,23 +236,24 @@ Beam Composition  @TPC FF &  88.5\%   & 8.2\%   & 3.3 \%   & 94.0\%	& 5.3\% & 0.
 \label{fig:stag60A}
 \end{figure}
 
-In order to reproduce the closest make up of the beam to data, we weight each event of a given particle species according to the estimated beam composition. In case of 60A runs, for example, the weights are 0.688 for pions,  0.046 for muons  and 0.266 for electrons.
-We produce accordingly the interacting and incident histograms for the events surviving the selection, staggering the contributions for each particle species, as shown in Figure  \ref{fig:stag60A}. From those histograms, we are able to evaluate the relative contribution of  pions and  background to each bin of the interacting and incident histograms separately and obtain the respective corrections for data. We take here the interacting histogram as example, noting that the derivation of the correction for the incident histogram is identical. The number of entries in each bin of the interacting plot (Figure \ref{fig:stag60A} left) is  $N^{\text{TOT}}_{\text{Interacting}} (E_{i})$, equal to the sum of the pions and background in that bin, namely
+We evaluate the beamline background contribution to the cross section by producing the interacting and incident histograms for the events surviving the selection, staggering the contributions for each particle species, as shown in Figure  \ref{fig:stag60A}. From those histograms, we are able to evaluate the contribution of  pions and  beamline backgrounds to each bin of the interacting and incident histograms separately and obtain the relative pion content. The relative pion content in each bin for the interacting and incident histograms represents the correction applied to data. We take here the interacting histogram as example, noting that the derivation of the correction for the incident histogram is identical. The number of entries in each bin of the interacting plot (Figure \ref{fig:stag60A} left) is  $N^{\text{TOT}}_{\text{Int}} (E_{i})$, equal to the sum of the pions and beamline backgrounds in that bin, namely
 
 \begin{equation}
-N^{\text{TOT}}_{\text{Interacting}} (E_{i}) =  N^\pi_{Interacting} (E_{i}) + \underbrace{ N^\mu_{Interacting} (E_{i}) + N^e_{Interacting} (E_{i}) + N^{Secondary}_{Interacting} (E_{i}) }_{B_{Interacting} (E_i)}.
+N^{\text{TOT}}_{\text{Int}} (E_{i}) =  N^\pi_{\text{Int}} (E_{i}) + \underbrace{ N^\mu_{\text{Int}} (E_{i}) + N^e_{\text{Int}} (E_{i}) + N^{Secondary}_{\text{Int}} (E_{i}) }_{B_{\text{Int}} (E_i)}.
 \end{equation}
-Thus, the relative contribution of pions to each bin in MC can be calculated as follows
+Thus, the relative pion content to each bin in MC can be calculated as follows
 \begin{equation}
-C^{\pi MC}_{Interacting} (E_{i}) =  \frac{N^{\pi MC}_{Interacting}}{ N^{TOT MC}_{Interacting} (E_{i}) } =    \frac{N^{TOT MC}_{Interacting} (E_{i}) - B^ {MC}_{Interacting} (E_i)}{ N^{TOT MC}_{Interacting} (E_{i})}.
+C^{\pi MC}_{\text{Int}} (E_{i}) =  \frac{N^{\pi MC}_{\text{Int}}}{ N^{TOT MC}_{\text{Int}} (E_{i}) } =    \frac{N^{TOT MC}_{\text{Int}} (E_{i}) - B^ {MC}_{\text{Int}} (E_i)}{ N^{TOT MC}_{\text{Int}} (E_{i})}.
 \end{equation}
 
 
-In order to evaluate the pion content of each bin in data, we scale the measured bin content by the corresponding  pion contribution found in MC, as follows
+In order to evaluate the pion content of each bin in data, we scale the measured bin by the corresponding relative pion content found in MC, as follows
 \begin{equation}
-N^{\pi Reco Data}_{Interacting} = N^{TOT Data}_{Interacting} (E_{i}) - B^{Data}_{Interacting} (E_i)  =  C^{\pi MC}_{Interacting} (E_{i}) N^{TOT Data}_{Interacting} (E_{i}).
+N^{\pi Reco Data}_{\text{Int}} = N^{TOT Data}_{\text{Int}} (E_{i}) - B^{Data}_{\text{Int}} (E_i)  =  C^{\pi MC}_{\text{Int}} (E_{i}) N^{TOT Data}_{\text{Int}} (E_{i}).
 \end{equation}
 
+The pion content is evaluated separately in the interacting and incident histograms. Their ratio determines a correction to the measured raw cross section. 
+For example, the measured raw  cross section of a sample with enhanced muons content will tend to be lower than the raw cross section of a muon free sample. This is because most of the muons will cross the TPC without stopping, thus contributing almost exclusively to the incident histogram, forcing the pion content to be lower in the incident histogram than in the interacting; thus, the correction will tend to enhance the cross section.
 
 \section{Estimate of Energy Loss before the TPC}\label{ch:eloss}
 The beamline particles travel a path from where their  momentum is measured in the beamline until they are tracked again inside the TPC. In the LArIAT geometry, a particle leaving the WC4 will encounter the materials listed in Table \ref{tab:budget} before being registered again. The energy lost by the particle in this non-instrumented material modifies the particle's kinetic energy and directly affects the cross section measurement, as shown in equation \ref{eq:enFF}.
