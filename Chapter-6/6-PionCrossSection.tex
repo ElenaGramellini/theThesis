@@ -6,27 +6,33 @@
 
 
 \section{Raw Cross Section}\label{ch:PionXSRaw}
-We measure the ($\pi^-$-Ar) cross section as a function of the kinetic energy in the two chosen data sets, the 60A and 100A negative runs. 
-As will be clarified in \ref{ch:PionXSCorrections},  the corrections to the raw cross section depend on the beam conditions and need to proceed independently for the two data sets. Thus, we present here the two measurements separately.
+We measure the ($\pi^-$-Ar) cross section as a function of the kinetic energy in the two chosen data sets, the -60A and -100A negative runs. 
+As we will clarify in Section \ref{ch:PionXSCorrections},  the corrections to the raw cross section depend on the beam conditions and need to be calculated independently for the two data sets. Thus, we present here the measurements on the two datasets separately.
 
 
 As stated in section \ref{ch:XSRaw},  the raw cross section is given by the equation \label{eq:thinTargetXSSolved}
 \begin{equation}
- \sigma_{TOT} (E_i)  = \frac{1}{n \delta X}\frac{N_{Interacting}(E_i)}{N_{Incident}(E_i)}.
+ \sigma_{TOT} (E_i)  = \frac{1}{n \delta X}\frac{N^{\text{TOT}}_{\text{Int}}(E_i)}{N^{\text{TOT}}_{\text{Inc}}(E_i)}.
 \end{equation}
 
-where $N_{Interacting}$  is the number of particles interacting in an argon slice at kinetic energy $E_i$, $N_{Incident}$ is number of particles incident  on the argon slice at   kinetic energy $E_i$,  $n$ is the density of the target centers  and $\delta X$ is the thickness of the argon slice.
+where $N^{\text{TOT}}_{\text{Int}}$  is the number of particles interacting at kinetic energy $E_i$, $N^{\text{TOT}}_{\text{Inc}}$ is number of particles incident  on an argon slice at  kinetic energy $E_i$,  $n$ is the density of the target centers  and $\delta X$ is the thickness of the argon slice.
 
 
-Figure \ref{fig:InteractingRaw} shows the interacting histogram for the 60A dataset on the left and for the 100A dataset on the right. 
-Figure \ref{fig:IncidentRaw} shows the incident histogram for the 60A dataset on the left and for the 100A dataset on the right. 
-Figure \ref{fig:XSRaw} shows the raw cross section for the 60A dataset on the left and for the 100A dataset on the right. On all plots the same color scheme is used: the statistical uncertainty is shown in azure, while the systematic uncertainty is shown in blue. The calculation of the statistical unceratinty is laid out in section \ref{ch:StatUncertaintyXSRaw}, while the systematics on this \ref{ch:SysUncertaintyXSRaw}.
+Figure \ref{fig:InteractingRaw} shows the distribution of  $N^{\text{TOT}}_{\text{Int}}$  as a function of the kinetic energy for the 60A dataset on the left and for the 100A dataset on the right. The data central points are represented by black dots, the statistical uncertainty is shown in black, while the systematic uncertainty is shown in red. Data is displayed over the raw cross section obtained with a MC mixed sample of pions, muon and electrons in the percentage predicted by G4Beamline. The contribution from the simulated pions are shown in blue, the ones from secondaries in red, the ones from muons in yellow and the ones from electrons in gray. 
+The simulated pion's and backgrounds' contributions are stacked; the sum of the integrals from each particle species is normalized to the integral of the data.
+ 
+Figure \ref{fig:IncidentRaw} shows the distribution of  $N^{\text{TOT}}_{\text{Inc}}$   for the 60A dataset on the left and for the 100A dataset on the right. Data is displayed over the MC. The same color scheme and normalization procedure is used for both the interacting and incident histograms. 
+
+
+Figure \ref{fig:XSRaw} shows the raw cross section for the 60A dataset on the left and for the 100A dataset on the right, statistical uncertainty in black and systematic uncertainty in red. The raw data cross section is overlaid to the reconstructed MC cross section (in azure). 
+
+The calculation of the statistical uncertainty for the interacting, incident and cross section measurements is laid out in Section \ref{ch:StatUncertaintyXSRaw}, while the  corresponding systematics  uncertainty on Section \ref{ch:SysUncertaintyXSRaw}.
 
 \begin{figure}[p]
 \centering  
 \includegraphics[width=0.48\textwidth]{Chapter-6/Images/Plots60A_MCData_Int_StatSyst.pdf}
 \includegraphics[width=0.48\textwidth]{Chapter-6/Images/Plots100A_MCData_Int_StatSyst.pdf}
-\caption{Raw number of interacting pion candidates as a function of the reconstructed kinetic energy for the 60A runs (lef) and for the 100A runs (right). The statistical uncertainties are shown in azure, the systematic uncertainties in blue.}
+\caption{Raw number of interacting pion candidates as a function of the reconstructed kinetic energy for the 60A runs (left) and for the 100A runs (right). The statistical uncertainties are shown in black, the systematic uncertainties in red.}
 \label{fig:InteractingRaw}
 \end{figure}
 
@@ -35,7 +41,7 @@ Figure \ref{fig:XSRaw} shows the raw cross section for the 60A dataset on the le
 \centering  
 \includegraphics[width=0.48\textwidth]{Chapter-6/Images/Plots60A_MCData_Inc_StatSyst.pdf}
 \includegraphics[width=0.48\textwidth]{Chapter-6/Images/Plots100A_MCData_Inc_StatSyst.pdf}
-\caption{Raw number of incident pion candidates as a function of the reconstructed kinetic energy for the 60A runs (lef) and for the 100A runs (right). The statistical uncertainties are shown in azure, the systematic uncertainties in blue.}
+\caption{Raw number of incident pion candidates as a function of the reconstructed kinetic energy for the 60A runs (left) and for the 100A runs (right). The statistical uncertainties are shown in black, the systematic uncertainties in red.}
 \label{fig:IncidentRaw}
 \end{figure}
 
@@ -43,33 +49,35 @@ Figure \ref{fig:XSRaw} shows the raw cross section for the 60A dataset on the le
 \centering  
 \includegraphics[width=0.48\textwidth]{Chapter-6/Images/Plots60A_MCData_XS_StatSyst.pdf}
 \includegraphics[width=0.48\textwidth]{Chapter-6/Images/Plots100A_MCData_XS_StatSyst.pdf}
-\caption{Raw ($\pi^-$-Ar) total hadronic cross section for the 60A runs (lef) and for the 100A runs (right). The statistical uncertainties are shown in azure, the systematic uncertainties in blue.}
+\caption{Raw ($\pi^-$-Ar) total hadronic cross section for the 60A runs (left) and for the 100A runs (right). The statistical uncertainties are shown in black, the systematic uncertainties in red. The raw cross section obtained with a MC mixed sample of pions, muon and electrons in the percentage predicted by G4Beamline is shown in azure. }
 \label{fig:XSRaw}
 \end{figure}
 
 
 \subsection{Statistical Uncertainty}\label{ch:StatUncertaintyXSRaw}
-The statistical uncertainty for each kinetic energy bin of the cross section plot is calculated by error propagation from the statistical uncertainty on $N_{Incident}$ and $N_{Interacting}$ correspondent bin.  Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N_{Incident}$ is distributed as a poissonian with mean and variance equal to $N_{Incident}$ in each bin.  
-On the other hand, $N_{Interacting}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The variance for the binomial is given by  
+The statistical uncertainty for each kinetic energy bin of the cross section plot is calculated by error propagation from the statistical uncertainty on $N^{\text{TOT}}_{\text{Inc}}$ and $N^{\text{TOT}}_{\text{Int}}$ correspondent bin.  Since the number of incident hadrons in each energy bin is given by a simple counting, we assume that $N^{\text{TOT}}_{\text{Inc}}$ is distributed as a poissonian with mean and variance equal to $N^{\text{TOT}}_{\text{Inc}}$ in each bin.  
+On the other hand, $N^{\text{TOT}}_{\text{Int}}$ follows a binomial distribution: a particle in a given energy bin might or might not interact.  The variance for the binomial is given by  
 \begin{equation}
-\text{\textsf{Var[$N_{Incident}$]}} = \mathcal{N}P_{Interacting}(1-P_{Interacting});
+\text{\textsf{Var[}} N^{\text{TOT}}_{\text{Int}} \text{\textsf{]}}
+ = \mathcal{N}P_{Interacting}(1-P_{Interacting});
 \label{eq:binVar}
 \end{equation}
 
-since the interaction probability $P_{Interacting}$ is $\frac{ N_{Interacting}}{N_{Incident}}$ and the number of tries $\mathcal{N}$ is $N_{Incident}$, equation \ref{eq:binVar} translates into
+since the interaction probability $P_{Interacting}$ is $\frac{ N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Inc}}}$ and the number of tries $\mathcal{N}$ is $N^{\text{TOT}}_{\text{Inc}}$, equation \ref{eq:binVar} translates into
 \begin{equation}
-\text{\textsf{Var[$N_{Incident}$]}} = N_{Incident}\frac{ N_{Interacting}}{N_{Incident}} (1-\frac{ N_{Interacting}}{N_{Incident}}) = N_{Interacting}(1-\frac{ N_{Interacting}}{N_{Incident}}). 
+\text{\textsf{Var[}} N^{\text{TOT}}_{\text{Int}} \text{\textsf{]}}
+= N^{\text{TOT}}_{\text{Inc}}\frac{ N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Inc}}} (1-\frac{ N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Inc}}}) = N^{\text{TOT}}_{\text{Int}}(1-\frac{ N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Inc}}}). 
 \end{equation}
 
-$N_{Incident}$ and $N_{Interacting}$ are not independent.
+$N^{\text{TOT}}_{\text{Inc}}$ and $N^{\text{TOT}}_{\text{Int}}$ are not independent.
 The statistical uncertainty on the cross section is thus calculated as 
 \begin{equation}
-\delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N_{Interacting}}{N_{Interacting}}+\frac{\delta N_{Incident}}{N_{Incident}}\Big) 
+\delta\sigma_{tot}(E) = \sigma_{tot}(E) \Big(\frac{\delta N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Int}}}+\frac{\delta N^{\text{TOT}}_{\text{Inc}}}{N^{\text{TOT}}_{\text{Inc}}}\Big) 
 \end{equation}
 where:
 \begin{eqnarray}
-\delta N_{Incident} = \sqrt[]{N_{Incident}} \\
-\delta N_{Interacting} = \sqrt[]{N_{Interacting}\Big(1-\frac{ N_{Interacting}}{N_{Incident}}\Big)}.
+\delta N^{\text{TOT}}_{\text{Inc}} = \sqrt[]{N^{\text{TOT}}_{\text{Inc}}} \\
+\delta N^{\text{TOT}}_{\text{Int}} = \sqrt[]{N^{\text{TOT}}_{\text{Int}}\Big(1-\frac{ N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Inc}}}\Big)}.
 \end{eqnarray}
 
 
@@ -79,5 +87,47 @@ The only systematic effect considered in the measurement of the raw cross sectio
 
 
 \section{Corrections to the Raw Cross Section}\label{ch:PionXSCorrections}
-\subsection{Treatment of Systematics}
+As described in section \ref{ch:MCCorrections} as series of corrections are needed to derive the true pion cross section from the raw cross section. 
+These corrections are described in equation \ref{eq:C}, 
 
+\begin{equation}
+   \sigma^{\pi^-}_{TOT}(E_{i})  = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{\pi MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{\pi MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
+ \tag{\ref{eq:C}}
+\end{equation}
+
+
+
+\subsection{Background subtraction}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Chapter-6/Images/Bkg60A_inc_int.pdf}
+\includegraphics[width=\textwidth]{Chapter-6/Images/Bkg100A_inc_int.pdf}
+\caption{.}
+\label{fig:BkgCorr}
+\end{figure}
+
+
+\subsubsection{Treatment of Systematics}
+
+
+\subsection{Efficiency Correction}
+\subsubsection{Treatment of Systematics}
+
+
+\subsection{Final Plots}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{Chapter-6/Images/TheMoneyPlot60A.pdf}
+\includegraphics[width=0.48\textwidth]{Chapter-6/Images/TheMoneyPlot100A.pdf}
+\caption{.}
+\label{fig:FinalXSPion}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{Chapter-6/Images/TheMoneyPlot.pdf}
+\caption{.}
+\label{fig:FinalXSPion}
+\end{figure}
