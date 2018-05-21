@@ -1,4 +1,4 @@
-\chapter{Preparatory Work}\label{ch:samples}
+\chapter{Data and MC preparation for the Cross Section Measurements}\label{ch:samples}
 %{\raggedleft ``\emph{Il dolce non lo mangi mai, ma qualche volta ti rifai.} \par}
 %{\raggedleft \emph{Abbracciami}"\par}
 %{\raggedleft -- Pietro Ciampi, L'amore e' tutto qui, 1971 -- \par}
@@ -11,20 +11,21 @@
 
 
 This chapter describes the preparatory work done on the the data and Monte Carlo samples used for the cross section analyses. 
-This entails the choice of the data set and the production of the information needed to construct the Monte Carlo Simulation~(section \ref{sec:dataSet}),  the construction and use of said Monte Carlo simulation~(section \ref{sec:MCSet}), the study and optimization of the tracking in the TPC for the cross section analyses~(section \ref{sec:TrackingStudies}),  the calibration of the calorimetry response and related energy studies~(section \ref{ch:energyCal}). 
+This entails the choice of the datasets and the production of the information needed to construct the Monte Carlo Simulation~(section \ref{sec:dataSet}),  the construction and use of said Monte Carlo simulation~(section \ref{sec:MCSet}), the study and optimization of the tracking in the TPC for the cross section analyses~(section \ref{sec:TrackingStudies}),  the calibration of the calorimetry response and related energy studies~(section \ref{ch:energyCal}). 
 
 
 
-\section{Cross Section Analyses Data Set}\label{sec:dataSet}
+\section{Cross Section Analyses Data Sets}\label{sec:dataSet}
 We choose LArIAT Run-II as the data period for the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section analyses. 
 Data taking for the this period started on 03/15/2016  and ended on 07/31/2016. 
 Since we are interested in beamline and TPC information, we ask basic requirements on the operational status of the time of fight, wire chambers and TPC to form the good run list for this period, which we informally call ``lovely runs".
 
-The subset of lovely runs  chosen for the  ($\pi^{-}$,Ar) total hadronic cross section analysis includes only the -60A and -100A magnet configurations in negative polarity, even if LArIAT explored several other beamline configurations during Run-II. The -60A and -100A combined data set accounts for approximately 90\% of the total Run-II negative polarity runs.   Since the production of beamline Monte Carlo depends on the wanted beamline configuration, the choice of only two beamline settings limits the need for beamline MC production. 
+The subset of lovely runs  chosen for the  ($\pi^{-}$,Ar) total hadronic cross section analysis includes only the -60A and -100A magnet configurations in negative polarity, even if LArIAT explored several other beamline configurations during Run-II. The -60A and -100A combined data set accounts for approximately 90\% of the total Run-II negative polarity runs.   The  choice of the main two beamline settings limits the need for the production of many MC sets and related corrections, still maintaining a high number of events. 
+%Since the production of beamline Monte Carlo depends on the wanted beamline configuration, the choice of only two beamline settings limits the need for beamline MC production. 
 
 Similarly, the subset of lovely runs chosen  for the (K$^{+}$,Ar)  total hadronic cross section analysis includes only the +60A and +100A magnet configurations in positive polarity. It should be noted that kaons are extremely rare in the +60A sample, thus the data sample for the (K$^{+}$,Ar) cross section after the mass selection is about 90\% +100A runs, as shown in Table \ref{tab:databreakdown}.
 
-For the first measurements in LArIAT that uses both beamline and TPC information, we choose strict requirements on the reconstruction of the WC tracks, the so-called ``Picky Track" sample (see \ref{sec:MWPCfunc}). This choice presents two advantages:  the uncertainty on the momentum reconstruction for the ``Picky Tracks" sample is smaller compared to the ``High Yield" sample, and the comparison with the beamline MC results is straightforward. A possible future update and cross check of these analysis would be the use of the High Yield sample, where the statistics is about three times higher. 
+For the first measurements in LArIAT that uses both beamline and TPC information, we choose strict requirements on the reconstruction of the WC tracks, the so-called ``Picky Track" sample (see Section \ref{sec:MWPCfunc}). This choice presents two advantages:  the uncertainty on the momentum reconstruction for the ``Picky Tracks" sample is smaller compared to the ``High Yield" sample, and the comparison with the beamline MC results is straightforward. A possible future update and cross check of these analysis would be the use of the High Yield sample, where the statistics is about three times higher. 
 
 The breakdown of beamline events as a function of the magnets settings is shown in Table \ref{tab:databreakdown}. 
 The choice of the data sets determines the production of beamline MC and serves as basis for the production of Data Driven MC, as shown in the next sections.
@@ -44,15 +45,15 @@ Data Events after $K$ Mass Selection                &     274              &   2
 
 
 \section{Construction of a Monte Carlo Simulation for LArIAT}\label{sec:MCSet}
-For the simulation of LArIAT events and their particle make up, we use a combination of two MC generators: the G4Beamline Monte Carlo and the Data Driven single particle Monte Carlo (DDMC). We use the G4Beamline MC to simulate the particle transportation in the beamline and calculate the particle composition of the beam just after the fourth Wire Chamber (WC4). In order to simulate the beamline particles after WC4 and in the TPC, we use the DDMC.
+For the simulation of LArIAT events and for the simulation of the datasets' particle make up, we use a combination of two MC generators: the G4Beamline Monte Carlo and the Data Driven single particle Monte Carlo (DDMC). We use the G4Beamline MC to simulate the particle transportation in the beamline and calculate the particle composition of the beam just after the fourth Wire Chamber (WC4). In order to simulate the beamline particles after WC4 and in the TPC, we use the DDMC.
 
 \subsection{G4Beamline}\label{ch:beamlineComposition}
-G4Beamline simulates the beam collision with the LArIAT secondary target, the energy deposited by the particles in the LArIAT beamline detectors, and the action of the LArIAT magnets, effectively accounting for particle transportation through the beam line from the LArIAT target until ``Big Disk", a fictional, void detector located just before the LArIAT cryostat. 
- At the moment of this writing, G4Beamline does not simulated the responses of the beam line detectors. It is possible to interrogate the truth level information of the simulated particles in several points of the geometry. In order to ease the handshake between G4Beamline and the DDMC, we ask for the beam composition just after WC4.
+G4Beamline simulates the beam collision with the LArIAT secondary target, the energy deposited by the particles in the LArIAT beamline detectors, and the action of the LArIAT magnets, effectively accounting for particle transportation through the beamline from the LArIAT target until ``Big Disk", a fictional, void detector located just before the LArIAT cryostat. 
+ At the moment of this writing, G4Beamline does not simulated the responses of the beamline detectors. It is possible to interrogate the truth level information of the simulated particles in several points of the geometry. In order to ease the handshake between G4Beamline and the DDMC, we ask for the beam composition just after WC4.
 Since LArIAT data are taken under different beam conditions, we need to simulate separately the beam composition according to the magnets' settings and the secondary beam intensity with G4Beamline. For the pion cross section analysis the relevant beam conditions are  secondary beam energy of 64 GeV, negative polarity magnet with current of 100 A and 60 A. For the kaon cross section analysis the relevant beam conditions is a secondary beam energy of 64 GeV, positive polarity magnet with current of 100 A. 
 
 \subsubsection{Beam Composition for Negative Pion Cross Section}
-Even if pions are by far the biggest beam component in negative polarity runs, the LArIAT tertiary beam is not a pure pion beam. While useful to discriminate between pions, kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the contamination from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects. The first step of this process is assessing the percentage of electrons and muons in the $\pi/\mu/e$ beamline candidates via the G4Beamline MC. The full treatment of the beamline contamination in the pion cross section calculation is described in section \ref{ch:PionXSBkgSub}.
+Even if pions are by far the biggest beam component in negative polarity runs, the LArIAT tertiary beam is not a pure pion beam. While useful to discriminate between pions, kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the contamination from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects. The first step of this process is assessing the percentage of electrons and muons in the $\pi/\mu/e$ beamline candidates via the G4Beamline MC. 
 Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
 Figure \ref{fig:BeamComposition} shows the momentum predictions from G4Beamline overlaid with data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area normalized to data. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC. We attribute  the difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in the center of the momentum distribution.
 
@@ -77,22 +78,23 @@ G4Electrons &   26.6 \%           &        8.9 \%        \\ \hline
 \label{tab:beamline}
 \end{table}
 
+The estimated beam composition is used as a basis to estimate the background contamination in the  ($\pi^{-}$,Ar) cross section measurement, whose  full treatment is described in section \ref{ch:PionXSBkgSub}.
 
 \subsubsection{Beam Composition for Positive Kaon Cross Section}
 In the positive polarity runs, the tertiary beam composition is mainly pions and protons. The left side of Figure \ref{fig:BeamCompositionPos} shows the  predictions for the momentum spectra for the 100A positive runs  according to  G4Beamline (solid colors) overlaid with data (black points). 
 Since the LArIAT beamline detectors can discriminate between kaons and other particles, we do not rely on the G4Beamline simulation to estimate the beamline contamination in the pool of kaon candidates (as in the case of the pion cross section), but rather we use a data drive approach. 
 The basic idea of this data driven approach is to estimate the bleed over from high and low mass peaks under the kaon peak by fitting the tails of the $\pi/\mu/e$ and proton mass distributions, as shown in Figure \ref{fig:BeamCompositionPos} right side. 
 Since the shape of the tails is unknown, the estimate is done multiple times varying the range and shape for reasonable functions. 
-For example, to estimate the proton content under the kaon peak, we start by fitting the left tail of the proton mass distribution with a gaussian function between 650 $MeV/c^2$ and 750 $MeV/c^2$.% in a reasonable range and with a reasonable function. 
-We extend the fit function under the kaon peak and integrate the between 350-650 $MeV/c^2$. We integrate the mass histogram in the same range and calculate the proton contamination as the ratio between the two integrals. We repeat this procedure for several fit shapes (gaussian, linear and exponential functions are used) and tail ranges. Finally, we calculate the contamination as the weighted average of single estimates, where the weights are calculated to be the $1./\chi^2$ of the tail fits. The procedure is repeated for lighter particles mass peak independently.
+For example, to estimate the proton content under the kaon peak, we start by fitting the left tail of the proton mass distribution with a gaussian function between 650 $MeV/c^2$ and 750 MeV/c$^2$.% in a reasonable range and with a reasonable function. 
+  We extend the fit function under the kaon peak and integrate the extended fit function between 350-650 MeV/c$^2$. We integrate the mass histogram in the same range and calculate the proton contamination as the ratio between the two integrals. We repeat this procedure for several fit shapes (gaussian, linear and exponential functions) and tail ranges. Finally, we calculate the contamination as the weighted average of single estimates, where the weights are calculated to be the $1./\chi^2$ of the tail fits. The procedure is repeated for lighter particles mass peak independently.
 With 12 iterations of this method we find a proton contamination of  0.2 $\pm$ 0.5 \%  and a contamination from the lighter particles of 5 $\pm$ 2 \% .
-
+The estimate of the proton background is currently not used in the kaon cross section analysis, but it is a fundamental step to retrieve the true kaon cross section which will be implemented in the analysis next step.
 
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-5/Images/Beam100Pos.png}
 \includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-5/Images/MassPos.png}
-\caption{$Left.$ Beam composition for the +100A runs after WC4 (no mass selection applied). The solid blue plot represents the simulated pion content, the yellow plot represents the simulated muon content and the grey plot represents the simulated positron content, the red the proton content and the mustard the kaon content. The plots are area normalized to the number of data events, shown in black.$Right.$ Mass distribution for the Run-II positive runs, where the area under the kaon mass peak is highlighted in purple. The area under the extension of a possible fit for the proton tail is highlighted in red. }
+\caption{\emph{Left:} Beam composition for the +100A runs after WC4 (no mass selection applied). The solid colors represent the contributions from the G4Beamline simulated particles: blue plot represents the simulated pion content, the yellow plot represents the simulated muon content and the grey plot represents the simulated positron content, the red the proton content and the mustard the kaon content. The plots are area normalized to the number of data events, shown in black. \emph{Right:} Mass distribution for the Run-II positive runs, where the area under the kaon mass peak is highlighted in purple. The area under the extension of a possible fit for the proton tail is highlighted in red. }
 \label{fig:BeamCompositionPos}
 \end{figure}
 
@@ -101,9 +103,9 @@ With 12 iterations of this method we find a proton contamination of  0.2 $\pm$ 0
 \subsection{Data Driven MC}\label{sec:DDMC}
 The Data Driven single particle Monte Carlo (DDMC) is a single particle gun which simulates the particle transportation from WC4 into the TPC leveraging on the beamline data information. The DDMC uses the data momentum and position at WC4 to derive the event generation: a general sketch of the DDMC workflow is shown in Figure \ref{fig:DDMCSketch}.
 
-When producing a DDMC sample, beam line data from a particular running period and/or running condition are selected first. For example, data for the negative 60A runs and for the negative 100A runs inform the event generation stage of two different DDMC samples. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the  particle position ($X, Y$) at WC4 directly from the data measurement; we calculate the components of the momentum using the beamline measurement of the momentum magnitude in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector, as described in section \ref{sec:MWPCfunc}. The momentum and position of the selected data form a 5-dimensional tupla, which we sample thousands of times through a 5-dimensional hit-or-miss sampling procedure to generate the MC events. This produces MC $P_x, P_y, P_z, X, Y$ distributions  with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the considered variables.  As an example, the results of the DDMC generation compared to data for the kaon +100A sample are shown in figure \ref{fig:DDMCComparison} for the $P_z$, $X$ and $Y$ distributions; as expected, MC and data agree within the statistical uncertainty by construction. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the MC generated events. The particles are free to decay and interact in their path from WC4 to the TPC according to the Geant4 simulation.
+When producing a DDMC sample, beamline data from a particular running period and/or running condition are selected first. For example, data for the negative 60A runs and for the negative 100A runs inform the event generation stage of two different DDMC samples. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the  particle position ($X, Y$) at WC4 directly from the data measurement; we calculate the components of the momentum using the beamline measurement of the momentum magnitude in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector, as described in section \ref{sec:MWPCfunc}. The momentum and position of the selected data form a 5-dimensional tupla, which we sample thousands of times through a 5-dimensional hit-or-miss sampling procedure to generate the MC events. This generates MC events  with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the $P_x, P_y, P_z, X, Y$ variables.  As an example, the results of the DDMC generation compared to data for the kaon +100A sample are shown in figure \ref{fig:DDMCComparison} for the $P_z$, $X$ and $Y$ distributions; as expected, MC and data agree within the statistical uncertainty by construction. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the MC generated events. The particles are free to decay and interact in their path from WC4 to the TPC according to the Geant4 simulation.
 
-Using the DDMC technique ensures that the MC and data particles have very similar momentum, position and angular distributions at WC4 and allows us to use the MC sample in several occasions, for example to calibrate the energy loss upstream of the TPC (see Section \ref{ch:eloss}) or to study the tracking and the calorimetric performance (sections \ref{sec:TrackingStudies} and \ref{ch:energyCal}). A small caveat is in order here: the DDMC is a single particle Monte Carlo, which means that the beam pile-up is not simulated. 
+Using the DDMC technique ensures that the MC and data particles have very similar momentum, position and angular distributions at WC4 and allows us to use the MC sample in several occasions: to calibrate the energy loss upstream of the TPC (see Section \ref{ch:eloss}), to estimate the background contamination to the pion cross section (see Section \ref{ch:PionXSBkgSub}), or to study the tracking and the calorimetric performance (sections \ref{sec:TrackingStudies} and \ref{ch:energyCal}). A small caveat is in order here: the DDMC is a single particle Monte Carlo, which means that the beam pile-up is not simulated. 
 
 
 Six samples are the basis fo the MC used in the pion cross section measurement: three samples of  $\sim$340000 pions, muons and electrons to simulate the negative 60A runs, and three samples of $\sim$340000 pions, muons and electrons for the negative 100A runs.
@@ -137,7 +139,105 @@ The MC used for the kaon cross section analysis is a sample of \textcolor{red}{N
 
 
 
-\subsection{Estimate of Energy Loss before the TPC}\label{ch:eloss}
+
+
+\section{Estimate of Backgrounds in the Pion Cross Section}\label{ch:PionXSBkgSub}
+We use the beamline simulation and the DDMC simulation to estimate the background in the total hadronic pion cross section. Two categories of background exists for the negative pion cross section measurement: the one related to the pion interaction in the chamber, discussed in Section \ref{ch:CaptureAndDecay} and the one related to the beamline contamination, discussed in Section \ref{ch:PionXSBkgSub2}.
+
+\subsection{Background from Pion Capture and Decay}\label{ch:CaptureAndDecay}
+Our goal is to measure the total hadronic cross section for negative pions in argon. Since pion capture can be classified as an electromagnetic process and pion decay is a week process,  capture and decay represent unwanted interactions. We present here a study of capture and decay in Monte Carlo and the solution we adopted to mitigate their occurrence in the data sample. 
+
+For this MC study, we use a sample of  MC pions generated according to the  $-6$0A beam profile with the DDMC (see Section \ref{sec:DDMC}). It is important to notice that capture occurs predominantly at rest, while decay may occur both in flight and at rest. Thus, we can highly mitigate capture and decay at rest by removing pions which would release all their energy in the TPC and stop. This translates into a momentum selection, where we keep only events whose WC momentum is above a certain threshold. 
+Figure \ref{fig:CaptureMom} shows the true momentum distribution for the primary pions\footnote{We use here the Geant4 denomination ``primary" to indicate that the pion considered does not undergo interactions modifying its energy before getting to the TPC. In fact, not every pion shot from wire chamber four will arrive to the TPC as primary,  some will decay or interact before the TPC.}  that arrive to the TPC (pink), that capture (green) or decay (blue) inside the TPC, on a linear and log scale vertical axis. 
+
+
+
+
+In order to choose the selection value for the wire chamber momentum, it is beneficial to estimate the ratio of events which capture or decay that survive the selection in MC as a function of the momentum threshold, and compare it with the survival ratio for all events. This is done in figure \ref{fig:survRatio}. We define the survival ratio simply  as the number of events surviving the true momentum selection divided by the number of events of that category. We calculate the survival ratio separately for the three event categories explained above: total (pink), capture (green) and decay (blue).
+Selecting pions with momentum greater than 420 MeV/c reduces the capture events by ~99\% while maintaining about 80\% of the total data sample. 
+Figure \ref{fig:evtRatio} shows the ratio of events which end their life in capture (green) or decay (blue) over the total number of events as a as a function of the true momentum at wire chamber four. This ratio is slightly dependent on the inelastic cross section implemented in Geant4, as we are able to register a pion capture (or decay) only if it did not interact inelastically in the TPC. We choose a momentum threshold of 420~MeV/c because the percentage of capture events drops below 1\% and the percentage of decays is never above 2\% for momenta greater than 420~MeV/c. After the momentum selection, we evaluate the contribution of capture and decay to be a negligibly small background to the cross section measurement compared to the background related to the beamline.
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=15cm]{Chapter-7/Images/CDAsMomentumFunct.png}
+\caption{True momentum distribution at wire chamber 4 for every simulated pion arriving in the TPC (pink), ending its life in capture (green) or in decay (blue) in the TPC, linear vertical axis on the left, logarithmic on the right. }
+\label{fig:CaptureMom}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=7.5cm]{Chapter-7/Images/CDThreshold.png}
+\caption{Survival ratio as a function of selection threshold on true momentum at wire chamber four for for every simulated pion arriving in the TPC (pink), capture (green) or in decay (blue).   }
+\label{fig:survRatio}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\centering
+\includegraphics[width=7.5cm]{Chapter-7/Images/CDRatio.png}
+\caption{Ratio between the capture (green) and decay (blue) events over the total number of events as a as a function of the true momentum at wire chamber four.}
+\label{fig:evtRatio}
+\end{minipage}
+\end{figure}
+
+
+\subsection{Beamline Background}\label{ch:PionXSBkgSub2}
+As shown in Section \ref{ch:beamlineComposition}, we use G4Beamline to estimate the beam composition at WC4, obtaining the composition shown in Table \ref{tab:beamline}.
+Once we have estimated the beam composition at WC4, the next step to estimate the beamline background in the cross section measurement by propagating pions, muons and electrons to the TPC and evaluate their contribution to the cross section. To do so, we simulate the same number of electrons, muons and pions with the DDMC and we apply the same selection filters on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}.
+
+\begin{table}[]
+\centering
+\begin{tabular}{| l | l | l | l | l | l | l | l | }
+\hline
+ &  \multicolumn{3}{|c|}{Magnet Current -60A} & \multicolumn{3}{|c|}{Magnet Current -100 A}\\
+
+                                                  & MC $\pi^-$   & MC  $ \mu^-$ & MC  $e^-$ & MC  $\pi^-$ & MC  $\mu^-$ & MC  $e^-$  \\
+\hline
+&  &  &  & & &\\  
+Total Initial events                     & 334500  & 334500 & 334500 &344500 &344500& 344500 \\
+After Multiplicity Rejection        & 330668  & 333420 & 198065 &326576 &344208& 201380 \\
+After WC2TPC Selection          & 218239  & 296333 & 91139  &230418 &300228& 98834  \\
+Evts After Shower Rejection     & 208063  & 288914 &  20293 &219882 &293585& 17780  \\
+&  &  &  & & &\\  
+  \hline
+&  &  &  & & &\\  
+Selection Survival Rate           &62.3\% & 86.6\% & 6.1\% & 63.8\%& 85.5\%& 5.2\%\\
+Beam Composition  @WC4      &  68.8\%   &  4.6 \%  & 26.6 \%    & 87.4 \% & 3.7 \%  & 8.9 \% \\ %
+Beam Composition  @TPC FF &  88.5\%   & 8.2\%   & 3.3 \%   & 94.0\%	& 5.3\% & 0.7\%\\
+                                                  &                      &                       &                   &                       &                        &\\  
+\hline
+\end{tabular}
+\caption{MC selection flow per particle species.}
+\label{tab:MCafterCutContaminants}
+\end{table}
+
+
+\begin{figure}[p]
+\centering
+%\includegraphics[width=\textwidth]{Studies/Figures/Staggered60A.png}
+\caption{Left: staggered contributions to the interacting kinetic energy distribution for electron (grey), muons (yellow) and pion (blue) in the 60A simulation sample. Right: staggered contributions to the incident kinetic energy distribution for electron (grey), muons (yellow) and pion (blue) in the 60A simulation sample.  }
+\label{fig:stag60A}
+\end{figure}
+
+In order to reproduce the closest make up of the beam to data, we weight each event of a given particle species according to the estimated beam composition. In case of 60A runs, for example, the weights are 0.688 for pions,  0.046 for muons  and 0.266 for electrons.
+We produce accordingly the interacting and incident histograms for the events surviving the selection, staggering the contributions for each particle species, as shown in Figure  \ref{fig:stag60A}. From those histograms, we are able to evaluate the relative contribution of  pions and  background to each bin of the interacting and incident histograms separately and obtain the respective corrections for data. We take here the interacting histogram as example, noting that the derivation of the correction for the incident histogram is identical. The number of entries in each bin of the interacting plot (Figure \ref{fig:stag60A} left) is  $N^{\text{TOT}}_{\text{Interacting}} (E_{i})$, equal to the sum of the pions and background in that bin, namely
+
+\begin{equation}
+N^{\text{TOT}}_{\text{Interacting}} (E_{i}) =  N^\pi_{Interacting} (E_{i}) + \underbrace{ N^\mu_{Interacting} (E_{i}) + N^e_{Interacting} (E_{i}) + N^{Secondary}_{Interacting} (E_{i}) }_{B_{Interacting} (E_i)}.
+\end{equation}
+Thus, the relative contribution of pions to each bin in MC can be calculated as follows
+\begin{equation}
+C^{\pi MC}_{Interacting} (E_{i}) =  \frac{N^{\pi MC}_{Interacting}}{ N^{TOT MC}_{Interacting} (E_{i}) } =    \frac{N^{TOT MC}_{Interacting} (E_{i}) - B^ {MC}_{Interacting} (E_i)}{ N^{TOT MC}_{Interacting} (E_{i})}.
+\end{equation}
+
+
+In order to evaluate the pion content of each bin in data, we scale the measured bin content by the corresponding  pion contribution found in MC, as follows
+\begin{equation}
+N^{\pi Reco Data}_{Interacting} = N^{TOT Data}_{Interacting} (E_{i}) - B^{Data}_{Interacting} (E_i)  =  C^{\pi MC}_{Interacting} (E_{i}) N^{TOT Data}_{Interacting} (E_{i}).
+\end{equation}
+
+
+\section{Estimate of Energy Loss before the TPC}\label{ch:eloss}
 The beamline particles travel a path from where their  momentum is measured in the beamline until they are tracked again inside the TPC. In the LArIAT geometry, a particle leaving the WC4 will encounter the materials listed in Table \ref{tab:budget} before being registered again. The energy lost by the particle in this non-instrumented material modifies the particle's kinetic energy and directly affects the cross section measurement, as shown in equation \ref{eq:enFF}.
 
 \begin{table}[h!]
@@ -150,16 +250,16 @@ Liquid Argon                           & 1.4                             & 3.20 
 Stainless Steel                        & 7.7                            & 0.23                             \\
 Titanium                                  & 4.5                            & 0.04                             \\ 
 Air                                            &  1.2 $\cdot10^{-3}$  & 89.43                              \\
-Plastic Scintillator                    & 1.03                          & 1.20 (+ 1.30)                             \\ \hline
+Plastic Scintillator                    & 1.03                          & 1.20 (+ 1.30)                 \\ \hline
 \end{tabular}
 \caption{LArIAT material budget from WC4 to the TPC Front Face.}
 \label{tab:budget}
 \end{table}
 
 
-We derive an estimate of the energy loss between the beamline momentum measurement and the TPC ($E_{loss}$) from the pion DDMC sample, since this quantity is not  measurable directly on data. 
+We derive an estimate of the energy loss between the beamline momentum measurement and the TPC ($E_{loss}$) from the pion and kaon DDMC samples, since this quantity is not  measurable directly on data. 
 The $E_{loss}$ distribution for the 60A  and 100A pion sample is shown in figure \ref{fig:ELoss60A}, left and right respectively. A clear double peaked structure is visible, which is due to the particles either missing or hitting the HALO paddle: a schematic rendering of this occurrence is  shown in figure \ref{fig:Halo}. The kinematic at WC4 determines the trajectory of a particle and whether or not it will hit the halo paddle. In figure \ref{fig:PxVsXTrue} , we plot the true  horizontal component of the momentum $P_x$ versus the true $X$ position at WC4 for pions missing the halo paddle (left) and for pions hitting the halo paddle (right) for the 60A MC simulation runs -- analogous plots are obtained with the 100A simulation. These distributions can be separated drawing a line in this position-momentum space. 
-We use a logistic regression  \cite{agresti2013categorical}  as a classifier to find the best separating line, shown in both plots as the red line. We classify as ``hitting the halo paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02* X - 0.4 < 0 $$ and as ``missing the halo  paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02*X - 0.4 > 0, $$ where the coefficients of the line are empirically found by the logistic regression estimation. Overall, this simple methode classifies in the right category (hit or miss) about 86\% of the pion events. In MC, we assign  $E_{loss} = 32 \pm 4 $~MeV for pion events classified as ``hitting the halo paddle"; we assign  $E_{loss} = 24 \pm 3 $~MeV for pion events classified as ``missing the halo paddle". We apply the same classifier on data. A scan of the simulated geometry showed an excess of 3 cm of un-instrumented argon compared with the surveyed detector geometry. We account for this difference by assigning in data $E_{loss} = 24 \pm 6 $~MeV for pion events classified as ``hitting the halo paddle" and  $E_{loss} = 17 \pm 6 $~MeV for pion events classified as ``missing the halo paddle", where the uncertainty is derived as the standard deviation of the double peaked distribution.
+We use a logistic regression  \cite{agresti2013categorical}  as a classifier to find the best separating line, shown in both plots as the red line. We classify as ``hitting the halo paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02* X - 0.4 < 0 $$ and as ``missing the halo  paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02*X - 0.4 > 0, $$ where the coefficients of the line are empirically found by the logistic regression estimation. Overall, this simple method classifies in the right category (hit or miss) about 86\% of the pion events. In MC, we assign  $E_{loss} = 32 \pm 4 $~MeV for pion events classified as ``hitting the halo paddle"; we assign  $E_{loss} = 24 \pm 3 $~MeV for pion events classified as ``missing the halo paddle". We apply the same classifier on data. A scan of the simulated geometry showed an excess of 3 cm of uninstrumented argon compared with the surveyed detector geometry. We account for this difference by assigning in data $E_{loss} = 24 \pm 6 $~MeV for pion events classified as ``hitting the halo paddle" and  $E_{loss} = 17 \pm 6 $~MeV for pion events classified as ``missing the halo paddle", where the uncertainty is derived as the standard deviation of the double peaked distribution.
 
 The summary of the values for used for $E_{Loss}$ for the pion sample is listed in table \ref{tab:Eloss}  with the analogous results for the study on the kaon case.
 
@@ -207,8 +307,6 @@ Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
 \caption{Horizontal component of the true momentum vs the horizontal position at WC4 for MC simulated pions of the 60A runs. The plot on the left shows the distribution for pion that miss the halo paddle and the plot on the right shows the distributions for pions that hit the halo. The form of the classifier is overlaid to both plots (red line).}
 \label{fig:PxVsXTrue}
 \end{figure}
-
-
 
 \section{Tracking Studies}\label{sec:TrackingStudies}
 In this section, we describe three studies. The first is a justification of the selection criteria for the beamline handshake with the TPC information.  We perform this study to boost  the correct identification of the particles in the TPC associated with the beamline information, while maintaining sufficient statistics for the cross section measurement.  The second study is an optimization of the tracking algorithm, with the scope of maximizing the identification of the hadronic interaction point inside the TPC.  These two studies are related, since the optimization of the tracking is performed on TPC tracks which have been matched to the wire chamber track; in turn, the tracking algorithm for TPC tracks determines the number of reconstructed tracks in each event used to try the matching with the wire chamber track. Starting with a sensible tracking reconstruction, we perform the WC2TPC matching optimization first, then the tracking optimization. The WC2TPC match purity and efficiency  are then calculated again with the optimized tracking.
