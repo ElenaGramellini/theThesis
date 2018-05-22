@@ -99,8 +99,7 @@ We propagate this uncertainty  by varying the energy measurement $KE_{j}$ at eac
 %We propagate this uncertainty  by calculating the $N^{\text{TOT}}_{\text{Inc}}$,  $N^{\text{TOT}}_{\text{Int}}$ and cross section plots twice: first assigning $KE_{j} + \delta KE_{j}$ at each kinetic energy sampling, then assigning $KE_{j} - \delta KE_{j}$. The difference between the central value and the maximum and minimum value in each kinetic energy bin gives the systematic uncertainty.
 
 \section{Corrections to the Raw Cross Section}\label{ch:PionXSCorrections}
-As described in section \ref{ch:MCCorrections} as series of corrections are needed to derive the true pion cross section from the raw cross section. 
-The corrected cross section is given in equation \ref{eq:C}, 
+As described in section \ref{ch:MCCorrections}, we need to apply a background correction and an efficiency correction in order to derive the true pion cross section from the raw cross section.  The true cross section is given in equation \ref{eq:C}, 
 
 \begin{equation}
    \sigma^{\pi^-}_{TOT}(E_{i})  = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{\pi MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{\pi MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
@@ -113,7 +112,41 @@ Section \ref{ch:EFFXS} describes the procedure employed to obtain  the efficienc
 
 
 \subsection{Background subtraction}\label{ch:BKGsubXSPuppa}
-We use the procedure described in \ref{ch:PionXSBkgSub2} to evaluate the pion content in the interacting $C^{\pi MC}_{\text{Int}} (E_{i})$  and incident $C^{\pi MC}_{\text{Inc}} (E_{i})$) histograms.
+We use the procedure described in \ref{ch:PionXSBkgSub2} to evaluate the relative pion content in the interacting histogram $C^{\pi MC}_{\text{Int}} (E_{i})$  and the relative pion content in the incident $C^{\pi MC}_{\text{Inc}} (E_{i})$. We start by evaluating the relative pion content assuming the beamline composition simulated by G4Beamline, whose pion, muon and electron percentages per beam condition are reported again in the first line of Table \ref{tab:beamlineSys}. The left side of Figure \ref{fig:CorrectionsBeam} shows the  MC estimated  relative pion content for the interacting histogram as function of kinetic energy for the 60A runs (top) and 100A runs (bottom). The right side of the same figure shows the  MC estimated  relative pion content for the incident histogram as function of kinetic energy for the 60A runs (top) and 100A runs (bottom). In Figure \ref{fig:CorrectionsBeam} the central curves displayed in light blue are obtained using the beamline composition as predicted by G4Beamline: these are the correction curves for the relative pion content applied to data.
+
+So, the question now becomes: how well do we know the beamline composition? In absence of additional data constraints,  we take a 100\% systematic uncertainty on the electron content, reported in lines 3 and 4 of Table \ref{tab:beamlineSys}. The effect of doubling or halving the electron percentage in the beam on the pion relative content is displayed in red in Figure \ref{fig:CorrectionsBeam}. We reserve a slightly different treatment for the muon content. Since G4Beamline tracks only particles which cross all the wire chambers, pion events that decay in flight from WC1 to WC4 are not recorded by G4Beamline. Pion decays in the beamline could be trigger the beamline detectors in data, if the produced muon proceeds in the beamline. Thus, we take the G4Beamline prediction for muons as a lower bound in the composition: the effect of doubling the muon content (line 2 in Table \ref{tab:beamlineSys}) is shown in blue on Figure \ref{fig:CorrectionsBeam}. A future study of data from additional beamline detectors such as the Aerogel Chernkov detectors \cite{detectorPaper} or the muon range stack (see Section \ref{sec:MuRS}) has the potential of a narrowing the systematics uncertainty coming from the beamline compositon.
+
+
+We propagate the uncertainty on the beamline composition  as a systematic uncertainty to the cross section by varying the beam composition for all the cases listed in Table \ref{tab:beamlineSys} and evaluating variation of obtained  data cross sections in each bin. This systematic uncertainty is summed in quadrature with the statistical uncertainty and the systematic uncertainty related to the kinetic energy measurement.
+
+
+\begin{table}[p]
+\centering
+\begin{tabular}{| l | l | l | l | l | l | l | l | }
+\hline
+ &  \multicolumn{3}{|c|}{Magnet Current -60A} & \multicolumn{3}{|c|}{Magnet Current -100 A}\\
+
+                                                  & MC $\pi^-$   & MC  $ \mu^-$ & MC  $e^-$ & MC  $\pi^-$ & MC  $\mu^-$ & MC  $e^-$  \\
+\hline
+Expected Composition          & 68.8	\%&4.6 \%&	26.6 \%&	87.4 \%&	3.7	\%&8.9 \% \\
+Composition 2x Muons          & 64.2	\%&9.2 \%&	26.6 \%&	83.7 \%&	7.4	\%&8.9 \% \\
+Composition 2x Electrons      &42.2	\%&4.6 \%&	53.2 \%&	78.5	\%&  3.7	\%&17.8 \%\\
+Composition 0.5x Electrons   &82.1	\%&4.6 \%&	13.3 \%&	91.9 \%&	3.7	\%&4.4 \% \\
+\hline
+\end{tabular}
+\caption{Beam composition variation for the study of systematics due to beam contamination.}
+\label{tab:beamlineSys}
+\end{table}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{Chapter-6/Images/Bkg60A_inc_int.pdf}
+\includegraphics[width=\textwidth]{Chapter-6/Images/Bkg100A_inc_int.pdf}
+\caption{\emph{Left:} MC estimated relative pion content for interacting histogram a function of kinetic energy for the 60A runs (top) and 100A runs (bottom), statistics uncertainty in azure and systematic uncertainty in blue. \emph{Right:}  MC estimated relative pion content  for incident histogram a function of kinetic energy for the 60A runs (top)  and 100A (bottom), statistics uncertainty in azure and systematic uncertainty in blue.}
+\label{fig:CorrectionsBeam}
+\end{figure}
+
+
 
 \subsection{Efficiency Correction}\label{ch:EFFXS}
 The interaction point for a track used in the total hadronic cross section analysis is defined to be the last point of the WC2TPC matched track which lies inside the fiducial volume. This definition is independent from the topology of the interaction. If the TPC track stops within the fiducial volume, its last point will be the interaction point, no matter what the products of the interaction look like; if the track crosses the boundaries of the fiducial volume, the track will be considered ``through going" and no interaction point will be found.  Given this definition, it is evident that we rely on the tracking algorithm to discern where the interaction occurred in the TPC  and correctly stop the tracking. The tracking algorithm has an intrinsic angle resolution as shown in section \ref{sec:angleRes}, which limits its efficiency, especially in the case of elastic scattering occurring a low angles. 
@@ -217,43 +250,6 @@ Figure \ref{fig:FinalXSPion} show the measurement of the ($\pi^-$-Ar) total hadr
 %We estimate the number of secondaries using the DDMC pion sample.  The percentage of secondaries is given by the number of matched WC2TPC tracks whose corresponding particle is not flagged as primary by Geant4.  The secondary to pion ratio is 4.9\% in the 60A sample and $Y$\% in the 100A sample.
 
 \subsection{Background Contribution to the Cross Section}\label{sec:Correction}
-
-Figures \ref{fig:CorrectionsBeam} show $C^{\pi MC}_{Interacting} (E_{i})$ and $C^{\pi MC}_{Incident} (E_{i})$ as a function of the kinetic energy for the 60A runs and their systematic uncertainty.  We take a 100\% systematic uncertainty on the muon and electron content: we calculate the extreme values of  $C^{\pi MC}_{Interacting} (E_{i})$ and $C^{\pi MC}_{Incident} (E_{i})$ in each bin changing the beam composition for the configurations listed in Table \ref{tab:beamlineSys}.
-
-
-
-\begin{table}[p]
-\centering
-\begin{tabular}{| l | l | l | l | l | l | l | l | }
-\hline
- &  \multicolumn{3}{|c|}{Magnet Current -60A} & \multicolumn{3}{|c|}{Magnet Current -100 A}\\
-
-                                                  & MC $\pi^-$   & MC  $ \mu^-$ & MC  $e^-$ & MC  $\pi^-$ & MC  $\mu^-$ & MC  $e^-$  \\
-\hline
-Composition 2x muons          & 64.2	\%&9.2 \%&	26.6 \%&	83.7 \%&	7.4	\%&8.9 \% \\
-Composition 0.5x muons       &71.1	\%&2.3 \%&	26.6 \%&	89.2 \%&	1.9	\%&8.9 \% \\
-Composition 2x Electrons      &42.2	\%&4.6 \%&	53.2 \%&	78.5	\%&  3.7	\%&17.8 \%\\
-Composition 0.5x Electrons   &82.1	\%&4.6 \%&	13.3 \%&	91.9 \%&	3.7	\%&4.4 \% \\
-\hline
-\end{tabular}
-\caption{Beam composition variation for the study of systematics due to beam contamination.}
-\label{tab:beamlineSys}
-\end{table}
-
-\begin{figure}[p]
-\centering
-%\includegraphics[width=\textwidth]{Studies/Figures/c60A_Multiple.png}
-\caption{Left: relative pion content for interacting histogram a function of kinetic energy for the 60A runs, statistics uncertainty in azure and systematic uncertainty in blue. Right: relative pion content  for incident histogram a function of kinetic energy for the 60A runs, statistics uncertainty in azure and systematic uncertainty in blue.}
-\label{fig:CorrectionsBeam}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{Chapter-6/Images/Bkg60A_inc_int.pdf}
-\includegraphics[width=\textwidth]{Chapter-6/Images/Bkg100A_inc_int.pdf}
-\caption{.}
-\label{fig:BkgCorr}
-\end{figure}
 
 
 
