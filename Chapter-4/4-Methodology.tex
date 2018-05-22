@@ -3,8 +3,8 @@
 {\raggedleft -- Eazy-E, Gimmie that Nutt,  1993 -- \par}
 \vspace{0.5cm}
 
-This chapter describes the general procedure employed to measure a total hadronic differential cross 10.03.p1section in LArIAT.
-Albeit with small differences, both the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section measurements rely on the same procedure described in details in the following sections. We start by selecting the particle of interest using a combination of beamline detectors and TPC information (Section \ref{ch:ParticleSelectionMethod}). We then perform a handshake between the beamline information and the TPC tracking to assure the selection of the right TPC track (Section \ref{ch:WC2TPCMatchMethod}). Finally, we apply the ``thin slice" method and measure the ``raw" hadronic cross section (Section \ref{ch:ThinSliceMethod}). A series of corrections are then evaluated to obtain the ``true" cross section (Section \ref{ch:MCCorrections}). 
+This chapter describes the general procedure employed to measure a total hadronic differential cross section in LArIAT.
+Albeit with small differences, both the  ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section measurements rely on the same procedure. We start by selecting the particle of interest using a combination of beamline detectors and TPC information (Section \ref{ch:ParticleSelectionMethod}). We then perform a handshake between the beamline information and the TPC tracking to assure the selection of the correct TPC track (Section \ref{ch:WC2TPCMatchMethod}). Finally, we apply the ``thin slice" method and measure the ``raw" hadronic cross section (Section \ref{ch:ThinSliceMethod}). A series of corrections are then evaluated to obtain the ``true" cross section (Section \ref{ch:MCCorrections}). 
 
 At the end of this chapter, we show a sanity check of the methodology by applying the thin slice method employing only MC truth information and retrieving the Geant4 tabulated cross section for pions and kaons (Section \ref{ch:procedureTesting}).
 
@@ -34,7 +34,7 @@ The measurement of the ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross sect
 
 
 \subsection{Selection of Beamline Events}\label{ch:beamlineDetectorsData}
-As shown in equation \ref{eq:enFF}, we leverage the beamline particle identification and momentum measurement before entering the TPC as in input to evaluate the kinetic energy for the hadrons used in the  cross sections measurements. Thus, we select the LArIAT data to keep only events whose wire chamber and time of flight information is registered (line 1 in in Table \ref{tab:beamlineDataSelection}). Additionally, we perform a check of the plausibility of the trajectory inside the beamline detectors: given the position of the hits in the four wire chambers, we make sure the particle's trajectory does not cross any impenetrable material such as the collimator and the magnets steel (line 2 in in Table \ref{tab:beamlineDataSelection}).
+As shown in equation \ref{eq:enFF}, we leverage the beamline particle identification and momentum measurement before entering the TPC as an input to evaluate the kinetic energy for the hadrons used in the  cross sections measurements. Thus, we select the LArIAT data to keep only events whose wire chamber and time of flight information is registered (line 1 in in Table \ref{tab:beamlineDataSelection}). Additionally, we perform a check of the plausibility of the trajectory inside the beamline detectors: given the position of the hits in the four wire chambers, we make sure the particle's trajectory does not cross any impenetrable material such as the collimator and the magnets steel (line 2 in in Table \ref{tab:beamlineDataSelection}).
 
 
 \subsection{Particle Identification in the Beamline}
@@ -48,11 +48,11 @@ m_{Beam} = \frac{p_{Beam}}{c}\sqrt{\biggl(\frac{TOF*c}{l}\biggr)^2 -1},
 Figure \ref{fig:mass} shows the mass distribution for the Run II negative polarity runs on the left and positive polarity runs on the right. We perform the classification of events into the different samples as follows:
 
 \begin{itemize}
-\item \underline{$\pi/\mu/e$:}  mass $<$ 350~MeV
+\item \underline{$\pi/\mu/e$:}  mass $<$ 350~MeV/c$^2$
 
-\item \underline{kaon:} 350~MeV $<$ mass $<$ 650~MeV
+\item \underline{kaon:} 350~MeV $<$ mass $<$ 650~MeV/c$^2$
 
-\item \underline{proton:} 650~MeV $<$ mass $<$ 3000~MeV.
+\item \underline{proton:} 650~MeV $<$ mass $<$ 3000~MeV/c$^2$.
 
 \end{itemize}
 
@@ -117,7 +117,7 @@ Once we have selected the pool of hadron candidates and we have identified the T
 Cross section measurements on a thin target have been the bread and butter of nuclear and particle experimentalists since the Geiger-Marsden experiments \cite{Geiger1909}. At their core, this type of experiments consists in shooting a beam of particles with a known flux on a thin slab of material and recording the outgoing flux. 
 
 
-In general, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and that the target is thin compared to the projectile interaction length, so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{\text{Int}}$ and number of incident particles $N_{\text{Inc}}$ on the target determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
+In general even in the case of thin target, the target is not a single particle, but rather a slab of material containing many diffusion centers. The so-called  ``thin target" approximation assumes that the target centers are uniformly distributed in the material and that the target is thin compared to the projectile interaction length, so that no center of interaction sits in front of another. In this approximation, the ratio between the number of particles interacting in the target $N_{\text{Int}}$ and the number of incident particles $N_{\text{Inc}}$ on the target determines the interaction probability $P_{Interacting}$, which is the complementary to one of the survival probability $P_{Survival}$. 
 Equation \ref{eq:thinTargetXS} 
 \begin{equation}
 P_{Survival} = 1- P_{Interacting} = 1 - \frac{N_{\text{Int}}}{N_{\text{Inc}}} = e^{-\sigma_{TOT} n \delta X}
@@ -158,7 +158,7 @@ where $E_{\text{Dep},i}$ is the energy deposited at each argon slice before the 
 If the particle enters a slice, it contributes to $N_{\text{Inc}}( E^{kin})$ in the energy bin corresponding to its kinetic energy in that slice. If it interacts in the slice, it also contributes to $N_{\text{Int}}(E^{kin})$ in the appropriate energy bin. The cross section as a function of kinetic energy, $\sigma_{TOT}( E^{kin})$ will then be proportional to the ratio $\frac{N_{\text{Int}}( E^{kin})}{N_{\text{Inc}}( E^{kin})}$. 
 
 
-Our goal is to measure the total interaction cross section, independently  from the topology of the interaction. Thus, we determine that a hadron interacted simply by requiring that the last point of the WC2TPC matched track lies inside the fiducial volume, whose boundaries are defined in Table \ref{tab:FidVol}. If the TPC track stops within the fiducial volume, its last point will be the interaction point; if the track crosses the boundaries of the fiducial volume, the track will be considered ``through going" and no interaction point will be found. The only slabs considered to fill the  $N_{\text{Inc}})$ and  $N_{\text{Inc}}$ plots are the slabs included the fiducial volume.
+Our goal is to measure the total interaction cross section, independently  from the topology of the interaction. Thus, we determine that a hadron interacted simply by requiring that the last point of the WC2TPC matched track lies inside the fiducial volume, whose boundaries are defined in Table \ref{tab:FidVol}. If the TPC track stops within the fiducial volume, its last point will be the interaction point; if the track crosses the boundaries of the fiducial volume, the track will be considered ``through going" and no interaction point will be found. The only points of the hadronic candidate track considered to fill the  $N_{\text{Inc}})$ and  $N_{\text{Inc}}$ plots are the ones contained in the fiducial volume.
 
 
 
@@ -186,7 +186,7 @@ Equation \ref{eq:thinTargetXSSolved}  is a prescription for measuring the cross 
 \label{eq:thinTargetXSSolved2}
 \end{equation}
 
-Unfortunately, this is not the case. In fact, the selection used to isolate pions in the LArIAT beam allows for the presence of some muons and electrons as background. Also, the LArIAT TPC is not 100\% efficient in determining the interaction point. Therefore we need to apply two corrections evaluated on the MC in order to extract the true cross section from LArIAT data: the background subtraction and the efficiency correction. 
+Unfortunately, this is not the case. In fact, the selection used to isolate pions in the LArIAT beam allows for the presence of some muons and electrons as background, while the kaon selection allows for a small percentage of protons (see Section \ref{ch:beamlineComposition}). Also, the LArIAT TPC is not 100\% efficient in determining the interaction point. Therefore we need to apply two corrections evaluated on the MC in order to extract the true cross section from LArIAT data: the background subtraction and the efficiency correction. 
 Still using the pion case as example, we estimate the pion cross section in each energy bin changing  Equation \ref{eq:thinTargetXSSolved2} into
 \begin{equation}
  \sigma^{\pi^-}_{TOT}(E_{i})  =\frac{1}{n \delta X}\frac{N^{\pi^-}_{ \text{Int}} (E_{i})}{N^{\pi^-}_{ \text{Inc}}(E_{i})} = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i) [ N^{ \text{TOT}}_{ \text{Int}} (E_{i}) - B_{ \text{Int}} (E_i)] }{   \epsilon^{\text{Int}}(E_i) [N^{ \text{TOT}}_{ \text{Inc}}(E_{i}) - B_{ \text{Inc}} (E_i)]},
@@ -196,7 +196,7 @@ Still using the pion case as example, we estimate the pion cross section in each
 
 
  
-where  $N^{\text{TOT}}_{\text{Int}} (E_{i})$ and $N^{\text{TOT}}_{\text{Incident}} (E_{i})$ is the measured content of the interacting and incident histograms for events that pass the event selection, $B_{\text{Int}} (E_i)$ and $B_{\text{Inc}} (E_i)$ represent the contributions from beamline background to the interacting and incident histograms respectively, and  $\epsilon^{\text{Int}}(E_i)$ and  $\epsilon^{\text{Inc}}(E_i)$ are the efficiency corrections for said histograms. 
+where  $N^{\text{TOT}}_{\text{Int}} (E_{i})$ and $N^{\text{TOT}}_{\text{Incident}} (E_{i})$ is the measured content of the interacting and incident histograms for events that pass the event selection, $B_{\text{Int}} (E_i)$ and $B_{\text{Inc}} (E_i)$ represent the contributions from the background to the interacting and incident histograms respectively, and  $\epsilon^{\text{Int}}(E_i)$ and  $\epsilon^{\text{Inc}}(E_i)$ are the efficiency corrections for said histograms. 
 
 As we will show in section \ref{ch:PionXSBkgSub}, the background subtraction for the interacting and incident histograms can be translated into a corresponding relative pion content $C^{\pi MC}_{Interacting} (E_{i})$ and $C^{\pi MC}_{Incident} (E_{i})$ and the cross section re-written as follows
 
@@ -218,9 +218,9 @@ As we will show in section \ref{ch:PionXSBkgSub}, the background subtraction for
 \section{Procedure testing with truth quantities}\label{ch:procedureTesting}
 The ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section implemented in Geant4 can be used as a tool to validate the measurement methodology.  We describe here a closure test done on Monte Carlo to prove that the methodology of slicing the TPC retrieves the underlying cross section distribution implemented in Geant4 within the statistical uncertainty. %under the working assumption of perfect reconstruction.
 
-For pions and kaons in the considered energy range, the Geant4 inelastic model adopted is ``BertiniCascade"; the pion elastic cross sections are modeled on Chips, while the kaon elastic cross sections are modeled on Gheisha and Chips.
+For pions and kaons in the considered energy range, the Geant4 inelastic model adopted is ``BertiniCascade"; the pion elastic cross sections are tabulated from on Chips, while the kaon elastic cross sections are tabulated on Gheisha and Chips.
 
-For the validation test, we fire a sample of pions and a sample of kaons inside the LArIAT TPC active volume using the Data Driven Monte Carlo (see section \ref{sec:DDMC}). We apply  the thin-sliced method using only true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects from possible issues with the methodology.  For each slab of 4.7 mm length along the path of the hadron, we integrate the true energy deposition as given by the Geant4 transportation model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Since the MC is a pure beam of the hadron of interest and truth information is used to retrieve the interaction point, no correction is applied. Doing so, we obtain the true interacting and incident distributions for the considered hadron and we obtain the true MC cross section as a function of the hadron true kinetic energy. 
+For the validation test, we fire a sample of pions and a sample of kaons inside the LArIAT TPC active volume using the Data Driven Monte Carlo (see section \ref{sec:DDMC}). We apply  the thin-sliced method using only true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects from possible issues with the methodology.  For each slab of 4.7 mm length along the path of the hadron, we integrate the true energy deposition as given by the Geant4 transportation model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Since the MC is a pure beam of the hadron of interest and truth information is used to retrieve the interaction point, no correction is applied. Doing so, we obtain the true interacting and incident distributions for the considered hadron, from which we derive  the true MC cross section as a function of the hadron true kinetic energy. 
 
 Figure \ref{fig:TrueMCXS2} shows the total hadronic cross section for argon implemented in Geant4 10.03.p1 (solid lines) overlaid with the true MC cross section as obtained with the sliced TPC method (markers) for pions on the left and kaons on the right; the total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.  The nice agreement with the Geant4 distribution and the cross section  obtained with the sliced TPC method gives us confidence in the  validity of the methodology. 
         

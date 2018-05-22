@@ -6,9 +6,8 @@
 
 
 
-This chapter describes the preparatory work done on the the data and Monte Carlo samples used for the cross section analyses. 
-This entails the choice of the datasets and the production of the information needed to construct the Monte Carlo Simulation~(section \ref{sec:dataSet}),  the construction and use of said Monte Carlo simulation~(section \ref{sec:MCSet}), the study and optimization of the tracking in the TPC for the cross section analyses~(section \ref{sec:TrackingStudies}),  the calibration of the calorimetry response and related energy studies~(section \ref{ch:energyCal}). 
-
+This chapter describes the  work done on the  data and Monte Carlo samples in preparation for the cross section analyses. 
+This entails the choice of the datasets and the production of the information needed to construct the Monte Carlo Simulation~(Section  \ref{sec:dataSet}),  the construction and use of said Monte Carlo simulation~(section \ref{sec:MCSet}), the study of backgrounds for the pion cross section~(Section  \ref{ch:PionXSBkgSub}), the study of the energy loss between WC4 and TPC (Section \ref{ch:eloss}), the study of the tracking in the TPC~(Section  \ref{sec:TrackingStudies}), and study of  the calorimetry response ~(Section  \ref{ch:energyCal}). 
 
 
 \section{Cross Section Analyses Data Sets}\label{sec:dataSet}
@@ -16,7 +15,7 @@ We choose LArIAT Run-II as the data period for the  ($\pi^{-}$,Ar) and (K$^{+}$,
 Data taking for the this period started on 03/15/2016  and ended on 07/31/2016. 
 Since we are interested in beamline and TPC information, we ask basic requirements on the operational status of the time of fight, wire chambers and TPC to form the good run list for this period, which we informally call ``lovely runs".
 
-The subset of lovely runs  chosen for the  ($\pi^{-}$,Ar) total hadronic cross section analysis includes only the -60A and -100A magnet configurations in negative polarity, even if LArIAT explored several other beamline configurations during Run-II. The -60A and -100A combined data set accounts for approximately 90\% of the total Run-II negative polarity runs.   The  choice of the main two beamline settings limits the need for the production of many MC sets and related corrections, still maintaining a high number of events. 
+The subset of lovely runs  chosen for the  ($\pi^{-}$,Ar) total hadronic cross section analysis includes only the -60A and -100A magnet configurations in negative polarity, even if LArIAT explored several other beamline configurations during Run-II. The -60A and -100A combined data set accounts for approximately 90\% of the total Run-II negative polarity runs.   The  choice of the main two beamline settings limits the need for the production of many different MC sets and related corrections, still maintaining a high number of events. 
 %Since the production of beamline Monte Carlo depends on the wanted beamline configuration, the choice of only two beamline settings limits the need for beamline MC production. 
 
 Similarly, the subset of lovely runs chosen  for the (K$^{+}$,Ar)  total hadronic cross section analysis includes only the +60A and +100A magnet configurations in positive polarity. It should be noted that kaons are extremely rare in the +60A sample, thus the data sample for the (K$^{+}$,Ar) cross section after the mass selection is about 90\% +100A runs, as shown in Table \ref{tab:databreakdown}.
@@ -51,7 +50,9 @@ Since LArIAT data are taken under different beam conditions, we need to simulate
 \subsubsection{Beam Composition for Negative Pion Cross Section}
 Even if pions are by far the biggest beam component in negative polarity runs, the LArIAT tertiary beam is not a pure pion beam. While useful to discriminate between pions, kaons, and protons, the beamline detectors are not sensitive enough to  discriminate among the lighter particles in the beam: electrons, muons and pions fall under the same mass hypothesis. Thus, we need to assess the contamination from beamline particles other than pions in the event selections used for the pion cross section analysis and correct for its effects. The first step of this process is assessing the percentage of electrons and muons in the $\pi/\mu/e$ beamline candidates via the G4Beamline MC. 
 Since the beamline composition is a function of the magnet settings, we simulate separately events for magnet current of -60A and -100A. 
-Figure \ref{fig:BeamComposition} shows the momentum predictions from G4Beamline overlaid with data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area normalized to data. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC. We attribute  the difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in the center of the momentum distribution.
+Figure \ref{fig:BeamComposition} shows the momentum predictions from G4Beamline overlaid with data for the 60A runs (left) and for the 100A runs (right). The predictions for electrons, muons and pions have been staggered and their sum is area normalized to data. Albeit not perfect, these plots show a reasonable agreement between the momentum shapes in data and MC.  We attribute the difference in shape to a two approximations performed in the MC. Firstly, G4Beamline lacks the simulation of the WC efficiency which is momentum dependent and leads to enhance the number events in the center of the momentum distribution. Secondly, G4Beamline stop tracking pions and their products if they decay in after WC1; in data, pion decays in flight can still create a tigger if the produced muon travels thought the beamline detectors. In the pion cross section analysis, these differences between data and G4Beamline are accounted for as a systematic uncertainty related to the beam composition (see Section \ref{ch:BKGsubXSPuppa}).
+%We attribute  the difference in shape to the lack of simulation of the WC efficiency in the MC which is momentum dependent and leads to enhance the number events in the center of the momentum distribution.
+
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth,height=\textheight,keepaspectratio]{Chapter-5/Images/Beam60A.png}
@@ -81,10 +82,10 @@ In the positive polarity runs, the tertiary beam composition is mainly pions and
 Since the LArIAT beamline detectors can discriminate between kaons and other particles, we do not rely on the G4Beamline simulation to estimate the beamline contamination in the pool of kaon candidates (as in the case of the pion cross section), but rather we use a data drive approach. 
 The basic idea of this data driven approach is to estimate the bleed over from high and low mass peaks under the kaon peak by fitting the tails of the $\pi/\mu/e$ and proton mass distributions, as shown in Figure \ref{fig:BeamCompositionPos} right side. 
 Since the shape of the tails is unknown, the estimate is done multiple times varying the range and shape for reasonable functions. 
-For example, to estimate the proton content under the kaon peak, we start by fitting the left tail of the proton mass distribution with a gaussian function between 650 $MeV/c^2$ and 750 MeV/c$^2$.% in a reasonable range and with a reasonable function. 
-  We extend the fit function under the kaon peak and integrate the extended fit function between 350-650 MeV/c$^2$. We integrate the mass histogram in the same range and calculate the proton contamination as the ratio between the two integrals. We repeat this procedure for several fit shapes (gaussian, linear and exponential functions) and tail ranges. Finally, we calculate the contamination as the weighted average of single estimates, where the weights are calculated to be the $1./\chi^2$ of the tail fits. The procedure is repeated for lighter particles mass peak independently.
-With 12 iterations of this method we find a proton contamination of  0.2 $\pm$ 0.5 \%  and a contamination from the lighter particles of 5 $\pm$ 2 \% .
-The estimate of the proton background is currently not used in the kaon cross section analysis, but it is a fundamental step to retrieve the true kaon cross section which will be implemented in the analysis next step.
+For example, to estimate the proton content under the kaon peak, we start by fitting the left tail of the proton mass distribution with a gaussian function between 650 $MeV/c^2$ and 750 MeV/c$^2$. % in a reasonable range and with a reasonable function. 
+ We extend the fit function under the kaon peak and integrate the extended fit function between 350-650 MeV/c$^2$. We integrate the mass histogram in the same range and calculate the proton contamination as the ratio between the two integrals. We repeat this procedure for several fit shapes (gaussian, linear and exponential functions) and tail ranges. Finally, we calculate the contamination as the weighted average of single estimates, where the weights are calculated to be the $1./|1-\chi^2|$ of the tail fits. The procedure is repeated for lighter particles mass peak independently.
+With 12 iterations of this method we find a proton contamination of  5.0 $\pm$ 2.0 \%  and a contamination from the lighter particles of 0.2 $\pm$ 0.5 \% .
+The estimate of the proton background is currently not used in the kaon cross section analysis, but it is a fundamental step to retrieve the true kaon cross section which will be implemented in the further development of the analysis.
 
 
 \begin{figure}
@@ -99,14 +100,12 @@ The estimate of the proton background is currently not used in the kaon cross se
 \subsection{Data Driven MC}\label{sec:DDMC}
 The Data Driven single particle Monte Carlo (DDMC) is a single particle gun which simulates the particle transportation from WC4 into the TPC leveraging on the beamline data information. The DDMC uses the data momentum and position at WC4 to derive the event generation: a general sketch of the DDMC workflow is shown in Figure \ref{fig:DDMCSketch}.
 
-When producing a DDMC sample, beamline data from a particular running period and/or running condition are selected first. For example, data for the negative 60A runs and for the negative 100A runs inform the event generation stage of two different DDMC samples. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the  particle position ($X, Y$) at WC4 directly from the data measurement; we calculate the components of the momentum using the beamline measurement of the momentum magnitude in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector, as described in section \ref{sec:MWPCfunc}. The momentum and position of the selected data form a 5-dimensional tupla, which we sample thousands of times through a 5-dimensional hit-or-miss sampling procedure to generate the MC events. This generates MC events  with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the $P_x, P_y, P_z, X, Y$ variables.  As an example, the results of the DDMC generation compared to data for the kaon +100A sample are shown in figure \ref{fig:DDMCComparison} for the $P_z$, $X$ and $Y$ distributions; as expected, MC and data agree within the statistical uncertainty by construction. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the MC generated events. The particles are free to decay and interact in their path from WC4 to the TPC according to the Geant4 simulation.
+When producing a DDMC sample, beamline data from a particular running period and/or running condition are selected first. For example, data for the negative 60A runs and for the negative 100A runs inform the event generation stage of two different DDMC samples. Figure \ref{fig:DDMCQuantities}  schematically shows the data quantities of interest leveraged from data: the momentum ($P_x, P_y, P_z$) and position ($X, Y$) at WC4. For each data event, we obtain the  particle position ($X, Y$) at WC4 directly from the data measurement; we calculate the components of the momentum using the beamline measurement of the momentum magnitude in conjunction with the hits on WC3 and WC4 to determine the direction of the momentum vector, as described in section \ref{sec:MWPCfunc}. The momentum and position of the selected data form a 5-dimensional tupla, which we sample thousands of times through a 5-dimensional hit-or-miss sampling procedure to generate the MC events. This sampling generates MC events  with the same momentum and position distributions as data, with the additional benefit of accounting for the correlations between the $P_x, P_y, P_z, X, Y$ variables.  As an example, the results of the DDMC generation compared to data for the kaon +100A sample are shown in figure \ref{fig:DDMCComparison} for the $P_z$, $X$ and $Y$ distributions; as expected, MC and data agree within the statistical uncertainty by construction. A LArSoft simulation module then launches single particle MC from z = -100 cm (the location of the WC4) using the generated events. The particles are free to decay and interact in their path from WC4 to the TPC according to the Geant4 simulation.
 
-Using the DDMC technique ensures that the MC and data particles have very similar momentum, position and angular distributions at WC4 and allows us to use the MC sample in several occasions: to calibrate the energy loss upstream of the TPC (see Section \ref{ch:eloss}), to estimate the background contamination to the pion cross section (see Section \ref{ch:PionXSBkgSub}), or to study the tracking and the calorimetric performance (sections \ref{sec:TrackingStudies} and \ref{ch:energyCal}). A small caveat is in order here: the DDMC is a single particle Monte Carlo, which means that the beam pile-up is not simulated. 
+Using the DDMC technique ensures that the MC and data particles have very similar momentum, position and angular distributions at WC4 and allows us to use the MC sample in several occasions: to estimate the background contamination to the pion cross section (see Section \ref{ch:PionXSBkgSub}), to calibrate the energy loss upstream of the TPC (see Section \ref{ch:eloss}),  or to study the tracking and the calorimetric performance (sections \ref{sec:TrackingStudies} and \ref{ch:energyCal}). A small caveat is in order here: the DDMC is a single particle Monte Carlo, which means that the beam pile-up is not simulated. 
 
 
-Six samples are the basis fo the MC used in the pion cross section measurement: three samples of  $\sim$340000 pions, muons and electrons to simulate the negative 60A runs, and three samples of $\sim$340000 pions, muons and electrons for the negative 100A runs.
-
-The MC used for the kaon cross section analysis is a sample of \textcolor{red}{NUMBERS}  kaons.
+We generate six samples for the pion cross section measurement: three samples of  $\sim$330000 pions, muons and electrons to simulate the negative 60A runs, and three samples of $\sim$340000 pions, muons and electrons for the negative 100A runs. We generate a sample of  195000  kaons for the kaon cross section analysis.
 
 \begin{figure}[hpbt]
 \centering
@@ -145,7 +144,7 @@ We use the beamline simulation and the DDMC simulation to estimate the backgroun
 Our goal is to measure the total hadronic cross section for negative pions in argon. Since pion capture can be classified as an electromagnetic process and pion decay is a week process,  capture and decay represent unwanted interactions. We present here a study of capture and decay in Monte Carlo and the solution we adopted to mitigate their occurrence in the data sample. 
 
 For this MC study, we use a sample of  MC pions generated according to the  $-6$0A beam profile with the DDMC (see Section \ref{sec:DDMC}). It is important to notice that capture occurs predominantly at rest, while decay may occur both in flight and at rest. Thus, we can highly mitigate capture and decay at rest by removing pions which would release all their energy in the TPC and stop. This translates into a momentum selection, where we keep only events whose WC momentum is above a certain threshold. 
-Figure \ref{fig:CaptureMom} shows the true momentum distribution for the primary pions\footnote{We use here the Geant4 denomination ``primary" to indicate that the pion considered does not undergo interactions modifying its energy before getting to the TPC. In fact, not every pion shot from wire chamber four will arrive to the TPC as primary,  some will decay or interact before the TPC.}  that arrive to the TPC (pink), that capture (green) or decay (blue) inside the TPC, on a linear and log scale vertical axis. 
+Figure \ref{fig:CaptureMom} shows the true momentum distribution for the primary pions\footnote{We use here the Geant4 denomination ``primary" to indicate that the pion considered does not undergo interactions modifying its energy before getting to the TPC. In fact, not every pion shot from wire chamber four will arrive to the TPC as primary,  some will decay or interact before the TPC.}  that arrive to the TPC (pink), that capture (green) or decay (blue) inside the TPC, on a linear scale (left) and on a log scale (right) vertical axis. 
 
 
 
@@ -323,75 +322,10 @@ Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
 \end{figure}
 
 \section{Tracking Studies}\label{sec:TrackingStudies}
-In this section, we describe three studies. The first is a justification of the selection criteria for the beamline handshake with the TPC information.  We perform this study to boost  the correct identification of the particles in the TPC associated with the beamline information, while maintaining sufficient statistics for the cross section measurement.  The second study is an optimization of the tracking algorithm, with the scope of maximizing the identification of the hadronic interaction point inside the TPC.  These two studies are related, since the optimization of the tracking is performed on TPC tracks which have been matched to the wire chamber track; in turn, the tracking algorithm for TPC tracks determines the number of reconstructed tracks in each event used to try the matching with the wire chamber track. Starting with a sensible tracking reconstruction, we perform the WC2TPC matching optimization first, then the tracking optimization. The WC2TPC match purity and efficiency  are then calculated again with the optimized tracking.
 
 The third study is an evaluation of  the angular resolution of the tracking algorithm in data and MC, which is particularly important in the context of the cross section analyses.
 
 
-
-\subsection{Study of WC to TPC Match}\label{ch:WC2TPCMatchOptimization}
-
-Plots I want in this section:
-\begin{enumerate}
-\item WC2TPC MC DeltaX, DeltaY and $\alpha$
-\end{enumerate}
-
-
-Scope of this study is assessing the goodness of the wire chamber to TPC match on Monte Carlo and decide the selection values we will use on data. A word of caution is necessary here. With this study, we want to minimize pathologies associated with the presence of the primary hadron itself, e.g. the incorrect association between the beamline hadron and its decay products inside the TPC.  Assessing the contamination from pile-up\footnote{We remind the reader that the DDMC is a single particle Monte Carlo, where the beam pile up is not simulated.}, albeit related, is beyond the scope of this study.
-
-In MC, we are able to define a correct WC2TPC match using the Geant4 truth information. We are thus able to count how many times the WC tracks is associated with the wrong TPC reconstructed track. 
-
-We define a correct match if the all following conditions are met:
-\begin{itemize}
-\item[-] the length of the true primary Geant4 track in the TPC is greater than 2 cm,  
-\item[-] the length of the reconstructed track length is greater than 2 cm,
-\item[-] the Z position of the first reconstructed point is within 2 cm from the TPC front face
-\item[-] the distance between the reconstructed track and the true entering point is the minimum compared with all the other reconstructed tracks.
-\end{itemize}
-
-In order to count the wrong matches, we consider all the reconstructed tracks whose Z position of the first reconstructed point lies within 2 cm from the TPC front face. Events with true length in TPC $<$ 2 cm are included. 
-Since hadrons are shot 100 cm upstream from the TPC front face, the following two scenarios are possible from a truth standpoint: 
-\begin{itemize}
-\item[[$Ta$]] the primary hadron decays or interact strongly before getting to the TPC,
-\item[[$Tb$]] the primary hadron enters the TPC.
-\end{itemize}
-
-As described in Section \ref{ch:WC2TPCMatchMethod}, we define a WC2TPC match according to the relative position of the WC and TPC track parametrized with $\Delta R$ and the angle between them, parametrized with $\alpha$. Once we choose the selection values $r_{T}$ and $\alpha_{T}$ to determine a reconstructed WC2TPC match, the following five scenarios are possible in the truth to reconstruction interplay : 
-\begin{itemize}
-\item[1)] only the correct track is matched
-\item[2)] only one wrong track is matched 
-\item[3)] the correct track and one (or more) wrong tracks are matched
-\item[4)] multiple wrong tracks  matched.
-\item[5)] no reconstructed tracks are matched
-\end{itemize}
-
-Since we keep only events with one and only one match, we discard cases 3), 4) and 5) from the events used in the cross section measurement. For each set of $r_{T}$ and $\alpha_{T}$ selection value, we define purity and efficiency of the selection as follows:
-\begin{equation}
-\text{Efficiency} = \frac{\text{Number of events correctly matched}}{\text{ Number of events with primary in TPC}},
-\end{equation}
-
-\begin{equation}
-\text{Purity} = \frac{\text{Number of events correctly matched}}{\text{Total number of matched events}}.
-\end{equation}
-
-Figure \ref{fig:EffPurityK} shows the efficiency (left) and purity (right) for WC2TPC match as a function of the radius, $r_{T}$, and angle, $\alpha_{T}$, selection value. It is apparent how both efficiency and purity are fairly flat as a function of the radius selection value at a given angle. This is not surprising. Since we are studying a single particle gun Monte Carlo sample, the wrong matches can occur only for mis-tracking of the primary or for association with decay products;  decay products will tend to be produced at large angles compared to the primary, but could be fairly close to the in $x$ and $y$ projection of the primary. The radius cut would play a key role in removing pile up events. 
-
-For LArIAT cross section measurements, we generally prefer purity over efficiency, since a sample of particles of a pure species will lead to a better measurement. Obviously, purity should be balanced with a sensible efficiency to avoid rejecting the whole sample. 
-
-We choose $(\alpha_{T}$, $r_{T}) = (8 \text{ deg}, 4 \text{ cm} )$ and get a MC 85\% efficiency and 98\% purity for the kaon sample and a MC 95\% efficiency and 90\% purity for the pion sample.
-
-
-\begin{figure}[hpbt]
-\centering
-\includegraphics[width=15cm]{Chapter-5/Images/KEffPurity.png}
-\caption{Efficiency (left) and purity (right) for WC2TPC match as a function of the radius and angle selections for the kaon sample.}
-\label{fig:EffPurityK}
-\end{figure}
-
-
-
-
-\subsection{Tracking Optimization}\label{ch:TrackOptimization}
 
 
 \subsection{Angular Resolution}\label{sec:angleRes}
@@ -480,55 +414,11 @@ A small $0.5 \text{ deg}$ systematic shift between the mean of the data and MC a
 The ability to measure the kinetic energy of hadrons in the TPC is fundamental for the cross section analyses. 
 Thus, we describe first how we calibrate the TPC calorimetric response (Section \ref{ch:energyCalibration}) and how we measure the kinetic energy of the hadrons in the TPC (Section \ref{ch:kinEn}).
 
-\subsection{Energy Calibration}\label{ch:energyCalibration}
-Scope of the energy calibration is to identify the factors which convert the charge collected (dQ) to energy deposited in the chamber (dE). As described in section \ref{sec:SignalProc}, this is a multi-step procedure. In LArIAT, we first correct the raw charge by the electronic noise on the considered wire \cite{LArIATdqdx}, then by the electron lifetime \cite{LArIATLifeTime},  and then by the recombination using the ArgoNeut recombination values. Lastly, we apply overall calibration of the energy, i.e. we determine the ``calorimetry constants" using the procedure described in this section.
-
-
-We independently determine  the calorimetry constants for Data and Monte Carlo in the LArIAT Run-II Data samples using  a parametrization of the stopping power (a.k.a. energy deposited per unit length, $dE/dX$)  as a function of momentum. This is done by comparing the stopping power measured on reconstructed quantities against the Bethe-Bloch theoretical prediction for various particle species (see Equation \ref{eq:BB}).  We obtain the theoretical expectation for the $dE/dX$ most probable value of pions ($\pi$), muons ($\mu$), kaons ($K$), and protons ($p$) in the momentum range most relevant for LArIAT (Figure \ref{fig:PDGEnergyLossArgon}) using the tables provided by the Particle Data Group \cite{Patrignani:2016xqp} for liquid argon \cite{PDG-Argon}.
-
-The basic idea of this calibration technique is to utilize a sample of beamline events with known particle species and momentum to measure the $dE/dX$ of the corresponding tracks in the TPC. In particular, we decided to use positive pions as calibration sample and samples from all the other particle species as cross check. Once the $dE/dX$ of the positive pion sample  has been measured at various momenta, we tune to calorimetry constants within the reconstruction software to align the measured values to match the theoretical ones found in Figure \ref{fig:PDGEnergyLossArgon}. 
-
-In data, we start by selecting a sample of beamline positive pion beamline candidates without any restriction on their measured momentum\footnote{it should be noted that some muon and position contamination is present in the $\pi^+$ sample}.
-We then apply the WC2TPC match and subtract the energy loss upstream to the TPC front face, determining the momentum at the TPC front face. For each surviving pion candidate,  we measure the $dE/dx$ at each of the first 12 spacepoints associated the 3D reconstructed track, corresponding to a $\sim$ 5 cm portion. These $dE/dX$ measurements are then put into a histogram that corresponds to measured momentum of the track. The $dE/dX$ histograms are sampled every 50 MeV/c in momentum (e.g. 150~MeV/c $< P <$ 200~MeV/c, 200~MeV/c $< P <$ 250/c~MeV, etc...).   This process of selecting, sampling, and recording the $dE/dX$ for various momentum bins is repeated over the entire sample of events, allowing us to collect sufficient statistic in most of the momentum bins between 150~MeV/c and 1100~MeV/c. On average, pions and muons only lose $\sim$10 MeV in this 5~cm section of the track and protons lose $\sim$20 MeV. Thus choosing 50 MeV/c size bins for our histograms covers the energy spread within those bins due to energy loss from ionization for all the particle species identifiable in the beamline. 
-Each 50 MeV/c momentum binned $dE/dX$ histogram is now fit with a simple Landau function. The most probable value (MPV) and the associated error on the MPV from the fit are extracted and plotted against the theoretical prediction Figure \ref{fig:PDGEnergyLossArgon}. Depending on the outcome of the data-prediction comparison, we modify the calorimetry constants and we repeat the procedure until a qualitative agreement is achieved.  We perform this  tuning for the collection and induction plane separately. 
-As a cross check to the calorimetry constants determined using the positive pions, we lock the constants and  plot the $dE/dx$ versus momentum distribution of all the other particle species identifiable in the beamline data ($\pi/\mu/e$, K , p, in both polarities) against the corresponding Beth-Bloch prediction. The agreement between data from the other particle species and the predictions is the expected result of this cross check.
-The results of the tuning and cross check for Run-II data on the collection plane is shown in Figure \ref{fig:BBandData}  negative polarity data on top, positive polarity data on the bottom.
-
-In MC, we simulate the corresponding positive pion sample with the DDMC (see section \ref{sec:DDMC}) and follow the same steps as in data. More details on the calorimetry tuning can be found in \cite{LArIATCalo}.
-
-\textcolor{red}{Add agreement between data and MC for dedx for pions}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.50\textwidth]{Chapter-5/Images/dEdXvsMomentumTemplate.png}
-\caption{Stopping power for pions, muons, kaons, and protons in liquid argon over the momentum range most relvant for LArIAT according to the Beth-Bloch equation. The solid lines represent the prediction for the mean energy $dE/dX$, while the dashed lines are the predictions for the MPV.}
-\label{fig:PDGEnergyLossArgon}
-\end{figure}
-
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.50\textwidth]{Chapter-5/Images/RunIINegTotaldEdXvsMomentum.png}
-\includegraphics[width=0.50\textwidth]{Chapter-5/Images/RunIIPosTotaldEdXvsMomentum.png}
-\caption{Stopping power versus Momentum for Run-II negative (top) and positive (bottom) polarity data. We achieve the agreement between the Bethe-Bloch predictions and the distribution obtained with of the positive pions (top plot, red dots) by tuning the calorimetry constants. Once the calorimetry constants are locked in, the agreement between the other particle species and the Bethe-Bloch predictions follows naturally.}
-\label{fig:BBandData}
-\end{figure}
-
-
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[width=0.50\textwidth]{images/CalibrationExample.png}
-%\caption{Illustration of the calibration technique. Here we depict a 325 MeV wire chamber track (shown in green) which enters the TPC (taking into account the energy loss from the upstream material) and we sample the first 12 spacepoints (shown in teal) to extract the dE/dX distribution which is fit with a Landau.}
-%\label{fig:CalibrationExample}
-%\end{figure}
-
-
-
 
 
 
 \subsection{Kinetic Energy Measurement}\label{ch:kinEn}
-The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill. In this section, we define the measurement on the kinetic energy and  determine the related uncertainty. We will propagate this uncertainty into the cross section measurement, as discussed in Section \ref{ch:SysUncertaintyXSRaw} for the pion cross section and in Section \ref{ch:SysUncertaintyXSRawKaon} for the kaon cross section.
+The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill. In this section, we define the measurement on the kinetic energy and  determine the related uncertainty. We will propagate this uncertainty into the cross section measurement, as discussed in Section \ref{ch:SysUncertaintyXSRaw} for the pion cross section and in Section \ref{ch:KaonXSRawUnc} for the kaon cross section.
 
 The kinetic energy of a hadron at the $j^{\text{th}}$ slice of argon in the TPC is given by
 
