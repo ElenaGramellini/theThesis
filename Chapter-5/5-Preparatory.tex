@@ -149,9 +149,9 @@ Figure \ref{fig:CaptureMom} shows the true momentum distribution for the primary
 
 
 
-In order to choose the selection value for the wire chamber momentum, it is beneficial to estimate the ratio of events which capture or decay that survive the selection in MC as a function of the momentum threshold, and compare it with the survival ratio for all events. This is done in figure \ref{fig:survRatio}. We define the survival ratio simply  as the number of events surviving the true momentum selection divided by the number of events of that category. We calculate the survival ratio separately for the three event categories explained above: total (pink), capture (green) and decay (blue).
-Selecting pions with momentum greater than 420 MeV/c reduces the capture events by ~99\% while maintaining about 80\% of the total data sample. 
-Figure \ref{fig:evtRatio} shows the ratio of events which end their life in capture (green) or decay (blue) over the total number of events as a as a function of the true momentum at wire chamber four. This ratio is slightly dependent on the inelastic cross section implemented in Geant4, as we are able to register a pion capture (or decay) only if it did not interact inelastically in the TPC. We choose a momentum threshold of 420~MeV/c because the percentage of capture events drops below 1\% and the percentage of decays is never above 2\% for momenta greater than 420~MeV/c. After the momentum selection, we evaluate the contribution of capture and decay to be a negligibly small background to the cross section measurement compared to the background related to the beamline.
+In order to choose the selection value for the wire chamber momentum, it is beneficial to estimate the ratio of events which capture or decay that survive the selection in MC as a function of the momentum threshold, and compare it with the survival ratio for all the 60A events. This is done in figure \ref{fig:survRatio}. We define the survival ratio simply  as the number of events surviving the true momentum selection divided by the number of events of that category. We calculate the survival ratio separately for the three event categories explained above: total (pink), capture (green) and decay (blue).
+Selecting pions with momentum greater than 420 MeV/c reduces the capture events by ~99\% while maintaining about 80\% of the 60A data sample and almost the entire 100A sample. 
+Figure \ref{fig:evtRatio} shows the ratio of events which end their life in capture (green) or decay (blue) over the total number of events as a as a function of the true momentum at wire chamber four. This ratio is slightly dependent on the inelastic cross section implemented in Geant4, as we are able to register a pion capture (or decay) only if it did not interact inelastically in the TPC. We choose a momentum threshold of 420~MeV/c because the percentage of capture events drops below 1\% and the percentage of decays is never above 2\% for momenta greater than 420~MeV/c. After the momentum selection, we evaluate the contribution of capture and decay to be a negligibly small background to the cross section measurement compared to the background related to the beamline which we will address in the next section.
 
 \begin{figure}[]
 \centering
@@ -188,7 +188,7 @@ We define beamline background every TPC track matched to the WC track which is n
 \end{itemize}
 
 The first step to quantify the effect of the beamline background on the pion cross section is to estimate what percentage of events used in the cross section calculation is not a primary pion.  We start by noting that the last type of background, the ``matched pile up" events, is a negligible fraction, because of the definition of the WC2TPC match: we deem the probability of a single match with a halo particle in the absence of a beamline particle\footnote{ Events with multiple WC2TPC matches are always rejected.} negligibly small. %\textcolor{red}{SHOW VTX distribution in WC2TPC match}
-As shown in Section \ref{ch:beamlineComposition}, we use G4Beamline to estimate the percentage of pions, muons and electrons at WC4, obtaining the composition shown in Table \ref{tab:beamline}. The next step is to simulate those pions, muons and electrons from WC4 to the TPC with the DDMC and evaluate their contribution to the cross section. To do so, we start by simulating the same number of electrons, muons and pions with the DDMC and we apply the same selection filters on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}. In order to reproduce the closest make up of the beam to data, we weight each event of a given particle species according to the estimated beam composition. In case of 60A runs, for example, the weights are 0.688 for pions,  0.046 for muons  and 0.266 for electrons.
+As shown in Section \ref{ch:beamlineComposition}, we use G4Beamline to estimate the percentage of pions, muons and electrons at WC4, obtaining the composition shown in Table \ref{tab:beamline}. The next step is to simulate those pions, muons and electrons from WC4 to the TPC with the DDMC and evaluate their contribution to the cross section. To do so, we start by simulating the same number of electrons, muons and pions with the DDMC and we apply the same selection chain (i.e. track multiplicity rejection, WC2TPC acceptance and shower rejection) on the three samples. The number of events per particle species surviving this selection is shown on table \ref{tab:MCafterCutContaminants}. In order to reproduce the closest make up of the beam to data, we weight each event of a given particle species according to the estimated beam composition. In case of 60A runs, for example, the weights are 0.688 for pions,  0.046 for muons  and 0.266 for electrons.
 
 
 It should be noted that pions may  interact hadronically in the steel or in the non-instrumented argon upstream to the TPC front face while travelling the length of between WC4 and the TPC. Or, they could decay in flight between WC4 and the TPC. One of the interaction products can leak into the TPC and be matched with the WC track, contributing to the pool of events used for the cross section calculation. We call this type of particles ``secondaries" from pion events, with a terminology inspired by Geant4.  We estimate the number of secondaries using the DDMC pion sample.  The percentage of secondaries is given by the number of matched WC2TPC tracks whose corresponding particle is not flagged as primary by Geant4.  The secondary to pion ratio is 4.9\% in the 60A sample and 4.3\% in the 100A sample.
@@ -271,8 +271,10 @@ Plastic Scintillator                    & 1.03                          & 1.20 (
 
 
 We derive an estimate of the energy loss between the beamline momentum measurement and the TPC ($E_{loss}$) from the pion and kaon DDMC samples, since this quantity is not  measurable directly on data. 
-The $E_{loss}$ distribution for the 60A  and 100A pion sample is shown in figure \ref{fig:ELoss60A}, left and right respectively. A clear double peaked structure is visible, which is due to the particles either missing or hitting the HALO paddle: a schematic rendering of this occurrence is  shown in figure \ref{fig:Halo}. The kinematic at WC4 determines the trajectory of a particle and whether or not it will hit the halo paddle. In figure \ref{fig:PxVsXTrue} , we plot the true  horizontal component of the momentum $P_x$ versus the true $X$ position at WC4 for pions missing the halo paddle (left) and for pions hitting the halo paddle (right) for the 60A MC simulation runs -- analogous plots are obtained with the 100A simulation. These distributions can be separated drawing a line in this position-momentum space. 
-We use a logistic regression  \cite{agresti2013categorical}  as a classifier to find the best separating line, shown in both plots as the red line. We classify as ``hitting the halo paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02* X - 0.4 < 0 $$ and as ``missing the halo  paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02*X - 0.4 > 0, $$ where the coefficients of the line are empirically found by the logistic regression estimation. Overall, this simple method classifies in the right category (hit or miss) about 86\% of the pion events. In MC, we assign  $E_{loss} = 32 \pm 4 $~MeV for pion events classified as ``hitting the halo paddle"; we assign  $E_{loss} = 24 \pm 3 $~MeV for pion events classified as ``missing the halo paddle". We apply the same classifier on data. A scan of the simulated geometry showed an excess of 3 cm of uninstrumented argon compared with the surveyed detector geometry. We account for this difference by assigning in data $E_{loss} = 24 \pm 6 $~MeV for pion events classified as ``hitting the halo paddle" and  $E_{loss} = 17 \pm 6 $~MeV for pion events classified as ``missing the halo paddle", where the uncertainty is derived as the standard deviation of the double peaked distribution.
+The $E_{loss}$ distribution for the 60A  and 100A pion sample is shown in figure \ref{fig:ELoss60A}, left and right respectively. The $E_{loss}$ distribution for the  whole kaon sample is shown in figure \ref{fig:ELossKaons}. A clear double peaked structure is visible, which is due to the particles either missing or hitting the HALO paddle: a schematic rendering of this occurrence is  shown in figure \ref{fig:Halo}. The kinematic at WC4 determines the trajectory of a particle and whether or not it will hit the halo paddle. In figure \ref{fig:PxVsXTrue} , we plot the true  horizontal component of the momentum $P_x$ versus the true $X$ position at WC4 for pions missing the halo paddle (left) and for pions hitting the halo paddle (right) for the -60A MC simulation runs -- analogous plots are obtained with the -100A pion simulation and with the kaon simulation. These distributions can be separated drawing a line in this position-momentum space. 
+We use a logistic regression  \cite{agresti2013categorical}  as a classifier to find the best separating line, shown in both plots as the red line. We classify as ``hitting the halo paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02* X - 0.4 < 0 $$ and as ``missing the halo  paddle" all pions whose $P_x$ and $X$ are such that $$P_x +0.02*X - 0.4 > 0, $$ where the coefficients of the line are empirically found by the logistic regression estimation. Overall, this simple method classifies in the right category (hit or miss) about 86\% of the pion events. In MC, we assign  $E_{loss} = 32 \pm 4 $~MeV for pion events classified as ``hitting the halo paddle"; we assign  $E_{loss} = 24 \pm 3 $~MeV for pion events classified as ``missing the halo paddle". We apply the same classifier on data. 
+
+A scan of the simulated geometry showed an excess of 3 cm of uninstrumented argon compared with the surveyed detector geometry. We account for this difference by assigning in data $E_{loss} = 24 \pm 6 $~MeV for pion events classified as ``hitting the halo paddle" and  $E_{loss} = 17 \pm 6 $~MeV for pion events classified as ``missing the halo paddle", where the uncertainty is derived as the standard deviation of the double peaked distribution.
 
 The summary of the values for used for $E_{Loss}$ for the pion sample is listed in table \ref{tab:Eloss}  with the analogous results for the study on the kaon case.
 
@@ -284,8 +286,8 @@ The summary of the values for used for $E_{Loss}$ for the pion sample is listed 
                           & Hitting Halo          & Missing Halo     \\ \hline
 Pion  MC           &  $32 \pm 4 $         &    $24 \pm 3$     \\ \hline
 Pion Data          &  $25 \pm 6$          &    $17 \pm 6 $    \\ \hline
-Kaon  MC          &  $37 \pm 5 $        &     $31 \pm 4 $    \\ \hline
-Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
+Kaon  MC          &  $38 \pm 6 $        &     $31 \pm 5 $    \\ \hline
+Kaon Data         &  $26 \pm 7 $        &     $22 \pm 7 $    \\ \hline
 \end{tabular}
 \caption{Energy loss for pions and kaons.}
 \label{tab:Eloss}
@@ -307,6 +309,16 @@ Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
 
 \begin{figure}[hbpt]
 \centering
+\includegraphics[width=0.45\textwidth]{Chapter-5/Images/ELossKaons.pdf}
+\caption{True energy loss between WC4 and the TPC front face according to the MC simulation of positive kaons in the 60A and 100A combined sample. The distribution for the whole data sample is shown in blue, the distribution for the kaons missing the halo is shown in red, and the distribution for the kaons hitting the halo is shown in green.  }
+\label{fig:ELossKaons}
+\end{figure}
+
+
+
+
+\begin{figure}[hbpt]
+\centering
 \includegraphics[scale=0.5]{Chapter-5/Images/Halo.png}
 \caption{Schematic rendering of the particle path between WC4 and the TPC front face. The paddle with the hollow central circle represents the Halo paddle. We illustrate two possible trajectories: in black, a trajectory that miss the paddle and goes through the hole in the Halo, in blue a trajectory that hits the Halo paddle and goes through the scintillation material.}
 \label{fig:Halo}
@@ -322,10 +334,8 @@ Kaon Data         &  $26 \pm 6 $        &     $22 \pm 6 $    \\ \hline
 \end{figure}
 
 \section{Tracking Studies}\label{sec:TrackingStudies}
-
-The third study is an evaluation of  the angular resolution of the tracking algorithm in data and MC, which is particularly important in the context of the cross section analyses.
-
-
+The tracking of hadrons in the TPC determines both the beamline to TPC handshake and the identification of the interaction point within the TPC. Thus, it plays a fundamental role in the cross section measurements. We performed several studies geared towards the optimization of the package for tracking in the TPC. In particular, we studied a suitable set of parameters for the WC2TPC match and we optimized the clustering algorithm to maximize the efficiency of finding the interaction point on MC. Given the technical nature of these studies, we report them in Appendix \ref{ch:AppendixTrack}. 
+We report here the evaluation of  the angular resolution of the tracking algorithm in data and MC, due to its implication on the physics measurement.
 
 
 \subsection{Angular Resolution}\label{sec:angleRes}
