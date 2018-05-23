@@ -340,34 +340,41 @@ We report here the evaluation of  the angular resolution of the tracking algorit
 
 \subsection{Angular Resolution}\label{sec:angleRes}
 Scope of this study is to understand and compare the tracking performances and angular resolution of the TPC tracking on data and MC. 
-We use the angular resolution of the tracking to determine  the value of smallest angle that we can reconstruct with a non-zero efficiency, effectively determining a selection on the angular distribution of the cross section measurement due to the tracking performance. This study is performed on the pion sample, but its results are extrapolated to the kaon case.
+We use the angular resolution of the tracking to determine  the value of smallest angle that we can reconstruct with a non-zero efficiency, effectively determining a selection on the angular distribution of the cross section measurement due to the tracking performance. %\textcolor{red}{This study is performed on the pion sample, but its results are extrapolated to the kaon case.}
 
 We start by selecting all the WC2TPC matched tracks used for the cross section analysis.  These tracks can contain from a minimum of 3 3D-space points to a maximum of 240  3D-space points.  We fit a line to all the 3D-space points associated with the track. 
 For each track we calculate the average distance between each point in space and the fit line as follows 
 \begin{equation} 
 \bar d = \frac{\sum^N_i d_i}{N},
 \end{equation} 
-where $N$ is the number of 3D-space points of the track and $d_i$ is the distance of the $i$-th space point to the line fit. Several tests to compare the goodness of fit between data and MC have been considered. We decided to use $\bar d$ for its straightforward interpretation. The $\bar d$ distribution for data and MC is shown in Figure \ref{fig:Chi2AllPts} and shows a relatively good agreement between data and MC.
+where $N$ is the number of 3D-space points of the track and $d_i$ is the distance of the $i$-th space point to the line fit. Several tests to compare the goodness of fit between data and MC have been considered. We decided to use $\bar d$ for its straightforward interpretation. The $\bar d$ distribution for data and MC is shown in Figure \ref{fig:Chi2AllPts} for pions and in Figure \ref{fig:Chi2AllPtsK} for kaons and shows a relatively good agreement between data and MC.
 
 A visual representation of the procedure used to evaluate the angular resolution is shown in Figure \ref{fig:AngResProcedure}. 
-For each track, we order the space points according to their Z position along the positive beam direction (panel a) and we split them in two sets: the first set contains all the points belonging to the first half of the track and the second set contains all the points belonging the second half of the track. We remove the last four points in the first set and the first four points in the second set, so to have a gap in the middle of the original track (panel b). We fit the first and the second set of points with two lines  (panel c). We then calculate the angle between the fit of the first and second half $\alpha$ (panel d). The angle $\alpha$ determines the spatial resolution of the tracking. The distributions for data and MC for $\alpha$ are given in Figure \ref{fig:trackingResolution}. The mean of the data and MC angular resolution are respectively 
+For each track, we order the space points according to their Z position along the positive beam direction (panel a) and we split them in two sets: the first set contains all the points belonging to the first half of the track and the second set contains all the points belonging the second half of the track. We remove the last four points in the first set and the first four points in the second set, so to have a gap in the middle of the original track (panel b). We fit the first and the second set of points with two lines  (panel c). We then calculate the angle between the fit of the first and second half $\alpha$ (panel d). The angle $\alpha$ determines the spatial resolution of the tracking. The distributions for data and MC for $\alpha$ are given in Figure \ref{fig:trackingResolution} for pions and in Figure \ref{fig:trackingResolutionK} for kaons. The mean of the data and MC angular resolution are reported in Table {tab:AngRes} for pions and kaons in data and MC.
 
-\begin{equation}
-\bar\alpha_{Data} = (5.0 \pm 4.5) \text{ deg}, 
-\end{equation}
 
-\begin{equation}
-\bar\alpha_{MC} = (4.5 \pm 3.9) \text{ deg}. 
-\end{equation}
+
+\begin{table}[b]
+\centering
+\begin{tabular}{|l|c|c|}  
+\hline
+                      &       Data          & MC     \\ \hline
+Pions             &   $\bar\alpha_{Data} = (5.0 \pm 4.5) \text{ deg}$          & $\bar\alpha_{MC} = (4.5 \pm 3.9) \text{ deg}$ \\ \hline
+Kaons            &   $\bar\alpha_{Data} = (4.3 \pm 3.7) \text{ deg}$          & $\bar\alpha_{MC} = (4.4 \pm 3.6) \text{ deg}$  \\ \hline
+\end{tabular}
+\caption{Angular resolution for Pion and Kaon tracking in both data and MC.}
+\label{tab:AngRes}
+\end{table}
+
 
 Interaction angles smaller than the angle resolution are indistinguishable for the reconstruction. Therefore, we assess our ability to measure the cross section to be limited to interaction angles greater than 5.0 deg. More accurate studies of the angular resolution as a function of the kinetic energy and track length, albeit interesting, are left for an improvement of the analysis. 
 
-It is beneficial to take a moment to describe the definition of interaction angle. In case of elastic scattering, the definition is straightforward: the interaction angle is the angle between the incoming and outgoing pion, i.e.
+It is beneficial to take a moment to describe the definition of interaction angle. In case of elastic scattering, the definition is straightforward: the interaction angle is the angle between the incoming and outgoing hadron, i.e.
 
 \begin{equation}  
 \theta = \cos^{-1} \Big(\frac{\vec p _{\text{incoming}}  \cdot\vec p _{\text{outgoing}}}{|\vec p _{\text{incoming}}|  |\vec p _{\text{outgoing}}| }\Big).
 \end{equation}   
-In case of inelastic scattering,  the presence of several topologies requires a more complex definition, as shown in figure \ref{fig:scatterPic}.  We define the scattering angle as the biggest of the angles between the incoming pion and the visible daughters, where the visible daughters are charged particles that travel more than 0.47 cm in the detector (see panel a); in case all the daughters are invisible, the angle is assigned to be 90 deg (see panel b). We chose this working definition of scattering angle for inelastic scattering keeping in mind how our tracking reconstruction works: the tracking will stop correctly in case of all the daughters are not visible in the detector and it is likely to stop correctly if multiple daughters form an interaction vertex. The only ``dangerous" case is the production of one charged daughter plus neutrals, which we can study with this working definition of scattering angle (see panel c).
+In case of inelastic scattering,  the presence of several topologies requires a more complex definition, as shown in figure \ref{fig:scatterPic}.  We define the scattering angle as the biggest of the angles between the incoming hadron and the visible daughters, where the visible daughters are charged particles that travel more than 0.47 cm in the detector (see panel a); in case all the daughters are invisible, the angle is assigned to be 90 deg (see panel b). We chose this working definition of scattering angle for inelastic scattering keeping in mind how our tracking reconstruction works: the tracking will stop correctly non of the daughters are is visible in the detector and it is likely to stop correctly if multiple daughters form an interaction vertex. The only ``dangerous" case is the production of one charged daughter plus neutrals, which we can study with this working definition of scattering angle (see panel c).
 
 
 We can see the effects of the angular resolution on the cross section by plotting the true Geant4 cross section for interaction angles greater than a minimum interaction angle. Figure \ref{fig:trueWithAngles} shows the  true Geant4 cross section  for interaction angles greater than 0 deg (green), 4.5 deg (red), 5.0 deg  (blue) and 9.0 deg (yellow). 
@@ -414,7 +421,7 @@ A small $0.5 \text{ deg}$ systematic shift between the mean of the data and MC a
 \begin{minipage}[t]{0.45\linewidth}
 \centering
 \includegraphics[width=\textwidth]{Chapter-5/Images/DavgKaons.pdf}
-\caption[]{Distributions of the average distance between each 3D point in space and the fit line,  $\bar d$ for the data used in the kaon cross section analysis and the kaon only DDMC. The distributions are area normalized. } \label{fig:Chi2AllPts}
+\caption[]{Distributions of the average distance between each 3D point in space and the fit line,  $\bar d$ for the data used in the kaon cross section analysis and the kaon only DDMC. The distributions are area normalized. } \label{fig:Chi2AllPtsK}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{0.45\linewidth}
@@ -443,14 +450,13 @@ A small $0.5 \text{ deg}$ systematic shift between the mean of the data and MC a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Calorimetry Studies}\label{ch:energyCal} 
-The ability to measure the kinetic energy of hadrons in the TPC is fundamental for the cross section analyses. 
-Thus, we describe first how we calibrate the TPC calorimetric response (Section \ref{ch:energyCalibration}) and how we measure the kinetic energy of the hadrons in the TPC (Section \ref{ch:kinEn}).
+The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill.  Thus, the energy measurement provided by the LArTPC is fundamental for the cross section analysis. In Appendix  \ref{ch:energyCalibration}, we describe how we calibrate the TPC calorimetric response. In the following section, we describe how we measure the kinetic energy of the hadrons in the TPC.
 
 
 
 
 \subsection{Kinetic Energy Measurement}\label{ch:kinEn}
-The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill. In this section, we define the measurement on the kinetic energy and  determine the related uncertainty. We will propagate this uncertainty into the cross section measurement, as discussed in Section \ref{ch:SysUncertaintyXSRaw} for the pion cross section and in Section \ref{ch:KaonXSRawUnc} for the kaon cross section.
+In this section, we define the measurement on the kinetic energy and  determine the related uncertainty. We will propagate this uncertainty into the cross section measurement, as discussed in Section \ref{ch:SysUncertaintyXSRaw} for the pion cross section and in Section \ref{ch:KaonXSRawUnc} for the kaon cross section.
 
 The kinetic energy of a hadron at the $j^{\text{th}}$ slice of argon in the TPC is given by
 
@@ -487,6 +493,14 @@ The uncertainty on $E_{i}$ is given by the width of the Landau fit to the data. 
 \includegraphics[width=0.48\textwidth]{Chapter-5/Images/DepEnergy_Fit_v4100A.png}
 \caption[]{ Energy deposited  $E_{i}$ in a single slab of argon for the pion -60A runs (left) and -100A runs (right).  The data is shown in black, the MC in blue. The distributions are fitted with a landau displayed in red for data and in teal for MC. } \label{fig:EnergyDeposited}
 \end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/KaonEdep.pdf}
+\caption[]{ Energy deposited  $E_{i}$ in a single slab of argon for the kaons of the +60A runs and +100A runs.  The data is shown in black, the MC in blue. The distributions are fitted with a landau displayed in red for data and in teal for MC. } \label{fig:EnergyDepositedK}
+\end{figure}
+
+
 
 
 \begin{comment}
