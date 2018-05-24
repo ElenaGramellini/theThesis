@@ -10,21 +10,33 @@
 
 \chapter{The theoretical framework}
 
-\section{The Standard Model}
+\begin{figure}[h!]
+\includegraphics[scale=0.2,right]{Chapter-1/Images/Bach.png}
+\end{figure}
+
+{\raggedleft -- J. S. Bach, Suite No. 1 in G major, BWV 1007, 1720 ca. -- \par}
+\vspace{0.5cm}
+
+In this chapter, we set the ($\pi^-$- Ar) and ($K^+$- Ar) total hadronic cross section measurements into the greater theoretical and phenomenological framework. We start by briefly describing the Standard Model (Section \ref{ch:SM}), with particular attention to neutrinos and neutrino interactions (Section \ref{ch:nus} ). We then describe some of the open questions in neutrino physics today and Beyond Standard Model theories (\ref{ch:BMS}) setting the stage for the measurements reported in this work (Section \ref{ch:MotHadXS}).
+
+\section{The Standard Model}\label{ch:SM}
 The Standard Model (SM) of particle physics is the most accurate theoretical description of the subatomic world and, in general, one of the most precisely tested theories in the history of physics.  The SM describes the strong, electromagnetic and weak interactions among  elementary particles in the framework of quantum field theory, accounting for the unification of electromagnetic and weak interactions for energies above the  vacuum expectation value (VEV) of the Higgs field. The SM does not describe gravity or general relativity.
 
-The Standard Model is a gauge theory based on the local group of symmetry
+The Standard Model is a gauge theory based on the local symmetry group
 \begin{equation}
-G_{SM} = SU(3)_C  \otimes SU(2)_T \otimes U(1)_Y
+G_{SM} = SU(3)_C  \otimes SU(2)_L \otimes U(1)_Y
 \label{eq:SMGroup}
 \end{equation}
 
-where the subscripts indicate the conserved charges: the strong charge, or color C, the weak isospin T (or rather its third component T3) and the hypercharge Y. These quantities can be related to the electric charge Q through the Gell-Mann-Nishijima relation:
+where the subscripts C indicates the conserved strong charge (color),   and the subscripts Y indicates the conserved hypercharge. 
+If we indicated with T the weak isospin T and with T3  its third component, hypercharge can be related to the electric charge Q through the Gell-Mann-Nishijima relation:
 \begin{equation}
 Q = \frac{Y}{2} + T_3.
 \end{equation}
 
-In the quantum field framework, the elementary particles correspond to the irreducible representations of the G$_{SM}$ symmetry group. In particular, the particles are divided in two categories, fermions and bosons, according to their spin-statistics. Described by the Fermi-Dirac statistics, fermions have half-integer spin and are sometimes called ``matter-particles". Bosons or ``force carriers" have integer spin, follow the Bose-Einstein statistics and mediate the interaction between fermions. The fundamental fermions and their quantum numbers are listed in Tab \ref{tab:SMParticles}.
+
+
+In the quantum field framework, the SM fields correspond to the irreducible representations of the G$_{SM}$ symmetry group. In particular, the particles are divided in two categories, fermions and bosons, according to their spin-statistics. Described by the Fermi-Dirac statistics, fermions have half-integer spin and are sometimes called ``matter-particles". Bosons or ``force carriers" have integer spin, follow the Bose-Einstein statistics and mediate the interaction between fermions. The fundamental fermions and their quantum numbers are listed in Tab \ref{tab:SMParticles}.
 
 \begin{table}[]
 \centering
@@ -43,19 +55,21 @@ Generation               & I                   & II                  & III      
 & $\begin{matrix}\ u_R\\ d'_R \end{matrix}$ & $\begin{matrix}\ c_R\\ s'_R \end{matrix}$ & $\begin{matrix}\ t_R\\ b'_R \end{matrix}$ & $\begin{matrix}\ 0\\ 0 \end{matrix}$ & $\begin{matrix}\ 4/3\\ -2/3 \end{matrix}$ & $\begin{matrix}\ 2/3\\ -1/3 \end{matrix}$ \\
                          &                     &                     &                     &                         &                     &                    \\\hline
 \end{tabular}
-\caption{SM elementary fermions. The subscripts L and R indicate respectively the negative helicity (left-handed) and the positive helicity (right-handed).}
+\caption{SM elementary fermionic fields. The subscripts L and R indicate respectively the negative chirality (left-handed) and the positive chirality (right-handed).}
 \label{tab:SMParticles}
 \end{table}
 
-Quarks can interact via all three the fundamental forces; they are triplets of SU(3)$_C$, that is they can exist in three different colors: C = R, G, B. If one chooses a base where $u$, $c$ and $t$ quarks are simultaneously eigenstates of both the strong and the weak interactions, the remaining eigenstates are usually written as $d$, $s$ and $b$ for the strong interaction and $d'$, $s'$ and $b'$ for the weak interaction, because the latter ones are the result of a Cabibbo rotation on the first ones.
+Quarks can interact via all three the fundamental forces; they are triplets of SU(3)$_C$, that is they can exist in three different colors. If one chooses a base where $u$, $c$ and $t$ quarks are simultaneously eigenstates of both the strong and the weak interactions, the remaining eigenstates are usually written as $d$, $s$ and $b$ for the strong interaction and $d'$, $s'$ and $b'$ for the weak interaction, because the latter ones are the result of a CKM rotation on the first ones.
 Charged leptons interact via the weak and the electromagnetic forces, while neutrinos only interact via the weak force. 
 The gauge group univocally determines the number of gauge bosons that carry the interaction; the gauge bosons correspond to the generators of the group: eight gluons (g) for the strong interaction, one photon ($\gamma$) and three bosons (W$^\pm$, Z$^0$) for the electroweak interaction.
-A gauge theory by itself cannot provide a description of massive particles, but it is experimentally well know that most of the elementary particles have non-zero masses. The introduction of massive fields in the Standard Model lagrangian would make the theory non-renormalizable, and - so far - mathematically impossible to handle. This problem is solved in the SM by the introduction of a scalar iso-doublet $\Phi(x)$, the Higgs field, which gives mass to W$^\pm$ and Z$^0$ gauge bosons through the electroweak symmetry breaking mechanism and to the fermions through Yukawa coupling \cite{Higgs1964,Higgs19642}.  The discovery of the Higgs boson in 2012 by the LHC experiments \cite{201230,Aad2012} marked the ultimate confirmation  of a long history of successful predictions by the SM.
+A gauge theory by itself cannot provide a description of massive particles, but it is experimentally well know that most of the elementary particles have non-zero masses. The introduction of massive fields in the Standard Model lagrangian would make the theory not gauge invariant, resulting ill-defined. This problem is solved in the SM by the introduction of a scalar iso-doublet $\Phi(x)$, the Higgs field, which gives mass to W$^\pm$ and Z$^0$ gauge bosons through the electroweak symmetry breaking mechanism and to the fermions through Yukawa coupling \cite{Higgs1964,Higgs19642}.  The discovery of the Higgs boson in 2012 by the LHC experiments \cite{201230,Aad2012} marked the ultimate confirmation  of a long history of successful predictions by the SM.
 
-\section{Neutrinos:  tiny cracks in the Standard Model}
+\section{Neutrinos:  tiny cracks in the Standard Model}\label{ch:nus}
+To our current knowledge, neutrinos are the most abundant fermion in the Universe. And yet, they are maybe the most mysterious particle in the SM: they generate theoretical puzzles and experimental challenges. In this section, we treat neutrinos within and beyond the SM and describe the make up of their interaction with matter.
+
 \subsection{Neutrinos in the Standard Model}
-Neutrino were introduced in the SM as left-handed massless Weyl spinors.
-The Dirac equation of motion
+Neutrino can be introduced in the SM as left-handed massless Weyl spinors.
+The Dirac equation of motion for a free field
 \begin{equation}
 (i\gamma^ \mu \partial_\mu - m) \psi = 0
 \end{equation}
@@ -74,9 +88,9 @@ i\gamma^ \mu \partial_\mu  \psi_R = m \psi_L
 \end{equation}
 
 for the chiral fields $\psi_R$ and $\psi_L$, whose evolution in space and time is coupled through the mass $m$.
-If the fermion is massless, the chiral fields decouple and the fermion can be described by a single Weyl spinor with two independent components~\cite{Weyl:10.2307}. Pauli initially rejected the description of a physical particle through a single Weyl spinor because of its implication of parity violation. In fact, since the spatial inversion operator throws $\psi_R \leftrightarrow \psi_L$, parity is conserved only if the both the chiral components exist at the same time.  For the neutrino introduction in the SM, experiments came in help of the theoretical description.  The constraint of parity conservation weakened after Wu's experiment in 1957 \cite{PhysRev.105.1413}. Additionally,  there was no experimental indication for massive neutrinos, nor evidence of interaction via the neutrino right-handed component.% neutrinos likely interacted only via the left-handed component. 
+If the fermion is massless, the chiral fields decouple and the fermion can be described by a single Weyl spinor with two independent components~\cite{Weyl:10.2307}. Pauli initially rejected the description of a physical particle through a single Weyl spinor because of its implication of parity violation. In fact, since the spatial inversion operator throws $\psi_R \leftrightarrow \psi_L$, parity is conserved only if both chiral components exist at the same time.  For the neutrino introduction in the SM, experiments came in help of the theoretical description.  The constraint of parity conservation weakened after Wu's experiment in 1957 \cite{PhysRev.105.1413}. Additionally,  there was no experimental indication for massive neutrinos, nor evidence of interaction via the neutrino right-handed component.% neutrinos likely interacted only via the left-handed component. 
 
-The symmetry group $SU(2)_T \otimes U(1)_Y$ is the only group relevant for neutrino interactions. The SM electroweak lagrangian is the most general renormalizable lagrangian invariant under the local symmetry group $SU(2)_T \otimes U(1)_Y$. The lagrangian couples the weak isotopic spin doublets and singlets described in Table \ref{tab:SMParticles} with the gauge bosons  $A^{\mu}_{a}$ ($a$ $=$ 1,2,3) and $B^{\mu}$, and Higgs doublet $\Phi(x)$:
+The symmetry group $SU(2)_L \otimes U(1)_Y$ is the only group relevant for neutrino interactions. The SM electroweak lagrangian is the most general renormalizable lagrangian invariant under the local symmetry group $SU(2)_L \otimes U(1)_Y$. The lagrangian couples the weak isotopic spin doublets and singlets described in Table \ref{tab:SMParticles} with the gauge bosons  $A^{\mu}_{a}$ ($a$ $=$ 1,2,3) and $B^{\mu}$, and Higgs doublet $\Phi(x)$:
 
 \begin{eqnarray}
 \lefteqn{\mathcal{L} = i\sum_{\alpha=e,\mu,\tau} \bar{L}'_{\alpha L}  \slashed D L'_{\alpha L} + 
@@ -104,11 +118,11 @@ The coupling between left-handed and right-handed field generates the mass term 
 The determination of the flavor of a neutrino dynamically arises from the corresponding charged lepton associated in a change current interaction; for example, a $\nu_e$ is a neutrino which produces an $e^-$, a $\bar\nu_\mu$ is a neutrino which produces a $\mu^+$, $etc$. 
 The neutrino flavor eigenstates $\ket{\nu_\alpha}$,  with $\alpha = e,\mu,\tau$, are orthogonal to each other and form a base for the weak interaction matrix.
 
-Overwhelming experimental data show that neutrinos change flavor during their propagation~\cite{Patrignani:2016xqp}. This phenomenon, called ``neutrino oscillations",  was predicted first by Bruno Pontecorvo in 1957 ~\cite{Pontecorvo:1967fh}.  Neutrino oscillations are possible only if the neutrino flavor eigenstate are not identical to the mass eigenstates, thus resulting in the first evidence of physics beyond the Standard Model.  A minimal extension of the SM introduces three mass eigenstates, $\ket{\nu_i}$ ($i = 1,2, 3$), whose mass $m_i$ is well defined. 
-The unitary Pontecorvo-Maki-Nakagawa-Sakata matrix transforms the spinor wave functions ($\psi$) of each component  between the flavor and mass bases as follows
+Overwhelming experimental data show that neutrinos change flavor during their propagation~\cite{Patrignani:2016xqp}. This phenomenon, called ``neutrino oscillations",  was predicted first by Bruno Pontecorvo in 1957 ~\cite{Pontecorvo:1967fh}.  Neutrino oscillations are possible only if the neutrino flavor eigenstate are not identical to the mass eigenstates. Thus, the observation of neutrino oscillation results in the first evidence of physics beyond the Standard Model.  A minimal extension of the SM introduces three mass eigenstates, $\ket{\nu_i}$ ($i = 1,2, 3$), whose mass $m_i$ is well defined. 
+The unitary Pontecorvo-Maki-Nakagawa-Sakata matrix transforms the mass base into the flavor base as follows
 
 \begin{equation} 
-\sum_\alpha \psi_\alpha \ket{\nu_\alpha} =  \sum_i \psi_i \ket{\nu_i}, \rightarrow \psi_\alpha =  U_{PMNS} \psi_i, 
+ \ket{\nu_\alpha} =   U_{PMNS} \ket{\nu_i},
 \end{equation}
 
 with
@@ -162,13 +176,13 @@ where $c$ e $s$ stand respectively for cosine and sine of the corresponding  mix
         & Value   & Precision & Experiment \\
 \hline
 $\theta_{23}$            & 45$^\circ$                      & 9.0\%   & Super Kamiokande, MINOS,\\
-$\Delta m^2_{23}$    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  No$\nu$a, MACRO \\
+|$\Delta m^2_{32}$|    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  No$\nu$a, MACRO \\
 \hline
 $\theta_{12}$            & 34$^\circ$                     & 5.8\% &  SNO,Gallex,\\
-$\Delta m^2_{12}$    & 7.4 $10^{-5}$ eV$^2$   & 2.8\% &  SAGE,  KamLAND \\
+|$\Delta m^2_{12}$|    & 7.4 $10^{-5}$ eV$^2$   & 2.8\% &  SAGE,  KamLAND \\
 \hline
 $\theta_{13}$            &   9$^\circ$                    & 4.7\%  & DAYA  Bay, \\
-$\Delta m^2_{13}$    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  RENO\\
+|$\Delta m^2_{32}$|    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  RENO\\
 \hline
 \end{tabular}
 \end{table}
@@ -177,7 +191,7 @@ $\Delta m^2_{13}$    & 2.5 $10^{-3}$ eV$^2$   & 1.8\% &  RENO\\
 All neutrino experiments involving the detection of single neutrinos are concerned with neutrino interactions (and neutrino cross sections) on nuclei. 
 Given the invisible nature of the neutrino, characterizing the products of its interaction is the only method to a) assess the neutrino presence, b) detect its flavor in case of a charge current interaction and c) eventually reconstruct its energy. 
 
-Historically, neutrino interactions with the nucleus in the GeV region are divided into three categories into three categories whose contributions change as a function of increasing neutrino energy:: quasi elastic (QE), resonant (RES), and deep inelastic (DIS) scattering. All current and forthcoming oscillation experiments live in the 0.1-10 GeV transition region, which encompasses the energy where the QE neutrino-nucleus interaction transitions into RES and then into DIS. 
+Historically, neutrino interactions with the nucleus in the GeV region are divided into three categories into three categories whose contributions change as a function of increasing neutrino energy:: quasi elastic (QE), resonant (RES), and deep inelastic (DIS) scattering. All current and forthcoming oscillation experiments on neutrino beams live in the 0.1-10 GeV transition region, which encompasses the energy where the QE neutrino-nucleus interaction transitions into RES and then into DIS. 
 For scattering off free nucleons, neutrino and antineutrino QE charge current scattering refers to the process $\nu_l n \rightarrow l^- p$ and $\bar\nu_l p \rightarrow l^+ n$ where a charged lepton and single nucleon are ejected in the elastic interaction. %of a neutrino (or antineutrino) with a nucleon in the target material.  
  Resonant scattering refers to an inelastic collision producing a nucleon excited state ($\Delta$,N*) -- the resonance -- which then quickly decays, most often to a nucleon and single-pion final state. DIS refers to the head-on collision between the neutrino and a parton inside the nucleon, producing hadronization and subsequent  abundant production of mesons and nucleons.  In addition to such interactions between the neutrino and a single component of the nucleus, neutrinos can also interact with the nucleus as a whole, albeit more rarely, a well documented process called coherent meson production scattering \cite{Vilain1993}; the signature of such process is the production of a distinctly forward-scattered single meson final state, most often a pion.  This simple picture of neutrino interactions works rather well for scattering 
 off of light nuclear targets, such as the H$_2$ and D$_2$ of bubble chamber experiments \cite{RevModPhys.84.1307}, but the complexity of the nuclear structure for heavier nuclei such as argon complicates this model. 
@@ -201,7 +215,7 @@ Data on neutrino scattering off many different nuclei are available for both cha
 \end{figure}
 
 
-\section{Beyond the Standard Model}
+\section{Beyond the Standard Model}\label{ch:BMS}
 The discovery of neutrino oscillation and its implication of non-zero neutrino mass mark  the beginning of a new, exciting era in neutrino physics: the era of physics Beyond the Standard Model (BSM) at the intensity frontier.
 We are currently searching for new, deeper theories that can accommodate neutrinos with tiny but non-zero masses, while remaining consistent with the rest of the Standard Model. 
 
@@ -253,7 +267,7 @@ Despite its highly predictive power, a number of conceptual issues arise in the 
 
 The SM does not include a suitable dark matter candidate and a mechanisms that accounts for the baryon asymmetry of the universe.  Additionally, up to a total of 25 parameters remain seemingly arbitrary and need to be fitted to data: 3 gauge couplings, 9 charged fermion masses, 3 mixing angles and one CP phase in the CKM matrix, the Higgs mass and quartic coupling, $\theta_{QCD}$, 3 neutrino mixing angles, 1 Dirac phase and, eventually,  2 Majorana phases. 
 
-From a group theory perspective, the SM has a rather complex group structure, where a gauge group is formed with the direct product of other three groups as shown in eq. \ref{eq:SMGroup}. \textcolor{red}{Drawing a parallel with the electroweak symmetry breaking mechanism, where the $ SU(2)_T \otimes U(1)_Y$ is recovered from $U(1)_{EM}$, an interesting line of simplification for the SM group structure would be to devise a similar mechanism where $SU(3)_C  \otimes SU(2)_T \otimes U(1)_Y$ is recovered from an hypothetical larger group. IS THIS CORRECT?} Just as the electroweak unification becomes evident at energies higher than the Higgs VEV,  a direct manifestation of Grand Unification Theories (GUTs) would occur at even higher energies.
+From a group theory perspective, the SM has a rather complex group structure, where a gauge group is formed with the direct product of other three groups as shown in eq. \ref{eq:SMGroup}. \textcolor{red}{Drawing a parallel with the electroweak symmetry breaking mechanism, where the $ SU(2)_L \otimes U(1)_Y$ is recovered from $U(1)_{EM}$, an interesting line of simplification for the SM group structure would be to devise a similar mechanism where $SU(3)_C  \otimes SU(2)_L \otimes U(1)_Y$ is recovered from an hypothetical larger group. IS THIS CORRECT?} Just as the electroweak unification becomes evident at energies higher than the Higgs VEV,  a direct manifestation of Grand Unification Theories (GUTs) would occur at even higher energies.
 
 As the smallness of neutrino masses suggests the existence of a higher mass scale, an other, even stronger, hint to Grand Unification comes from the slope of running of the coupling constants. The coupling constants for the electromagnetic, weak and strong interactions in the SM vary as a function of the interaction energy as shown in figure \ref{fig:constants};  they do not exactly meet under the current experimental constraints, but their trend is interesting enough to push for the construction of theories where perfect unification is achieved through the addition of new particles. 
 
@@ -267,7 +281,7 @@ As the smallness of neutrino masses suggests the existence of a higher mass scal
 
 
 
-\textbf{SU(5).} The smallest simple group containing $SU(3)_C  \otimes SU(2)_T \otimes U(1)_Y$ is SU(5), as shown first by Georgi and Glashow in~\cite{PhysRevLett.32.438}. Quarks and leptons in this group fit the $\bar 5$ and 10 representations. The representation for left-handed fermions are the following
+\textbf{SU(5).} The smallest simple group containing $SU(3)_C  \otimes SU(2)_L \otimes U(1)_Y$ is SU(5), as shown first by Georgi and Glashow in~\cite{PhysRevLett.32.438}. Quarks and leptons in this group fit the $\bar 5$ and 10 representations. The representation for left-handed fermions are the following
 \begin{align}
 \bar 5 &= (\nu_e, e^-)_L + \bar d_L\\
 10 &=  e^+_L  +  \bar u_L  + (u, d)_L ,
@@ -290,13 +304,13 @@ Predictions on the proton decay lifetime depend on the chosen SUSY model; again,
 
 %Models I want to mention: SUSY and SU(5) kaon modes and p -> epi0
 
-%The $SU(5)$ group is the smallest simple group containing $SU(3)_C  \otimes SU(2)_T \otimes U(1)_Y$. Georgi and Glashow proposed the ``minimal SU(5)"
+%The $SU(5)$ group is the smallest simple group containing $SU(3)_C  \otimes SU(2)_L \otimes U(1)_Y$. Georgi and Glashow proposed the ``minimal SU(5)"
 
 %the running is parametrized as follows
 %where $b_i$ are coefficients for each interaction, and  the constants assume the same value $\alpha_{GUT}$ at energy $E=M_{GUT}$
 
 
-\section{Motivations for Hadronic Cross Sections in Argon}
+\section{Motivations for Hadronic Cross Sections in Argon} \label{ch:MotHadXS} 
 Critical challenges await  the next decade of high energy physics at the intensity frontier. % will entail an even deeper understanding of the neutrino mixing pattern, investigation of the neutrino mass origin, the determination of the number of neutrinos and their nature, and the measurement of CP violation in the lepton sector. 
 %%% Plug to LArTPC %%%%%%%%%%%%
 Following the recommendation of the latest Particle Physics Project Prioritization Panel  \cite{P5}, the US  is dedicating substantial resources to the development of a short- and long- baseline neutrino program to address many of open questions in neutrino physics today.  This program pivots on the Liquid Argon Time Projection Chamber (LArTPC) detector technology which will be described in Chapter \ref{ch:2}.  

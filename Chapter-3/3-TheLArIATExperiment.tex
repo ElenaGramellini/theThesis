@@ -3,7 +3,7 @@
 % Add TOF and Momentum Plots?
 
 \chapter{LArIAT: Liquid Argon In A Testbeam}\label{sec:experimentDescription}
-{\raggedleft ``\emph{But, hey we need to be somewhat foolish...} \par}
+{\raggedleft ``\emph{But, hey we need to be somewhat foolish...}" \par}
 {\raggedleft -- Agnes Obel, Avenue, 2010 -- \par}
 \vspace{0.5cm}
 
@@ -111,10 +111,12 @@ It is still possible to reconstruct the particle's momentum  even if the informa
 %Under the assumption of identical magnets, we define a plane centered in the middle of the two magnets (called ``midplane") that the physical particles need to cross. We project the completed half of the wire chamber track to the midplane, assuming no bending, to find the point of intersection. We use this point to complete the other half of the wire chamber track and to calculate the reconstructed momentum  with these four points. To account for the lack of bending in our reconstructed wire chamber track, we apply to the calculated momentum  a correction obtained with a sample of 4-point, single hit tracks.
 
 Events satisfying the simplest scenario of one single hit in each of the four wire chambers form the ``Picky Track" sample.  We construct another, higher statistics sample, where we loosen the requirements on single hit and wire chamber efficiency: the ``High Yield" sample. For LArIAT Run II, the High Yield sample is about three times the Picky Tracks statistics.  
+We assume an uncertainty of 2\% for four-point WC track, momentum uncertainty as reported for the same beamline in \cite{MinervaTestbeam}.
 
 %We use Picky Tracks to calibrate the momentum measurement for the High Yield sample, in particular to obtain a momentum correction for  tracks missing information from the central WCs;  this correction adds an uncertainty of approximately 2\% to the momentum calculation of the High Yield sample.
 
-\textcolor{red}{Four point track momentum uncertainty}
+
+
 
 \subsection{Time-of-Flight System}\label{sec:TOF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,6 +185,7 @@ We retrieved the scintillation paddles from the decommissioning of the CDF detec
 
 
 \section{In the Cryostat}
+The heart of the LArIAT experiment lives in the LArIAT cryostat. In this section, we describe the cryogenic system and the argon purity (Section \ref{ch:Cryo}), the LArIAT TPC (Section \ref{sec:TPCCharge}) and light collection system (\ref{sec:TPCLight}).
 \subsection{Cryogenics and Argon Purity}\label{ch:Cryo}
 LArIAT repurposed the ArgoNeuT cryostat \cite{ArgoNeuT-det} in order to use it in a beam of charged particles, and added a new process piping and a new liquid argon filtration system in FTBF.  %The main modifications to the ArgoNeuT cryostat are the addition of a beam flange and a port for the light collection system, 
 Inside the LArIAT experimental hall, the cryostat sits in the beam of charged particles with its horizontal main axis oriented parallel to the secondary beam, ~3$^\circ$ off axis from the tertiary beam
@@ -290,7 +293,7 @@ The signal from the ASICs are driven to the other end of the readout chain, to t
 
 
 
-\subsection{LArTPC: Light Collection System}\label{sec:TPCLight}
+\subsection{LArTPC: Light Collection System}\label{sec:TPCLight} 
 The collection of scintillation photons is the second mechanism of particle detection in argon other than the ionization electrons. Over the course of LArIAT's three years of data taking, the light collection system changed several times. We describe here the light collection system for Run II. Two PMTs, a 3-inch diameter Hamamatsu R-11065 and 2-inch diameter ETL D757KFL~\cite{lightsys-pmttests}, as well as three SiPMs arrays (two Hamamatsu S11828-3344M 4x4 arrays and one single-channel SensL MicroFB-60035) are mounted on the PEEK support structure. PEEK screws into an access flange as shown in Figure~\ref{lightsys_pmts}, on the anode side, leaving  approximately 5~cm of clearance from the collection plane.  
 
 %------------------------------------------

@@ -20,6 +20,7 @@
 \usepackage{dcolumn}
 \usepackage{bm}
 \usepackage{hyperref}
+\usepackage[export]{adjustbox}
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter\bra{\langle}{\rvert}
@@ -60,7 +61,7 @@
 \begin{document}
 
 % Need to define title before the abstract.
-\title{Measurement of total hadronic cross sections in the LArIAT experiment}
+\title{Measurement of ($\pi^-$-Ar) and ($K^+$-Ar) total hadronic cross sections in the LArIAT experiment}
 \author{Elena Gramellini}
 \advisor{Bonnie T. Fleming}
 \date{Date you'll receive your degree} % usually not \today.
@@ -105,31 +106,37 @@ thank you for the roots and thank you for the wings.
 A lot of people are awesome, especially you, since you probably agreed to read this when it was a draft. 
 
 
-%Bonnie, I don't even know where to start in thanking you. 
+%I jumped the pond a little less than 5 years ago because I had a taste of what being a physicists in the US might mean and wanted more. 
+%I came to this vast (and at times inhospitable) land thinking I would learn a lot of physics (which I did) and trying to keep doing research for as long as I could (which I'm fortunate enough to say I'll still do for a while). Little did I know that getting my PhD would be first and foremost a journey to self discovery, the beginning of a path to asymptotically tend to the person and the scientist I want to be. A journey impossible without the help of many people, which I will now proceed to thank, hoping that the acknowledgements won't be longer than the thesis itself.
 
+%Mom, you are and will always be the hero of my story; I know this has been challenging for you, thanks for being there for me at every hour of the day and the night, for being always honest with me and for somehow handling this whole US-Italy thing gracefully. I can't believe you still haven't met Bonnie. Ah, and don't worry, I'll always translate things for you. 
+
+%Bonnie Fleming, my advisor, I don't even know where to start in thanking you. Thanks for listening to me before I proved I was worth be listened to; thanks for always believing I could make it, even at the bottom of my doubts; thanks for the laughters, thanks for leading by example, thanks for  letting me part of the most wonderful research group ; 
 
 %Flavio
 %
 
-%A big thank you to my academic sisters, a bunch of extraordinary women who have taught me so much about myself and our field.
-%From the youngest to the oldest (again academically speaking): Supraja, you worked the magic of enriching my past, thank you from the bottom of my heart;  Brooke, the depth of your knowledge, your drive and love for our field has been and will always be a constant inspiration;  Ariana, thanks for keeping me sane for the last four years, if you run for president, remember to delete  our Skype chats, love and hugs to you dudette; and last but not least Xiao, I don't think Fermilab has given me a bigger gift than your friendship. 
+%A big thank you to my academic sisters, from the youngest to the oldest (again academically speaking): Supraja Balasubramanian, you worked the magic of enriching my past, thank you from the bottom of my heart;  Brooke Morrison, the depth of your knowledge, your drive and love for our field has been and will always be a constant inspiration;  Ariana  Hackenburg, thanks for keeping me sane for the last four years, if you run for president -- as you should -- remember to delete our Skype chats, love and hugs to you dudette; and last but not least Xiao Luo, Fermilab has given me lots of extraordinary gifts, but no one  bigger than your friendship. 
 
-%Shany %Louise
-%Jen 
-%Jonathan
-%Andrzej
+%Jen Raaf
+%Jonathan Asaadi
+%Andrzej M. Szelc
+%Roberto Acciarri
 %LArIAT & MicroBooNE
-%Marci Viola Brogna
+%To all the members of the NPG, thanks for all the laughters and all the wise insights. You're the smartest bunch of idiots I've ever met, I love y'all.
+%Shany %Louise
+
+%To the extraordinary people who stayed close, even with an ocean in between: la Tasso, Marci, la Bea, la Kittirn, Alvin, la Viola e Brogna, Sighi and all the people from the ``La Chiappia Nuova" group, thanks for making me feel like I never left.
 %Finally, Anto, cause people might think I'm nice and easy, but you know I'm not. And you're still here.
 
 
 % Starts proper arabic numbering of pages and chapters.
 \mainmatter
-%\input{Chapters/0-Introduction}
-%\input{Chapter-1/1-Theory}
-%\input{Chapter-2/2-LArTPCs}
-%\input{Chapter-3/3-TheLArIATExperiment}
-%\input{Chapter-4/4-Methodology}
+\input{Chapters/0-Introduction}
+\input{Chapter-1/1-Theory}
+\input{Chapter-2/2-LArTPCs}
+\input{Chapter-3/3-TheLArIATExperiment}
+\input{Chapter-4/4-Methodology}
 \input{Chapter-5/5-Preparatory}
 \input{Chapter-6/6-PionCrossSection}
 \input{Chapter-7/7-KaonCrossSection}
@@ -141,8 +148,8 @@ A lot of people are awesome, especially you, since you probably agreed to read t
 % Only call appendix once, here.
 \appendix
 %%\input{Chapters/A-KaonAna}
-%\input{AppendixB-TrackingStudies/B-Tracking}
-%\input{AppendixC-EnergyCalibration/C-EnergyCalibration}
+\input{AppendixB-TrackingStudies/B-Tracking}
+\input{AppendixC-EnergyCalibration/C-EnergyCalibration}
 %\input{AppendixB-EField/B-LArIATEField}
 %%\input{Chapters/C-MicroBooNECRT}
 
