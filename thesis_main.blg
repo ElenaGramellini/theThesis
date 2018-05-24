@@ -53,45 +53,45 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
 while executing---line 1090 of file plain.bst
-You've used 119 entries,
+You've used 120 entries,
             2118 wiz_defined-function locations,
-            1258 strings with 35442 characters,
-and the built_in function-call counts, 60886 in all, are:
-= -- 5152
-> -- 5547
+            1264 strings with 35519 characters,
+and the built_in function-call counts, 61185 in all, are:
+= -- 5184
+> -- 5554
 < -- 5
-+ -- 2233
-- -- 2102
-* -- 5848
-:= -- 10975
-add.period$ -- 353
-call.type$ -- 119
-change.case$ -- 1401
++ -- 2236
+- -- 2104
+* -- 5872
+:= -- 11024
+add.period$ -- 356
+call.type$ -- 120
+change.case$ -- 1405
 chr.to.int$ -- 0
-cite$ -- 146
-duplicate$ -- 1289
-empty$ -- 2878
-format.name$ -- 2102
-if$ -- 11349
+cite$ -- 147
+duplicate$ -- 1300
+empty$ -- 2905
+format.name$ -- 2104
+if$ -- 11410
 int.to.chr$ -- 0
-int.to.str$ -- 119
-missing$ -- 105
-newline$ -- 593
-num.names$ -- 228
-pop$ -- 1287
+int.to.str$ -- 120
+missing$ -- 106
+newline$ -- 598
+num.names$ -- 230
+pop$ -- 1289
 preamble$ -- 1
-purify$ -- 1277
+purify$ -- 1280
 quote$ -- 0
-skip$ -- 891
+skip$ -- 898
 stack$ -- 0
-substring$ -- 2515
-swap$ -- 132
+substring$ -- 2545
+swap$ -- 133
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 470
+type$ -- 474
 warning$ -- 27
-while$ -- 355
-width$ -- 122
-write$ -- 1260
+while$ -- 359
+width$ -- 123
+write$ -- 1271
 (There were 7 error messages)
