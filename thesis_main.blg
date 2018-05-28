@@ -56,43 +56,43 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1090 of file plain.bst
 You've used 121 entries,
             2118 wiz_defined-function locations,
-            1267 strings with 35669 characters,
-and the built_in function-call counts, 61328 in all, are:
-= -- 5194
+            1268 strings with 35607 characters,
+and the built_in function-call counts, 61421 in all, are:
+= -- 5206
 > -- 5567
 < -- 5
 + -- 2241
 - -- 2108
-* -- 5869
-:= -- 11058
+* -- 5883
+:= -- 11068
 add.period$ -- 359
 call.type$ -- 121
 change.case$ -- 1409
 chr.to.int$ -- 0
 cite$ -- 149
-duplicate$ -- 1309
-empty$ -- 2912
+duplicate$ -- 1310
+empty$ -- 2922
 format.name$ -- 2108
-if$ -- 11437
+if$ -- 11457
 int.to.chr$ -- 0
 int.to.str$ -- 121
 missing$ -- 107
 newline$ -- 603
 num.names$ -- 232
-pop$ -- 1297
+pop$ -- 1295
 preamble$ -- 1
 purify$ -- 1283
 quote$ -- 0
 skip$ -- 907
 stack$ -- 0
-substring$ -- 2525
+substring$ -- 2550
 swap$ -- 133
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 478
 warning$ -- 28
-while$ -- 359
+while$ -- 361
 width$ -- 124
-write$ -- 1279
+write$ -- 1280
 (There were 7 error messages)

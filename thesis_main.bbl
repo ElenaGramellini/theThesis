@@ -516,12 +516,6 @@ Howard Georgi and S.~L. Glashow.
 \newblock Unity of all elementary-particle forces.
 \newblock {\em Phys. Rev. Lett.}, 32:438--441, Feb 1974.
 
-\bibitem{2006physics4152G}
-G.~{Giacomelli}.
-\newblock {Introduction to the Workshop ``30 years of bubble chamber
-  physics''}.
-\newblock {\em ArXiv Physics e-prints}, April 2006.
-
 \bibitem{9780471779957}
 D.Y. Wong~(editor) G.L. Shaw~(Editor).
 \newblock {\em Pion-nucleon Scattering}.
@@ -786,6 +780,13 @@ D.R.O. Morrison N.~Rivoire V.~Flaminio, W.G.~Moorhead.
 \newblock {Compilation of Cross Sections II: $K^+$ and $K^-$ Induced
   Reactions}.
 \newblock {\em CERN-HERA}, pages 83--02, 1983.
+
+\bibitem{WWW}
+W.~Walkowiak.
+\newblock Drift velocity of free electrons in liquid argon.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  449(1-2):288--294, jul 2000.
 
 \bibitem{Weyl:10.2307}
 Hermann Weyl.
