@@ -162,8 +162,10 @@ If the particle enters a slice, it contributes to the $N_{\text{Inc}}( E^{kin})$
 The process is applied to all the hadrons in the sample; the cross section as a function of kinetic energy, $\sigma_{TOT}( E^{kin})$ is then evaluated to be proportional to the ratio $\frac{N_{\text{Int}}( E^{kin})}{N_{\text{Inc}}( E^{kin})}$ -- bin by bin ratio. 
 
 
-Our goal is to measure the total interaction cross section, independently  from the topology of the interaction. Thus, we determine that a hadron interacted simply by requiring that the last point of the WC2TPC matched track lies in a slice within the fiducial volume, whose boundaries are defined in Table \ref{tab:FidVol}. If the TPC track ends within the fiducial volume, its last point will be the interaction point; if the track crosses the boundaries of the fiducial volume, the track will be considered ``through going" and no interaction point will be found. The only points of the hadronic candidate track considered to fill the  $N_{\text{Int}}$ and  $N_{\text{Inc}}$ distributions are the ones contained in the fiducial volume.
-\textcolor{red}{ADD DECAY}
+Our goal is to measure the total interaction cross section, independently  from the topology of the interaction. Thus, we determine that a hadron interacted simply by requiring that the last point of the WC2TPC matched track lies in a slice within the fiducial volume, whose boundaries are defined in Table \ref{tab:FidVol}. If the TPC track ends within the fiducial volume, its last point will be the interaction point; if the track crosses the boundaries of the fiducial volume, the track will be considered ``through going" and no interaction point will be found. The only points of the hadronic candidate track considered to fill the  $N_{\text{Int}}$ and  $N_{\text{Inc}}$ distributions are the ones contained in the fiducial volume. 
+ 
+ A notable background pertinent only to the $N_{\text{Int}}$  distribution are cases in which the hadrons decays inside the TPC. In those cases in fact, the tracking ends inside the TPC but the interaction is not hadronic. The handling of decay background is treated in a slightly different way for the pion and kaon section, details can be found in sections \ref{ch:PionXSBkgSub} and \ref{ch:KaonXSRaw} respectively.
+
 
 
 \begin{table}[t]
@@ -183,29 +185,29 @@ $Z$ & 0 cm   & 86 cm  \\ \hline
 
 \subsection{Corrections to the Raw Cross Section}\label{ch:MCCorrections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-Equation \ref{eq:thinTargetXSSolved}  is a prescription for measuring the cross section in case of a pure beam of the hadron of interest and 100\% efficiency in the determination of the interaction point.  For example, if LArIAT had a beam of pure pions and were 100\% efficient in determining the interaction point within the TPC, the pion cross section in each energy bin would be given by
+Equation \ref{eq:thinTargetXSSolved}  is a prescription for measuring the cross section in case of a pure beam of the hadron of interest and 100\% efficiency in the determination of the interaction point.  For example, if LArIAT had a beam of pure pions and were 100\% efficient in determining the interaction point within the TPC, the pion cross section as a function of  kinetic energy (estimated at the central value of the energy bin $E_i$) would be given by
 
 \begin{equation}
  \sigma^{\pi^-}_{TOT}(E_{i})  = \frac{1}{n \delta X}\frac{N^{\pi^-}_{ \text{Int}} (E_{i})}{N^{\pi^-}_{ \text{Inc}}(E_{i})}.
 \label{eq:thinTargetXSSolved2}
 \end{equation}
 
-Unfortunately, this is not the case. In fact, the selection used to isolate pions in the LArIAT beam allows for the presence of some muons and electrons as background, while the kaon selection allows for a small percentage of protons (see Section \ref{ch:beamlineComposition}). Also, the LArIAT TPC is not 100\% efficient in determining the interaction point. Therefore we need to apply two corrections evaluated on the MC in order to extract the true cross section from LArIAT data: the background subtraction and the efficiency correction. 
+Unfortunately, this is not the case. In fact, the selection used to isolate pions in the LArIAT beam allows for the presence of some muons and electrons as background, while the kaon selection allows for a small contamination of protons (see Section \ref{ch:beamlineComposition}). Also, the LArIAT TPC tracking algorithm is not 100\% efficient in determining the interaction point. Therefore we need to apply two corrections evaluated on the MC in order to extract the final cross section from LArIAT data: i) a background subtraction and ii) a correction for reconstruction effects. 
 Still using the pion case as example, we estimate the pion cross section in each energy bin changing  Equation \ref{eq:thinTargetXSSolved2} into
 \begin{equation}
- \sigma^{\pi^-}_{TOT}(E_{i})  =\frac{1}{n \delta X}\frac{N^{\pi^-}_{ \text{Int}} (E_{i})}{N^{\pi^-}_{ \text{Inc}}(E_{i})} = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i) [ N^{ \text{TOT}}_{ \text{Int}} (E_{i}) - B_{ \text{Int}} (E_i)] }{   \epsilon^{\text{Int}}(E_i) [N^{ \text{TOT}}_{ \text{Inc}}(E_{i}) - B_{ \text{Inc}} (E_i)]},
+ \sigma^{\pi^-}_{TOT}(E_{i})  =\frac{1}{n\text{ } \delta X}\frac{N^{\pi^-}_{ \text{Int}} (E_{i})}{N^{\pi^-}_{ \text{Inc}}(E_{i})} = \frac{1}{n \text{ }\delta X}\frac{ \epsilon^{\text{Inc}}(E_i) [ N^{ \text{TOT}}_{ \text{Int}} (E_{i}) - B_{ \text{Int}} (E_i)] }{   \epsilon^{\text{Int}}(E_i) [N^{ \text{TOT}}_{ \text{Inc}}(E_{i}) - B_{ \text{Inc}} (E_i)]},
 \label{eq:True}
 \end{equation}
 
 
 
  
-where  $N^{\text{TOT}}_{\text{Int}} (E_{i})$ and $N^{\text{TOT}}_{\text{Incident}} (E_{i})$ is the measured content of the interacting and incident histograms for events that pass the event selection, $B_{\text{Int}} (E_i)$ and $B_{\text{Inc}} (E_i)$ represent the contributions from the background to the interacting and incident histograms respectively, and  $\epsilon^{\text{Int}}(E_i)$ and  $\epsilon^{\text{Inc}}(E_i)$ are the efficiency corrections for said histograms. 
+where  $N^{\text{TOT}}_{\text{Int}} (E_{i})$ and $N^{\text{TOT}}_{\text{Incident}} (E_{i})$ is the measured content of the interacting and incident histograms for events that pass the event selection, $B_{\text{Int}} (E_i)$ and $B_{\text{Inc}} (E_i)$ represent the contributions from the background to the interacting and incident histograms respectively, and  $\epsilon^{\text{Int}}(E_i)$ and  $\epsilon^{\text{Inc}}(E_i)$ are the corrections for reconstruction effects.
 
-As we will show in section \ref{ch:PionXSBkgSub}, the background subtraction for the interacting and incident histograms can be translated into a corresponding relative pion content $C^{\pi MC}_{Interacting} (E_{i})$ and $C^{\pi MC}_{Incident} (E_{i})$ and the cross section re-written as follows
+As we will show in section \ref{ch:PionXSBkgSub}, the background subtraction for the interacting and incident histograms can be translated into corresponding relative pion content factors $C^{\pi MC}_{\text{Int}} (E_{i})$ and $C^{\pi MC}_{\text{Inc}} (E_{i})$ and the cross section re-written as follows
 
 \begin{equation}
-      \sigma^{\pi^-}_{TOT}(E_{i})  = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{\pi MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{\pi MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
+      \sigma^{\pi^-}_{TOT}(E_{i})  = \frac{1}{n\text{ } \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{\pi MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{\pi MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
 \label{eq:C}
 \end{equation}
 
@@ -219,14 +221,14 @@ As we will show in section \ref{ch:PionXSBkgSub}, the background subtraction for
 
 
 
-\section{Procedure testing with truth quantities}\label{ch:procedureTesting}
-The ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section implemented in Geant4 can be used as a tool to validate the measurement methodology.  We describe here a closure test done on Monte Carlo to prove that the methodology of slicing the TPC retrieves the underlying cross section distribution implemented in Geant4 within the statistical uncertainty. %under the working assumption of perfect reconstruction.
+\section{Procedure testing with MC truth quantities}\label{ch:procedureTesting}
+The ($\pi^{-}$,Ar) and (K$^{+}$,Ar) total hadronic cross section implemented in Geant4 can be used as a tool to validate the measurement methodology.  We describe here a closure test done on Monte Carlo to prove that the methodology of slicing the TPC retrieves the underlying cross section distribution implemented in Geant4 within the MC statistical uncertainty. 
 
-For pions and kaons in the considered energy range, the Geant4 inelastic model adopted is ``BertiniCascade"; the pion elastic cross sections are tabulated from on Chips, while the kaon elastic cross sections are tabulated on Gheisha and Chips.
+For pions and kaons in the considered energy range, the Geant4 inelastic model adopted is ``BertiniCascade"; the pion elastic cross sections are tabulated from Chips, while the kaon elastic cross sections are tabulated on Gheisha and Chips.
 
-For the validation test, we fire a sample of pions and a sample of kaons inside the LArIAT TPC active volume using the Data Driven Monte Carlo (see section \ref{sec:DDMC}). We apply  the thin-sliced method using only true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects from possible issues with the methodology.  For each slab of 4.7 mm length along the path of the hadron, we integrate the true energy deposition as given by the Geant4 transportation model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Since the MC is a pure beam of the hadron of interest and truth information is used to retrieve the interaction point, no correction is applied. Doing so, we obtain the true interacting and incident distributions for the considered hadron, from which we derive  the true MC cross section as a function of the hadron true kinetic energy. 
+For the validation test, we fire a sample of pions and a sample of kaons inside the LArIAT TPC active volume using the Data Driven Monte Carlo, a procedure described in Section \ref{sec:DDMC}. We apply the thin-sliced method using only true quantities to calculate the hadron kinetic energy at each slab in order to decouple reconstruction effects from possible issues with the methodology.  For each slab of 4.7 mm length along the path of the hadron, we integrate the true energy deposition as given by the Geant4 transport model. Then, we recursively subtracted it from the hadron kinetic energy at the TPC front face to evaluate the kinetic energy at each slab until the true interaction point is reached. Since the MC is a pure beam of the hadron of interest and truth information is used to retrieve the interaction point, no background correction or reconstruction effects correction is applied. Doing so, we obtain the true interacting and incident distributions for the considered hadron, whose ratio leads to  the true MC cross section as a function of the hadron kinetic energy. 
 
-Figure \ref{fig:TrueMCXS2} shows the total hadronic cross section for argon implemented in Geant4 10.03.p1 (solid lines) overlaid with the true MC cross section as obtained with the sliced TPC method (markers) for pions on the left and kaons on the right; the total cross section is shown in green,  the elastic cross section in blue and the inelastic cross section in red.  The nice agreement with the Geant4 distribution and the cross section  obtained with the sliced TPC method gives us confidence in the  validity of the methodology. 
+Figure \ref{fig:TrueMCXS2} shows the total hadronic cross section for argon implemented in Geant4 10.03.p1 (solid lines) overlaid with the true MC cross section as obtained with the sliced TPC method (markers) for pions on the left and kaons on the right; the total cross section is shown in green. For completeness, we also report the contributions from  the elastic cross section (in blue) and the inelastic cross section (in red), available at the MC level.  The nice agreement with the Geant4 distribution and the cross section  obtained with the sliced TPC method gives us confidence in the  validity of the methodology. 
         
 %\begin{comment}     
 \begin{figure}
