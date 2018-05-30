@@ -208,9 +208,11 @@ Figure \ref{fig:EffCorr60A} shows $\epsilon^{\text{Int}}(E_{i})$ in the left sid
 
 \clearpage
 \section{Results}\label{ch:FinalPion}
-Figure \ref{fig:FinalXSPion} show the measurement of the ($\pi^-$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction effects correction to the raw cross section. The top left plot is the measurement obtained on the 60A data, statistical uncertainty in black and systematic uncertainty in red. The top right plot is the measurement obtained on the 100A data, statistical uncertainty in black and systematic uncertainty in blue. The bottom plot shows the two measurements overlaid. In all three plot, the Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green.
+Figure \ref{fig:FinalXSPion} shows the measurement of the ($\pi^-$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction effects correction to the raw cross section. The top left plot is the measurement obtained on the 60A data, statistical and systematic uncertainty shown in red. The top right plot is the measurement obtained on the 100A data, statistical uncertainty and systematic uncertainty shown in blue. The bottom plot shows the two measurements overlaid. In all three plot, the Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green. 
 
 The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty related to the kinetic energy measurement, the systematic uncertainty related to the beam composition and the systematic uncertainty related to the reconstruction effects correction.
+
+The cross section measurements in the two datasets agree within the systematic uncertainty, even if the cross section measured in the 60A data is lower than the one measured in the 100A data in all overlapping bins except for the 200-250 MeV bin.
 
 \begin{figure}[htb]
 \centering
@@ -222,6 +224,21 @@ The systematic uncertainty on the cross section is the sum in quadrature of the 
 \emph{Bottom:} ($\pi^-$-Ar) total hadronic cross section measurements in the 60A and 100A samples overlaid with the  Geant4 prediction (green).}
 \label{fig:FinalXSPion}
 \end{figure}
+
+The top panel of Figure \ref{fig:FinalXSResPion} shows the cross section obtained combining the two datasets. To combine the datasets, we merge the corrected interacting histogram for the 60A data with the interacting histogram for the 100A data; we apply the same merging with the incident histograms. We then calculate the cross section central point and statistical uncertainty using the merged interacting and incident histograms. The systematic uncertainty is calculated as the sum in quadrature of the original systematic uncertainties on the cross section measurements on the two separated data sets.
+
+The bottom panel of figure  \ref{fig:FinalXSResPion} shows the relative difference between the measured cross section and the Geant4 predicted cross section.
+A couple of considerations are in order here. On one hand, we note the general agreement between the measured and predicted cross sections. We expected the pion cross section in argon to be well modeled in Geant4, given the vast set of measurements available for pion interaction -- albeit not on argon. Thus, this agreement augments our confidence in the experimental methodology used.
+On the other hand, this agreement is not perfect.  As a matter of fact, its imperfections are rather suggestive: we see a slight shift of the delta resonance at higher energies and a small shape difference, with a steeper drop between the delta region and the flatter part at energies greater than 400 MeV. 
+Since we see room for improvement of the systematic uncertainties, we look forward to see if this difference in shape will be confirmed by further analyses.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Chapter-6/Images/TheRealMoneyPlot.pdf}
+\caption{ \emph{Top:} ($\pi^-$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$ measured in the combined sample, statistical uncertainty and systematic uncertainty in black. The Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green. \emph{Bottom:} Relative difference between the measured cross section and the Geant4 prediction. }
+\label{fig:FinalXSResPion}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{comment}

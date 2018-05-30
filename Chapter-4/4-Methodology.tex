@@ -72,7 +72,7 @@ The secondary beam impinging on LArIAT secondary target produces a plethora of p
 
 \subsection{TPC Selection: Shower Removal}\label{ch:electrons}
 In the case of the ($\pi^-$,Ar) cross section, the resolution of  beamline mass spectrometer is not sufficient to select a beam of pure pions. In fact,  muons which are close in mass to the pions and relativistic electrons survive the selection on the beamline mass.  It is important to notice that the composition of the negative polarity beam is mostly pions, as will be discussed in section \ref{ch:beamlineComposition}.
-Still, we devise a selection on the TPC information to mitigate the presence of electrons in the sample used for the pion cross section. The selection relies on the different topologies of a pion and an electron event when propagating in liquid argon: while the former will trace a track inside the TPC active volume, the latter will tend to ``shower", i.e. interact with the medium, producing bremsstrahlung photons which pair convert into several short tracks. In order to remove the shower topology, we create a region of interest (ROI) around the TPC track corresponding to the beamline particle. We look for short tracks contained in the ROI, as depicted in figure \ref{fig:showerFilt}:  if more then 5 tracks shorter than 10 cm are in the ROI, we reject the event. Line 7 in in Table \ref{tab:beamlineDataSelection} shows the number of events surviving this selection.
+Still, we devise a selection on the TPC information to mitigate the presence of electrons in the sample used for the pion cross section. The selection relies on the different topologies of a pion and an electron event when propagating in liquid argon: while the former will trace a track inside the TPC active volume, the latter will tend to ``shower", i.e. interact with the medium, producing bremsstrahlung photons which pair convert into several short tracks. In order to remove the shower topology, we create a region of interest (ROI) around the TPC track corresponding to the beamline particle. We look for short tracks contained in the ROI, as depicted in figure \ref{fig:showerFilt}:  if more then 5 tracks shorter than 10 cm are in the ROI, we reject the event. Line 7 in  Table \ref{tab:beamlineDataSelection} shows the number of events surviving this selection; that table also shows that this selection is applied after the wire chamber to TPC match (discussed in the next section). The WC2TPC match already lower the presence of electrons in the sample, which is further reduced by the shower filter.
 
 \begin{figure}
   \centering  
@@ -139,9 +139,17 @@ Solving for the cross section, we find:
 \end{equation}
 
 \subsection{Not-so-Thin Target: Slicing the Liquid Argon Volume}\label{ch:XSRaw}
-The interaction length of pions and kaons in liquid argon is expected to be of the order of 50 cm for pions and 100 cm for kaons. Thus, the LArIAT TPC, with its 90 cm of length, is not a thin target. However, the fine-grained tracking of the LArIAT LArTPC allows us to treat the argon volume as a sequence of many adjacent thin targets. 
+The interaction length of pions and kaons in liquid argon is expected to be of the order of 50 cm for pions and 100 cm for kaons. Thus, the LArIAT TPC, with its 90 cm of length, is not a thin target. However, the granularity of the LArIAT LArTPC detector allows us to treat the argon volume as a sequence of many adjacent thin targets. 
 
-As described in Chapter \ref{sec:experimentDescription}, LArIAT induction and collection planes consist of 240 wires each at 4 mm spacing. The wires are oriented at +/- $60^{\circ}$ from the vertical direction, while the beam direction is oriented 3 degrees off the $z$ axis in the $XZ$ plane.  The collection wires collect signals proportional to the energy deposited by the hadron along its path in a  $\delta${\emph{X}} = 4 mm/(sin($60^{\circ}$)cos($3^{\circ}$)) $\approx$ 4.7~mm slab of liquid argon. Thus, one can think to slice the TPC into many thin targets of $\delta${\emph{X}} = 4.7~mm thickness along the direction of the incident particle, making a measurement at each wire along the path.
+As described in Chapter \ref{sec:experimentDescription}, LArIAT induction and collection planes consist of 240 wires each at 4 mm spacing. The wires are oriented at +/- $60^{\circ}$ from the vertical direction, while the beam direction is oriented 3 degrees off the $z$ axis in the $XZ$ plane.  The collection wires collect signals proportional to the energy deposited by the hadron along its path in a  $\delta${\emph{X}} = 4 mm/(sin($60^{\circ}$)cos($3^{\circ}$)) $\approx$ 4.7~mm slab of liquid argon. Thus, one can think to slice the TPC into many thin targets of $\delta${\emph{X}} = 4.7~mm thickness along the direction of the incident particle, making a measurement at each wire along the path, as sketched in Figure \ref{fig:TPCGran}.
+
+\begin{figure}
+  \centering  
+\includegraphics[width=0.8\textwidth]{Chapter-4/Images/LArSlice.png}
+\caption{Representation of sliced LAr Volume.}
+\label{fig:TPCGran}
+\end{figure}
+
 
 Considering each slice {\emph{j}}  a ``thin target",  we can apply the cross section calculation from Equation~\ref{eq:thinTargetXSSolved} iteratively, evaluating the kinetic energy of the hadron as it enters each slice, $E_{j}^{kin}$.  For each WC2TPC matched particle, the energy of the hadron entering the TPC is known thanks to the momentum and mass determination by the tertiary beamline, 
 
