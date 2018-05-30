@@ -461,7 +461,7 @@ Once we fix the scattering angle definition, we can study the effects of the ang
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Calorimetry Studies}\label{ch:energyCal} 
-The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill.  Thus, the energy measurement provided by the LArTPC is fundamental for the cross section analysis. In Appendix  \ref{ch:energyCalibration}, we describe how we calibrate the TPC calorimetric response. In the following section, we describe how we measure the kinetic energy of the hadrons in the TPC.
+The measured kinetic energy of a hadron candidate at each argon slab determines which bins of the interacting and incident histograms a selected event is going to fill.  Thus, the energy measurement provided by the LArTPC is fundamental for the cross section analysis. In Appendix  \ref{ch:energyCalibration}, we describe how we calibrate the TPC calorimetric response. In this section, we describe how we measure the kinetic energy of the hadrons in the TPC.
 
 
 
@@ -488,10 +488,9 @@ The energy deposited by the hadron from the TPC front face until the $j^{\text{t
 \begin{equation}
 E_{\text{FF-j}} = \sum_{i<j} E_{i}, 
 \end{equation}
-where $E_{i}$ is measured in each slab as  the product of the stopping power,  $dE/dX_{i}$,  and the track pitch, $Pitch_i$, for that point. 
-If we assume conservatively that the measurements of $E_{i}$ are not independent from one another, the uncertainty on $E_{\text{FF-j}}$ becomes
+where $E_{i}$ is measured in each slab as  the product of the stopping power,  $dE/dX_{i}$,  and the track pitch for that point. Since the measurements of the energy deposited in each slab rely on the same global calorimetric procedure and tracking algorithms, we assume conservatively that that the measurements of $E_{i}$ are not independent from one another; thus, the uncertainty on $E_{\text{FF-j}}$ becomes
 \begin{equation}
-\delta E_{\text{FF-j}} = (j-1) \delta E_{i}, 
+\delta E_{\text{FF-j}} =  \sum_{i<j}  \delta E_{i} = (j-1) \delta E_{i}, 
 \end{equation}
 where $\delta E_{i}$ is the uncertainty on the energy loss in one slab of argon.
 

@@ -4,7 +4,7 @@
 {\raggedleft -- Nina Simone, 1978 -- \par}% Baltimore,
 \vspace{0.5cm}
 
-In this chapter, we show the result of the thin slice method to measure  the ($K^+$-Ar) total hadronic cross section. In Section \ref{ch:KaonXSRaw}, we start by measuring the raw cross section. In Section \ref{ch:KaonXSCorrections}, we apply a statistical subtraction of the background contributions based on simulation and a correction for detection inefficiency. The final results are presented in Section \ref{ch:FinalKaon}.
+In this chapter, we show the result of the thin slice method to measure  the ($K^+$-Ar) total hadronic cross section. In Section \ref{ch:KaonXSRaw}, we start by measuring the raw cross section. In Section \ref{ch:KaonXSCorrections}, we apply a statistical subtraction of the background contributions based on simulation and a correction for reconstruction effects. The final results are presented in Section \ref{ch:FinalKaon}.
 
 
 \section{Raw Cross Section}\label{ch:KaonXSRaw}
@@ -12,7 +12,7 @@ We measure the raw ($K^+$-Ar) total hadronic cross section as a function of the 
 
 Similar to the pion case,  the raw cross section is given by the equation \ref{eq:thinTargetXSSolved}
 \begin{equation}
- \sigma_{TOT} (E_i)  = \frac{1}{n \delta X}\frac{N^{\text{TOT}}_{\text{Int}}(E_i)}{N^{\text{TOT}}_{\text{Inc}}(E_i)},
+ \sigma_{TOT} (E_i)  = \frac{1}{n \delta X}\frac{N^{\text{TOT}}_{\text{Int}}(E_i)}{N^{\text{TOT}}_{\text{Inc}}(E_i)}, \tag{\ref{eq:thinTargetXSSolved}}
 \end{equation}
 
 where $N^{\text{TOT}}_{\text{Int}}$  is the measured number of particles interacting at kinetic energy $E_i$, $N^{\text{TOT}}_{\text{Inc}}$ is the  measured  number of particles incident  on an argon slice at  kinetic energy $E_i$,  $n$ is the density of the target centers  and $\delta X$ is the thickness of the argon slice. The density of the target centers and the slab thickness are $n = 0.021\cdot10^{24} \text{ cm}^{-3} $ and  $\delta X=0.47\text{ cm}$, respectively.
@@ -23,7 +23,7 @@ Figure \ref{fig:InteractingRawK} shows the distribution of  $N^{\text{TOT}}_{\te
 The contribution from the simulated kaons which interact hadronically is shown in pink, the contributions from kaon decay is shown in orange and the one from secondaries in red. 
 The simulated kaon's and secondaries' contributions are stacked; the sum of their integrals is normalized to the integral of the data.
  
-Figure \ref{fig:IncidentRawK} shows the distribution of  $N^{\text{TOT}}_{\text{Inc}}$. Data is displayed over the MC. For the  $N^{\text{TOT}}_{\text{Inc}}$ distribution we do not make a distinction between kaons that decay or interact hadronically because any kaon independently from its final interaction contributes to the flux of incident particles at given kinetic energy.
+Figure \ref{fig:IncidentRawK} shows the distribution of  $N^{\text{TOT}}_{\text{Inc}}$. Data is displayed over the MC. For the  $N^{\text{TOT}}_{\text{Inc}}$ distribution we do not make a distinction between kaons that decay or interact hadronically because any kaon contributes to the flux of incident particles at given kinetic energy independently from its final interaction.
 The same normalization procedure is used for both the interacting and incident histograms. 
 
 
@@ -65,14 +65,14 @@ We propagate this uncertainty  by varying the energy measurement $KE_{j}$ at eac
 
 
 \section{Corrections to the Raw Cross Section}\label{ch:KaonXSCorrections}
-As described in section \ref{ch:MCCorrections}, we need to apply a background correction and an efficiency correction in order to derive the true Kaon cross section from the raw cross section.  The true cross section is given in equation \ref{eq:C}, 
+As described in section \ref{ch:MCCorrections}, we need to apply a background correction and a correction for reconstruction effects in order to derive the  kaon cross section from the raw cross section.  The  cross section is given in equation \ref{eq:C}, 
 
 \begin{equation}
    \sigma^{K^+}_{TOT}(E_{i})  = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{K MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{K MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
  \tag{\ref{eq:C}}
 \end{equation}
 
-Currently, the only background considered for the kaon hadronic cross section comes from the presence of secondaries. A further development of the analysis will need to account for the presence of a small proton contamination. Figure \ref{fig:CorrectionsBeamK} shows the relative kaon content for the interacting and incident histograms.
+Currently, the only background considered for the kaon hadronic cross section comes from the presence of secondaries and decay interaction points. A further development of the analysis will need to account for the presence of a small proton contamination. Figure \ref{fig:CorrectionsBeamK} shows the relative kaon content suitable for the hadronic cross section for the interacting and incident histograms. 
 \begin{figure}[p]
 \centering
 \includegraphics[width=\textwidth]{Chapter-7/Images/KaonBkgSub_WithDK.pdf}
@@ -82,10 +82,10 @@ Currently, the only background considered for the kaon hadronic cross section co
 
 
 As described in \ref{ch:EFFXS} for the pion case, we derive the correction on a set of pure kaon MC, calculating its value bin by bin as the ratio between the true bin content and the correspondent reconstructed bin content. The correction is then applied to the relevant bin in data. 
-The efficiency correction is evaluated separately for the interacting and incident histograms, namely $\epsilon^{\text{int}}_i$ and  $\epsilon^{\text{inc}}_i$, and propagated to the cross section as shown in  equation \ref{eq:C}. 
+The correction for recontruction effects is evaluated separately for the interacting and incident histograms, namely $\epsilon^{\text{int}}(E_i)$ and  $\epsilon^{\text{inc}}(E_i)$, and propagated to the cross section as shown in  equation \ref{eq:C}. 
 
 
-In section \ref{sec:angleRes}, we estimated the angular resolution for data and MC to be $\bar\alpha_{Data} = (4.3 \pm 3.7) \text{ deg}$  and  $\bar\alpha_{MC} = (4.4 \pm 3.6) \text{ deg}$, respectively.  Most interaction angles smaller than the angular resolution will thus be indistinguishable  for the reconstruction. Thus, we claim we are able to  measure the cross section for interaction angles greater than 4.5 deg. Geant4 simulates interactions at all angles: in order to calculate the efficiency correction,  we select events which have an interaction angle greater than a $\alpha_{res}$ to construct the true interacting and incident histograms (the denominator of the efficiency correction). The systematics on the efficiency correction is estimated by varying the value of $\alpha_{res}$ between 0 deg and 4.5 deg and propagating the uncertainty on the cross section. 
+In section \ref{sec:angleRes}, we estimated the angular resolution for data and MC to be $\bar\alpha_{Data} = (4.3 \pm 3.7) \text{ deg}$  and  $\bar\alpha_{MC} = (4.4 \pm 3.6) \text{ deg}$, respectively.  Most interaction angles smaller than the angular resolution will thus be indistinguishable  for the reconstruction. Thus, we claim we are able to  measure the cross section for interaction angles greater than 4.5 deg. Geant4 simulates interactions at all angles: in order to calculate the correction for reconstruction effects,  we select events which have an interaction angle greater than a $\alpha_{res}$ to construct the true interacting and incident histograms (the denominator of the correction). The systematics on this correction is estimated by varying the value of $\alpha_{res}$ between 0 deg and 4.5 deg and propagating the uncertainty on the cross section. 
 
 Figure \ref{fig:EffCorrK} shows $\epsilon^{\text{Int}}(E_{i})$ in the left side and $ \epsilon^{\text{Inc}}(E_i)$ on the right as a function of the kinetic energy for the kaon sample and their systematic uncertainty. 
 
@@ -93,16 +93,16 @@ Figure \ref{fig:EffCorrK} shows $\epsilon^{\text{Int}}(E_{i})$ in the left side 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{Chapter-7/Images/EffCorrK.pdf}
-\caption{\emph{Left:} Efficiency correction on the interacting histogram, statistical uncertainty in blue, systematic uncertainty in red. \emph{Right:}  Efficiency correction on the incident histogram, statistical uncertainty in blue, systematic uncertainty in red.}
+\caption{\emph{Left:} Reconstruction  effects correction on the interacting histogram, statistical uncertainty in blue, systematic uncertainty in red. \emph{Right:}  Reconstruction  effects  correction on the incident histogram, statistical uncertainty in blue, systematic uncertainty in red.}
 \label{fig:EffCorrK}
 \end{figure}
 
 
 
 \section{Results}\label{ch:FinalKaon}
-Figure \ref{fig:FinalXSKaon} show the measurement of the ($K^+$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and efficiency correction to the raw cross section. The plot shows the measurement obtained on the full dataset, statistical uncertainty in black and systematic uncertainty in red. The Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green.
+Figure \ref{fig:FinalXSKaon} show the measurement of the ($K^+$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction  effects  correction to the raw cross section. The plot shows the measurement obtained on the full dataset, statistical uncertainty in black and systematic uncertainty in red. The Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green.
 
-The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty related to the kinetic energy measurement and the systematic uncertainty related to the efficiency correction.
+The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty related to the kinetic energy measurement and the systematic uncertainty related to the reconstruction  effects  correction.
 
 \begin{figure}[htb]
 \centering
