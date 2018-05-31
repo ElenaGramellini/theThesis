@@ -252,8 +252,11 @@ LArIAT Run-II has three wire planes separated by 4 mm spaces: in order of increa
 Electrons moving past the induction plane will induce a bipolar pulse on its wires; the drifting electrons will be then collected on the collection plane's wires, forming a unipolar pulse. 
 
 The three wire planes and the cathode form three drift volumes, as shown in Figure \ref{fig:driftregions}. 
-The main drift volume is defined as the region between the cathode plane and the shield plane (C-S). The other two drift regions are those between the shield plane and the induction plane (S-I), and between the induction plane and the collection plane (I-C). The electric field in these regions is chosen to satisfy the charge transparency condition and allow for 100$\%$ transmission of the drifting electrons through the shield and the induction planes. 
-
+The main drift volume is defined as the region between the cathode plane and the shield plane (C-S). The other two drift regions are those between the shield plane and the induction plane (S-I), and between the induction plane and the collection plane (I-C). The electric field in these regions is chosen to satisfy the charge transparency condition  and allow for 100$\%$ transmission of the drifting electrons through the shield and the induction planes; for example, the transparency condition between for the shield plane reads
+\begin{equation}
+\frac{E_{S-I}}{E_{C-S}} > \frac{1+\rho}{1-\rho},
+\end{equation}
+where $E_{C-S}$ is the electric field in the region between the cathode and the shield plane, $E_{S-I}$ is the electric field in the region between the shield and the induction plane, and $\rho = \frac{2\pi \text{ }r}{D}$ is a factor accounting for the radius of the wires $r$ (152 $\mu m$) and the gap distance $D$ (4 mm). An analogous condition can be written for the induction plane.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.35]{Chapter-3/Images/DriftRegions.png}\\

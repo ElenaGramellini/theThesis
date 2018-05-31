@@ -15,7 +15,8 @@ The results of the tuning and cross check for Run-II data on the collection plan
 
 In MC, we simulate the corresponding positive pion sample with the DDMC (see section \ref{sec:DDMC}) and follow the same steps as in data. More details on the calorimetry tuning can be found in \cite{LArIATCalo}.
 
-\textcolor{red}{Add agreement between data and MC for dedx for pions}
+After the calibration is done separately on data and MC, we can compare the resulting dE/dX distributions; this is done for the set of pion beamline candidates and pion MC on the left side of Figure \ref{fig:dedx}. On the right side of the same figure, we report the data-MC comparison for the kaon sample used in the cross section. The distributions are fitted with simple Landau functions. As expected, the Landau MPV for data  is consistent with the MC MPV for both pions and kaons. For both the pion and the kaon case, the width of the Landau is a bit wider in data than in MC; this difference might be due to an underestimate of the electronic noise in the MC simulation.
+
 
 \begin{figure}[htb]
 \centering
@@ -27,10 +28,19 @@ In MC, we simulate the corresponding positive pion sample with the DDMC (see sec
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.50\textwidth]{Chapter-5/Images/RunIINegTotaldEdXvsMomentum.png}
-\includegraphics[width=0.50\textwidth]{Chapter-5/Images/RunIIPosTotaldEdXvsMomentum.png}
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/RunIINegTotaldEdXvsMomentum.png}
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/RunIIPosTotaldEdXvsMomentum.png}
 \caption{Stopping power versus Momentum for Run-II negative (top) and positive (bottom) polarity data. We achieve the agreement between the Bethe-Bloch predictions and the distribution obtained with of the positive pions (top plot, red dots) by tuning the calorimetry constants. Once the calorimetry constants are locked in, the agreement between the other particle species and the Bethe-Bloch predictions follows naturally.}
 \label{fig:BBandData}
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.48\textwidth]{AppendixC-EnergyCalibration/dEdXPions.pdf}
+\includegraphics[width=0.48\textwidth]{AppendixC-EnergyCalibration/dEdXKaons.pdf}
+\caption{\emph{Left:} dE/dx distribution for $\pi^-/\mu^-/e^-$ data (black) and Pion MC (blue). The Landau fit for data is shown in red, the one for MC in teal.\emph{Right:} dE/dx distribution for $K^+$ data (black) and Kaon MC (blue). The Landau fit for data is shown in red, the one for MC in teal. All the distributions are area normalized.}
+\label{fig:dedx}
 \end{figure}
 
 
