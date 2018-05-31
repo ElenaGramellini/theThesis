@@ -46,7 +46,7 @@ The secondary beam impinges then on a copper target within a steel collimator in
 \section{LArIAT Tertiary Beam Instrumentation}\label{sec:Instrumentation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The instrumentation of  LArIAT tertiary beam and the TPC components have changed several times during the three years of LArIAT data taking. The following paragraphs describe the components operational during ``Run II", the data taking period relevant to the hadron cross section measurements considered in this thesis. 
+The instrumentation of the LArIAT tertiary beam and the TPC components have changed several times during the three years of LArIAT data taking. The following paragraphs describe the components operational during ``Run II", the data taking period relevant to the hadron cross section measurements considered in this thesis. 
 
 The key components of the tertiary beamline instrumentation for the hadron cross section analyses are the two bending magnets, a set of four wire chambers (WCs) and two time-of-flight scintillating paddles (TOF) and, of course, the LArTPC.  The magnets determine the polarity of the particles in the tertiary beam; the combination of magnets and wire chambers determines the particles' momenta, which is used to determine the particle species in conjunction with the TOF.
 A muon range stack downstream from the TPC and two sets of cosmic paddles configured as a telescope surrounding the TPC are also used for calibration purposes.
@@ -73,7 +73,7 @@ We describe here the characteristics and response of one magnet, as the second o
 \end{figure}
 
 The current through the magnets at a given time is identical in both magnets. For the Run II data taking period, the current settings explored were 60A (B $\sim$0.21 T) and 100A (B $\sim$0.35 T) in both polarities. 
-Albeit advantageous to enrich the tertiary beam composition with high mass particles such as kaons, we never pushed the magnets current over 100 A, not to incur in overheating.  During operation, we operated an air and water cooling system on the magnets and we remotely monitored the magnet temperatures.
+Albeit advantageous to enrich the tertiary beam composition with high mass particles such as kaons, we never pushed the magnets current over 100 A, so as not to incur in overheating.  During operation, we operated an air and water cooling system on the magnets and we remotely monitored the magnet temperatures.
  
 \subsection{Multi-Wire Proportional Chambers}\label{sec:MWPC}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,12 +154,12 @@ We combine the pulses from the two PMTs on each paddle to determine the particle
 The punch-through and the muon range stack (MuRS) detectors are located downstream of the TPC. These detectors provide a sample of  TPC crossing tracks without relying on TPC information and can be used to improve particle ID for  muons and pions with momentum higher than  450 MeV/c.
 
 The punch-through is simple sheet of scintillator material, read out by two PMTs. 
-The MuRS is a segmented block of steel with four slots instrumented with scintillation bars. The four steel layers in front of each instrumented slot are 2 cm, 2 cm, 14 cm and 16 cm deep in the beam direction. Each instrumented slot is equipped with four scintillation bars each, positioned horizontally in the direction orthogonal to the beam. Each scintillator bar measures  \textcolor{red}{? x ? x 2}~cm and it is read out by one PMT.  
+The MuRS is a segmented block of steel with four slots instrumented with scintillation bars. The four steel layers in front of each instrumented slot are 2 cm, 2 cm, 14 cm and 16 cm deep in the beam direction. Each instrumented slot is equipped with four scintillation bars each, positioned horizontally in the direction orthogonal to the beam. Each scintillator is read out by one PMT.  
 
 The signals from both the punch-thorough and the MuRS PMTs  are sent to a NIM discriminator. If the signal crosses the discriminator threshold, it is digitized in the CAEN V1740, same as the TPC. The sampling time of the CAEN V1740 is slow (of the order of 128 ns) and that the pulse shape information from the PMT is lost. A Punch-thorough and MuRS signal will then be simply a ``hit" at a given time in the beamline event.
 
 
-It is worth mentioning here the presence of an additional scintillation paddle between WC4 and the downstream paddle of the TOF system, called halo. The halo is a 39x38x1 cm$^3$ paddle with a 6.5 cm radius hole in the center, whose original function was to reject  beam particles slightly offset from the beamline center. Data from this paddle turned out to be unusable, so our data events include both particle going through the halo scintillation material or through the halo hole.
+It is worth mentioning here the presence of an additional scintillation paddle between WC4 and the downstream paddle of the TOF system, called halo. The halo is a 39 x 38 x 1 cm$^3$ paddle with a 6.5 cm radius hole in the center, whose original function was to reject  beam particles slightly offset from the beamline center. Data from this paddle turned out to be unusable, so our data events include both particle going through the halo scintillation material or through the halo hole.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{LArIAT Cosmic Ray Paddle Detectors}\label{sec:CosmicRayPaddle}
@@ -213,7 +213,7 @@ We added a ``beam window'' on the front outer end cap and an ``excluder'' on the
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%
-As in any other LArTPC, argon purity is a crucial parameter for LArIAT. Indeed, the presence of contaminants affects both the basic working principles of a LArTPC, as shown in section \ref{sec:LArTPCWorkingPrinciple}: electronegative contaminants such as oxygen and water decrease the number of ionization electrons collected on the wires after drifting through the volume. In addition, contaminants such as Nitrogen decrease the light yield from scintillation light, especially in its slow component.
+As in any other LArTPC, argon purity is a crucial parameter for LArIAT. Indeed, the presence of contaminants affects both the basic working principles of a LArTPC, as shown in Section \ref{sec:LArTPCWorkingPrinciple}: electronegative contaminants such as oxygen and water decrease the number of ionization electrons collected on the wires after drifting through the volume. In addition, contaminants such as Nitrogen decrease the light yield from scintillation light, especially in its slow component.
 In LArIAT, contaminations should not exceed the level of 0.2 parts per billion (ppb). We achieve this level of purity in several stages. The specifics required for the commercial argon bought for LArIAT are 2 parts per million (ppm) oxygen, 3.5~ppm water, and 10~ppm nitrogen. This argon is monitored with the use of commercial gas analyzer.
 Argon is stored in a dewar external to LArIAT hall and filtered before filling the TPC. %The argon is delivered from the commercial dewar to the cryostat through 2.54~cm diameter schedule 10 stainless steel piping.  The piping was insulated with 20.32~cm of polyurethane foam by the manufacturer.  The piping was cleaned to remove oil and grease before being welded into the system. 
 LArIAT uses a filtration system designed for the Liquid Argon Purity Demonstrator (LAPD)~\cite{LAPD}: half of a 77~liter filter contains a 4A molecular sieve (Sigma-Aldrich~\cite{sigma-aldrich}) able to remove mainly water, while the other half contains BASF~CU-0226~S, a highly dispersed copper oxide impregnated on a high surface area alumina, apt to remove mainly oxygen~\cite{basf}. A single pass of argon in the filter is sufficient to achieve the necessary purity, unless the filter is saturated. In case the filter saturates, the media needs to be regenerated by using heated gas; this happened twice during the Run II period\footnote{We deemed the filter regeneration necessary every time the electron lifetime dropped under 100 \textmu s.}. The electron lifetime during the full LArIAT data taking are shown in Figure \ref{fig:Elifetime}.
@@ -279,7 +279,7 @@ Table \ref{tab:voltages} provides the default voltages applied to the cathode an
 \subsubsection{Electronics}
 
 Dedicated electronics read the induction and collection plane wires, for a total of  480-channel analog signal path from the TPC wires to the signal digitizers. A digital control system for the TPC-mounted electronics, a power supply, and a distribution system complete the front-end system. Figure \ref{pic:FEelectronics} shows a block diagram of the overall system. The direct readout of the ionization electrons in liquid argon forms typically small signals on the wires, which need amplification in oder to be processed. LArIAT  performs the amplification stage directly in cold with  amplifiers %developed by the Brookhaven National Lab (BNL) and 
-mounted on the TPC frame inside the liquid argon. The BNL ASICs adopted in LAriAT are designated as LArASIC, version 4-star and are the same used by the MicroBooNE experiment \cite{Acciarri2017}.
+mounted on the TPC frame inside the liquid argon. The BNL ASICs adopted in LArIAT are designated as LArASIC, version 4-star and are the same used by the MicroBooNE experiment \cite{Acciarri2017}.
 %The ASIC signals for each wire are then driven out of the vessel  to DAQ boards that act as waveform recorders.
 The signal from the ASICs are driven to the other end of the readout chain, to the CAEN V1740 digitizers \cite{CAENV1740}. The CAEN V1740 has a 12 bit resolution and a maximum input range of 2~VDC, resulting in about 180 ADC count for a crossing MIP.   
 
@@ -320,7 +320,7 @@ LArIAT receives three logic signals from the Fermilab accelerator complex relate
 
 The beam instruments,  the cosmic ray taggers, and the light collection system provide the other NIM-standard logic pulse inputs to the trigger decision. We automatically log the trigger inputs configuration with the rest of the DAQ configuration at the beginning of each run.
 
-Fundamental inputs to the trigger card come from the TOF (see section~\ref{sec:TOF}) and the wire chambers (see section~\ref{sec:MWPC}), as activity in these systems points to the presence of a charged particle in tertiary beam line.
+Fundamental inputs to the trigger card come from the TOF (see Section~\ref{sec:TOF}) and the wire chambers (see Section~\ref{sec:MWPC}), as activity in these systems points to the presence of a charged particle in tertiary beam line.
 In particular, the discriminated pulses from the TOF PMTs form a NIM logic pulse for the trigger logic. We ask for a coincidence within a 20~ns window for all the pulses from the PMTs looking at the same scintillator block and use a delayed coincidence between the upstream and downstream paddle to inform the trigger decision. In order to form a coincidence between the upstream and downstream paddles, we delay the upstream paddle coincidence by 20~ns and widen it by 100~ns. The delay and widening are necessary to account for both  lightspeed particles and slower particles (high-mass) to travel the 6.5~m between the upstream and the downstream paddles. 
 For the read out of the wire chambers, we use a total of sixteen multi-hit TDCs\cite{Sten}, four per chamber: two TDC per plane (horizontal and vertical), sixty-four wires per TDC. In each TDC, we keep the logical ``OR" for any signal over threshold from the sixty-four wires. We then require a coincidence between the ``OR" for the horizontal TDCs and the ``OR" for the vertical TDCs: with this logic we make sure that at least one horizontal wire and one vertical wire saw significant signal in one wire chamber.  The single logical pulse from each of the four wire chambers feeds into the first four inputs to the V1495 trigger card. We require a coincidence within 20~ns of at least three logical inputs to form a trigger.
 
@@ -333,10 +333,10 @@ We use the signal from the cryogenic PMTs (see Section \ref{sec:TPCLight}) to fo
 
 
 \section{Control Systems}
-LArIAT is a complex ensemble of systems which needed to be monitored simultaneously during data taking.  We performed the monitoring of the systems operations with a slow control system, a DAQ monitoring system and a low level data quality monitoring described in the following sections.
+LArIAT is a complex ensemble of systems which needed to be monitored simultaneously during data taking.  We performed the monitoring of the systems operations with a slow control system, a DAQ monitoring system and a low level data quality monitoring system described in the following sections.
 
 \subsubsection{Slow Control}
-We used the Synoptic Java Web Start framework \cite{Synoptic} as a real-time display of subsystem conditions. Synoptic provides a Graphical User Interface that talks to the Fermilab Accelerator Control System via the ACNET protocol. Its simple GUI allowed us to change the operating parameters and to graph the trends of several variables of interest for all of the tertiary beam detectors.  Among the most important quantities monitored by Synoptic there are the level of argon in both the inner vessel and the external dewar, the operating voltages of cathode and wire planes, of the PMTs and SiPMs, and of the four wire chambers, as well as the magnet temperatures. Figure \ref{fig:synoptics} shows an example of the monitoring system.
+We used the Synoptic Java Web Start framework \cite{Synoptic} as a real-time display of subsystem conditions. Synoptic provides a Graphical User Interface that talks to the Fermilab Accelerator Control System via the ACNET protocol. Its simple GUI allowed us to change the operating parameters and to graph the trends of several variables of interest for all of the tertiary beam detectors.  Among the most important quantities monitored by Synoptic are the level of argon in both the inner vessel and the external dewar, the operating voltages of cathode and wire planes, of the PMTs and SiPMs, and of the four wire chambers, as well as the magnet temperatures. Figure \ref{fig:synoptics} shows an example of the monitoring system.
 LArIAT uses the Accelerator Control NETwork system (ACNET) to monitor the beam conditions of the MCenter beamline. For example, the horizontal and vertical position of the beam at the first two wire chambers (WC1 and WC2) are shown in \ref{fig:ACNET} as seen by the shifter during data taking. 
 
 \begin{figure}[htb]
