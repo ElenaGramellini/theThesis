@@ -344,7 +344,7 @@ Kaon Data         &  $26 \pm 7 $        &     $22 \pm 7 $    \\ \hline
 
 \section{Tracking Studies}\label{sec:TrackingStudies}
 The tracking of hadrons in the TPC determines both the beamline to TPC handshake and the identification of the interaction point within the TPC. Thus, it plays a fundamental role in the cross section measurements. We performed several studies geared towards the optimization of the LArSoft software package for tracking in the TPC. In particular, we studied a suitable set of parameters for the WC2TPC match and we optimized the clustering algorithm to maximize the efficiency of finding the interaction point on MC. Given the technical nature of these studies, we report them in Appendix \ref{ch:AppendixTrack}. 
-We only report here the evaluation of  the angular resolution of the tracking algorithm in data and MC, due to its important implications on the physics measurement.
+We only report here the evaluation of  the angular resolution of the tracking algorithm and a study of the track pitch in data and MC, due to their important implications on the physics measurement.
 
 
 \subsection{Angular Resolution}\label{sec:angleRes}
@@ -454,6 +454,20 @@ Once we fix the scattering angle definition, we can study the effects of the ang
 \end{figure}
 
 
+
+\subsection{Track Pitch}\label{sec:trackPitch}
+The granularity of the LArTPC detector leads to the fine-sampling of a hadron inside the argon active volume. This detector granularity translates into the ``track pitch" quantity, which is the distance between two consecutive 3D points of the tracking. The track pitch determines the width of the slab $\delta X$ in the cross section Equation \ref{eq:thinTargetXSSolved2}. Figure \ref{fig:Pitch} shows the pitch distribution in data (black) and MC (red) for the pion combined sample on the left and the kaon sample on the right. The MC and data distributions agree rather well.   Thus, we estimate the slab width to be $\delta X = 0.47 \pm 0.03 $ cm.
+
+
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/PitchPi.pdf}
+\includegraphics[width=0.48\textwidth]{Chapter-5/Images/PitchK.pdf}
+\caption{\emph{Left:} Pitch distribution for the pion combined sample 60A and 100A, data displayed in black, MC in red. 
+\emph{Right:} Pitch distribution for the kaon sample, data displayed in black, MC in red.}
+\label{fig:Pitch}
+\end{figure}
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

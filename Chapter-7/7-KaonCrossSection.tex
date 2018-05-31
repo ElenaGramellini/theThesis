@@ -15,7 +15,7 @@ Similar to the pion case,  the raw cross section is given by the Equation \ref{e
  \sigma_{TOT} (E_i)  = \frac{1}{n \delta X}\frac{N^{\text{TOT}}_{\text{Int}}(E_i)}{N^{\text{TOT}}_{\text{Inc}}(E_i)}, \tag{\ref{eq:thinTargetXSSolved}}
 \end{equation}
 
-where $N^{\text{TOT}}_{\text{Int}}$  is the measured number of particles interacting at kinetic energy $E_i$, $N^{\text{TOT}}_{\text{Inc}}$ is the  measured  number of particles incident  on an argon slice at  kinetic energy $E_i$,  $n$ is the density of the target centers  and $\delta X$ is the thickness of the argon slice. The density of the target centers and the slab thickness are $n = 0.021\cdot10^{24} \text{ cm}^{-3} $ and  $\delta X=0.47\text{ cm}$, respectively.
+where $N^{\text{TOT}}_{\text{Int}}$  is the measured number of particles interacting at kinetic energy $E_i$, $N^{\text{TOT}}_{\text{Inc}}$ is the  measured  number of particles incident  on an argon slice at  kinetic energy $E_i$,  $n$ is the density of the target centers  and $\delta X$ is the thickness of the argon slice. The density of the target centers and the slab thickness are $n = 0.021\cdot10^{24} \text{ cm}^{-3} $ and  $\delta X=0.47 \pm 0.03\text{ cm}$, respectively.
 
 
 As in the case of pions, kaons might decay or interact between WC4 and the TPC front face. Some of the interaction products may be wrongly matched to the WC track, forming the ``secondary" particle's background in the kaon sample. We estimate the effect of the contamination of secondaries through  the DDMC kaon sample.
@@ -29,7 +29,7 @@ The same normalization procedure is used for both the interacting and incident h
 
 Figure \ref{fig:XSRawK} shows the raw cross section, statistical uncertainty in black and systematic uncertainty in red. The raw data cross section is overlaid to the reconstructed cross section for the MC mixed sample, displayed in azure.  We calculate the statistical uncertainty for the interacting, incident and cross section distributions in a similar fashion to the pion case as described in Section \ref{ch:StatUncertaintyXSRaw}. 
 
-As in the pion case, the only systematic effect considered in the measurement of the raw cross section results from the propagation of the uncertainty associate with the measurement of the kinetic energy at each argon slab. For kaons, the uncertainty on the kinetic energy of a candidate at the j$^{th}$ slab of argon  is given by
+As in the pion case, the systematic effects considered in the measurement of the raw cross section results from the uncertainty on the pitch ($\delta X = 0.47 \pm 0.03$ cm) and from the propagation of the uncertainty associate with the measurement of the kinetic energy at each argon slab. For kaons, the uncertainty on the kinetic energy of a candidate at the j$^{th}$ slab of argon  is given by
 
 \begin{eqnarray}
 \delta KE_{j} &=& \sqrt{\delta p_{Beam}^2 + \delta E_{Loss}^2 +  \delta  E_{\text{dep FF-j}}^2}\\
@@ -100,9 +100,14 @@ Figure \ref{fig:EffCorrK} shows $\epsilon^{\text{Int}}(E_{i})$ in the left side 
 
 
 \section{Results}\label{ch:FinalKaon}
-Figure \ref{fig:FinalXSKaon} show the measurement of the ($K^+$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction  effects  correction to the raw cross section. The plot shows the measurement obtained on the full dataset, statistical and systematic uncertainty in black. The Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green.
+Figure \ref{fig:FinalXSKaon} show the measurement of the ($K^+$-Ar) total hadronic cross section,
+\begin{equation}
+ \sigma^{K^+}_{TOT}(E_{i})  =\frac{1}{n\text{ } \delta X}\frac{N^{K^+}_{ \text{Int}} (E_{i})}{N^{K^+}_{ \text{Inc}}(E_{i})} = \frac{1}{n \text{ }\delta X}\frac{ \epsilon^{\text{Inc}}(E_i) [ N^{ \text{TOT}}_{ \text{Int}} (E_{i}) - B_{ \text{Int}} (E_i)] }{   \epsilon^{\text{Int}}(E_i) [N^{ \text{TOT}}_{ \text{Inc}}(E_{i}) - B_{ \text{Inc}} (E_i)]},
+\end{equation}
 
-The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty related to the kinetic energy measurement and the systematic uncertainty related to the reconstruction  effects  correction.
+for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction  effects  correction to the raw cross section. The plot shows the measurement obtained on the full dataset, statistical and systematic uncertainty in black. The Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green.
+
+The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty calculated for the raw cross section and the systematic uncertainty related to the reconstruction  effects  correction.
 
 The measured cross section is mostly in disagreement with the predicted cross section; in particular it is significantly higher -- on the order of 20\%-30\% higher -- in the bins lower than 400 MeV. Such difference is unlikely to be accounted for the small proton contamination expected in the data sample. It is worth noticing that the 100 MeV to 400 MeV energy range is the region of interest for the expected kaons coming from a proton decay event. With this result, we will inform a tuning of the Geant4 model for kaon cross section.
 

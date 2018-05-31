@@ -212,7 +212,7 @@ The final product of this reconstruction stage is the collection of bidimensiona
 
 \textbf{Calorimetry.} The last step in the event reconstruction chain is to assign calorimetric information to the track (or shower) objects. Calorimetry is performed separately on the different planes. A multi-step procedure is needed to retrieve the energy deposited in the TPC  from the charge seen by the wires.
 For each hit associated with the track object, the calorimetry algorithms calculate the charge seen on every wire using the area underneath the gaussian fit; then, they correct this raw charge by the electron life time, the electronic noise on the considered wire and the recombination effect. Lastly an overall calibration of the energy, explained in detail in section \ref{ch:energyCalibration}, is applied and the calorimetric information for the given track is assigned.
-Even if calorimetry is done in 2D, it benefits from the 3D tracking information; typical objects available after the calorimetric reconstruction are the total energy deposited by the particle and its stopping power $dE/dx$ at each ``track pitch", i.e. at each 2D projection on the wire plane of the 3D trajectory.
+Even if calorimetry is done in 2D, it benefits from the 3D tracking information; typical objects available after the calorimetric reconstruction are the total energy deposited by the particle and its stopping power $dE/dx$ at each ``track pitch", i.e. at each segment between two 3D points projected on the wire plane.
 
 
 

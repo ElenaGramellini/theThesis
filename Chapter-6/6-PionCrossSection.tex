@@ -75,7 +75,7 @@ Since the interaction probability $P_{Interacting}$ is estimated by $\frac{ N^{\
 
 $N^{\text{TOT}}_{\text{Inc}}$ and $N^{\text{TOT}}_{\text{Int}}$ are not independent. In fact, the population of a given bin for the interacting histogram always implies at least the population of the same bin in the incident histogram  (and possibly other incidents bins at higher energies). Thus, we conservatively calculate the statistical uncertainty on the cross section as 
 \begin{equation}
-\delta\sigma_{TOT}(E) = \sigma_{TOT}(E) \Big(\frac{\delta N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Int}}}+\frac{\delta N^{\text{TOT}}_{\text{Inc}}}{N^{\text{TOT}}_{\text{Inc}}}\Big) 
+\frac{\delta\sigma_{TOT}(E)}{\sigma_{TOT}(E)} =  \Big(\frac{\delta N^{\text{TOT}}_{\text{Int}}}{N^{\text{TOT}}_{\text{Int}}}+\frac{\delta N^{\text{TOT}}_{\text{Inc}}}{N^{\text{TOT}}_{\text{Inc}}}\Big) 
 \end{equation}
 where:
 \begin{eqnarray}
@@ -86,7 +86,7 @@ where:
 
 
 \subsection{Treatment of Systematics} \label{ch:SysUncertaintyXSRaw}
-The only systematic effect considered in the measurement of the raw cross section results from the propagation of the uncertainty associate with the measurement of the kinetic energy at each argon slab. As shown in Section \ref{ch:kinEn}, the uncertainty on the kinetic energy of a pion candidate at the j$^{th}$ slab of argon  is given by
+The systematic effects considered in the measurement of the raw cross section results from the uncertainty on the track pitch  ($\delta X = 0.47 \pm 0.03 $ cm, shown in \ref{sec:trackPitch})  and from the propagation of the uncertainty associate with the measured kinetic energy at each argon slab. As shown in Section \ref{ch:kinEn}, the uncertainty on the kinetic energy of a pion candidate at the j$^{th}$ slab of argon  is given by
 
 \begin{eqnarray}
 \delta KE_{j} &=& \sqrt{\delta p_{Beam}^2 + \delta E_{Loss}^2 +  \delta  E_{\text{dep FF-j}}^2}\\
@@ -148,14 +148,14 @@ Composition 0.5x Electrons   &82.1	\%&4.6 \%&	13.3 \%&	91.9 \%&	3.7	\%&4.4 \% \\
 
 
 \subsection{Correction for Reconstruction Effects}\label{ch:EFFXS}
-The interaction point for a particle in the selected sample for the total hadronic cross section analysis is the last point of its track that lies inside the LArTPC fiducial volume. This definition holds regardless the type of the interaction, i.e. if the TPC track ends within the fiducial volume, its last point will be the interaction point, no matter what the products of the interaction look like; on the other hand, if the track crosses the boundaries of the fiducial volume, the particle will be considered ``through going" and no interaction point will be found.  Given this definition, it is evident that we rely on the tracking algorithm to discern where the interaction occurred in the TPC  and correctly end the tracking. The tracking algorithm has an intrinsic angle resolution as shown in Section \ref{sec:angleRes}, which limits its efficiency, especially in the case of elastic scattering occurring a low angles. \textcolor{red}{Plus, there are instance where INSERT HERE THE STUFF ABOUT THE MIGRATION}
-Thus, we need to apply a correction accounting for mis-reconstruction of the interaction point in order to retrieve the true cross section.  This correction is evaluated separately for the interacting and incident histograms bin by bin, namely $\epsilon^{\text{int}}(E_i)$ and  $\epsilon^{\text{inc}}(E_i)$, and applied in the cross section formula as shown in  Equation \ref{eq:C}. 
+The interaction point for a particle in the selected sample for the total hadronic cross section analysis is the last point of its track that lies inside the LArTPC fiducial volume. This definition holds regardless the type of the interaction, i.e. if the TPC track ends within the fiducial volume, its last point will be the interaction point, no matter what the products of the interaction look like; on the other hand, if the track crosses the boundaries of the fiducial volume, the particle will be considered ``through going" and no interaction point will be found.  Given this definition, it is evident that we rely on the tracking algorithm to discern where the interaction occurred in the TPC  and correctly end the tracking. The tracking algorithm has an intrinsic angle resolution as shown in Section \ref{sec:angleRes}, which limits its efficiency, especially in the case of elastic scattering occurring a low angles. Also, as mentioned in Section \ref{ch:MCCorrections}, the tracking algorithm can prematurely stop, mis-identifying an interaction point. 
+Thus, we need to apply a correction accounting for mis-reconstruction of the interaction point in order to retrieve the final cross section.  This correction is evaluated separately for the interacting and incident histograms bin by bin, namely $\epsilon^{\text{int}}(E_i)$ and  $\epsilon^{\text{inc}}(E_i)$, and applied in the cross section formula as shown in  Equation \ref{eq:C}. 
 
 \subsubsection{Reconstruction Effects Correction: Procedure}\label{sec:EffCorrection}
 We describe here the procedure to calculate the mis-reconstruction correction taking the interacting distribution as example and noting that the procedure is identical for the incident distribution. 
 
 In Section \ref{sec:angleRes}, we estimated the angular resolution for data and MC to be $\bar\alpha_{Data} = (5.0 \pm 4.5) \text{ deg}$  and 
-$\bar\alpha_{MC} = (4.5 \pm 3.9) \text{ deg}$, respectively.  Most interaction angles smaller than the angular resolution will thus be indistinguishable  for the reconstruction. Thus, we claim we are able to  measure the cross section for interaction angles greater than 5.0 deg. Geant4 simulates interactions at all angles, as shown in figure \ref{fig:trueScatteringAngle}. In order to calculate the correction for reconstruction effects,  we select events which have an interaction angle greater than a given $\alpha_{res}$ to construct the true interacting and incident histograms (the denominator of the correction).
+$\bar\alpha_{MC} = (4.5 \pm 3.9) \text{ deg}$, respectively.  Most interaction angles smaller than the angular resolution will thus be indistinguishable  for the reconstruction. Thus, we claim we are able to  measure the cross section for interaction angles greater than 5.0 deg. Geant4 simulates interactions at all angles, as shown in figure \ref{fig:trueScatteringAngle}. In order to calculate the correction for reconstruction effects,  we select events which have an interaction angle greater than a given $\alpha_{res}$ to construct the true MC interacting and incident histograms (the denominator of the correction).
 
 We derive the correction $\epsilon^{\text{int}}(E_i)$ on a set of pure pion MC, calculating its value bin by bin as the ratio between the true bin content and the correspondent reconstructed bin content. The true interacting distribution is obtained applying the thin slice method on true MC energy deposition up to the MC flagged true interaction point for interaction angles greater than 5$^\circ$. The reconstructed MC interacting distribution is obtained treating the MC events through the same reconstruction process as data: the interaction point is given by the end of the tracking and its energy is given by the reconstructed calorimetric information. The correction is then applied to in data bin by bin. In formulae, the correction is calculated to be
 
@@ -175,7 +175,7 @@ N^{\text{$\pi$ Reco Data}}_{\text{Int}} (E_{i}) =  N^{\text{TOT Data}}_{\text{In
 \end{equation}
 
 
- The systematics on this correction is estimated by varying the value of $\alpha_{res}$ between 0 deg and 4.5 deg and propagating the uncertainty on the cross section. 
+ The systematics on this correction is estimated by varying the value of $\alpha_{res}$ between 0 deg and 5.0 deg and propagating the uncertainty on the cross section. 
 
 
 Figure \ref{fig:EffCorr60A} shows $\epsilon^{\text{Int}}(E_{i})$ in the left side and $ \epsilon^{\text{Inc}}(E_i)$ on the right as a function of the kinetic energy for the 60A runs and their systematic uncertainty. Similarly, Figure \ref{fig:EffCorr100A} shows $\epsilon^{\text{Int}}(E_{i})$ in the left side and $ \epsilon^{\text{Inc}}(E_i)$ on the right as a function of the kinetic energy for the 100A runs and their systematic uncertainty. 
@@ -208,9 +208,15 @@ Figure \ref{fig:EffCorr60A} shows $\epsilon^{\text{Int}}(E_{i})$ in the left sid
 
 \clearpage
 \section{Results}\label{ch:FinalPion}
-Figure \ref{fig:FinalXSPion} shows the measurement of the ($\pi^-$-Ar) total hadronic cross section for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction effects correction to the raw cross section. The top left plot is the measurement obtained on the 60A data, statistical and systematic uncertainty shown in red. The top right plot is the measurement obtained on the 100A data, statistical uncertainty and systematic uncertainty shown in blue. The bottom plot shows the two measurements overlaid. In all three plot, the Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green. 
+Figure \ref{fig:FinalXSPion} shows the measurement of the ($\pi^-$-Ar) total hadronic cross section, 
 
-The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty related to the kinetic energy measurement, the systematic uncertainty related to the beam composition and the systematic uncertainty related to the reconstruction effects correction.
+\begin{equation}
+ \sigma^{\pi^-}_{TOT}(E_{i})  =\frac{1}{n\text{ } \delta X}\frac{N^{\pi^-}_{ \text{Int}} (E_{i})}{N^{\pi^-}_{ \text{Inc}}(E_{i})} = \frac{1}{n \text{ }\delta X}\frac{ \epsilon^{\text{Inc}}(E_i) [ N^{ \text{TOT}}_{ \text{Int}} (E_{i}) - B_{ \text{Int}} (E_i)] }{   \epsilon^{\text{Int}}(E_i) [N^{ \text{TOT}}_{ \text{Inc}}(E_{i}) - B_{ \text{Inc}} (E_i)]},
+\end{equation}
+
+for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction effects correction to the raw cross section. The top left plot is the measurement obtained on the 60A data, statistical and systematic uncertainty shown in red. The top right plot is the measurement obtained on the 100A data, statistical uncertainty and systematic uncertainty shown in blue. The bottom plot shows the two measurements overlaid. In all three plot, the Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green. 
+
+The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty calculated for the raw cross section, the systematic uncertainty related to the beam composition and the systematic uncertainty related to the reconstruction effects correction.
 
 The cross section measurements in the two datasets agree within the systematic uncertainty, even if the cross section measured in the 60A data is lower than the one measured in the 100A data in all overlapping bins except for the 200-250 MeV bin.
 
