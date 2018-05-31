@@ -10,7 +10,7 @@ In this chapter, we show the result of the thin slice method to measure  the ($K
 \section{Raw Cross Section}\label{ch:KaonXSRaw}
 We measure the raw ($K^+$-Ar) total hadronic cross section as a function of the kinetic energy in the combined +60A and +100A dataset. 
 
-Similar to the pion case,  the raw cross section is given by the equation \ref{eq:thinTargetXSSolved}
+Similar to the pion case,  the raw cross section is given by the Equation \ref{eq:thinTargetXSSolved}
 \begin{equation}
  \sigma_{TOT} (E_i)  = \frac{1}{n \delta X}\frac{N^{\text{TOT}}_{\text{Int}}(E_i)}{N^{\text{TOT}}_{\text{Inc}}(E_i)}, \tag{\ref{eq:thinTargetXSSolved}}
 \end{equation}
@@ -65,7 +65,7 @@ We propagate this uncertainty  by varying the energy measurement $KE_{j}$ at eac
 
 
 \section{Corrections to the Raw Cross Section}\label{ch:KaonXSCorrections}
-As described in section \ref{ch:MCCorrections}, we need to apply a background correction and a correction for reconstruction effects in order to derive the  kaon cross section from the raw cross section.  The  cross section is given in equation \ref{eq:C}, 
+As described in Section \ref{ch:MCCorrections}, we need to apply a background correction and a correction for reconstruction effects in order to derive the  kaon cross section from the raw cross section.  The  cross section is given in Equation \ref{eq:C}, 
 
 \begin{equation}
    \sigma^{K^+}_{TOT}(E_{i})  = \frac{1}{n \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{K MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{K MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
@@ -82,10 +82,10 @@ Currently, the only background considered for the kaon hadronic cross section co
 
 
 As described in \ref{ch:EFFXS} for the pion case, we derive the correction on a set of pure kaon MC, calculating its value bin by bin as the ratio between the true bin content and the correspondent reconstructed bin content. The correction is then applied to the relevant bin in data. 
-The correction for recontruction effects is evaluated separately for the interacting and incident histograms, namely $\epsilon^{\text{int}}(E_i)$ and  $\epsilon^{\text{inc}}(E_i)$, and propagated to the cross section as shown in  equation \ref{eq:C}. 
+The correction for recontruction effects is evaluated separately for the interacting and incident histograms, namely $\epsilon^{\text{int}}(E_i)$ and  $\epsilon^{\text{inc}}(E_i)$, and propagated to the cross section as shown in  Equation \ref{eq:C}. 
 
 
-In section \ref{sec:angleRes}, we estimated the angular resolution for data and MC to be $\bar\alpha_{Data} = (4.3 \pm 3.7) \text{ deg}$  and  $\bar\alpha_{MC} = (4.4 \pm 3.6) \text{ deg}$, respectively.  Most interaction angles smaller than the angular resolution will thus be indistinguishable  for the reconstruction. Thus, we claim we are able to  measure the cross section for interaction angles greater than 4.5 deg. Geant4 simulates interactions at all angles: in order to calculate the correction for reconstruction effects,  we select events which have an interaction angle greater than a $\alpha_{res}$ to construct the true interacting and incident histograms (the denominator of the correction). The systematics on this correction is estimated by varying the value of $\alpha_{res}$ between 0 deg and 4.5 deg and propagating the uncertainty on the cross section. 
+In Section \ref{sec:angleRes}, we estimated the angular resolution for data and MC to be $\bar\alpha_{Data} = (4.3 \pm 3.7) \text{ deg}$  and  $\bar\alpha_{MC} = (4.4 \pm 3.6) \text{ deg}$, respectively.  Most interaction angles smaller than the angular resolution will thus be indistinguishable  for the reconstruction. Thus, we claim we are able to  measure the cross section for interaction angles greater than 4.5 deg. Geant4 simulates interactions at all angles: in order to calculate the correction for reconstruction effects,  we select events which have an interaction angle greater than a $\alpha_{res}$ to construct the true interacting and incident histograms (the denominator of the correction). The systematics on this correction is estimated by varying the value of $\alpha_{res}$ between 0 deg and 4.5 deg and propagating the uncertainty on the cross section. 
 
 Figure \ref{fig:EffCorrK} shows $\epsilon^{\text{Int}}(E_{i})$ in the left side and $ \epsilon^{\text{Inc}}(E_i)$ on the right as a function of the kinetic energy for the kaon sample and their systematic uncertainty. 
 
