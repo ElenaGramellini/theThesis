@@ -3,20 +3,20 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis_main.aux
 The style file: plain.bst
 Database file #1: bib.bib.bib
-You're missing a field part---line 1511 of file bib.bib.bib
+You're missing a field part---line 1558 of file bib.bib.bib
  : number = 
  :          ,
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 2051 of file bib.bib.bib
+Unbalanced braces---line 2090 of file bib.bib.bib
  : archiveprefix = "arXiv
  :                       },
 I'm skipping whatever remains of this entry
-Repeated entry---line 2327 of file bib.bib.bib
+Repeated entry---line 2366 of file bib.bib.bib
  : @conference{Sten
  :                 ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "PhysRevD.90.072005"
-Warning--I didn't find a database entry for "PhysRevLett.115.121803"
+Name 1 in "K. Nakamura, and S.T. Petcov" has a comma at the end for entry PDGOsc
+while executing---line 1049 of file plain.bst
 Warning--to sort, need author or key in 2006257
 Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
 while executing---line 1049 of file plain.bst
@@ -42,6 +42,8 @@ Warning--empty journal in fesbach1992theoretical
 Warning--empty booktitle in Sten
 Warning--empty institution in LArIATCalo
 Warning--empty journal in SpaceCharge
+Name 1 in "K. Nakamura, and S.T. Petcov" has a comma at the end for entry PDGOsc
+while executing---line 1090 of file plain.bst
 Warning--empty institution in Nutini2015
 Warning--empty institution in FirstTPC
 Warning--empty institution in LArIATdqdx
@@ -53,45 +55,45 @@ Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Ri
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
 while executing---line 1090 of file plain.bst
-You've used 123 entries,
+You've used 126 entries,
             2118 wiz_defined-function locations,
-            1278 strings with 36718 characters,
-and the built_in function-call counts, 63746 in all, are:
-= -- 5380
-> -- 5858
+            1286 strings with 22802 characters,
+and the built_in function-call counts, 36564 in all, are:
+= -- 3645
+> -- 1360
 < -- 5
-+ -- 2357
-- -- 2222
-* -- 6150
-:= -- 11498
-add.period$ -- 365
-call.type$ -- 123
-change.case$ -- 1472
++ -- 564
+- -- 426
+* -- 2589
+:= -- 6233
+add.period$ -- 374
+call.type$ -- 126
+change.case$ -- 583
 chr.to.int$ -- 0
-cite$ -- 151
-duplicate$ -- 1332
-empty$ -- 2980
-format.name$ -- 2222
-if$ -- 11866
+cite$ -- 154
+duplicate$ -- 1365
+empty$ -- 3056
+format.name$ -- 426
+if$ -- 7502
 int.to.chr$ -- 0
-int.to.str$ -- 123
-missing$ -- 109
-newline$ -- 613
-num.names$ -- 236
-pop$ -- 1354
+int.to.str$ -- 126
+missing$ -- 112
+newline$ -- 628
+num.names$ -- 242
+pop$ -- 459
 preamble$ -- 1
-purify$ -- 1344
+purify$ -- 452
 quote$ -- 0
-skip$ -- 922
+skip$ -- 944
 stack$ -- 0
-substring$ -- 2614
-swap$ -- 135
+substring$ -- 2683
+swap$ -- 138
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 486
+type$ -- 498
 warning$ -- 28
-while$ -- 367
-width$ -- 126
-write$ -- 1302
-(There were 7 error messages)
+while$ -- 376
+width$ -- 129
+write$ -- 1335
+(There were 9 error messages)

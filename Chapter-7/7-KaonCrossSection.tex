@@ -4,7 +4,7 @@
 {\raggedleft -- Nina Simone, 1978 -- \par}% Baltimore,
 \vspace{0.5cm}
 
-In this chapter, we show the result of the thin slice method to measure  the ($K^+$-Ar) total hadronic cross section. In Section \ref{ch:KaonXSRaw}, we start by measuring the raw cross section. In Section \ref{ch:KaonXSCorrections}, we apply a statistical subtraction of the background contributions based on simulation and a correction for reconstruction effects. The final results are presented in Section \ref{ch:FinalKaon}.
+In this chapter, we show the results of the thin slice method to measure  the ($K^+$-Ar) total hadronic cross section. In Section \ref{ch:KaonXSRaw}, we start by measuring the raw cross section. In Section \ref{ch:KaonXSCorrections}, we apply a statistical subtraction of the background contributions based on simulation and a correction for reconstruction effects. The final results are presented in Section \ref{ch:FinalKaon}.
 
 
 \section{Raw Cross Section}\label{ch:KaonXSRaw}
@@ -23,11 +23,11 @@ Figure \ref{fig:InteractingRawK} shows the distribution of  $N^{\text{TOT}}_{\te
 The contribution from the simulated kaons which interact hadronically is shown in pink, the contributions from kaon decay is shown in orange and the one from secondaries in red. 
 The simulated kaon's and secondaries' contributions are stacked; the sum of their integrals is normalized to the integral of the data.
  
-Figure \ref{fig:IncidentRawK} shows the distribution of  $N^{\text{TOT}}_{\text{Inc}}$. Data is displayed over the MC. For the  $N^{\text{TOT}}_{\text{Inc}}$ distribution we do not make a distinction between kaons that decay or interact hadronically because any kaon contributes to the flux of incident particles at given kinetic energy independently from its final interaction.
+Figure \ref{fig:IncidentRawK} shows the distribution of  $N^{\text{TOT}}_{\text{Inc}}$. Data is displayed over MC. For the  $N^{\text{TOT}}_{\text{Inc}}$ distribution we do not make a distinction between kaons that decay or interact hadronically because any kaon contributes to the flux of incident particles at given kinetic energy independently from its final interaction.
 The same normalization procedure is used for both the interacting and incident histograms. 
 
 
-Figure \ref{fig:XSRawK} shows the raw cross section, statistical uncertainty in black and systematic uncertainty in red. The raw data cross section is overlaid to the reconstructed cross section for the MC mixed sample, displayed in azure.  We calculate the statistical uncertainty for the interacting, incident and cross section distributions in a similar fashion to the pion case as described in Section \ref{ch:StatUncertaintyXSRaw}. 
+Figure \ref{fig:XSRawK} shows the raw cross section, statistical uncertainty in black and systematic uncertainty in red. The raw data cross section is overlaid to the reconstructed cross section for the MC  sample, displayed in azure.  We calculate the statistical uncertainty for the interacting, incident and cross section distributions in a similar fashion to the pion case as described in Section \ref{ch:StatUncertaintyXSRaw}. 
 
 As in the pion case, the systematic effects considered in the measurement of the raw cross section results from the uncertainty on the pitch ($\delta X = 0.47 \pm 0.03$ cm) and from the propagation of the uncertainty associate with the measurement of the kinetic energy at each argon slab. For kaons, the uncertainty on the kinetic energy of a candidate at the j$^{th}$ slab of argon  is given by
 
@@ -72,7 +72,7 @@ As described in Section \ref{ch:MCCorrections}, we need to apply a background co
  \tag{\ref{eq:C}}
 \end{equation}
 
-Currently, the only background considered for the kaon hadronic cross section comes from the presence of secondaries and decay interaction points. A further development of the analysis will need to account for the presence of a small proton contamination. Figure \ref{fig:CorrectionsBeamK} shows the relative kaon content suitable for the hadronic cross section for the interacting and incident histograms. 
+Currently, the only background considered for the kaon hadronic cross section comes from the presence of secondaries and decay interaction points. A further development of the analysis will need to account for the presence of a small proton contamination (estimated to be $\sim 5\%$ in Section \ref{ch:protons}). Figure \ref{fig:CorrectionsBeamK} shows the relative kaon content suitable for the hadronic cross section for the interacting and incident histograms. 
 \begin{figure}[p]
 \centering
 \includegraphics[width=\textwidth]{Chapter-7/Images/KaonBkgSub_WithDK.pdf}
@@ -107,7 +107,8 @@ Figure \ref{fig:FinalXSKaon} show the measurement of the ($K^+$-Ar) total hadron
 
 for  scattering angles greater than 5$^\circ$, as the result of the background subtraction and reconstruction  effects  correction to the raw cross section. The plot shows the measurement obtained on the full dataset, statistical and systematic uncertainty in black. The Geant4 prediction for the total hadronic cross section for angle scattering greater than 5$^\circ$ is displayed in green.
 
-The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty calculated for the raw cross section and the systematic uncertainty related to the reconstruction  effects  correction.
+The systematic uncertainty on the cross section is the sum in quadrature of the statistical uncertainty, the systematic uncertainty calculated for the raw cross section and the systematic uncertainty related to the reconstruction  effects  correction. In every bin, the statistical uncertainty is the dominant uncertainty; a future iteration of the analysis using the ``High Yield" sample, which is expected to boost the statistics by a factor of 3, will reduce the statistical uncertainty.
+
 
 The measured cross section is mostly in tension with the predicted cross section; in particular it is significantly higher -- on the order of 20\%-30\% higher -- in the bins lower than 400 MeV. Such difference is unlikely to be accounted for the small proton contamination expected in the data sample. It is worth noticing that the 100 MeV to 400 MeV energy range is the region of interest for the expected kaons coming from a proton decay event. With this result, we will inform a tuning of the Geant4 model for kaon cross section.
 

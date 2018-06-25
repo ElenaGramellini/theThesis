@@ -1,33 +1,102 @@
-\subsubsection{Inputs to the Trigger System}
-
-Two primary inputs to the trigger card are from the time of flight (see Sec.~\ref{sec:TOF}) and the wire chamber (see Sec.~\ref{sec:MWPC}) systems in the tertiary beamline.  Coincidence of activity in both of these systems strongly suggests that a charged particle has made the journey down the tertiary beam line from the copper target to the LArTPC in the cryostat, and that we will have a measure of its momentum and its velocity. PMT pulses from the time of flight system each pass through a 
-%FIXME WHAT MODEL linear fanout?
-linear fan-out, one output of which is threshold discriminated by a
-%FIXME WHAT MODEL
-discriminator to produce a NIM logic pulse for use in trigger logic.  On each of the upstream or downstream TOF paddles, we form a coincidence to within 20~ns of pulses from all the PMTs observing that same block of scintillator.  The upstream paddle coincidence signal is delayed 20~ns to allow any approximately lightspeed particles to travel 6.5~m to the downstream paddle.  The same upstream paddle coincidence signal is also widened to 100~ns to allow for slow-traveling (high-mass) particles.  Coincidences of these upstream and downstream TOF trigger input signals can be made in the V1495 trigger card.
-
-Each wire chamber is read out by four multi-hit TDCs (time to digital converters), with sixty-four wires per TDC and two TDCs per plane (one horizontal and one vertical).  The TDCs each provide a logical ``fast'' OR of their inputs, indicating that one or more of their sixty-four wires went over the settable threshold.  Using NIM logic units, the OR of the horizontal wires and the OR of the vertical wires are input to a coincidence unit for each wire chamber, providing a single logical pulse for each of the four wire chambers, indicating that at least one horizontal wire and one vertical wire saw significant signal.  The single culminating logical pulses from each of the four wire chambers make up the first four inputs to the V1495 trigger card.  Within the user-programmable FPGA, the V1495 looks for the coincidence within 20~ns of at least three of these four specially-treated logical inputs.
-
-Another primary input to the trigger card is from the cosmic towers (see Section~\ref{sec:CosmicRayPaddle}). To capture cosmic ray events in which a minimally ionizing cosmic ray muon crossed the TPC along the body diagonal, NIM modules form the logical coincidences from the two cosmic towers, one upper and one lower paddle assembly, in each combination.  The OR of these is provided as an input to the V1495. 
-
-Three important logic pulses are derived from the timing of the beam.  These include a pulse in a brief window before the beam, a pulse indicating that the beam is on, and a pulse which defines the beam-free period which may be used for collecting cosmic-ray events.  An adjustable pulser is a fourth trigger input which does not depend on any particular activity in the experiment hall,  useful for collecting background events with zero bias. 
-
-The PMTs observing liquid argon scintillation light (see Section \ref{sec:PhotonSystem}) produce pulses which form the foundation of several interesting trigger inputs.  Thresholding a copy of each PMT pulse (after amplification), and requiring a coincidence of pulses within $\sim$20~ns, creates simple trigger inputs indicating ionizing radiation was produced in the TPC.  This scintillation logic pulse is used to initiate a gate which spans the length of the TPC drift time, creating a logic signal which is remains ``on'' while significant drift charge may still be present in the TPC.  In addition, requiring a delayed coincidence of two subsequent scintillation logic pulses, separated by a variable length of time ranging from 300~ns to 7~$\mu$s, is used to create a trigger input to select events where a cosmic muon stops and decays to a Michel electron in the TPC.  A few different versions of this light-based trigger were implemented throughout the course of LArIAT's run time to allow reconstruction and calorimetric studies of Michel electrons. Figure~\ref{michel_logic} shows a schematic diagram of the logic comprising the Michel electron trigger. 
-
-\begin{figure}
-\includegraphics[width=\textwidth]{figures/trigger_michellogic.png}
-\caption{\label{michel_logic}A schematic diagram of the trigger logic used to select Michel electron events during the cosmic readout window of the LArIAT supercycle.  The two PMT signals refer to the Hamamatsu (``HMM'') and ETL PMTs described in Section~\ref{sec:PhotonSystem}.  For some data-taking periods in Run-II, un-amplified pulses were discriminated at 180 mV to act as a veto on events that may saturate the dynamic range of the V1751 digitizer.  The discriminator thresholds used on the amplified (x10) PMT signal copies (\emph{ThA}, \emph{ThB}) as well as the Gate Delay period, were adjusted between run periods while experimenting with different configurations.}
-\end{figure}
-
-Further trigger inputs come from the beam line instrumentation behind the LArTPC cryostat, the PMTs of the Punch-Through scintillator paddles and those of the scintillator paddles instrumenting the Muon Range Stack.  The PMT pulses of all four of the broad-faced Punch Through paddles are discriminated to form logic pulses.  A single logic pulse is formed from these, indicating activity in at least two overlapping paddles at the rear of cryostat, before the steel block of the range stack.  PMT pulses from the Muon Range Stack are amplified and threshold discriminated.  These MuRS paddle pulses are then combined as in the Punch Through, creating single-bit indicators for each of the four instrumented layers that at least one pair of overlapping scintillator paddles sent signals within a 20~ns coincidence window.
-
-\subsubsection{Trigger Decision and Issuance}
-
-The V1495 may be configured to have up to sixteen trigger patterns and sixteen veto patterns, based on the trigger input signals.  A trigger pattern is defined as the AND of one or more defined inputs, and may include the NOT of the AND of further inputs.  Veto patterns are independently defined in the same way, but they have a very different effect.  When any of the trigger patterns fire, a ``fast trigger'' signal is issued and an adjustable countdown is initiated.  If the countdown completes without a veto pattern firing, the ``slow trigger'' signal is also issued and on a distinct hardware channel. Otherwise, if a veto pattern fires during the countdown, the slow trigger signal is vetoed.  
-
-The fast trigger signal prompts readout of all the `short' data buffers, which include the V1751 modules, the V1495 itself, and the MWPC controller.  The V1751 buffers typically contain digitized PMT signals from the time of flight and cryogenic light collection detectors. Readout of the TPC wire signals, which are much longer and more numerous, is only prompted at the issuance of the slow trigger.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% yale_thesis.tex
+% Elena Gramellini
+% Started: 2017/12/05
+%
+% A bare, sample template for a Yale PhD thesis using yalephd.cls
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper,12pt]{yalephd}
+% remove draft option for final printing.
+% font size must be between 10pt-12pt.
+\usepackage{caption,setspace}
+\usepackage{amsmath} 
+\usepackage{rotating}
+%\usepackage{newtxtext,newtxmath,amsmath}
+\usepackage{ textcomp }
+
+
+\usepackage{geometry} % you need this for yalephd.cls to work.
+\usepackage{graphicx}
+\usepackage[graphicx]{realboxes}
+ % you probably want the rest of these.
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+\usepackage{textgreek}
+
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{appendix}
+\usepackage{comment}
+\usepackage{cite}
+\usepackage{color}
+\bibliographystyle{plain}
+\usepackage{slashed}  
+
+%\setcounter{chapter}{-1}
+
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+
+\usepackage{lineno,xcolor}
+
+
+%\linenumbers
+\begin{document}
+\begin{equation}
+E^{\text{kin}}_{\text{Front Face}} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam}^2 - E_{Loss} 
+\end{equation}
 
 
 
+\begin{document}
+
+\begin{equation}
+E^\text{kin}_j = E^{\text{kin}}_{\text{Front Face}} - \sum_{j<i} E_{\text{dep i}} 
+\end{equation}
+
+
+\begin{equation}
+E_{i} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam}^2 - E_{Loss} - E_{\text{dep FF-i}}
+\end{equation}
+
+\begin{equation}
+\delta E_{i} = \sqrt{\delta p_{Beam}^2 + \delta E_{Loss}^2 +  \delta  E_{\text{dep FF-i}}^2}
+\end{equation}
+
+\begin{equation}
+E_{\text{dep FF-i}} = \sum_{j<i} E_{\text{dep i}}  \Rightarrow \delta E_{\text{dep FF-i}} = (i -1) \delta E_{\text{dep i}}
+\end{equation}
+
+
+\begin{equation}
+      \sigma^{\pi^-}_{TOT}(E_{i})  = \frac{1}{n\text{ } \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{\pi MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{\pi MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
+\label{eq:C}
+\end{equation}
+
+\begin{equation}
+      \sigma^{K^+}_{TOT}(E_{i})  = \frac{1}{n\text{ } \delta X}\frac{ \epsilon^{\text{Inc}}(E_i)  \hspace{0.2cm} C^{K MC}_{\text{Int}} (E_{i}) \hspace{0.2cm} N^{\text{TOT}}_{\text{Int}} (E_{i}) }{   \epsilon^{\text{Int}}(E_i) \hspace{0.2cm} C^{K MC}_{\text{Inc}} (E_{i}) \hspace{0.2cm}  N^{\text{TOT}}_{\text{Inc}} (E_{i})}.
+\label{eq:C}
+\end{equation}
+
+\end{document}

@@ -1,7 +1,7 @@
 \chapter{Measurement of LArIAT Electric Field}\label{ch:AppendixB}
 The electric field of a LArTPC in the drift volume is a fundamental quantity for the proper functionality of this technology, as it affects almost every reconstructed quantity such as the position of hits or their collected charge. Given its importance, we calculate the electric field for LArIAT with a single line diagram from our HV circuit and we cross check the obtained value with a measurement relying only on TPC data. 
 
-Before getting into the details of the measurement procedures, it is important to explicit the relationship between some  quantities in play. The electric field and the drift velocity ($v_{drift}$) are related as follows 
+Before getting into the details of the measurement procedures, it is important to clarify the relationship between the  quantities in play. The electric field ($E_{field}$) and the drift velocity ($v_{drift}$) are related as follows 
 \begin{equation} v_{drift} = \mu(E_{field},T) E_{field}, \label{eq:vd}
 \end{equation}
 where $\mu$ is the electron mobility, which depends on the electric field and on the temperature (T). The empirical formula for this dependency is described in ~\cite{WWW} and shown in Figure \ref{fig:EV} for several argon temperatures.
@@ -20,7 +20,7 @@ The relationship between the drift time ($t_{drift}$) and the drift velocity is 
 t_{drift} = \Delta x/v_{drift}, \label{eq:drifttime}
 \end{equation}
 where $\Delta x$ is the distance between the edges of the drift region.
-Table \ref{tab:Efields} reports the values of the electric field, drift velocity, and drift times for the smaller drift volumes. 
+Table \ref{tab:Efields} reports the values of the electric field, drift velocity, and drift times for the TPC's small drift volumes. 
 
 \begin{table}[]
 \centering
@@ -56,7 +56,7 @@ which we measure with the Glassman power supply, shown in  Figure \ref{fig:curre
 \begin{minipage}{0.45\textwidth}
 \centering
 \includegraphics[width=3in]{AppendixB-EField/Images/CircuitLArIAT.png}
-\caption{LArIAT HV simple schematics.}
+\caption{LArIAT HV simple scheme.}
 \label{fig:circuit}
 \end{minipage}\hfill
 \begin{minipage}{0.45\textwidth}
@@ -98,17 +98,17 @@ where $I$ is the current and $R_{eq}$ is the equivalent resistor representing th
 \label{fig:AngleDef}
 \end{minipage}
 \end{figure}
-We devise an independent method to measure the drift time (and consequently drift velocity and electric field) using TPC cathode to anode piercing tracks. We use this method as a cross check to the single line method.
+We devised an independent method to measure the drift time (and consequently drift velocity and electric field) using TPC cathode to anode piercing tracks. We use this method as a cross check to the single line method.
 The basic idea is simple:
 \begin{itemize}
-\item[0.] Select cosmic ray events with only 1 reconstructed track 
-\item[1.] Reduce the events to the one containing tracks that cross both anode and cathode
-\item[2.] Identify the first and last hit of the track
-\item[3.] Measure the time difference between these two hits ($\Delta t$).
+\item[1.] Select cosmic ray events with only 1 reconstructed track 
+\item[2.] Reduce the events to the ones containing tracks that cross both anode and cathode
+\item[3.] Identify the first and last hit of the track
+\item[4.] Measure the time difference between these two hits ($\Delta t$).
 \end{itemize}
 This method works under the assumptions that the time it takes for a cosmic particle to cross the chamber ($\sim$ns) is small compared to the charge drift time ($\sim$ hundreds of $\mu$s).
 
-We choose cosmic events to allow for a high number of anode to cathode piercing tracks (ACP tracks), rejecting  beam  events where the particles travel almost perpendicularly to drift direction. We select events with only one reconstructed track to  maximize the chance of selecting a single crossing muon (no-michel electron). We utilize ACP tracks because their hits span the full drift length of the TPC, see figure \ref{fig:Scheme}, allowing us to define where the first and last hit of the tracks are located in space regardless of our assumption of the electric field. %The definition of the last hit is easy: it is the hit closest to the cathode. The definition of the first hit is a bit more complicated. A track that crosses the anode planes will deposit charge in the small drift volumes (S-I and I-C). The drift time in S-I and I-C region was already calculated in Table \ref{tab:Efields}. This is to say that the position of the first hit matters when calculating the drift time at the microsecond precision. Single hits on the collection plan will not form a 3D object. This means that we can safely exclude that the reconstruction of ACP tracks starts at the cathode plane (black point in figure \ref{fig:Scheme}). %Understanding if the first hit of a track in on the induction or on the shield plan is more complicated. For now, we'll take an uncertainty hit of 2.3 $\mu$s.
+We choose cosmic events to allow for a high number of anode to cathode piercing tracks (ACP tracks), rejecting  beam  events where the particles travel almost perpendicularly to drift direction. We select events with only one reconstructed track to  maximize the chance of selecting a single crossing muon (no michel electron). We utilize ACP tracks because their hits span the full drift length of the TPC, see Figure \ref{fig:Scheme}, allowing us to define where the first and last hit of the tracks are located in space regardless of our assumption of the electric field. %The definition of the last hit is easy: it is the hit closest to the cathode. The definition of the first hit is a bit more complicated. A track that crosses the anode planes will deposit charge in the small drift volumes (S-I and I-C). The drift time in S-I and I-C region was already calculated in Table \ref{tab:Efields}. This is to say that the position of the first hit matters when calculating the drift time at the microsecond precision. Single hits on the collection plan will not form a 3D object. This means that we can safely exclude that the reconstruction of ACP tracks starts at the cathode plane (black point in figure \ref{fig:Scheme}). %Understanding if the first hit of a track in on the induction or on the shield plan is more complicated. For now, we'll take an uncertainty hit of 2.3 $\mu$s.
 
 
 One of the main features of this method is that it doesn't rely on the measurement of the trigger time. Since $\Delta t$ is the time difference between the first and last hit of a track and we assume the charge started drifting at the same time for both hits, the measurement of the absolute beginning of drift time $t_0$ is unnecessary. We boost the presence of ACP tracks in the cosmic sample by imposing the following requirements on tracks:
@@ -124,7 +124,7 @@ One of the main features of this method is that it doesn't rely on the measureme
 
 Tracks passing all these selection requirements are used for the $\Delta t$ calculation.
 
-For each track passing our selection, we loop through the associated hits to retrieve the timing information. The analysis is performed separately on hits on the collection plane and induction plane, but lead to consistent results. As an example of the time difference, figures \ref{fig:Run2PosColFit} and \ref{fig:Run2PosIndFit} represent the difference in time between the last and first hit of the selected tracks for Run-II Positive Polarity sample on the collection and induction plane respectively.  We fit with a Gaussian to the peak of the $\Delta t$ distributions to extract the mean drift time and the uncertainty associated with it. The long tail at low $\Delta t$ represents contamination of non-ACP tracks in the track selection.  We apply the same procedure to Run-I and Run-II, positive and negative polarity alike.
+For each track passing our selection, we loop through the associated hits to retrieve the timing information. The analysis is performed separately on hits on the collection plane and induction plane, but leads to consistent results. As an example of the time difference, figures \ref{fig:Run2PosColFit} and \ref{fig:Run2PosIndFit} represent the difference in time between the last and first hit of the selected tracks for Run-II Positive Polarity sample on the collection and induction plane respectively.  We fit with a Gaussian to the peak of the $\Delta t$ distributions to extract the mean drift time and the uncertainty associated with it. The long tail at low $\Delta t$ represents contamination of non-ACP tracks in the track selection.  We apply the same procedure to Run-I and Run-II, positive and negative polarity alike.
 
    
 \begin{figure}[h!]

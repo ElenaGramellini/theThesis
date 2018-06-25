@@ -8,7 +8,7 @@ In the next few years, LArTPCs will  be the tools to answer some of the burning 
 
 
 \section{The Liquid Argon Time Projection Chamber Technology}
-In this section, we outline an extremely brief history of Time Projection Chambers as particle detectors, focusing on their incarnation as Argon detectors for neutrino physics. We further describe the working principles of Liquid Argon Time Projection Chambers, leading  to the description of the event reconstruction in LArTPC.
+In this section, we outline an extremely brief history of Time Projection Chambers as particle detectors, focusing on their incarnation as argon detectors for neutrino physics. We further describe the working principles of Liquid Argon Time Projection Chambers, leading  to the description of the event reconstruction in LArTPC.
 
 \subsection{TPCs, Neutrinos \& Argon}
 David Nygren designed the first Time Projection Chamber (TPC) in the late 1970s~\cite{FirstTPC} for the  PEP-4 experiment, a detector  apt to study electron-positron collisions at the PEP storage ring at the SLAC National Accelerator Laboratory.
@@ -89,7 +89,7 @@ Excitation and ionization of the detector medium occur in similar amounts. Since
 \begin{equation}
 P(k) = \frac{s^k}{k! \lambda^k} e^{-s/ \lambda }, 
 \end{equation}
-where $\lambda = 1/N_{e}\sigma_i$, with $N_{e}$ being the electron density of $\sigma_i$ the ionization cross-section per electron.  About 66\% of the ionizing collisions in Argon produce only a single electron/ion pair \cite{0034-4885-73-11-116201}; in the other cases, the transferred kinetic energy is enough for the primary electron to liberate one or more secondary electrons, which usually stay close to the original pair.  
+where $\lambda = 1/N_{e}\sigma_i$, with $N_{e}$ being the electron density of $\sigma_i$ the ionization cross-section per electron.  About 66\% of the ionizing collisions in argon produce only a single electron/ion pair \cite{0034-4885-73-11-116201}; in the other cases, the transferred kinetic energy is enough for the primary electron to liberate one or more secondary electrons, which usually stay close to the original pair.  
 Occasionally, electrons can receive enough energy to be ejected with high energy, forming a so-called ``$\delta$-ray": a detectable  short track off the particle trajectory, as shown in figure \ref{fig:delta}. 
 The average number of $\delta$-ray  with energy E$>$E$_0$ per cm follows the empirical form
 \begin{equation}
@@ -100,7 +100,7 @@ where $y$ is an empirical factor depending on the medium (0.114 for  gaseous Ar)
 \begin{figure}[hbpt]
 \centering
 \includegraphics[width=\textwidth]{Chapter-2/Images/Delta.png}
-\caption{Events display for a LArIAT pion absorption candidate on the induction plane, with highlighted delta ray.}
+\caption{Event display for a LArIAT pion absorption candidate on the induction plane, with highlighted delta ray.}
 \label{fig:delta}
 \end{figure}
 
@@ -192,10 +192,9 @@ LArTPC signal processing develops in several consecutive stages that we summariz
 
 
 \textbf{Hit Reconstruction.} The second stage of the signal processing is the reconstruction of hits, indicating an energy deposition in the detector.  A peak finder scans the deconvolved TPC waveforms for each wire on the whole readout time looking for spikes  above  the waveform's baseline. It then fits these peaks with gaussian shapes and stores the fit parameters such as the quality of the fit, the peak time, height and area under the gaussian fit. The information resulting from this process on a single spike form a single reconstructed ``hit", see Figure \ref{fig:SignalProc} panel c).
-The next steps in the event reconstruction chain will then decide if rejecting hits with poor fits.
-It is important to notice how the height and width of the hit depend on the topology of the event: for example, a particle running  parallel to the wire planes will leave a series of narrow individual hits, one on each consecutive wire, while a particle traveling towards the planes will leave long, wide hits on very few wires. The height of the hits and their integral is proportional to the charge collected on the wire, so it depends on the particle type.\\
+The next steps in the event reconstruction chain will then decide which hits to use according to their goodness of fit. It is important to notice how the height and width of the hit depend on the topology of the event: for example, a particle running  parallel to the wire planes will leave a series of narrow individual hits, one on each consecutive wire, while a particle traveling towards the planes will leave long, wide hits on very few wires. The height of the hits and their integral is proportional to the charge collected on the wire, so it depends on the particle type.\\
 
-The event reconstruction chain uses collection of hits to form more complex objects associated with the particles in the detector. The development of different approaches to accomplish this task is an extremely hot topic in LArTPC event reconstruction which spans from more traditional approaches such as line-clustering  \cite{Barker2011} to the use of machine learning tools \cite{1748-0221-12-03-P03011}. Generally speaking, the scope of hit clustering and event reconstruction to provide shower-like or track like-objects with an associated energy reconstruction. This is because different particles have different topology in the detector -- electrons and photon create electromagnetic showers,  resulting in shower-like topologies, while muons and hadrons  leave track-like signals.  For the scope of these thesis, we will describe only LArIAT's approach to track reconstruction even if we recognize the breath of LArTPC event reconstruction is much wider. We are interested in the reconstruction of pions and kaons in the active volume, whose topology is track-like.\\
+The event reconstruction chain uses collection of hits to form more complex objects associated with the particles in the detector. The development of different approaches to accomplish this task is an extremely hot topic in LArTPC event reconstruction which spans from more traditional approaches such as line-clustering  \cite{Barker2011} to the use of machine learning tools \cite{1748-0221-12-03-P03011}. Generally speaking, the scope of hit clustering and event reconstruction is to provide shower-like or track like-objects with an associated energy reconstruction. This is because different particles have different topology in the detector -- electrons and photon create electromagnetic showers,  resulting in shower-like topologies, while muons and hadrons  leave track-like signals.  For the scope of this thesis, we will describe only LArIAT's approach to track reconstruction even if we recognize the breath of LArTPC event reconstruction is much wider. We are interested in the reconstruction of pions and kaons in the active volume, whose topology is track-like.\\
 
 \textbf{2D Clustering Reconstruction.} 
 The LArIAT reconstruction of track-like objects starts by clustering hits on the collection and induction planes separately with the use of the TrajCluster clustering package\cite{Baller2016}. 
