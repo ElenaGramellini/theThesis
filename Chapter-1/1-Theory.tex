@@ -366,7 +366,7 @@ $N^*$ (1440) 1/2$^+$     & \begin{tabular}{@{}l@{}}$N^* \rightarrow N \pi$ \\$N^
 
 
 
-The key elements of a neutrino event generators for resonance and DIS events are the nuclear model and the hadron treatment (both production and transportation).  We illustrate here the conceptual basis of the GENIE Neutrino Generator~\cite{Andreopoulos:2009rq} as an example, since GENIE is one the most popular event generators for liquid argon experiments.
+The key elements of  neutrino event generators for resonance and DIS events are the nuclear model and the hadron treatment (both production and transportation).  We illustrate here the conceptual basis of the GENIE Neutrino Generator~\cite{Andreopoulos:2009rq} as an example, since GENIE is one the most popular event generators for liquid argon experiments.
 For example, the nuclear model used by GENIE for all processes is a Relativistic Fermi Gas (RFG) model modified to incorporate nucleon-nucleon correlations \cite{PhysRevD.24.1400}. This means that the initial momentum and binding energy of the struck nucleon is determined by assuming nucleons inside the nucleus are quasi-free, acting independently in the mean field of the nucleus. For A $ >$ 20 such as argon, the 2-parameter Woods-Saxon shell model for density function is used.  The GENIE module INTRANUKE \cite{Juszczak2006} is used to simulate final-state interactions (FSI) which model  hadron re-interactions inside the nucleus. This module places the outgoing particles in the nucleus and propagates them using the ``hA model".  In the INTRANUKE hA model, hadrons can undergo at most one FSI per event. When possible, external hadron-nucleus scattering data are used to tune INTRANUKE. Since no data are available for argon, GENIE uses an interpolation of data from heavier and lighter nuclei for the pion-argon cross section leading to resultant uncertainties in the INTRANUKE module of the order of 10-20\%.
  
 Once the pion has left the target nucleus, the pion-argon hadronic cross section also plays an important role in the pion transportation inside the argon medium: processes such as pion absorption or pion charge exchange can greatly modify the topology of a neutrino interaction	 in the detector and lead to significant modifications in the event classification.
@@ -469,21 +469,35 @@ For the LArIAT simulation of the MC sample used in the $\pi^-$ argon total hadro
 
 
 
+%\begin{figure}
+%\captionsetup{justification=raggedright}  
+%	\begin{minipage}[t]{.5\textwidth}  
+%	  \centering  
+%	   \includegraphics[width=\textwidth]{Chapter-1/Images/IreneCarbon.png}
+%	   	        \caption{ Total, elastic and reaction cross section for $\pi^-$ on $^{12}$C. Comparison between results from Geant4 simulation (Bertini cascade model), GENIE simulation (hA model), and experimental data \cite{Clough1974, PhysRevC.23.2173, ALLARDYCE19731,osti_4488432}.}
+%        \label{fig:pionC}
+%	\end{minipage}%  
+%	\begin{minipage}[t]{0.5\textwidth}  
+%	  \centering  
+%	\includegraphics[width=\textwidth]{Chapter-1/Images/IreneCalcium.png}
+%        \caption{Total, elastic and reaction cross section for $\pi^-$ on $^{40}$Ca. Comparison between results from Geant4 simulation (Bertini cascade model),  GENIE simulation (hA model), and experimental data \cite{ALLARDYCE19731}.}
+%        \label{fig:pionCa}
+%	\end{minipage}
+%	\par
+%\end{figure}
+
 \begin{figure}
-\captionsetup{justification=raggedright}  
-	\begin{minipage}[t]{.53\textwidth}  
-	  \centering  
-	   \includegraphics[width=3in]{Chapter-1/Images/IreneCarbon.png}
+\centering
+	   \includegraphics[width=0.5\textwidth]{Chapter-1/Images/IreneCarbon.png}
 	   	        \caption{ Total, elastic and reaction cross section for $\pi^-$ on $^{12}$C. Comparison between results from Geant4 simulation (Bertini cascade model), GENIE simulation (hA model), and experimental data \cite{Clough1974, PhysRevC.23.2173, ALLARDYCE19731,osti_4488432}.}
         \label{fig:pionC}
-	\end{minipage}%  
-	\begin{minipage}[t]{0.53\textwidth}  
-	  \centering  
-	\includegraphics[width=3in]{Chapter-1/Images/IreneCalcium.png}
+\end{figure}
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.5\textwidth]{Chapter-1/Images/IreneCalcium.png}
         \caption{Total, elastic and reaction cross section for $\pi^-$ on $^{40}$Ca. Comparison between results from Geant4 simulation (Bertini cascade model),  GENIE simulation (hA model), and experimental data \cite{ALLARDYCE19731}.}
         \label{fig:pionCa}
-	\end{minipage}
-	\par
 \end{figure}
 
 \begin{figure}[hbpt]
@@ -575,13 +589,13 @@ K$^+$ and K$^-$ cross sections on protons and deuterons over the range of 0.6-2.
 \captionsetup{justification=raggedright}  
 	\begin{minipage}[t]{.53\textwidth}  
 	  \centering  
-	   \includegraphics[width=3in]{Chapter-1/Images/Friedmann.png}
+	   \includegraphics[width=2.8in]{Chapter-1/Images/Friedmann.png}
 	   	        \caption{Ratios between experimental and calculated cross sections as from \cite{Friedman:1997eq}. Top: Total cross sections. \\Bottom: reaction cross sections.}
         \label{fig:Friedmann}
 	\end{minipage}%  
 	\begin{minipage}[t]{0.53\textwidth}  
 	  \centering  
-	\includegraphics[width=3in]{Chapter-1/Images/Bugg.png}
+	\includegraphics[width=2.8in]{Chapter-1/Images/Bugg.png}
         \caption{Total K$^+$  and K$^-$ cross sections on carbon as from \cite{PhysRev.168.1466}.}
         \label{fig:Bugg}
 	\end{minipage}

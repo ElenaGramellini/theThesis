@@ -98,7 +98,7 @@ For each event passing the selection on its beamline information, we need to ide
 
 We attempt to uniquely match one wire chamber track (see Section \ref{sec:MWPCfunc}) to one and only one reconstructed TPC track. 
 In order to determine if a match is present, we apply a geometrical selection on the relative position of the wire chamber and TPC tracks. 
-We start by considering only TPC tracks whose first point is in the first 2 cm upstream portion of the TPC for the match.  We project the wire chamber track to the TPC front face where we define the coordinates of the projected point as  $x_{FF}$ and $y_{FF}$.  For each considered TPC track, we define $\Delta$X as the difference between the $x$ position of the most upstream point of the TPC track and $x_{FF}$.  $\Delta$Y is defined analogously. We define the radius difference, $\Delta$R, as $ \Delta \text{R} =  \sqrt{ \Delta \text{X}^2 +  \Delta \text{Y}^2}  $. We define  as $\alpha$ the angle between the incident WC track and the TPC track in the plane that contains them.  If  $\Delta \text{R} < 4 $~cm, $\alpha < 8^\circ $,  a match between WC-track and TPC track is found. We describe  how we determine the value for the radius and angular selection in Appendix \ref{ch:AppendixTrack}.
+We start by considering only TPC tracks whose first point is in the first 2 cm upstream portion of the TPC for the match.  We project the wire chamber track to the TPC front face where we define the coordinates of the projected point as  $x_{FF}$ and $y_{FF}$.  For each considered TPC track, we define $\Delta$X as the difference between the $x$ position of the most upstream point of the TPC track and $x_{FF}$.  $\Delta$Y is defined analogously. We define the radius difference, $\Delta$R, as $ \Delta \text{R} =  \sqrt{ \Delta \text{X}^2 +  \Delta \text{Y}^2}  $, see Figure \ref{fig:Match}. We define  as $\alpha$ the angle between the incident WC track and the TPC track in the plane that contains them.  If  $\Delta \text{R} < 4 $~cm, $\alpha < 8^\circ $,  a match between WC-track and TPC track is found. We describe  how we determine the value for the radius and angular selection in Appendix \ref{ch:AppendixTrack}.
 We discard events with multiple WC2TPC matches. We use only those TPC tracks that are matched to WC tracks in the cross section calculation. Line 6 in Table \ref{tab:beamlineDataSelection} shows the number of events where a unique WC2TPC match was found.
 
 In MC, we mimic the matching between the WC and the TPC track by constructing an artificial WC track using truth information at wire chamber four. We then apply the same WC to TPC matching algorithm as in data. 
@@ -108,7 +108,7 @@ In MC, we mimic the matching between the WC and the TPC track by constructing an
   \centering  
 \includegraphics[width=\textwidth]{Chapter-4/Images/WC2TPCMatchTracks.png}
 \caption{Visual rendering of the wire chamber to TPC match.}
-\label{fig:showerFilt}
+\label{fig:Match}
 \end{figure}
 
 \section{The Thin Slice Method}\label{ch:ThinSliceMethod}
