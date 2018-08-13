@@ -1,99 +1,69 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis_main.aux
 The style file: plain.bst
-Database file #1: bib.bib.bib
-You're missing a field part---line 1558 of file bib.bib.bib
- : number = 
- :          ,
-I'm skipping whatever remains of this entry
-Unbalanced braces---line 2090 of file bib.bib.bib
- : archiveprefix = "arXiv
- :                       },
-I'm skipping whatever remains of this entry
-Repeated entry---line 2366 of file bib.bib.bib
- : @conference{Sten
- :                 ,
-I'm skipping whatever remains of this entry
-Name 1 in "K. Nakamura, and S.T. Petcov" has a comma at the end for entry PDGOsc
-while executing---line 1049 of file plain.bst
-Warning--to sort, need author or key in 2006257
-Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
-while executing---line 1049 of file plain.bst
-Warning--to sort, need author or key in PDG-Argon
-Warning--empty author in PDG-Argon
-Warning--empty institution in PDG-Argon
-Warning--empty year in PDG-Argon
-Warning--empty author in 2006257
-Warning--empty journal in Adams:2013qkq
-Warning--empty institution in Synoptic
-Warning--empty journal in Antonello:2015lea
+Database file #1: bib.bib
 Warning--empty institution in Baller2016
-Warning--empty journal in Boulay:2004dk
 Warning--empty institution in CAEN1495
 Warning--empty institution in CAENV1740
-Warning--empty journal in Cavanna:2014iqa
-Warning--empty journal in EricFChurck
 Warning--empty institution in detectorPaper
+Warning--empty institution in Synoptic
+Warning--empty journal in Adams:2013qkq
 Warning--empty journal in Drakoulakos:2004gn
-Warning--empty journal in fesbach1992theoretical
-Warning--empty booktitle in Sten
+Warning--empty journal in Cavanna:2014iqa
 Warning--empty institution in LArIATCalo
+Warning--empty journal in Antonello:2015lea
+Warning--empty journal in Boulay:2004dk
+Warning--empty institution in LArIATLifeTime
+Warning--empty institution in LArIATdqdx
+Warning--empty booktitle in Sten
+Warning--empty journal in P5
+Warning--empty journal in fesbach1992theoretical
+Warning--empty institution in PDG-Argon
+Warning--empty year in PDG-Argon
 Warning--empty journal in SpaceCharge
-Name 1 in "K. Nakamura, and S.T. Petcov" has a comma at the end for entry PDGOsc
-while executing---line 1090 of file plain.bst
 Warning--empty institution in Nutini2015
 Warning--empty institution in FirstTPC
-Warning--empty institution in LArIATdqdx
-Warning--empty institution in LArIATLifeTime
-Warning--empty journal in P5
 Warning--empty journal in Rubbia:1977zz
-Warning--empty year in osti_4488432
-Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation1
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "V. Flaminio, W.G. Moorhead, D.R.O. Morrison, N. Rivoire" for entry Compilation2
-while executing---line 1090 of file plain.bst
-You've used 126 entries,
+You've used 124 entries,
             2118 wiz_defined-function locations,
-            1286 strings with 22802 characters,
-and the built_in function-call counts, 36564 in all, are:
-= -- 3645
-> -- 1360
+            1278 strings with 21918 characters,
+and the built_in function-call counts, 33363 in all, are:
+= -- 3427
+> -- 874
 < -- 5
-+ -- 564
-- -- 426
-* -- 2589
-:= -- 6233
-add.period$ -- 374
-call.type$ -- 126
-change.case$ -- 583
++ -- 386
+- -- 250
+* -- 2104
+:= -- 5723
+add.period$ -- 384
+call.type$ -- 124
+change.case$ -- 504
 chr.to.int$ -- 0
-cite$ -- 154
-duplicate$ -- 1365
-empty$ -- 3056
-format.name$ -- 426
-if$ -- 7502
+cite$ -- 146
+duplicate$ -- 1351
+empty$ -- 3008
+format.name$ -- 250
+if$ -- 6920
 int.to.chr$ -- 0
-int.to.str$ -- 126
+int.to.str$ -- 124
 missing$ -- 112
-newline$ -- 628
-num.names$ -- 242
-pop$ -- 459
+newline$ -- 634
+num.names$ -- 246
+pop$ -- 348
 preamble$ -- 1
-purify$ -- 452
+purify$ -- 373
 quote$ -- 0
-skip$ -- 944
+skip$ -- 884
 stack$ -- 0
-substring$ -- 2683
-swap$ -- 138
+substring$ -- 2673
+swap$ -- 137
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 498
-warning$ -- 28
-while$ -- 376
-width$ -- 129
-write$ -- 1335
-(There were 9 error messages)
+type$ -- 490
+warning$ -- 22
+while$ -- 380
+width$ -- 127
+write$ -- 1351
+(There were 22 warnings)

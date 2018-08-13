@@ -1,60 +1,92 @@
 \begin{thebibliography}{100}
 
-\bibitem{PDG-Argon}
-{PDG Tables for Liquid Argon. }.
-\newblock Technical report.
-
-\bibitem{2006257}
-Precision electroweak measurements on the z resonance.
-\newblock {\em Physics Reports}, 427(5):257 -- 454, 2006.
-
-\bibitem{PhysRevD.90.072005}
-K.~et~al. Abe.
-\newblock Search for proton decay via
-  $p\ensuremath{\rightarrow}\ensuremath{\nu}{K}^{+}$ using $260\text{ }\text{
-  }\mathrm{kiloton}\ifmmode\cdot\else\textperiodcentered\fi{}\mathrm{year}$
-  data of super-kamiokande.
-\newblock {\em Phys. Rev. D}, 90:072005, Oct 2014.
-
-\bibitem{PhysRevLett.118.151801}
-K.~et~al. Abe.
-\newblock Combined analysis of neutrino and antineutrino oscillations at t2k.
-\newblock {\em Phys. Rev. Lett.}, 118:151801, Apr 2017.
-
-\bibitem{lightsys-pmttests}
-R.~Acciarri et~al.
-\newblock {Demonstration and Comparison of Operation of Photomultiplier Tubes
-  at Liquid Argon Temperature}.
-\newblock {\em JINST}, 7:P01016, 2012.
-
-\bibitem{MicroBooNE-det}
-R.~Acciarri et~al.
-\newblock {Design and Construction of the MicroBooNE Detector}.
-\newblock {\em JINST}, 12(02):P02017, 2017.
-
-\bibitem{Acciarri:2016sli}
-R.~Acciarri et~al.
-\newblock {First Observation of Low Energy Electron Neutrinos in a Liquid Argon
-  Time Projection Chamber}.
-\newblock {\em Phys. Rev.}, D95(7):072005, 2017.
-\newblock [Phys. Rev.D95,072005(2017)].
-
-\bibitem{Adams:2013qkq}
-C.~Adams et~al.
-\newblock {The Long-Baseline Neutrino Experiment: Exploring Fundamental
-  Symmetries of the Universe}.
-\newblock 2013.
-
-\bibitem{PhysRevLett.118.231801}
-P.~et~al. Adamson.
-\newblock Constraints on oscillation parameters from ${\ensuremath{\nu}}_{e}$
-  appearance and ${\ensuremath{\nu}}_{\ensuremath{\mu}}$ disappearance in nova.
-\newblock {\em Phys. Rev. Lett.}, 118:231801, Jun 2017.
-
 \bibitem{agresti2013categorical}
-Alan Agresti.
+A.~Agresti.
 \newblock {\em Categorical Data Analysis}.
 \newblock Wiley Series in Probability and Statistics. Wiley, 2013.
+
+\bibitem{Baller2016}
+B.~Baller.
+\newblock Trajcluster user guide.
+\newblock Technical report, 2016.
+\newblock \url{https://cdcvs.fnal.gov/redmine/documents/1026}.
+
+\bibitem{Barker2011}
+G.~Barker.
+\newblock Neutrino event reconstruction in a liquid argon {TPC}.
+\newblock {\em Journal of Physics: Conference Series}, 308:012015, 2011.
+
+\bibitem{0370-1298-64-10-303}
+J.~B. Birks.
+\newblock Scintillations from organic crystals: Specific fluorescence and
+  relative response to different radiations.
+\newblock {\em Proceedings of the Physical Society. Section A}, 64(10):874,
+  1951.
+
+\bibitem{CAEN1495}
+CAEN.
+\newblock Caen v1495 data sheet.
+\newblock Technical report, 2018.
+\newblock \url{http://www.caen.it/csite/CaenProd.jsp?idmod=484&parent=11}.
+
+\bibitem{CAENV1740}
+CAEN.
+\newblock Caen v1740 data sheet.
+\newblock Technical report, 2018.
+\newblock \url{http://www.caen.it/csite/CaenProd.jsp?parent=11&idmod=591}.
+
+\bibitem{Casper2002}
+D.~Casper.
+\newblock The nuance neutrino physics simulation, and the future.
+\newblock {\em Nuclear Physics B - Proceedings Supplements}, 112(1-3):161--170,
+  2002.
+
+\bibitem{EricFChurck}
+E.~Church.
+\newblock {LArSoft: A Software Package for Liquid Argon Time Projection Drift
+  Chambers}.
+\newblock {\em ArXiv, physics.ins-de/1311.6774}, 2013.
+
+\bibitem{Aad2012}
+ATLAS Collaboration.
+\newblock Observation of a new particle in the search for the standard model
+  higgs boson with the {ATLAS} detector at the {LHC}.
+\newblock {\em Physics Letters B}, 716(1):1--29, 2012.
+
+\bibitem{201230}
+CMS Collaboration.
+\newblock Observation of a new boson at a mass of 125 {GeV} with the cms
+  experiment at the lhc.
+\newblock {\em Physics Letters B}, 716(1):30 -- 61, 2012.
+
+\bibitem{detectorPaper}
+LArIAT Collaboration.
+\newblock The liquid argon in a testbeam (lariat) experiment.
+\newblock Technical report, In Preparation 2018.
+
+\bibitem{PhysRevLett.118.231801}
+No$\nu$a Collaboration.
+\newblock Constraints on oscillation parameters from ${\ensuremath{\nu}}_{e}$
+  appearance and ${\ensuremath{\nu}}_{\ensuremath{\mu}}$ disappearance in
+  no$\nu$a.
+\newblock {\em Phys. Rev. Lett.}, 118:231801, 2017.
+
+\bibitem{PhysRevD.95.012004}
+Super-Kamiokande Collaboration.
+\newblock Search for proton decay via
+  $p\ensuremath{\rightarrow}{e}^{+}{\ensuremath{\pi}}^{0}$ and
+  $p\ensuremath{\rightarrow}{\ensuremath{\mu}}^{+}{\ensuremath{\pi}}^{0}$ in
+  $0.31\text{ }\text{
+  }\mathbf{\text{megaton}}\ifmmode\cdot\else\textperiodcentered\fi{}\mathbf{\text{years}}$
+  exposure of the super-kamiokande water cherenkov detector.
+\newblock {\em Phys. Rev. D}, 95:012004, 2017.
+
+\bibitem{LeiguideOliveira:1953730}
+M.~A.~Leigui de~Oliveira.
+\newblock {Expression of Interest for a Full-Scale Detector Engineering Test
+  and Test Beam Calibration of a Single-Phase LAr TPC}.
+\newblock Technical Report CERN-SPSC-2014-027. SPSC-EOI-011, CERN, Geneva,
+  2014.
 
 \bibitem{Aguilar:2001ty}
 A.~Aguilar-Arevalo et~al.
@@ -63,16 +95,78 @@ A.~Aguilar-Arevalo et~al.
 \newblock {\em Phys. Rev.}, D64:112007, 2001.
 
 \bibitem{Aguilar-Arevalo:2013pmq}
-A.~A. Aguilar-Arevalo et~al.
+A.~Aguilar-Arevalo et~al.
 \newblock {Improved Search for $\bar \nu_\mu \rightarrow \bar \nu_e$
   Oscillations in the MiniBooNE Experiment}.
 \newblock {\em Phys. Rev. Lett.}, 110:161801, 2013.
 
-\bibitem{Amoruso:2004dy}
-S.~Amoruso et~al.
-\newblock {Study of electron recombination in liquid argon with the ICARUS
-  TPC}.
-\newblock {\em Nucl. Instrum. Meth.}, A523:275--286, 2004.
+\bibitem{PhysRevD.24.1400}
+A.~Bodek et~al.
+\newblock Further studies of fermi-motion effects in lepton scattering from
+  nuclear targets.
+\newblock {\em Phys. Rev. D}, 24:1400--1402, 1981.
+
+\bibitem{Bueno2007}
+A.~Bueno et~al.
+\newblock Nucleon decay searches with large liquid argon {TPC} detectors at
+  shallow depths: atmospheric neutrinos and cosmogenic backgrounds.
+\newblock {\em Journal of High Energy Physics}, 2007(04):041--041, 2007.
+
+\bibitem{Cervera2000}
+A.~Cervera et~al.
+\newblock Golden measurements at a neutrino factory.
+\newblock {\em Nuclear Physics B}, 579(1-2):17--55, 2000.
+
+\bibitem{1748-0221-8-07-P07002}
+A.~Ereditato et~al.
+\newblock Design and operation of argontube: a 5 m long drift liquid argon tpc.
+\newblock {\em Journal of Instrumentation}, 8(07):P07002, 2013.
+
+\bibitem{Synoptic}
+A.~Petrov et~al.
+\newblock Java synoptic toolkit.
+\newblock Technical report, 2010.
+\newblock \url{http://synoptic.fnal.gov/doc/readme.txt}.
+
+\bibitem{PhysRevC.14.635}
+A.~S.~Carroll et~al.
+\newblock Pion-nucleus total cross sections in the (3,3) resonance region.
+\newblock {\em Phys. Rev. C}, 14:635--638, 1976.
+
+\bibitem{AGUILARAREVALO200928}
+A.A. Aguilar-Arevalo et~al.
+\newblock The miniboone detector.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 599(1):28
+  -- 46, 2009.
+
+\bibitem{Clough1974}
+A.S.~Clough et~al.
+\newblock Pion-nucleus total cross sections from 88 to 860 {{{MeV}}}.
+\newblock {\em Nuclear Physics B}, 76(1):15--28, 1974.
+
+\bibitem{Bajc20161}
+B.~Borut et~al.
+\newblock Threshold corrections to dimension-six proton decay operators in
+  non-minimal \{SUSY\} su(5) \{GUTs\}.
+\newblock {\em Nuclear Physics B}, 910:1 -- 22, 2016.
+
+\bibitem{1748-0221-8-07-P07011}
+B.~J. P.~Jones et~al.
+\newblock A measurement of the absorption of liquid argon scintillation light
+  by dissolved nitrogen at the part-per-million level.
+\newblock {\em Journal of Instrumentation}, 8(07):P07011, 2013.
+
+\bibitem{ALLARDYCE19731}
+B.W.~Allardyce et~al.
+\newblock Pion reaction cross sections and nuclear sizes.
+\newblock {\em Nuclear Physics A}, 209(1):1 -- 51, 1973.
+
+\bibitem{Adams:2013qkq}
+C.~Adams et~al.
+\newblock {The Long-Baseline Neutrino Experiment: Exploring Fundamental
+  Symmetries of the Universe}.
+\newblock 2013.
 
 \bibitem{ArgoNeuT-det}
 C.~Anderson et~al.
@@ -84,22 +178,13 @@ C.~Andreopoulos et~al.
 \newblock {The GENIE Neutrino Monte Carlo Generator}.
 \newblock {\em Nucl. Instrum. Meth.}, A614:87--104, 2010.
 
-\bibitem{Synoptic}
-Timofei~Bolshakov Andrey~Petrov.
-\newblock Java synoptic toolkit.
-\newblock Technical report, Sept 2010.
-
-\bibitem{Antonello:2015lea}
-M.~Antonello et~al.
-\newblock {A Proposal for a Three Detector Short-Baseline Neutrino Oscillation
-  Program in the Fermilab Booster Neutrino Beam}.
-\newblock 2015.
-
-\bibitem{PhysRevC.23.2173}
-D.~Ashery, I.~Navon, G.~Azuelos, H.~K. Walter, H.~J. Pfeiffer, and F.~W.
-  Schlep\"utz.
-\newblock True absorption and scattering of pions on nuclei.
-\newblock {\em Phys. Rev. C}, 23:2173--2185, May 1981.
+\bibitem{Athanassopoulos1997}
+C.~Athanassopoulos et~al.
+\newblock The liquid scintillator neutrino detector and {LAMPF} neutrino
+  source.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  388(1-2):149--172, 1997.
 
 \bibitem{Athanassopoulos:1997pv}
 C.~Athanassopoulos et~al.
@@ -107,139 +192,43 @@ C.~Athanassopoulos et~al.
   LSND}.
 \newblock {\em Phys. Rev. Lett.}, 81:1774--1777, 1998.
 
-\bibitem{Bajc20161}
-Borut Bajc, Junji Hisano, Takumi Kuwahara, and Yuji Omura.
-\newblock Threshold corrections to dimension-six proton decay operators in
-  non-minimal \{SUSY\} su(5) \{GUTs\}.
-\newblock {\em Nuclear Physics B}, 910:1 -- 22, 2016.
+\bibitem{Aalseth2018}
+C.~E.~Aalseth et~al.
+\newblock {DarkSide}-20k: A 20 tonne two-phase {LAr} {TPC} for direct dark
+  matter detection at {LNGS}.
+\newblock {\em The European Physical Journal Plus}, 133(3), 2018.
 
-\bibitem{Baller2016}
-B.~Baller.
-\newblock Trajcluster user guide.
-\newblock Technical report, apr 2016.
+\bibitem{Green:2012gv}
+C.~Green et~al.
+\newblock {The Art Framework}.
+\newblock {\em J. Phys. Conf. Ser.}, 396:022020, 2012.
 
-\bibitem{Barker2011}
-Gary Barker.
-\newblock Neutrino event reconstruction in a liquid argon {TPC}.
-\newblock {\em Journal of Physics: Conference Series}, 308:012015, jul 2011.
+\bibitem{Juszczak2006}
+C.~Juszczak et~al.
+\newblock Simulations from a new neutrino event generator.
+\newblock {\em Nuclear Physics B - Proceedings Supplements}, 159:211--216,
+  2006.
 
-\bibitem{basf}
-BASF Corp. 100 Park Avenue, Florham Park, NJ 07932 USA.
+\bibitem{Patrignani:2016xqp}
+C.~Patrignani et~al.
+\newblock {Review of Particle Physics}.
+\newblock {\em Chin. Phys.}, C40(10):100001, 2016.
 
-\bibitem{PhysRevD.42.2974}
-et~al. Becker-Szendy.
-\newblock Search for proton decay into ${e}^{+}+{\ensuremath{\pi}}^{0}$ in the
-  imb-3 detector.
-\newblock {\em Phys. Rev. D}, 42:2974--2976, Nov 1990.
+\bibitem{PhysRev.105.1413}
+C.~S.~Wu et~al..
+\newblock Experimental test of parity conservation in beta decay.
+\newblock {\em Phys. Rev.}, 105:1413--1415, 1957.
 
-\bibitem{0370-1298-64-10-303}
-J~B Birks.
-\newblock Scintillations from organic crystals: Specific fluorescence and
-  relative response to different radiations.
-\newblock {\em Proceedings of the Physical Society. Section A}, 64(10):874,
-  1951.
+\bibitem{Wilkin:1973xd}
+C.~Wilkin et~al.
+\newblock {A comparison of pi+ and pi- total cross-sections of light nuclei
+  near the 3-3 resonance}.
+\newblock {\em Nucl. Phys.}, B62:61--85, 1973.
 
-\bibitem{PhysRevD.24.1400}
-A.~Bodek and J.~L. Ritchie.
-\newblock Further studies of fermi-motion effects in lepton scattering from
-  nuclear targets.
-\newblock {\em Phys. Rev. D}, 24:1400--1402, Sep 1981.
-
-\bibitem{Boulay:2004dk}
-Mark~G. Boulay and A.~Hime.
-\newblock {Direct WIMP detection using scintillation time discrimination in
-  liquid argon}.
-\newblock 2004.
-
-\bibitem{PhysRev.168.1466}
-D.~V. et~al. Bugg.
-\newblock Kaon-nucleon total cross sections from 0.6 to 2.65 gev/ \textit{c}.
-\newblock {\em Phys. Rev.}, 168:1466--1475, Apr 1968.
-
-\bibitem{Burton1973}
-W.~M. Burton and B.~A. Powell.
-\newblock Fluorescence of tetraphenyl-butadiene in the vacuum ultraviolet.
-\newblock {\em Applied Optics}, 12(1):87, jan 1973.
-
-\bibitem{CAEN1495}
-CAEN.
-\newblock Caen v1495 data sheet.
-\newblock Technical report, jan 2018.
-
-\bibitem{CAENV1740}
-CAEN.
-\newblock Caen v1740 data sheet.
-\newblock Technical report, jan 2018.
-
-\bibitem{PhysRevC.14.635}
-A.~S. et~al. Carroll.
-\newblock Pion-nucleus total cross sections in the (3,3) resonance region.
-\newblock {\em Phys. Rev. C}, 14:635--638, Aug 1976.
-
-\bibitem{Casper2002}
-D.~Casper.
-\newblock The nuance neutrino physics simulation, and the future.
-\newblock {\em Nuclear Physics B - Proceedings Supplements}, 112(1-3):161--170,
-  nov 2002.
-
-\bibitem{Cavanna:2014iqa}
-F.~Cavanna et~al.
-\newblock {LArIAT: Liquid Argon In A Testbeam}.
-\newblock 2014.
-
-\bibitem{Cervera2000}
-A.~Cervera, A.~Donini, M.B. Gavela, J.J.~Gomez C{\'{a}}denas,
-  P.~Hern{\'{a}}ndez, O.~Mena, and S.~Rigolin.
-\newblock Golden measurements at a neutrino factory.
-\newblock {\em Nuclear Physics B}, 579(1-2):17--55, jul 2000.
-
-\bibitem{EricFChurck}
-E.~Church.
-\newblock {LArSoft: A Software Package for Liquid Argon Time Projection Drift
-  Chambers}.
-\newblock 2013.
-
-\bibitem{Aad2012}
-ATLAS Collaboration.
-\newblock Observation of a new particle in the search for the standard model
-  higgs boson with the {ATLAS} detector at the {LHC}.
-\newblock {\em Physics Letters B}, 716(1):1--29, sep 2012.
-
-\bibitem{201230}
-CMS Collaboration.
-\newblock Observation of a new boson at a mass of 125 gev with the cms
-  experiment at the lhc.
-\newblock {\em Physics Letters B}, 716(1):30 -- 61, 2012.
-
-\bibitem{PhysRevD.95.012004}
-Super-Kamiokande Collaboration.
-\newblock Search for proton decay via
-  $p\ensuremath{\rightarrow}{e}^{+}{\ensuremath{\pi}}^{0}$ and
-  $p\ensuremath{\rightarrow}{\ensuremath{\mu}}^{+}{\ensuremath{\pi}}^{0}$ in
-  $0.31\text{ }\text{
-  }\mathbf{\text{megaton}}\ifmmode\cdot\else\textperiodcentered\fi{}\mathbf{\text{years}}$
-  exposure of the super-kamiokande water cherenkov detector.
-\newblock {\em Phys. Rev. D}, 95:012004, Jan 2017.
-
-\bibitem{detectorPaper}
-The~LArIAT Collaboration.
-\newblock The liquid argon in a testbeam (lariat) experiment.
-\newblock Technical report, In Preparation 2018.
-
-\bibitem{DellOro2016}
-Stefano Dell'Oro, Simone Marcocci, Matteo Viel, and Francesco Vissani.
-\newblock Neutrinoless double beta decay: 2015 review.
-\newblock {\em Advances in High Energy Physics}, 2016:1--37, 2016.
-
-\bibitem{DERENZO1974319}
-S.E. Derenzo, A.R. Kirschbaum, P.H. Eberhard, R.R. Ross, and F.T. Solmitz.
-\newblock Test of a liquid argon chamber with 20 μm rms resolution.
-\newblock {\em Nuclear Instruments and Methods}, 122:319 -- 327, 1974.
-
-\bibitem{Dimopoulos:1981dw}
-Savas Dimopoulos, Stuart Raby, and Frank Wilczek.
-\newblock {Proton Decay in Supersymmetric Models}.
-\newblock {\em Phys. Lett.}, B112:133, 1982.
+\bibitem{PhysRevC.23.2173}
+D.~Ashery et~al.
+\newblock True absorption and scattering of pions on nuclei.
+\newblock {\em Phys. Rev. C}, 23:2173--2185, 1981.
 
 \bibitem{Drakoulakos:2004gn}
 D.~Drakoulakos et~al.
@@ -247,58 +236,120 @@ D.~Drakoulakos et~al.
   using a fine-grained detector in the NuMI beam}.
 \newblock 2004.
 
+\bibitem{Wright:2015xia}
+D.~H.~Wright et~al.
+\newblock {The Geant4 Bertini Cascade}.
+\newblock {\em Nucl. Instrum. Meth.}, A804:175--188, 2015.
+
+\bibitem{PhysRevD.51.229}
+D.~Lee et~al.
+\newblock Predictions for the proton lifetime in minimal nonsupersymmetric
+  so(10) models: An update.
+\newblock {\em Phys. Rev. D}, 51:229--235, 1995.
+
+\bibitem{PhysRev.168.1466}
+D.V~Bugg et~al.
+\newblock Kaon-nucleon total cross sections from 0.6 to 2.65 {GeV}/{{{MeV}}}
+  \textit{c}.
+\newblock {\em Phys. Rev.}, 168:1466--1475, 1968.
+
+\bibitem{Friedman:1997eq}
+E.~Friedman et~al.
+\newblock {K+ nucleus reaction and total cross-sections: New analysis of
+  transmission experiments}.
+\newblock {\em Phys. Rev.}, C55:1304--1311, 1997.
+
+\bibitem{Morikawa1989}
+E.~Morikawa et~al.
+\newblock Argon, krypton, and xenon excimer luminescence: From the dilute gas
+  to the condensed phase.
+\newblock {\em The Journal of Chemical Physics}, 91(3):1469--1477, 1989.
+
 \bibitem{9780198520085}
-Torleif Ericson and Wolfram Weise.
+E.~Torleif et~al.
 \newblock {\em Pions and Nuclei (The International Series of Monographs on
   Physics)}.
 \newblock Oxford University Press, 1988.
-
-\bibitem{1748-0221-8-07-P07002}
-A~Ereditato et~al.
-\newblock Design and operation of argontube: a 5 m long drift liquid argon tpc.
-\newblock {\em Journal of Instrumentation}, 8(07):P07002, 2013.
-
-\bibitem{AGUILARAREVALO200928}
-A.A. Aguilar-Arevalo et~al.
-\newblock The miniboone detector.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment}, 599(1):28
-  -- 46, 2009.
-
-\bibitem{Bueno2007}
-Antonio~Bueno et~al.
-\newblock Nucleon decay searches with large liquid argon {TPC} detectors at
-  shallow depths: atmospheric neutrinos and cosmogenic backgrounds.
-\newblock {\em Journal of High Energy Physics}, 2007(04):041--041, apr 2007.
-
-\bibitem{Clough1974}
-A.S.~Clough et~al.
-\newblock Pion-nucleus total cross sections from 88 to 860 {MeV}.
-\newblock {\em Nuclear Physics B}, 76(1):15--28, jul 1974.
-
-\bibitem{ALLARDYCE19731}
-B.W.~Allardyce et~al.
-\newblock Pion reaction cross sections and nuclear sizes.
-\newblock {\em Nuclear Physics A}, 209(1):1 -- 51, 1973.
-
-\bibitem{Athanassopoulos1997}
-C~Athanassopoulos et~al.
-\newblock The liquid scintillator neutrino detector and {LAMPF} neutrino
-  source.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment},
-  388(1-2):149--172, mar 1997.
 
 \bibitem{BINON1970168}
 F.~Binon et~al.
 \newblock Scattering of negative pions on carbon.
 \newblock {\em Nuclear Physics B}, 17(1):168 -- 188, 1970.
 
+\bibitem{Cavanna:2014iqa}
+F.~Cavanna et~al.
+\newblock {LArIAT: Liquid Argon In A Testbeam}.
+\newblock 2014.
+
+\bibitem{ASDQchip}
+F~M~Newcomer et~al.
+\newblock A fast, low power, amplifier-shaper-discriminator for high rate straw
+  tracking systems.
+\newblock {\em IEEE Transactions on Nuclear Science}, 40(4):630--636, 1993.
+
 \bibitem{HASERT1973138}
 F.J.~Hasert et~al.
 \newblock Observation of neutrino-like interactions without muon or electron in
   the gargamelle neutrino experiment.
 \newblock {\em Physics Letters B}, 46(1):138 -- 140, 1973.
+
+\bibitem{Geiger1909}
+H.~Geiger et~al.
+\newblock On a diffuse reflection of the formula-particles.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
+  Engineering Sciences}, 82(557):495--500, 1909.
+
+\bibitem{PhysRevLett.32.438}
+H.~Georgi et~al.
+\newblock Unity of all elementary-particle forces.
+\newblock {\em Phys. Rev. Lett.}, 32:438--441, 1974.
+
+\bibitem{PhysRevD.70.073009}
+H.~Minakata et~al.
+\newblock Neutrino mixing and quark-lepton complementarity.
+\newblock {\em Phys. Rev. D}, 70:073009, 2004.
+
+\bibitem{RevModPhys.84.1307}
+J.~A.~Formaggio et~al.
+\newblock From ev to eev: Neutrino cross sections across energy scales.
+\newblock {\em Rev. Mod. Phys.}, 84:1307--1341, 2012.
+
+\bibitem{LArIATCalo}
+J.~Asaadi et~al.
+\newblock Determination of the electron lifetime in lariat.
+\newblock Technical report, 2017.
+\newblock
+  \url{https://lartpc-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=2513}.
+
+\bibitem{Lopez:1991eca}
+J.~L.~Lopez et~al.
+\newblock {Flipped SU(5): Origins and recent developments}.
+\newblock In {\em {15th Johns Hopkins Workshop on Current Problems in Particle
+  Theory: Particle Physics from Underground to Heaven Baltimore, Maryland,
+  August 26-28, 1991}}, pages 277--297, 1991.
+
+\bibitem{PhysRevA.36.614}
+J.~Thomas et~al.
+\newblock Recombination of electron-ion pairs in liquid argon and liquid xenon.
+\newblock {\em Phys. Rev. A}, 36:614--616, 1987.
+
+\bibitem{PhysRevD.90.072005}
+K.~Abe et~al.
+\newblock Search for proton decay via
+  $p\ensuremath{\rightarrow}\ensuremath{\nu}{K}^{+}$ using $260\text{ }\text{
+  }\mathrm{kiloton}\ifmmode\cdot\else\textperiodcentered\fi{}\mathrm{year}$
+  data of super-kamiokande.
+\newblock {\em Phys. Rev. D}, 90:072005, 2014.
+
+\bibitem{PhysRevLett.118.151801}
+K.~Abe et~al.
+\newblock Combined analysis of neutrino and antineutrino oscillations at t2k.
+\newblock {\em Phys. Rev. Lett.}, 118:151801, 2017.
+
+\bibitem{PDGOsc}
+K.~Nakamura et~al.
+\newblock Neutrino mass, mixing and oscillations.
+\newblock {\em Chin. Phys.}, C40(10):100001, 2016.
 
 \bibitem{MinervaTestbeam}
 L.~Aliaga et~al.
@@ -308,7 +359,7 @@ L.~Aliaga et~al.
   42, 2015.
 
 \bibitem{1748-0221-9-07-P07005}
-M~Adamowski et~al.
+M.~Adamowski et~al.
 \newblock The liquid argon purity demonstrator.
 \newblock {\em Journal of Instrumentation}, 9(07):P07005, 2014.
 
@@ -323,29 +374,65 @@ M.~Antonello et~al.
   liquid argon time projection chamber detector.
 \newblock {\em Advances in High Energy Physics}, 2013:1--16, 2013.
 
+\bibitem{Antonello:2015lea}
+M.~Antonello et~al.
+\newblock {A Proposal for a Three Detector Short-Baseline Neutrino Oscillation
+  Program in the Fermilab Booster Neutrino Beam}.
+\newblock 2015.
+
+\bibitem{Boulay:2004dk}
+M.~G.~Boulay et~al.
+\newblock {Direct WIMP detection using scintillation time discrimination in
+  liquid argon}.
+\newblock 2004.
+
 \bibitem{Ishida1997}
 N.~Ishida et~al.
 \newblock Attenuation length measurements of scintillation light in liquid rare
   gases and their mixtures using an improved reflection suppresser.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment},
-  384(2-3):380--386, jan 1997.
+  384(2-3):380--386, 1997.
+
+\bibitem{1748-0221-8-01-C01003}
+N.~Yahlali et~al.
+\newblock Imaging with sipms in noble-gas detectors.
+\newblock {\em Journal of Instrumentation}, 8(01):C01003, 2013.
 
 \bibitem{Vilain1993}
 P.~Vilain et~al.
 \newblock Coherent single charged pion production by neutrinos.
-\newblock {\em Physics Letters B}, 313(1-2):267--275, aug 1993.
+\newblock {\em Physics Letters B}, 313(1-2):267--275, 1993.
+
+\bibitem{PhysRevD.67.075007}
+Q.~Shafi et~al.
+\newblock Neutrino democracy, fermion mass hierarchies, and proton decay from
+  5d su(5).
+\newblock {\em Phys. Rev. D}, 67:075007, 2003.
 
 \bibitem{1748-0221-5-06-P06003}
-R~Acciarri et~al.
+R.~Acciarri et~al.
 \newblock Effects of nitrogen contamination in liquid argon.
 \newblock {\em Journal of Instrumentation}, 5(06):P06003, 2010.
 
+\bibitem{lightsys-pmttests}
+R.~Acciarri et~al.
+\newblock {Demonstration and Comparison of Operation of Photomultiplier Tubes
+  at Liquid Argon Temperature}.
+\newblock {\em JINST}, 7:P01016, 2012.
+
 \bibitem{1748-0221-8-08-P08005}
-R~Acciarri et~al.
+R.~Acciarri et~al.
 \newblock A study of electron recombination using highly ionizing particles in
   the argoneut liquid argon tpc.
 \newblock {\em Journal of Instrumentation}, 8(08):P08005, 2013.
+
+\bibitem{LArIATLifeTime}
+R.~Acciarri et~al.
+\newblock Determination of the electron lifetime in lariat.
+\newblock Technical report, 2016.
+\newblock \url{https://lartpc-docdb.fnal.gov/cgi-bin/private/RetrieveFile
+  docid=1804&filename=LArIAT_Electron_Lifetime.pdf&version=2}.
 
 \bibitem{1748-0221-12-03-P03011}
 R.~Acciarri et~al.
@@ -353,10 +440,105 @@ R.~Acciarri et~al.
   argon time projection chamber.
 \newblock {\em Journal of Instrumentation}, 12(03):P03011, 2017.
 
+\bibitem{MicroBooNE-det}
+R.~Acciarri et~al.
+\newblock {Design and Construction of the MicroBooNE Detector}.
+\newblock {\em JINST}, 12(02):P02017, 2017.
+
 \bibitem{Acciarri2017}
 R.~Acciarri et~al.
 \newblock Design and construction of the {MicroBooNE} detector.
-\newblock {\em Journal of Instrumentation}, 12(02):P02017--P02017, feb 2017.
+\newblock {\em Journal of Instrumentation}, 12(02):P02017--P02017, 2017.
+
+\bibitem{Acciarri:2016sli}
+R.~Acciarri et~al.
+\newblock {First Observation of Low Energy Electron Neutrinos in a Liquid Argon
+  Time Projection Chamber}.
+\newblock {\em Phys. Rev.}, D95(7):072005, 2017.
+\newblock [Phys. Rev.D95,072005(2017)].
+
+\bibitem{LArIATdqdx}
+R.~Acciarri et~al.
+\newblock Investigation of the non-uniformity observed in the wire response to
+  charge in lariat run 1.
+\newblock Technical report, 2017.
+\newblock
+  \url{https://lartpc-docdb.fnal.gov/cgi-bin/private/ShowDocument?docid=1994}.
+
+\bibitem{Teague1968}
+R.~K.~Teague et~al.
+\newblock Refractive index and the lorentz{\textendash}lorenz function for
+  gaseous and liquid argon, including a study of the coexistence curve near the
+  critical state.
+\newblock {\em The Journal of Chemical Physics}, 48(11):4973--4984, 1968.
+
+\bibitem{Amoruso:2004dy}
+S.~Amoruso et~al.
+\newblock {Study of electron recombination in liquid argon with the ICARUS
+  TPC}.
+\newblock {\em Nucl. Instrum. Meth.}, A523:275--286, 2004.
+
+\bibitem{DellOro2016}
+S.~Dell'Oro et~al.
+\newblock Neutrinoless double beta decay: 2015 review.
+\newblock {\em Advances in High Energy Physics}, 2016:1--37, 2016.
+
+\bibitem{Dimopoulos:1981dw}
+S.~Dimopoulos et~al.
+\newblock {Proton Decay in Supersymmetric Models}.
+\newblock {\em Phys. Lett.}, B112:133, 1982.
+
+\bibitem{Sten}
+S.~Hansen et~al.
+\newblock Fermilab test beam multi-wire proportional chamber tracking system
+  upgrade.
+\newblock 2014.
+\newblock International Conference on Technology and Instrumentation in
+  Particle Physics (TIPP 2014).
+
+\bibitem{PASCOLI20071}
+S.~Pascoli et~al.
+\newblock Leptogenesis and low energy cp-violation in neutrino physics.
+\newblock {\em Nuclear Physics B}, 774(1):1 -- 52, 2007.
+
+\bibitem{P5}
+S.~Ritz et~al.
+\newblock {Building for Discovery: Strategic Plan for U.S. Particle Physics in
+  the Global Context}.
+\newblock 2014.
+
+\bibitem{DERENZO1974319}
+S.E.~Derenzo et~al.
+\newblock Test of a liquid argon chamber with 20 μm rms resolution.
+\newblock {\em Nuclear Instruments and Methods}, 122:319 -- 327, 1974.
+
+\bibitem{2006257}
+SLD Electroweak~Group et~al.
+\newblock Precision electroweak measurements on the z resonance.
+\newblock {\em Physics Reports}, 427(5):257 -- 454, 2006.
+
+\bibitem{Compilation1}
+V.~Flaminio et~al.
+\newblock {Compilation of Cross Sections I: $\pi^+$ and $\pi^-$ Induced
+  Reactions}.
+\newblock {\em CERN-HERA}, pages 83--01, 1983.
+
+\bibitem{Compilation2}
+V.~Flaminio et~al.
+\newblock {Compilation of Cross Sections II: $K^+$ and $K^-$ Induced
+  Reactions}.
+\newblock {\em CERN-HERA}, pages 83--02, 1983.
+
+\bibitem{PhysRevD.55.6986}
+V.~Lucas et~al.
+\newblock Nucleon decay in a realistic so(10) susy gut.
+\newblock {\em Phys. Rev. D}, 55:6986--7009, 1997.
+
+\bibitem{PhysRevLett.115.121803}
+V.~Takhistov et~al.
+\newblock Search for nucleon and dinucleon decays with an invisible particle
+  and a charged lepton in the final state at the super-kamiokande experiment.
+\newblock {\em Phys. Rev. Lett.}, 115:121803, 2015.
 
 \bibitem{GEHMAN2011116}
 V.M.~Gehman et~al.
@@ -366,70 +548,53 @@ V.M.~Gehman et~al.
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 654(1):116
   -- 121, 2011.
 
-\bibitem{Aalseth2018}
-C.~E.~Aalseth et~al.l.
-\newblock {DarkSide}-20k: A 20 tonne two-phase {LAr} {TPC} for direct dark
-  matter detection at {LNGS}.
-\newblock {\em The European Physical Journal Plus}, 133(3), mar 2018.
+\bibitem{PhysRevC.78.035801}
+W.~H.~Lippincott et~al.
+\newblock Scintillation time dependence and pulse shape discrimination in
+  liquid argon.
+\newblock {\em Phys. Rev. C}, 78:035801, 2008.
+
+\bibitem{Burton1973}
+W.~M.~Burton et~al.
+\newblock Fluorescence of tetraphenyl-butadiene in the vacuum ultraviolet.
+\newblock {\em Applied Optics}, 12(1):87, 1973.
+
+\bibitem{WILLIS1974221}
+W.J.~Willis et~al.
+\newblock Liquid-argon ionization chambers as total-absorption detectors.
+\newblock {\em Nuclear Instruments and Methods}, 120(2):221 -- 236, 1974.
 
 \bibitem{Fenker}
-H~Fenker.
+H.~Fenker.
 \newblock Standard beam pwc for fermilab.
 \newblock Technical report, Fermi National Accelerator Lab., Batavia, IL (USA),
   1983.
 
 \bibitem{fesbach1992theoretical}
-H~Fesbach.
+H.~Fesbach.
 \newblock Theoretical nuclear physics: Nuclear reactions.
 \newblock 1992.
 
-\bibitem{RevModPhys.84.1307}
-J.~A. Formaggio and G.~P. Zeller.
-\newblock From ev to eev: Neutrino cross sections across energy scales.
-\newblock {\em Rev. Mod. Phys.}, 84:1307--1341, Sep 2012.
-
-\bibitem{Friedman:1997eq}
-E.~Friedman et~al.
-\newblock {K+ nucleus reaction and total cross-sections: New analysis of
-  transmission experiments}.
-\newblock {\em Phys. Rev.}, C55:1304--1311, 1997.
-
-\bibitem{Geiger1909}
-H.~Geiger and E.~Marsden.
-\newblock On a diffuse reflection of the formula-particles.
-\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
-  Engineering Sciences}, 82(557):495--500, jul 1909.
-
-\bibitem{PhysRevLett.32.438}
-Howard Georgi and S.~L. Glashow.
-\newblock Unity of all elementary-particle forces.
-\newblock {\em Phys. Rev. Lett.}, 32:438--441, Feb 1974.
-
-\bibitem{9780471779957}
-D.Y. Wong~(editor) G.L. Shaw~(Editor).
-\newblock {\em Pion-nucleon Scattering}.
-\newblock John Wiley \& Sons Inc, 1969.
+\bibitem{PhysRevD.42.2974}
+W.~Gajewski et~al.
+\newblock Search for proton decay into ${e}^{+}+{\ensuremath{\pi}}^{0}$ in the
+  imb-3 detector.
+\newblock {\em Phys. Rev. D}, 42:2974--2976, 1990.
 
 \bibitem{GlassmanPS}
 Glassman High Voltage, Inc., Precision Regulated High Voltage DC Power Supply.
 
 \bibitem{1063-7869-57-5-503}
-D~S Gorbunov.
+D.~S. Gorbunov.
 \newblock Sterile neutrinos and their role in particle physics and cosmology.
 \newblock {\em Physics-Uspekhi}, 57(5):503, 2014.
 
-\bibitem{Green:2012gv}
-C.~Green, J.~Kowalkowski, M.~Paterno, M.~Fischler, L.~Garren, and Q.~Lu.
-\newblock {The Art Framework}.
-\newblock {\em J. Phys. Conf. Ser.}, 396:022020, 2012.
-
-\bibitem{Sten}
-S.~Hansen, D.~Jensen, G.~Savage, E.~Skup, and A.~Soha.
-\newblock Fermilab test beam multi-wire proportional chamber tracking system
-  upgrade.
-\newblock June 2014.
-\newblock International Conference on Technology and Instrumentation in
-  Particle Physics (TIPP 2014).
+\bibitem{PDG-Argon}
+Particle~Data Group.
+\newblock {Energy Loss for Liquid Argon}.
+\newblock Technical report.
+\newblock
+  \url{http://pdg.lbl.gov/2017/AtomicNuclearProperties/MUE/muE_liquid_argon.txt}.
 
 \bibitem{0295-5075-103-2-21001}
 J.~Harada.
@@ -438,28 +603,29 @@ J.~Harada.
   via quark-lepton complementarity at next-to-leading order.
 \newblock {\em EPL (Europhysics Letters)}, 103(2):21001, 2013.
 
+\bibitem{Weyl:10.2307}
+W.~Hermann.
+\newblock Gravitation and the electron.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 15(4):323--334, 1929.
+
 \bibitem{Higgs19642}
-Peter~W. Higgs.
+P.~W. Higgs.
 \newblock Broken symmetries and the masses of gauge bosons.
-\newblock {\em Physical Review Letters}, 13(16):508--509, oct 1964.
+\newblock {\em Physical Review Letters}, 13(16):508--509, 1964.
 
 \bibitem{Higgs1964}
 P.W. Higgs.
 \newblock Broken symmetries, massless particles and gauge fields.
-\newblock {\em Physics Letters}, 12(2):132--133, sep 1964.
+\newblock {\em Physics Letters}, 12(2):132--133, 1964.
 
 \bibitem{0034-4885-73-11-116201}
-H~J Hilke.
+H.~J. Hilke.
 \newblock Time projection chambers.
 \newblock {\em Reports on Progress in Physics}, 73(11):116201, 2010.
 
-\bibitem{LArIATCalo}
-G.~Pulliam J.~Asaadi, E.~Gramellini.
-\newblock Determination of the electron lifetime in lariat.
-\newblock Technical report, August 2017.
-
 \bibitem{Jaff1913}
-George Jaff{\'{e}}.
+G.~Jaff{\'{e}}.
 \newblock Zur theorie der ionisation in kolonnen.
 \newblock {\em Annalen der Physik}, 347(12):303--344, 1913.
 
@@ -468,24 +634,12 @@ C.~Jarlskog.
 \newblock A basis independent formulation of the connection between quark mass
   matrices, {CP} violation and experiment.
 \newblock {\em Zeitschrift f\"{u}r Physik C Particles and Fields},
-  29(3):491--497, sep 1985.
-
-\bibitem{1748-0221-8-07-P07011}
-B~J~P Jones, C~S Chiu, J~M Conrad, C~M Ignarra, T~Katori, and M~Toups.
-\newblock A measurement of the absorption of liquid argon scintillation light
-  by dissolved nitrogen at the part-per-million level.
-\newblock {\em Journal of Instrumentation}, 8(07):P07011, 2013.
+  29(3):491--497, 1985.
 
 \bibitem{Jones:2015bya}
-Benjamin J.~P. Jones.
+B.J.P. Jones.
 \newblock {\em {Sterile Neutrinos in Cold Climates}}.
 \newblock PhD thesis, MIT, 2015.
-
-\bibitem{Juszczak2006}
-Cezary Juszczak, Jaros{\l}aw~A. Nowak, and Jan~T. Sobczyk.
-\newblock Simulations from a new neutrino event generator.
-\newblock {\em Nuclear Physics B - Proceedings Supplements}, 159:211--216, sep
-  2006.
 
 \bibitem{Kazakov:2000ra}
 D.~I. Kazakov.
@@ -493,102 +647,40 @@ D.~I. Kazakov.
 \newblock In {\em {2000 European School of high-energy physics, Caramulo,
   Portugal, 20 Aug-2 Sep 2000: Proceedings}}, pages 125--199, 2000.
 
-\bibitem{PhysRevD.51.229}
-Dae-Gyu Lee, R.~N. Mohapatra, M.~K. Parida, and Merostar Rani.
-\newblock Predictions for the proton lifetime in minimal nonsupersymmetric
-  so(10) models: An update.
-\newblock {\em Phys. Rev. D}, 51:229--235, Jan 1995.
-
-\bibitem{LeiguideOliveira:1953730}
-M~A Leigui~de Oliveira.
-\newblock {Expression of Interest for a Full-Scale Detector Engineering Test
-  and Test Beam Calibration of a Single-Phase LAr TPC}.
-\newblock Technical Report CERN-SPSC-2014-027. SPSC-EOI-011, CERN, Geneva, Oct
-  2014.
-
-\bibitem{PhysRevC.78.035801}
-W.~H. et~al. Lippincott.
-\newblock Scintillation time dependence and pulse shape discrimination in
-  liquid argon.
-\newblock {\em Phys. Rev. C}, 78:035801, Sep 2008.
-
-\bibitem{Lopez:1991eca}
-Jorge~L. Lopez and Dimitri~V. Nanopoulos.
-\newblock {Flipped SU(5): Origins and recent developments}.
-\newblock In {\em {15th Johns Hopkins Workshop on Current Problems in Particle
-  Theory: Particle Physics from Underground to Heaven Baltimore, Maryland,
-  August 26-28, 1991}}, pages 277--297, 1991.
-
-\bibitem{PhysRevD.55.6986}
-Vincent Lucas and Stuart Raby.
-\newblock Nucleon decay in a realistic so(10) susy gut.
-\newblock {\em Phys. Rev. D}, 55:6986--7009, Jun 1997.
-
 \bibitem{Majorana1937}
-Ettore Majorana.
+E.~Majorana.
 \newblock Teoria simmetrica dell'elettrone e del positrone.
-\newblock {\em Il Nuovo Cimento}, 14(4):171--184, apr 1937.
-
-\bibitem{PhysRevD.70.073009}
-Hisakazu Minakata and Alexei~Yu. Smirnov.
-\newblock Neutrino mixing and quark-lepton complementarity.
-\newblock {\em Phys. Rev. D}, 70:073009, Oct 2004.
+\newblock {\em Il Nuovo Cimento}, 14(4):171--184, 1937.
 
 \bibitem{SpaceCharge}
 M.~Mooney.
 \newblock The microboone experiment and the impact of space charge effects.
 \newblock 2015.
 
-\bibitem{Morikawa1989}
-E.~Morikawa, R.~Reininger, P.~G\"{u}rtler, V.~Saile, and P.~Laporte.
-\newblock Argon, krypton, and xenon excimer luminescence: From the dilute gas
-  to the condensed phase.
-\newblock {\em The Journal of Chemical Physics}, 91(3):1469--1477, aug 1989.
-
-\bibitem{PDGOsc}
-K.~Nakamura and S.T. Petcov.
-\newblock Neutrino mass, mixing and oscillations.
-\newblock {\em Chin. Phys.}, C40(10):100001, 2016.
-
-\bibitem{ASDQchip}
-FM~Newcomer, S~Tedja, R~Van~Berg, J~Van~der Spiegel, and HH~Williams.
-\newblock A fast, low power, amplifier-shaper-discriminator for high rate straw
-  tracking systems.
-\newblock {\em IEEE Transactions on Nuclear Science}, 40(4):630--636, 1993.
-
 \bibitem{Noether1971}
-Emmy Noether.
+E.~Noether.
 \newblock Invariant variation problems.
-\newblock {\em Transport Theory and Statistical Physics}, 1(3):186--207, jan
-  1971.
+\newblock {\em Transport Theory and Statistical Physics}, 1(3):186--207, 1971.
 
 \bibitem{Nutini2015}
 I.~Nutini.
 \newblock Study of charged particles interaction processes on ar in the 0.2 -
-  2.0 {GeV} energy range through combined information from ionization free
+  2.0 {{GeV}} energy range through combined information from ionization free
   charge and scintillation light.
-\newblock Technical report, jan 2015.
+\newblock Technical report, 2015.
+\newblock \url{https://doi.org/10.2172/1221325}.
 
 \bibitem{FirstTPC}
 D.~R. Nygren.
 \newblock The time projection chamber: A new 4 $\pi$ detector for charged
   particles.
 \newblock Technical report, 1974.
+\newblock \url{http://lss.fnal.gov/conf/C740805/p58.pdf}.
 
 \bibitem{PhysRev.54.554}
 L.~Onsager.
 \newblock Initial recombination of ions.
-\newblock {\em Phys. Rev.}, 54:554--557, Oct 1938.
-
-\bibitem{PASCOLI20071}
-S.~Pascoli, S.T. Petcov, and A.~Riotto.
-\newblock Leptogenesis and low energy cp-violation in neutrino physics.
-\newblock {\em Nuclear Physics B}, 774(1):1 -- 52, 2007.
-
-\bibitem{Patrignani:2016xqp}
-C.~Patrignani et~al.
-\newblock {Review of Particle Physics}.
-\newblock {\em Chin. Phys.}, C40(10):100001, 2016.
+\newblock {\em Phys. Rev.}, 54:554--557, 1938.
 
 \bibitem{Pontecorvo:1967fh}
 B.~Pontecorvo.
@@ -597,28 +689,11 @@ B.~Pontecorvo.
 \newblock {\em Sov. Phys. JETP}, 26:984--988, 1968.
 \newblock [Zh. Eksp. Teor. Fiz.53,1717(1967)].
 
-\bibitem{LArIATdqdx}
-T.~Yang R.~Acciarri.
-\newblock Investigation of the non-uniformity observed in the wire response to
-  charge in lariat run 1.
-\newblock Technical report, February 2017.
-
-\bibitem{LArIATLifeTime}
-T.~Yang R.~Acciarri, M.~Stancari.
-\newblock Determination of the electron lifetime in lariat.
-\newblock Technical report, March 2016.
-
 \bibitem{PhysRevLett.93.161801}
-Martti Raidal.
+M.~Raidal.
 \newblock Relation between the neutrino and quark mixing angles and grand
   unification.
-\newblock {\em Phys. Rev. Lett.}, 93:161801, Oct 2004.
-
-\bibitem{P5}
-Steve Ritz et~al.
-\newblock {Building for Discovery: Strategic Plan for U.S. Particle Physics in
-  the Global Context}.
-\newblock 2014.
+\newblock {\em Phys. Rev. Lett.}, 93:161801, 2004.
 
 \bibitem{Rubbia:1977zz}
 C.~Rubbia.
@@ -627,91 +702,25 @@ C.~Rubbia.
 \newblock 1977.
 
 \bibitem{osti_4488432}
-L.M. Saunders.
+L.M Saunders.
 \newblock Electromagnetic production of pions from nuclei.
-\newblock {\em Nucl. Phys., B7: 293-310(1968).}
+\newblock {\em Nucl. Phys., B7: 293-310(1968).}, 1968.
 
-\bibitem{PhysRevD.67.075007}
-Qaisar Shafi and Zurab Tavartkiladze.
-\newblock Neutrino democracy, fermion mass hierarchies, and proton decay from
-  5d su(5).
-\newblock {\em Phys. Rev. D}, 67:075007, Apr 2003.
-
-\bibitem{sigma-aldrich}
-Sigma-Aldrich, P.O. Box 14508, St. Louis, MO 63178 USA.
-
-\bibitem{PhysRevLett.115.121803}
-V.~et~al. Takhistov.
-\newblock Search for nucleon and dinucleon decays with an invisible particle
-  and a charged lepton in the final state at the super-kamiokande experiment.
-\newblock {\em Phys. Rev. Lett.}, 115:121803, Sep 2015.
-
-\bibitem{Teague1968}
-R.~K. Teague and C.~J. Pings.
-\newblock Refractive index and the lorentz{\textendash}lorenz function for
-  gaseous and liquid argon, including a study of the coexistence curve near the
-  critical state.
-\newblock {\em The Journal of Chemical Physics}, 48(11):4973--4984, jun 1968.
-
-\bibitem{PhysRevA.36.614}
-J.~Thomas and D.~A. Imel.
-\newblock Recombination of electron-ion pairs in liquid argon and liquid xenon.
-\newblock {\em Phys. Rev. A}, 36:614--616, Jul 1987.
-
-\bibitem{Compilation1}
-D.R.O. Morrison N.~Rivoire V.~Flaminio, W.G.~Moorhead.
-\newblock {Compilation of Cross Sections I: $\pi^+$ and $\pi^-$ Induced
-  Reactions}.
-\newblock {\em CERN-HERA}, pages 83--01, 1983.
-
-\bibitem{Compilation2}
-D.R.O. Morrison N.~Rivoire V.~Flaminio, W.G.~Moorhead.
-\newblock {Compilation of Cross Sections II: $K^+$ and $K^-$ Induced
-  Reactions}.
-\newblock {\em CERN-HERA}, pages 83--02, 1983.
+\bibitem{9780471779957}
+G.L. Shaw and D.Y.~Wong (editors).
+\newblock {\em Pion-nucleon Scattering}.
+\newblock John Wiley \& Sons Inc, 1969.
 
 \bibitem{WWW}
 W.~Walkowiak.
 \newblock Drift velocity of free electrons in liquid argon.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment},
-  449(1-2):288--294, jul 2000.
-
-\bibitem{Weyl:10.2307}
-Hermann Weyl.
-\newblock Gravitation and the electron.
-\newblock {\em Proceedings of the National Academy of Sciences of the United
-  States of America}, 15(4):323--334, 1929.
-
-\bibitem{Wilkin:1973xd}
-Colin et~al Wilkin.
-\newblock {A comparison of pi+ and pi- total cross-sections of light nuclei
-  near the 3-3 resonance}.
-\newblock {\em Nucl. Phys.}, B62:61--85, 1973.
-
-\bibitem{WILLIS1974221}
-W.J. Willis and V.~Radeka.
-\newblock Liquid-argon ionization chambers as total-absorption detectors.
-\newblock {\em Nuclear Instruments and Methods}, 120(2):221 -- 236, 1974.
-
-\bibitem{Wright:2015xia}
-D.~H. Wright and M.~H. Kelsey.
-\newblock {The Geant4 Bertini Cascade}.
-\newblock {\em Nucl. Instrum. Meth.}, A804:175--188, 2015.
-
-\bibitem{PhysRev.105.1413}
-C.~S. Wu, E.~Ambler, R.~W. Hayward, D.~D. Hoppes, and R.~P. Hudson.
-\newblock Experimental test of parity conservation in beta decay.
-\newblock {\em Phys. Rev.}, 105:1413--1415, Feb 1957.
-
-\bibitem{1748-0221-8-01-C01003}
-N~Yahlali, L~M~P Fernandes, K~González, A~N~C Garcia, and A~Soriano.
-\newblock Imaging with sipms in noble-gas detectors.
-\newblock {\em Journal of Instrumentation}, 8(01):C01003, 2013.
+  449(1-2):288--294, 2000.
 
 \bibitem{Yanagida1980}
 T.~Yanagida.
 \newblock Horizontal symmetry and masses of neutrinos.
-\newblock {\em Progress of Theoretical Physics}, 64(3):1103--1105, sep 1980.
+\newblock {\em Progress of Theoretical Physics}, 64(3):1103--1105, 1980.
 
 \end{thebibliography}
