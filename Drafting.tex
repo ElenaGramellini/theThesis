@@ -63,13 +63,33 @@
 
 %\linenumbers
 \begin{document}
+
+
+\begin{align}
+C^{\text{$\pi$ MC}}_{\text{Int}} (E_{i}) &= \frac{N^{\text{$\pi$ MC}}_{\text{Int}} (E_{i})}{N^{\text{TOT MC}}_{\text{Int}} (E_{i})}\\
+&= \frac{ N^{\text{TOT MC}}_{\text{Int}} (E_{i}) - B^{\text{TOT MC}}_{\text{Int}} (E_{i}) }{N^{\text{TOT MC}}_{\text{Int}} (E_{i})}
+\end{align}
+
+
+\begin{align}
+C^{\text{$\pi$ MC}}_{\text{Inc}} (E_{i}) &= \frac{N^{\text{$\pi$ MC}}_{\text{Inc}} (E_{i})}{N^{\text{TOT MC}}_{\text{Inc}} (E_{i})}\\
+&= \frac{ N^{\text{TOT MC}}_{\text{Inc}} (E_{i}) - B^{\text{TOT MC}}_{\text{Inc}} (E_{i}) }{N^{\text{TOT MC}}_{\text{Inc}} (E_{i})}
+\end{align}
+
+
 \begin{equation}
-E^{\text{kin}}_{\text{Front Face}} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam}^2 - E_{Loss} 
+E^{\text{kin}}_{\text{Front Face}} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam} - E_{Loss} 
 \end{equation}
 
 
+\begin{equation}
+U^\text{Int} _{i, j} (E_i) 
+\end{equation}
 
-\begin{document}
+\begin{equation}
+U^\text{Inc} _{i, j} (E_i) 
+\end{equation}
+
 
 \begin{equation}
 E^\text{kin}_j = E^{\text{kin}}_{\text{Front Face}} - \sum_{j<i} E_{\text{dep i}} 
@@ -77,15 +97,21 @@ E^\text{kin}_j = E^{\text{kin}}_{\text{Front Face}} - \sum_{j<i} E_{\text{dep i}
 
 
 \begin{equation}
-E_{i} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam}^2 - E_{Loss} - E_{\text{dep FF-i}}
+E_{i} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam} - E_{Loss} - E_{\text{dep FF-j}}
+\end{equation}
+
+
+\begin{equation}
+E_{\text{slice j}} = \sqrt{p_{Beam}^2 + m_{Beam}^2} - m_{Beam} - E_{Loss} - E_{\text{dep FF-j}}
+\end{equation}
+
+
+\begin{equation}
+\delta E_{\text{slice j}} = \sqrt{\delta p_{Beam}^2 + \delta E_{Loss}^2 +  \delta  E_{\text{dep FF-j}}^2}
 \end{equation}
 
 \begin{equation}
-\delta E_{i} = \sqrt{\delta p_{Beam}^2 + \delta E_{Loss}^2 +  \delta  E_{\text{dep FF-i}}^2}
-\end{equation}
-
-\begin{equation}
-E_{\text{dep FF-i}} = \sum_{j<i} E_{\text{dep i}}  \Rightarrow \delta E_{\text{dep FF-i}} = (i -1) \delta E_{\text{dep i}}
+E_{\text{dep FF-j}} = \sum_{j<s} E_{\text{dep s}}  \Rightarrow \delta E_{\text{dep FF-j}} = (j -1) \delta E_{\text{dep s}}
 \end{equation}
 
 
@@ -101,6 +127,21 @@ E_{\text{dep FF-i}} = \sum_{j<i} E_{\text{dep i}}  \Rightarrow \delta E_{\text{d
 
 
 \begin{equation}
+P_\text{Int} = \frac{N_\text{Int}}{N_\text{Inc}} = 1 - e^{-\sigma_\text{TOT} \text{ n }\delta X} 
+\end{equation}
+
+
+\begin{equation}
+\sigma_\text{TOT}(E)  \sim \frac{1}{\text{ n }\delta X} \frac{N_\text{Int}}{N_\text{Inc}}
+\end{equation}
+
+
+\begin{equation}
+\sigma_\text{TOT}(E_i)  = \frac{1}{\text{ n }\delta X} \frac{N^{\pi^-}_\text{Int}(E_i)}{N^{\pi^-}_\text{Inc}(E_i)}
+\end{equation}
+
+
+\begin{equation}
 \mathcal{L}(\mu_0; \sigma^2_0; \Delta\theta_0, \Delta\theta_1) = \prod^1_{i=0} f_X(\Delta\theta_i, \mu_0, \sigma^2_0 ) \Rightarrow 
 \end{equation}
 
@@ -112,10 +153,10 @@ E_{\text{dep FF-i}} = \sum_{j<i} E_{\text{dep i}}  \Rightarrow \delta E_{\text{d
 \centering
 \begin{tabular}{|l|c|c|}
 \hline
-                     & I = -60 A           & I = -100 A \\ \hline
-G4Pions       &   70.0 $\pm$ 3.0 \%           &       81.9 $\pm$ 2.1 \%        \\ \hline
-G4Muons     &   15.1 $\pm$ 1.0 \%           &      13.4 $\pm$ 0.6 \%         \\ \hline
-G4Electrons &   14.9 $\pm$ 1.0 \%           &       4.7 $\pm$ 0.3 \%        \\ \hline
+                     & Low E Beam          & High E Beam\\ \hline
+G4Pions       &   70.9 \%          &       82.3 \%         \\ \hline
+G4Muons     &   14.6 \%           &      13.5 \%         \\ \hline
+G4Electrons &   14.5 \%           &       4.2 \%         \\ \hline
 \end{tabular}
 \caption{Simulated beamline composition per magnet settings}
 \label{tab:beamline}
